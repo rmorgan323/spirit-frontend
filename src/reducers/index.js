@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import user from './user';
 
 const rootReducer = combineReducers({
-  fake: 'fake-reducer'
+  user
 });
 
 export default rootReducer;

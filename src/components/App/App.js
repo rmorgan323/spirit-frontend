@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import PatientDashboard from '../../containers/PatientDashboard/PatientDashboard';
+import Routes from '../../containers/Routes/Routes';
+import Header from '../../containers/Header/Header';
 import './App.css';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
-        <PatientDashboard />
+        <Header />
+        <Routes />
       </div>
     );
   }
