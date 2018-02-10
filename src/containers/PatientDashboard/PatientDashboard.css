@@ -1,0 +1,92 @@
+/******  GLOBAL CSS VARIABLES  ******/
+/***  COLORS  ***/
+/***  FONTS  ***/
+* {
+  font-size: 16px;
+  font-family: sans-serif;
+  outline: none;
+  color: #6d6e71; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: sans-serif;
+  line-height: 1.3; }
+
+h1 {
+  font-size: 44px; }
+
+h2 {
+  font-size: 30px; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 18px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  font-size: 10px; }
+
+p {
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 900; }
+
+::placeholder {
+  opacity: .5;
+  text-align: center; }
+
+/***  MIXINS  ***/
+.PatientDashboard {
+  width: 1200px;
+  margin: 20px auto; }
+  .PatientDashboard .pd-header-row {
+    display: flex; }
+    .PatientDashboard .pd-header-row h3 {
+      text-align: left; }
+  .PatientDashboard .pd-first {
+    width: 320px;
+    margin-right: 36px; }
+  .PatientDashboard .pd-second {
+    width: 300px;
+    margin-right: 24px; }
+  .PatientDashboard .pd-input-row {
+    display: flex;
+    justify-content: space-between; }
+  .PatientDashboard input {
+    width: 320px;
+    border: none;
+    border-bottom: 5px solid #f1f2f2; }
+  .PatientDashboard p {
+    width: 305px; }
+  .PatientDashboard .domains {
+    padding: 11px 15px 9px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 5px;
+    background-color: #f1f2f2;
+    color: #d1d3d4; }
+  .PatientDashboard .domains-true {
+    background-color: #a7a9ac;
+    color: #f1f2f2; }
+  .PatientDashboard .domains:hover {
+    color: #a7a9ac; }
+  .PatientDashboard .domains-true:hover {
+    color: #f1f2f2; }
+  .PatientDashboard .save-primary-concern {
+    border: none;
+    background: none;
+    color: red;
+    cursor: pointer; }
+  .PatientDashboard .save-primary-concern:hover {
+    color: #b30000; }
+  .PatientDashboard .select-primary-concern {
+    padding: 0 17px;
+    border: none;
+    background-color: #f1f2f2;
+    cursor: pointer; }
+  .PatientDashboard .select-primary-concern:hover {
+    background-color: #a7a9ac;
+    color: #f1f2f2; }
