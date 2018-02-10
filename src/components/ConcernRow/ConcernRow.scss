@@ -1,0 +1,31 @@
+@import '../../variables.scss';
+
+.ConcernRow {
+
+  display: flex;
+
+  .domains {
+    opacity: 0;
+    cursor: unset;
+  }
+
+  .domains-true {
+    opacity: 1;
+  }
+
+  .concern-left, .concern-notes {
+    width: 304px;
+    text-align: left;
+    background-color: $grey1;
+    padding: 13px 8px;
+    margin: 0 0 28px;
+  }
+
+  .concern-left {
+    margin-right: 29px;
+  }
+
+  .concern-notes {
+    margin-left: 28px;
+  }
+}
