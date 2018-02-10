@@ -24,6 +24,7 @@
   .pd-input-row {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
   }
 
   input {
@@ -56,6 +57,10 @@
 
   .domains-true:hover {
     color: $grey1;
+  }
+
+  .sam-hover {
+    background-color: $grey7;
   }
 
   .save-primary-concern {

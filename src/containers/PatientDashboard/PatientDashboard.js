@@ -3,7 +3,9 @@ import './PatientDashboard.css';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import Concerns from '../../components/Concerns/Concerns';
-import Sam from '../../components/Sam/Sam';
+import Sam from '../Sam/Sam';
+import Sensory from '../Sensory/Sensory';
+
 
 class PatientDashboard extends Component {
   constructor() {
@@ -71,27 +73,27 @@ class PatientDashboard extends Component {
           <p>
             <span 
               onClick={(event) => this.toggleDomain('domain1')} 
-              className={this.state.domain1 === false ? "domains" : "domains domains-true"}>1
+              className={this.state.domain1 === false ? "domains" : "domains sam-1 domains-true"}>1
             </span>
             <span 
               onClick={(event) => this.toggleDomain('domain2')} 
-              className={this.state.domain2 === false ? "domains" : "domains domains-true"}>2
+              className={this.state.domain2 === false ? "domains" : "domains sam-2 domains-true"}>2
             </span>
             <span 
               onClick={(event) => this.toggleDomain('domain3')} 
-              className={this.state.domain3 === false ? "domains" : "domains domains-true"}>3
+              className={this.state.domain3 === false ? "domains" : "domains sam-3 domains-true"}>3
             </span>
             <span 
               onClick={(event) => this.toggleDomain('domain4')} 
-              className={this.state.domain4 === false ? "domains" : "domains domains-true"}>4
+              className={this.state.domain4 === false ? "domains" : "domains sam-4 domains-true"}>4
             </span>
             <span 
               onClick={(event) => this.toggleDomain('domain5')} 
-              className={this.state.domain5 === false ? "domains" : "domains domains-true"}>5
+              className={this.state.domain5 === false ? "domains" : "domains sam-5 domains-true"}>5
             </span>
             <span 
               onClick={(event) => this.toggleDomain('domain6')} 
-              className={this.state.domain6 === false ? "domains" : "domains domains-true"}>6
+              className={this.state.domain6 === false ? "domains" : "domains sam-6 domains-true"}>6
             </span>
           </p>
           <input 
@@ -109,6 +111,8 @@ class PatientDashboard extends Component {
         </div>
 
         <Sam />
+
+        <Sensory />
       </div>
     )
   }

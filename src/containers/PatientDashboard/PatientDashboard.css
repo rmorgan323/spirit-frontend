@@ -54,7 +54,8 @@ p {
     margin-right: 24px; }
   .PatientDashboard .pd-input-row {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    margin-bottom: 50px; }
   .PatientDashboard input {
     width: 320px;
     border: none;
@@ -75,6 +76,8 @@ p {
     color: #a7a9ac; }
   .PatientDashboard .domains-true:hover {
     color: #f1f2f2; }
+  .PatientDashboard .sam-hover {
+    background-color: #231f20; }
   .PatientDashboard .save-primary-concern {
     border: none;
     background: none;
