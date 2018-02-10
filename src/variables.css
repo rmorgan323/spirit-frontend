@@ -39,14 +39,3 @@ p {
   text-align: center; }
 
 /***  MIXINS  ***/
-.Header {
-  background-color: #f1f2f2;
-  padding: 7px 20px; }
-  .Header h1 {
-    margin: 0;
-    text-align: left;
-    color: #d1d3d4; }
-  .Header .header-welcome {
-    position: absolute;
-    right: 20px;
-    top: 15px; }

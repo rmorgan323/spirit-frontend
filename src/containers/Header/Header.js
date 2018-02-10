@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import clearLocalStorage from '../../helpers/clearLocalStorage';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import './Header.css';
 
 class Header extends Component {
 
@@ -35,12 +36,17 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
-        Header
+      <div className="Header">
+        <h1>spirit</h1>
+        <h5 className="header-welcome">Welcome, {this.props.user.name}!</h5>
       </div>
     )
   }
 }
+
+const mapStateToProps = store => ({
+  user: store.user
+})
 
 const mapDispatchToProps = dispatch => ({
   getUser: () => {
@@ -48,7 +54,7 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(null, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
 
 
 

@@ -8,9 +8,8 @@ const loadUser = async () => {
       "Content-Type": "application/json"
     }
   });
-  console.log(user)
   const jsonUser = await user.json();
-  console.log(jsonUser)
+
   return jsonUser[0];
 }
 

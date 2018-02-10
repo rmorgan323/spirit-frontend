@@ -1,0 +1,93 @@
+@import '../../variables.scss';
+
+.PatientDashboard {
+  @include primary-content;
+
+  .pd-header-row {
+    display: flex;
+
+    h3 {
+      text-align: left;
+    }
+  }
+
+  .pd-first {
+    width: 320px;
+    margin-right: 36px;
+  }
+
+  .pd-second {
+    width: 300px;
+    margin-right: 24px;
+  }
+
+  .pd-input-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input {
+    width: 320px;
+    border: none;
+    border-bottom: 5px solid $grey1;
+  }
+
+  p {
+    width: 305px;
+  }
+
+  .domains {
+    padding: 11px 15px 9px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 5px;
+    background-color: $grey1;
+    color: $grey2;
+  }
+
+  .domains-true {
+    background-color: $grey3;
+    color: $grey1;
+  }
+
+  .domains:hover {
+    color: $grey3;
+  }
+
+  .domains-true:hover {
+    color: $grey1;
+  }
+
+  .save-primary-concern {
+    border: none;
+    background: none;
+    color: red;
+    cursor: pointer;
+  }
+
+  .save-primary-concern:hover {
+    color: darken(red, 15%);
+  }
+
+  .select-primary-concern {
+    padding: 0 17px;
+    border: none;
+    background-color: $grey1;
+    cursor: pointer;
+  }
+
+  .select-primary-concern:hover {
+    background-color: $grey3;
+    color: $grey1;
+  }
+
+}
+
+
+
+
+
+
+
+
+

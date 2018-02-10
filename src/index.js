@@ -6,7 +6,9 @@ import { BrowserRouter } from 'react-router-dom';
 import rootReducer from './reducers';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import './normalize.css';
 import './index.css';
+import './variables.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
