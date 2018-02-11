@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import SliderTen from '../SliderTen/SliderTen';
 import './SessionHeader.css';
 
-const SessionHeader = ({ title, headings }) => {
+const SessionHeader = ({ title, headings, databaseNamesArray }) => {
 
   const headingsDisplay = headings.map((heading, index) => {
     return (
       <div className="slider-holder">
         <SliderTen 
           sliderTitle={heading}
+          databaseName={databaseNamesArray[index]}
           key={index}
         />
       </div>

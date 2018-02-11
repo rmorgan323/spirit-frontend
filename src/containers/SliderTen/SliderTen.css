@@ -41,9 +41,11 @@ p {
 /***  MIXINS  ***/
 .SliderTen {
   width: 100%; }
+  .SliderTen h5 {
+    word-wrap: break-word; }
   .SliderTen p {
     width: 100%;
     text-align: center;
     font-size: 16px;
     margin: 5px 0 0;
-    color: #ddd; }
+    color: #aaa; }
