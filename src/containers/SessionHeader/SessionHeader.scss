@@ -1,0 +1,16 @@
+.SessionHeader {
+  display: flex;
+  h5 {
+    text-align: center;
+  }
+
+  .session-title {
+    width: 200px;
+  }
+
+  .slider-holder {
+    width: 130px;
+    margin: 10px;
+    padding: 5px;
+  }
+}
