@@ -2,12 +2,13 @@ import React from 'react'
 import './CategorySliders.css';
 import SliderTen from '../../containers/SliderTen/SliderTen';
 
-const CategorySliders = ({ title, slidersArray }) => {
+const CategorySliders = ({ title, slidersArray, databaseNamesArray }) => {
 
   const display = slidersArray.map((slider, index) => {
     return (
       <SliderTen 
         sliderTitle={slider}
+        databaseName={databaseNamesArray[index]}
         key={index}
       />
     )

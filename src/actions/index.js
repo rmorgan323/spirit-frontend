@@ -18,3 +18,8 @@ export const addConcern = concernObject => ({
   type: 'CONCERN_TO_STORE',
   concernObject
 })
+
+export const updateSlider = (slider) => ({
+  type: 'UPDATE_SLIDER_VALUE',
+  slider
+})

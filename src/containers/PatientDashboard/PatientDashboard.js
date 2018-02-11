@@ -111,8 +111,6 @@ class PatientDashboard extends Component {
         </div>
 
         <Sam />
-
-        <Sensory />
       </div>
     )
   }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Range from 'react-range-progress';
 import './SliderTen.css';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class SliderTen extends Component {
   constructor(props) {
@@ -8,18 +10,29 @@ class SliderTen extends Component {
 
 
     this.state = {
-      value: 0
+      value: 0,
+      previousValue: 0
     };
   }
-
 
   onRangeChanged = (value) => {
     this.setState({value})
   }
 
+  handleSliderUpdate = (previousValue) => {
+    if (this.state.value !== previousValue) {
+      this.props.updateSlider({[this.props.databaseName]: this.state.value})
+    }
+  
+    this.setState({previousValue: this.state.value})
+  }
+
   render() {
     return (
-      <div className="SliderTen">
+      <div 
+        className="SliderTen"
+        onMouseLeave={() => this.handleSliderUpdate(this.state.previousValue)}
+      >
         <h5>{this.props.sliderTitle}</h5>
         <Range
           value={this.state.value}
@@ -43,10 +56,19 @@ class SliderTen extends Component {
           min={0}
           max={10}
         />
-        <p>{this.state.value}</p>
+        <p style={this.state.value === 0 ? {'opacity': 0} : null} >{this.state.value}</p>
       </div>
     );
   }
 }
 
-export default SliderTen;
+const mapDispatchToProps = dispatch => ({
+  updateSlider: (slider) => {
+    dispatch(actions.updateSlider(slider));
+  }
+})
+
+export default connect(null, mapDispatchToProps)(SliderTen);
+
+
+
