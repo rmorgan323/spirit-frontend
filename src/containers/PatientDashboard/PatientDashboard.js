@@ -33,7 +33,7 @@ class PatientDashboard extends Component {
   }
 
   handleSave = (concern, d1, d2, d3, d4, d5, d6, notes) => {
-    this.props.addConcern({ concern: concern, d1: d1, d2: d2, d3: d3, d4: d4, d5: d5, d6: d6, notes: notes });
+    this.props.addConcern({ concern: concern, domain_1: d1, domian_2: d2, domain_3: d3, domain_4: d4, domain_5: d5, domain_6: d6, notes: notes });
     this.clearInputs();
   }
 
