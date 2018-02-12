@@ -40,6 +40,7 @@ class Sam extends Component {
           src={this.state.imgSrc} 
           useMap="#sam_map"
           width="400"
+          alt="sam-graphic"
         />
         <map name="sam_map">
           <area 
@@ -48,6 +49,7 @@ class Sam extends Component {
             coords="16,100,14"
             onMouseOver={() => this.handleMouseOver('.sam-1')}
             onMouseOut={() => this.handleMouseOut('.sam-1')}
+            alt="sam-graphic"
           />
           <area 
             className="sam-hover-2"
@@ -55,6 +57,7 @@ class Sam extends Component {
             coords="285,102,14"
             onMouseOver={() => this.handleMouseOver('.sam-2')}
             onMouseOut={() => this.handleMouseOut('.sam-2')}
+            alt="sam-graphic"
           />
           <area 
             className="sam-hover-3"
@@ -62,6 +65,7 @@ class Sam extends Component {
             coords="95,18,14"
             onMouseOver={() => this.handleMouseOver('.sam-3')}
             onMouseOut={() => this.handleMouseOut('.sam-3')}
+            alt="sam-graphic"
           />
           <area 
             className="sam-hover-4"
@@ -69,6 +73,7 @@ class Sam extends Component {
             coords="148,102,14"
             onMouseOver={() => this.handleMouseOver('.sam-4')}
             onMouseOut={() => this.handleMouseOut('.sam-4')}
+            alt="sam-graphic"
           />
           <area 
             className="sam-hover-5"
@@ -76,6 +81,7 @@ class Sam extends Component {
             coords="191,15,14"
             onMouseOver={() => this.handleMouseOver('.sam-5')}
             onMouseOut={() => this.handleMouseOut('.sam-5')}
+            alt="sam-graphic"
           />
           <area 
             className="sam-hover-6"
@@ -83,6 +89,7 @@ class Sam extends Component {
             coords="384,18,14"
             onMouseOver={() => this.handleMouseOver('.sam-6')}
             onMouseOut={() => this.handleMouseOut('.sam-6')}
+            alt="sam-graphic"
           />
         </map>
       </div>

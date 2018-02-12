@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SessionHeader from '../SessionHeader/SessionHeader';
 import CategorySliders from '../../components/CategorySliders/CategorySliders';
 import './Modulation.css';
