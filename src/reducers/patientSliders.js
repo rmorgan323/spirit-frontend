@@ -122,6 +122,7 @@ let defaultStore = {
   pos_6_grasp: null,
   pos_6_strength: null,
   pos_6_effortful: null,
+  
   soc_1_regulation: null,
   soc_1_engagement: null,
   soc_1_reciprocity: null,
@@ -145,7 +146,7 @@ let defaultStore = {
   soc_3_affective: null,
   soc_3_emotional_contagion: null,
   soc_3_activation_low: null,
-  soc_3_emotional_cascase: null,
+  soc_3_emotional_cascade: null,
   soc_3_activation_high: null,
   soc_3_emotional_differentiation: null,
   soc_3_emotional_association: null,

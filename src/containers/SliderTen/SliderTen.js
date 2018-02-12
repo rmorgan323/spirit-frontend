@@ -56,7 +56,7 @@ class SliderTen extends Component {
           }}
           height={6}
           width="100%"
-          thumbSize='14'
+          thumbSize={14}
           thumbColor={{r: 200, g: 200, b: 200, a: 1}}
           onChange={this.onRangeChanged}
           min={0}

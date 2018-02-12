@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SliderTen from '../SliderTen/SliderTen';
 import './SessionHeader.css';
 
