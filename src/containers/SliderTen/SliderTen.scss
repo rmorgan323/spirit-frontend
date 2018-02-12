@@ -3,6 +3,26 @@
 .SliderTen {
   width: 100%;
 
+  h2 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .button-fair {
+    margin: 0 5px;
+    color: #eee;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .button-fair:hover {
+    color: $grey5;
+  }
+
+  .button-active {
+    color: $grey5;
+  }
+
   h5 {
     word-wrap: break-word;
   }

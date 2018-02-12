@@ -41,6 +41,18 @@ p {
 /***  MIXINS  ***/
 .SliderTen {
   width: 100%; }
+  .SliderTen h2 {
+    text-align: center;
+    margin-top: 0; }
+  .SliderTen .button-fair {
+    margin: 0 5px;
+    color: #eee;
+    font-size: 22px;
+    cursor: pointer; }
+  .SliderTen .button-fair:hover {
+    color: #6d6e71; }
+  .SliderTen .button-active {
+    color: #6d6e71; }
   .SliderTen h5 {
     word-wrap: break-word; }
   .SliderTen p {
