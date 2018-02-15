@@ -1,7 +1,7 @@
 const loadSessionsList = async primaryConcernId => {
   try {
     const fetchedSessionsList = await fetch(
-      `localhost:3000/api/v1/primary-concerns/${primaryConcernId}/sessions`
+      `http://localhost:3000/api/v1/primary-concerns/${primaryConcernId}/sessions`
     );
     const jsonSessionsList = await fetchedSessionsList.json();
 
