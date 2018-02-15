@@ -10,10 +10,17 @@ const Header = (props) => {
     <div className="Header">
       <img className="header-wordmark" src="/assets/Spirit-Wordmark-White.png" alt="SpIRiT-wordmark" />
       {
-        props.user &&
+        props.user.name &&
         <div>
           <h5 className="header-welcome-user">Welcome, {props.user.name}!</h5>
           <h5 className="header-welcome-clinic">Clinic: {props.user.clinic}</h5>
+        </div>
+      }
+
+      {
+        !props.user.name &&
+        <div>
+          <a href="https://spirit.e1.loginrocket.com/login">LOGIN</a>
         </div>
       }
     </div>

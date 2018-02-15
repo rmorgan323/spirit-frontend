@@ -49,9 +49,11 @@ p {
     position: absolute;
     right: 20px;
     top: -9px;
-    color: #F9F9F9; }
+    color: #F9F9F9;
+    font-weight: 400; }
   .Header .header-welcome-clinic {
     position: absolute;
     right: 20px;
     top: 15px;
-    color: #F9F9F9; }
+    color: #F9F9F9;
+    font-weight: 400; }
