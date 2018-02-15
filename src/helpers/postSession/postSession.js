@@ -17,7 +17,7 @@ const postSession = async primaryConcernId => {
     return jsonSessionId;
   } catch (error) {
     throw new Error(
-      `Error fetching creating session by primary concern id ${primaryConcernId}: ${error}`
+      `Error creating session by primary concern id ${primaryConcernId}: ${error}`
     );
   }
 };
