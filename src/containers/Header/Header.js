@@ -8,7 +8,7 @@ const Header = (props) => {
 
   return (
     <div className="Header">
-      <h1>spirit</h1>
+      <img className="header-wordmark" src="/assets/Spirit-Wordmark-White.png" alt="SpIRiT-wordmark" />
       <h5 className="header-welcome-user">Welcome, {props.user.name}!</h5>
       <h5 className="header-welcome-clinic">Clinic: {props.user.clinic}</h5>
     </div>
