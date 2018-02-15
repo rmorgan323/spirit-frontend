@@ -46,7 +46,11 @@ p {
     margin: 0;
     text-align: left;
     color: #d1d3d4; }
-  .Header .header-welcome {
+  .Header .header-welcome-user {
+    position: absolute;
+    right: 20px;
+    top: -9px; }
+  .Header .header-welcome-clinic {
     position: absolute;
     right: 20px;
     top: 15px; }

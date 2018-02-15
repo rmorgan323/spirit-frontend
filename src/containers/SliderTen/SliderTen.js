@@ -3,6 +3,7 @@ import Range from 'react-range-progress';
 import './SliderTen.css';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import Definition from '../../components/Definition/Definition';
 
 class SliderTen extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class SliderTen extends Component {
       value: 0,
       previousValue: 0,
       fair: '',
-      previousFair: ''
+      previousFair: '',
+      displayDefinition: false
     };
   }
 
@@ -32,13 +34,29 @@ class SliderTen extends Component {
     this.setState({fair: letter})
   }
 
+  toggleDefinition = () => {
+    this.setState({displayDefinition: !this.state.displayDefinition})
+  }
+
   render() {
     return (
       <div 
         className="SliderTen"
         onMouseLeave={() => this.handleSliderUpdate(this.state.previousValue, this.state.previousFair)}
       >
-        <h5>{this.props.sliderTitle}</h5>
+        <div className="slider-heading">
+          <img 
+            className="definition-image" 
+            src="/assets/mag-glass.svg"
+            onClick={() => this.toggleDefinition()}
+          />
+          <div className={this.state.displayDefinition === true ? "definition-holder display-definition" : "definition-holder"}>
+            <Definition 
+              title={this.props.sliderTitle}
+            />
+          </div>
+          <h5>{this.props.sliderTitle}</h5>
+        </div>
         <p style={this.state.value === 0 ? {'opacity': 0} : null} >{this.state.value}</p>
         <Range
           value={this.state.value}

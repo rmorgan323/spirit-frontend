@@ -44,6 +44,23 @@ p {
   .SliderTen h2 {
     text-align: center;
     margin-top: 0; }
+  .SliderTen h5 {
+    margin-top: 0; }
+  .SliderTen .slider-heading {
+    display: flex;
+    align-items: flex-start;
+    position: relative; }
+  .SliderTen .definition-holder {
+    display: none; }
+  .SliderTen .display-definition {
+    display: block; }
+  .SliderTen .definition-image {
+    width: 17px;
+    cursor: pointer;
+    opacity: .65;
+    margin-right: 5px; }
+  .SliderTen .definition-image:hover {
+    opacity: 1; }
   .SliderTen .button-fair {
     margin: 0 5px;
     color: #eee;
