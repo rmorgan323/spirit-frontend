@@ -45,12 +45,16 @@ p {
   .Header .header-wordmark {
     margin: 0;
     width: 150px; }
-  .Header .header-welcome-user {
+  .Header .header-welcome-user, .Header .login-link {
     position: absolute;
     right: 20px;
     top: -9px;
     color: #F9F9F9;
-    font-weight: 400; }
+    font-weight: 400;
+    text-decoration: none;
+    transition: 0.3s ease-in-out; }
+    .Header .header-welcome-user:hover, .Header .login-link:hover {
+      border-bottom: 1px solid #F9F9F9; }
   .Header .header-welcome-clinic {
     position: absolute;
     right: 20px;

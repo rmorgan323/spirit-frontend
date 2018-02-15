@@ -20,7 +20,7 @@ const Header = (props) => {
       {
         !props.user.name &&
         <div>
-          <a href="https://spirit.e1.loginrocket.com/login">LOGIN</a>
+          <a href="https://spirit.e1.loginrocket.com/login"><h5 className="login-link">LOGIN</h5></a>
         </div>
       }
     </div>

@@ -9,12 +9,17 @@
     width: 150px;
   }
 
-  .header-welcome-user {
+  .header-welcome-user, .login-link {
     position: absolute;
     right: 20px;
     top: -9px;
     color: $white1;
     font-weight: 400;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      border-bottom: 1px solid $white1;
+    }
   }
 
   .header-welcome-clinic {
