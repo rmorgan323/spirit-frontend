@@ -10,13 +10,13 @@ const Concerns = (props) => {
     displayConcernRows = props.patientConcerns.map((concern, index) => {
       return (
         <ConcernRow 
-          concern={concern.concern}
-          d1={concern.d1}
-          d2={concern.d2}
-          d3={concern.d3}
-          d4={concern.d4}
-          d5={concern.d5}
-          d6={concern.d6}
+          concern={concern.description}
+          d1={concern.domain_1}
+          d2={concern.domain_2}
+          d3={concern.domain_3}
+          d4={concern.domain_4}
+          d5={concern.domain_5}
+          d6={concern.domain_6}
           notes={concern.notes}
           key={index}
         />

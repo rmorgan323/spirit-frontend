@@ -12,6 +12,7 @@ const PatientList = (props) => {
     patientListDisplay = props.patientList.map(patient => {
       return (
         <PatientCard
+          key={patient.id}
           id={patient.id}
           absName={patient.abstracted_name}
           lastAppt={moment(patient.updated_at).format('ll')}

@@ -5,6 +5,9 @@ import addClinicInfoToUser from '../helpers/addClinicInfoToUser/addClinicInfoToU
 import loadClinic from '../helpers/loadClinic/loadClinic';
 import postPatient from '../helpers/postPatient/postPatient';
 import loadPatientList from '../helpers/loadPatientList/loadPatientList';
+import loadPatientConcerns from '../helpers/loadPatientConcerns/loadPatientConcerns';
+import loadPatient from '../helpers/loadPatient/loadPatient';
+import postPatientConcern from '../helpers/postPatientConcern/postPatientConcern';
 
 export const getUser = () => async dispatch => {
   try {
@@ -26,12 +29,39 @@ export const userToStore = user => ({
   user
 });
 
-export const addConcern = concernObject => ({
-  type: 'CONCERN_TO_STORE',
-  concernObject
-});
+export const getPatientConcerns = id => async dispatch => {
+  try {
+    const concernArray = await loadPatientConcerns(id);
+    dispatch(concernArrayToStore(concernArray));
+    const patient = await loadPatient(id);
+    dispatch(currentPatientToStore(patient));
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-export const updateSlider = (slider) => ({
+export const currentPatientToStore = patient => ({
+  type: 'CURRENT_PATIENT_TO_STORE',
+  patient
+})
+
+export const addConcern = concern => async dispatch => {
+  const newConcern = await postPatientConcern(concern)
+  console.log(newConcern)
+  dispatch(concernToStore(concern))
+};
+
+export const concernArrayToStore = concerns => ({
+  type: 'CONCERN_ARRAY_TO_STORE',
+  concerns
+})
+
+export const concernToStore = concern => ({
+  type: 'CONCERN_TO_STORE',
+  concern
+})
+
+export const updateSlider = slider => ({
   type: 'UPDATE_SLIDER_VALUE',
   slider
 });
@@ -76,10 +106,8 @@ export const savePatient = (first, last, user, clinicAbbr) => async dispatch => 
   }
 }
 
-export const patientToStore = (patient) => ({
+export const patientToStore = patient => ({
   type: 'PATIENT_TO_STORE',
   patient
 })
-
-
 

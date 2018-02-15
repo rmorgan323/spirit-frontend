@@ -1,9 +1,11 @@
 const patientConcerns = (store = [], action) => {
   switch (action.type) {
     case "CONCERN_TO_STORE":
-      const newConcern = [...store, action.concernObject]
+      const newArray = [...store, action.concern]
+      return newArray;
 
-      return newConcern;
+    case "CONCERN_ARRAY_TO_STORE":
+      return action.concerns;
 
     default:
       return store;
