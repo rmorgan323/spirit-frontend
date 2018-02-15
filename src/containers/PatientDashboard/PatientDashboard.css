@@ -63,17 +63,19 @@ p {
   .PatientDashboard p {
     width: 305px; }
   .PatientDashboard .domains {
-    padding: 11px 15px 9px;
+    padding: 6px 10px 4px;
     cursor: pointer;
     border-radius: 20px;
     margin: 5px;
+    border: 5px solid #f1f2f2;
     background-color: #f1f2f2;
     color: #d1d3d4; }
   .PatientDashboard .domains-true {
     background-color: #a7a9ac;
     color: #f1f2f2; }
   .PatientDashboard .domains:hover {
-    color: #a7a9ac; }
+    color: #a7a9ac;
+    border: 5px solid #d1d3d4; }
   .PatientDashboard .domains-true:hover {
     color: #f1f2f2; }
   .PatientDashboard .sam-hover {
@@ -93,3 +95,7 @@ p {
   .PatientDashboard .select-primary-concern:hover {
     background-color: #a7a9ac;
     color: #f1f2f2; }
+  .PatientDashboard .sam-image {
+    display: block;
+    margin: auto;
+    width: 550px; }

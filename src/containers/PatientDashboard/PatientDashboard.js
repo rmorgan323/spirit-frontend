@@ -30,8 +30,8 @@ class PatientDashboard extends Component {
     this.setState({[name]: value })
   }
 
-  handleSave = (concern, d1, d2, d3, d4, d5, d6, notes) => {
-    this.props.addConcern({ concern: concern, domain_1: d1, domian_2: d2, domain_3: d3, domain_4: d4, domain_5: d5, domain_6: d6, notes: notes });
+  handleSave = (concern, d1, d2, d3, d4, d5, d6, notes, id) => {
+    this.props.addConcern({ description: concern, domain_1: d1, domain_2: d2, domain_3: d3, domain_4: d4, domain_5: d5, domain_6: d6, notes: notes, patient_id: id });
     this.clearInputs();
   }
 
@@ -103,19 +103,19 @@ class PatientDashboard extends Component {
           ></input>
           <button 
             className="save-primary-concern"
-            onClick={() => this.handleSave(this.state.concernInput, this.state.domain1, this.state.domain2, this.state.domain3, this.state.domain4, this.state.domain5, this.state.domain6, this.state.notesInput)}
+            onClick={() => this.handleSave(this.state.concernInput, this.state.domain1, this.state.domain2, this.state.domain3, this.state.domain4, this.state.domain5, this.state.domain6, this.state.notesInput, this.props.currentPatient.id)}
           >save</button>
-          <button className="select-primary-concern">SELECT</button>
         </div>
 
-        <Sam />
+        <img className="sam-image" src="/assets/sam-new.svg" />
       </div>
     )
   }
 }
 
 const mapStateToProps = store => ({
-  concerns: store.concerns
+  patientConcerns: store.patientConcerns,
+  currentPatient: store.currentPatient
 })
 
 
