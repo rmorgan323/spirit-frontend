@@ -11,7 +11,6 @@ class Spirit extends Component {
   render() {
     return (
       <div className="Spirit">
-        <a href="https://spirit.e1.loginrocket.com/login">LOGIN</a>
         <img
           className="homepage-wordmark"
           src="/assets/Spirit-Homepage-Wordmark-Purple.png"
