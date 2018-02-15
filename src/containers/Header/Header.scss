@@ -10,7 +10,13 @@
     color: $grey2 ;
   }
 
-  .header-welcome {
+  .header-welcome-user {
+    position: absolute;
+    right: 20px;
+    top: -9px;
+  }
+
+  .header-welcome-clinic {
     position: absolute;
     right: 20px;
     top: 15px;

@@ -21,7 +21,7 @@ const Executive = () => {
           databaseNamesArray={['exe_2a_working', 'exe_2a_shifting']}
         />
         <CategorySliders 
-          slidersArray={['Verbal', 'Spacial', 'General', 'Global/Local', 'Flexibility']}
+          slidersArray={['Verbal', 'Spatial', 'General', 'Global/Local', 'Flexibility']}
           databaseNamesArray={['exe_2b_verbal', 'exe_2b_spatial', 'exe_2b_general', 'exe_2b_global', 'exe_2b_flexibility']}
         />
         <CategorySliders 

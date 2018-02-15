@@ -8,6 +8,35 @@
     margin-top: 0;
   }
 
+  h5 {
+    margin-top: 0;
+  }
+
+  .slider-heading {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .definition-holder {
+    display: none;
+  }
+
+  .display-definition {
+    display: block;
+  }
+
+  .definition-image {
+    width: 17px;
+    cursor: pointer;
+    opacity: .65;
+    margin-right: 5px;
+  }
+
+  .definition-image:hover {
+    opacity: 1;
+  }
+
   .button-fair {
     margin: 0 5px;
     color: #eee;
