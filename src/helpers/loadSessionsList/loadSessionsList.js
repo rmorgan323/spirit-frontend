@@ -1,9 +1,9 @@
 const loadSessionsList = async primaryConcernId => {
   try {
-    const fetchedSessions = await fetch(
+    const fetchedSessionsList = await fetch(
       `localhost:3000/api/v1/primary-concerns/${primaryConcernId}/sessions`
     );
-    const jsonSessions = await fetchedSessions.json();
+    const jsonSessionsList = await fetchedSessionsList.json();
 
     return jsonSessions;
   } catch (error) {
