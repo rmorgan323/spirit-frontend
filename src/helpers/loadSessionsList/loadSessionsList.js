@@ -1,4 +1,4 @@
-const loadSessions = async primaryConcernId => {
+const loadSessionsList = async primaryConcernId => {
   try {
     const fetchedSessions = await fetch(
       `localhost:3000/api/v1/primary-concerns/${primaryConcernId}/sessions`
@@ -13,4 +13,4 @@ const loadSessions = async primaryConcernId => {
   }
 };
 
-export default loadSessions;
+export default loadSessionsList;
