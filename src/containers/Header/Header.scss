@@ -1,24 +1,32 @@
 @import '../../variables.scss';
 
 .Header {
-  background-color: $grey1;
+  background-color: $purple1;
   padding: 7px 20px;
 
-  h1 {
+  .header-wordmark {
     margin: 0;
-    text-align: left;
-    color: $grey2 ;
+    width: 150px;
   }
 
-  .header-welcome-user {
+  .header-welcome-user, .login-link {
     position: absolute;
     right: 20px;
     top: -9px;
+    color: $white1;
+    font-weight: 400;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      border-bottom: 1px solid $white1;
+    }
   }
 
   .header-welcome-clinic {
     position: absolute;
     right: 20px;
     top: 15px;
+    color: $white1;
+    font-weight: 400;
   }
 }

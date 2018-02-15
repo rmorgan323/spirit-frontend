@@ -5,19 +5,20 @@ class Spirit extends Component {
   constructor() {
     super();
 
-    this.state = {
-
-    }
+    this.state = {};
   }
 
   render() {
     return (
-      <div>
-        <h2>homepage</h2>
-        <a href="https://spirit.e1.loginrocket.com/login">LOGIN</a>
-        
+      <div className="Spirit">
+        <img
+          className="homepage-wordmark"
+          src="/assets/Spirit-Homepage-Wordmark-Purple.png"
+          alt="Spirit-Wordmark-with-Tagline"
+        />
+        <h4 className="homepage-brief-descriptor">A clinical reasoning model for ensuring best practice in pediatric occupational therapy.</h4>
       </div>
-    )
+    );
   }
 }
 
