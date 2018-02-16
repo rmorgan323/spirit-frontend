@@ -22,7 +22,7 @@ const PatientList = (props) => {
   }
 
   return (
-    <div>
+    <div className="PatientList">
       {patientListDisplay}
     </div>
   )

@@ -43,7 +43,8 @@ p {
   display: flex; }
   .ConcernRow .domains {
     opacity: 0;
-    cursor: unset; }
+    cursor: unset;
+    transition: all .3s ease-in-out; }
   .ConcernRow .domains-true {
     opacity: 1; }
   .ConcernRow .domains-hover {
