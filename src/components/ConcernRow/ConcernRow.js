@@ -41,6 +41,16 @@ class ConcernRow extends Component {
     })
   }
 
+  determineDomainClass = (domain, hover) => {
+    if (!domain) {
+      return 'domains';
+    } else if (!hover) {
+      return 'domains domains-true'
+    } else {
+      return 'domains domains-true domains-hover'
+    }
+  }
+
   render() {
     const { id, concern, d1, d2, d3, d4, d5, d6, notes } = this.props;
     const { hover } = this.state;
@@ -48,23 +58,34 @@ class ConcernRow extends Component {
     return (
       <div className="ConcernRow">
         <p className="concern-left">{concern}</p>
+
         <p>
-          <span className={ d1 === false ? "domains" : (hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>1</span>
-          <span className={ d2 === false ? "domains" : (hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>2</span>
-          <span className={ d3 === false ? "domains" : (hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>3</span>
-          <span className={ d4 === false ? "domains" : (hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>4</span>
-          <span className={ d5 === false ? "domains" : (hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>5</span>
-          <span className={ d6 === false ? "domains" : (hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>6</span>
+          <span className={this.determineDomainClass(d1, hover)}>1</span>
+          <span className={this.determineDomainClass(d2, hover)}>2</span>
+          <span className={this.determineDomainClass(d3, hover)}>3</span>
+          <span className={this.determineDomainClass(d4, hover)}>4</span>
+          <span className={this.determineDomainClass(d5, hover)}>5</span>
+          <span className={this.determineDomainClass(d6, hover)}>6</span>
         </p>
+
         <p className="concern-notes">{notes}</p>
-        <Link to={`/spirit/concerns/${id}/sessions`}><button onClick={(id) => this.props.setConcern(id)} onMouseEnter={() => this.selectEnter()} onMouseOut={() => this.selectLeave()} className="select-concern-button">SELECT</button></Link>
+
+        <Link to={`/spirit/concerns/${id}/sessions`}>
+          <button
+            className="select-concern-button"
+            onClick={(id) => this.props.setConcern(id)}
+            onMouseEnter={() => this.selectEnter()}
+            onMouseOut={() => this.selectLeave()}>
+            SELECT
+          </button>
+        </Link>
       </div>
     )
   }
 }
 
 const mapDispatchToProps = (dispatch, concernId) => ({
-  setConcern: (concernId) => dispatch(actions.setConcern(concernId))
+  // setConcern: (concernId) => dispatch(actions.setConcern(concernId))
 })
 
 export default connect(null, mapDispatchToProps)(ConcernRow);
