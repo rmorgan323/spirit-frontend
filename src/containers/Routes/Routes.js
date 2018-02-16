@@ -16,6 +16,7 @@ import Users from '../Users/Users';
 import Header from '../Header/Header';
 import Sessions from '../../containers/Sessions/Sessions';
 import PatientHeader from '../../components/PatientHeader/PatientHeader';
+import ConcernHeader from '../../components/ConcernHeader/ConcernHeader';
 import * as actions from '../../actions';
 
 class Routes extends Component {
@@ -54,6 +55,7 @@ class Routes extends Component {
       <div>
           <Route path="/" component={Header} />
           <Route path="/" component={PatientHeader} />
+          <Route path="/" component={ConcernHeader} />
         <Switch>
           {/*  <Route path="/spirit/sessions/:sessionId/therapygoals" component={Therapy} /> */}
           {/*  <Route path="/spirit/sessions/:sessionId/treatmentplans" component={Treatment} /> */}

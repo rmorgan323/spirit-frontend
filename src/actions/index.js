@@ -71,7 +71,6 @@ export const sessionsArrayToStore = sessions => ({
 
 export const addConcern = concern => async dispatch => {
   const newConcern = await postPatientConcern(concern)
-  console.log(newConcern)
   dispatch(concernToStore(concern))
 };
 
