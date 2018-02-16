@@ -75,7 +75,7 @@ class ConcernRow extends Component {
         <Link to={`/spirit/concerns/${id}/sessions`}>
           <button
             className="select-concern-button"
-            onClick={id => this.props.getConcern(id)}
+            onClick={() => this.props.getConcern(id)}
             onMouseEnter={() => this.selectEnter()}
             onMouseOut={() => this.selectLeave()}
           >
@@ -87,8 +87,8 @@ class ConcernRow extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch, concernId) => ({
-  // getConcern: (concernId) => dispatch(actions.getConcern(concernId))
+const mapDispatchToProps = dispatch => ({
+  getConcern: (concernId) => dispatch(actions.getConcern(concernId))
 });
 
 export default connect(null, mapDispatchToProps)(ConcernRow);
