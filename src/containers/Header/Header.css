@@ -53,8 +53,9 @@ p {
     font-weight: 400;
     text-decoration: none;
     transition: 0.3s ease-in-out; }
-    .Header .header-welcome-user:hover, .Header .login-link:hover {
-      border-bottom: 1px solid #F9F9F9; }
+  .Header .login-link:hover {
+    border-bottom: 1px solid #F9F9F9;
+    cursor: pointer; }
   .Header .header-welcome-clinic {
     position: absolute;
     right: 20px;
