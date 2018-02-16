@@ -1,8 +1,8 @@
 import React from 'react';
-import { connect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './Sessions.css';
 
-const Sessions = () => {
+export const Sessions = () => {
   return (
     <div className="Sessions">
       <h1>Sessions</h1>
@@ -10,4 +10,12 @@ const Sessions = () => {
   )
 }
 
-export default connect(null, null)(Sessions);
+const mapStateToProps = store => ({
+  
+})
+
+const mapDispatchToProps = () => ({
+
+})
+
+export default connect(mapStateToProps, null)(Sessions);
