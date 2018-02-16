@@ -12,7 +12,13 @@ $grey7: #231f20;
 $green1: #a8ed8a;
 $green2: #3cd52e;
 
-$purple1: #5E378C;
+$purple1: #EAE5F0;
+$purple2: #DFD7E7;
+$purple3: #BFAFD0;
+$purple4: #9E87BA;
+$purple5: #7F60A4;
+$purple6: #5E378C;
+$purple7: #462A69;
 
 $white1: #F9F9F9;
 
@@ -94,7 +100,7 @@ p {
 }
 
 @mixin primary-content {
-  width: 1200px;
+  width: 1152px;
   margin: 20px auto;
 }
 

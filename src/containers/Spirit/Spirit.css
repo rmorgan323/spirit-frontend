@@ -40,7 +40,7 @@ p {
 
 /***  MIXINS  ***/
 .Spirit {
-  width: 1200px;
+  width: 1152px;
   margin: 20px auto;
   display: flex;
   flex-direction: column; }

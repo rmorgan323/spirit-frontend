@@ -46,6 +46,8 @@ p {
     cursor: unset; }
   .ConcernRow .domains-true {
     opacity: 1; }
+  .ConcernRow .domains-hover {
+    border: 5px solid #7F60A4; }
   .ConcernRow .concern-left, .ConcernRow .concern-notes {
     width: 304px;
     text-align: left;
@@ -56,3 +58,13 @@ p {
     margin-right: 29px; }
   .ConcernRow .concern-notes {
     margin-left: 28px; }
+  .ConcernRow .select-concern-button {
+    width: 130px;
+    height: 44px;
+    background-color: #a7a9ac;
+    color: #f1f2f2;
+    margin-left: 20px;
+    border: none;
+    cursor: pointer; }
+  .ConcernRow .select-concern-button:hover {
+    background-color: #808285; }
