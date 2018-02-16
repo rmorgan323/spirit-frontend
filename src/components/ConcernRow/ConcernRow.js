@@ -61,4 +61,8 @@ class ConcernRow extends Component {
   }
 }
 
-export default ConcernRow;
+const mapDispatchToProps = dispatch => ({
+
+})
+
+export default connect(null, mapDispatchToProps)(ConcernRow);
