@@ -13,6 +13,10 @@
     opacity: 1;
   }
 
+  .domains-hover {
+    border: 5px solid $purple5;
+  }
+
   .concern-left, .concern-notes {
     width: 304px;
     text-align: left;
@@ -27,5 +31,19 @@
 
   .concern-notes {
     margin-left: 28px;
+  }
+
+  .select-concern-button {
+    width: 130px;
+    height: 44px;
+    background-color: $grey3;
+    color: $grey1;
+    margin-left: 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .select-concern-button:hover {
+    background-color: $grey4;
   }
 }

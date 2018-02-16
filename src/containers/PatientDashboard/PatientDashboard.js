@@ -107,7 +107,15 @@ class PatientDashboard extends Component {
           >save</button>
         </div>
 
-        <img className="sam-image" src="/assets/sam-new.svg" />
+        <div className="sam-holder">
+          <img className="sam-image" src="/assets/sam-new.svg" />
+          <div className="sam-dot-1 sam-dots">1</div>
+          <div className="sam-dot-2 sam-dots">2</div>
+          <div className="sam-dot-3 sam-dots">3</div>
+          <div className="sam-dot-4 sam-dots">4</div>
+          <div className="sam-dot-5 sam-dots">5</div>
+          <div className="sam-dot-6 sam-dots">6</div>
+        </div>
       </div>
     )
   }
