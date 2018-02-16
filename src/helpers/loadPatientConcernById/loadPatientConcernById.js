@@ -14,7 +14,7 @@ const loadPatientConcernById = async concernId => {
     );
     const jsonConcern = await fetchedConcern.json();
 
-    return jsonConcern;
+    return jsonConcern[0];
   } catch (error) {
     throw new Error(`Error fetch primary concern by id ${concernId}: ${error}`);
   }
