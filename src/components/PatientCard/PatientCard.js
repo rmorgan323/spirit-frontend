@@ -7,9 +7,9 @@ import * as actions from '../../actions';
 const PatientCard = (props) => {
 
   return (
-    <div>
-      <p>Patient Id: {props.absName}</p>
-      <p>Last update: {props.lastAppt}</p>
+    <div className="PatientCard">
+      <p><span>Patient Id: </span>{props.absName} </p>
+      <p><span>Last update: </span>{props.lastAppt}</p>
       <Link onClick={() => props.getPatientConcerns(props.id)} to={`/spirit/patients/${props.id}`}>SELECT</Link>
     </div>
   ) 

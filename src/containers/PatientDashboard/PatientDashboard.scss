@@ -115,6 +115,7 @@
     position: absolute;
     font-weight: bold;
     color: $purple3;
+    @include std-transition;
   }
 
   .sam-dot-1 {

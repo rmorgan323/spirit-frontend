@@ -104,7 +104,9 @@ p {
   margin: 20px auto;
 }
 
-
+@mixin std-transition {
+  transition: all .3s ease-in-out;
+}
 
 
 

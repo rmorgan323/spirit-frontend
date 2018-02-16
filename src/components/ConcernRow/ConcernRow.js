@@ -17,8 +17,7 @@ class ConcernRow extends Component {
 
     let activeDomains = Object.keys(this.props).reduce((accum, prop) => {
       if (prop.length === 2 && this.props[prop]) {
-        const y = [...prop].pop();
-        accum.push(y)
+        accum.push([...prop].pop());
       }
       return accum;
     },[])
@@ -29,7 +28,6 @@ class ConcernRow extends Component {
         document.querySelector(`.sam-dot-${index + 1}`).classList.add('sam-hover')
       }
     })
-    
   }
 
   selectLeave = () => {
