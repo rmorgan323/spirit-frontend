@@ -8,6 +8,7 @@ import loadPatientList from '../helpers/loadPatientList/loadPatientList';
 import loadPatientConcerns from '../helpers/loadPatientConcerns/loadPatientConcerns';
 import loadPatient from '../helpers/loadPatient/loadPatient';
 import postPatientConcern from '../helpers/postPatientConcern/postPatientConcern';
+// import loadPatientConcernById from '../helpers/'
 
 export const getUser = () => async dispatch => {
   try {
