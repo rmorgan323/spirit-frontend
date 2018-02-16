@@ -1,22 +1,63 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './ConcernRow.css';
 
-const ConcernRow = ({ concern, d1, d2, d3, d4, d5, d6, notes }) => {
 
-  return (
-    <div className="ConcernRow">
-      <p className="concern-left">{concern}</p>
-      <p>
-        <span className={ d1 === false ? "domains" : "domains sam-1 domains-true" }>1</span>
-        <span className={ d2 === false ? "domains" : "domains sam-2 domains-true" }>2</span>
-        <span className={ d3 === false ? "domains" : "domains sam-3 domains-true" }>3</span>
-        <span className={ d4 === false ? "domains" : "domains sam-4 domains-true" }>4</span>
-        <span className={ d5 === false ? "domains" : "domains sam-5 domains-true" }>5</span>
-        <span className={ d6 === false ? "domains" : "domains sam-6 domains-true" }>6</span>
-      </p>
-      <p className="concern-notes">{notes}</p>
-    </div>
-  )
+
+class ConcernRow extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hover: false
+    }
+  } 
+
+  selectEnter = () => {
+    this.setState({hover: true})
+
+    let activeDomains = Object.keys(this.props).reduce((accum, prop) => {
+      if (prop.length === 2 && this.props[prop]) {
+        const y = [...prop].pop();
+        accum.push(y)
+      }
+      return accum;
+    },[])
+
+    const samDots = [].slice.call(document.querySelectorAll('.sam-dots'))
+    samDots.forEach((dot, index) => {
+      if (activeDomains.includes((index + 1).toString())) {
+        document.querySelector(`.sam-dot-${index + 1}`).classList.add('sam-hover')
+      }
+    })
+    
+  }
+
+  selectLeave = () => {
+    this.setState({hover: false})
+
+    const samDots = [].slice.call(document.querySelectorAll('.sam-dots'))
+    samDots.forEach(dot => {
+      dot.classList.remove('sam-hover')
+    })
+  }
+
+  render() {
+    return (
+      <div className="ConcernRow">
+        <p className="concern-left">{this.props.concern}</p>
+        <p>
+          <span className={ this.props.d1 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>1</span>
+          <span className={ this.props.d2 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>2</span>
+          <span className={ this.props.d3 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>3</span>
+          <span className={ this.props.d4 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>4</span>
+          <span className={ this.props.d5 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>5</span>
+          <span className={ this.props.d6 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>6</span>
+        </p>
+        <p className="concern-notes">{this.props.notes}</p>
+        <button onMouseEnter={() => this.selectEnter()} onMouseOut={() => this.selectLeave()} className="select-concern-button">SELECT</button>
+      </div>
+    )
+  }
 }
 
 export default ConcernRow;
