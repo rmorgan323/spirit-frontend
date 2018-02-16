@@ -54,8 +54,12 @@ class Routes extends Component {
     return (
       <div>
           <Route path="/" component={Header} />
-          <Route path="/" component={PatientHeader} />
-          <Route path="/" component={ConcernHeader} />
+          <Route path="/spirit/patients" component={PatientHeader} />
+          <Route path="/spirit/concerns" component={PatientHeader} />
+          <Route path="/spirit/sessions" component={PatientHeader} />
+
+          <Route path="/spirit/concerns" component={ConcernHeader} />
+          <Route path="/spirit/sessions" component={ConcernHeader} />
         <Switch>
           {/*  <Route path="/spirit/sessions/:sessionId/therapygoals" component={Therapy} /> */}
           {/*  <Route path="/spirit/sessions/:sessionId/treatmentplans" component={Treatment} /> */}
