@@ -51,7 +51,6 @@ class PatientDashboard extends Component {
   render() {
     return (
       <div className="PatientDashboard">
-
         <div className="pd-header-row">
           <h3 className="pd-first">Primary Concerns</h3>
           <h3 className="pd-second">Domains</h3>

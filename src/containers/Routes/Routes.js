@@ -15,6 +15,7 @@ import clearLocalStorage from '../../helpers/clearLocalStorage';
 import Users from '../Users/Users';
 import Header from '../Header/Header';
 import Sessions from '../../containers/Sessions/Sessions';
+import PatientHeader from '../../components/PatientHeader/PatientHeader';
 import * as actions from '../../actions';
 
 class Routes extends Component {
@@ -52,6 +53,7 @@ class Routes extends Component {
     return (
       <div>
           <Route path="/" component={Header} />
+          <Route path="/" component={PatientHeader} />
         <Switch>
           {/*  <Route path="/spirit/sessions/:sessionId/therapygoals" component={Therapy} /> */}
           {/*  <Route path="/spirit/sessions/:sessionId/treatmentplans" component={Treatment} /> */}
