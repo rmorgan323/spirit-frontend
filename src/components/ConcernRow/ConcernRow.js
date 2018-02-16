@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './ConcernRow.css';
-
-
 
 class ConcernRow extends Component {
   constructor(props) {
@@ -10,7 +9,7 @@ class ConcernRow extends Component {
     this.state = {
       hover: false
     }
-  } 
+  }
 
   selectEnter = () => {
     this.setState({hover: true})
@@ -29,7 +28,6 @@ class ConcernRow extends Component {
         document.querySelector(`.sam-dot-${index + 1}`).classList.add('sam-hover')
       }
     })
-    
   }
 
   selectLeave = () => {
@@ -54,7 +52,7 @@ class ConcernRow extends Component {
           <span className={ this.props.d6 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>6</span>
         </p>
         <p className="concern-notes">{this.props.notes}</p>
-        <button onMouseEnter={() => this.selectEnter()} onMouseOut={() => this.selectLeave()} className="select-concern-button">SELECT</button>
+        <button onClick={console.log(this.props)} onMouseEnter={() => this.selectEnter()} onMouseOut={() => this.selectLeave()} className="select-concern-button">SELECT</button>
       </div>
     )
   }
