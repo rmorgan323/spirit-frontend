@@ -14,6 +14,7 @@ import UserDashboard from '../UserDashboard/UserDashboard';
 import clearLocalStorage from '../../helpers/clearLocalStorage';
 import Users from '../Users/Users';
 import Header from '../Header/Header';
+import Sessions from '../../containers/Sessions/Sessions';
 import * as actions from '../../actions';
 
 class Routes extends Component {
@@ -60,7 +61,7 @@ class Routes extends Component {
           <Route path="/spirit/sessions/:session_id/executive" component={Executive} />
           <Route path="/spirit/sessions/:session_id/postural" component={Postural} />
           <Route path="/spirit/sessions/:session_id/social" component={Social} />
-          {/* <Route path="/spirit/concerns/:concernId/sessions" component={Sessions} /> */}
+          <Route path="/spirit/concerns/:concernId/sessions" component={Sessions} />
           <Route path="/spirit/patients/:patient_id" component={PatientDashboard} />
           <Route exact path="/spirit/users/:user_id/join" component={Join} />
           <Route exact path="/spirit/users/:user_id/create" component={Create} />
