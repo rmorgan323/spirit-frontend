@@ -8,7 +8,8 @@ import loadPatientList from '../helpers/loadPatientList/loadPatientList';
 import loadPatientConcerns from '../helpers/loadPatientConcerns/loadPatientConcerns';
 import loadPatient from '../helpers/loadPatient/loadPatient';
 import postPatientConcern from '../helpers/postPatientConcern/postPatientConcern';
-// import loadPatientConcernById from '../helpers/'
+import loadPatientConcernById from '../helpers/loadPatientConcernById/loadPatientConcernById';
+import loadSessionsList from '../helpers/loadSessionsList/loadSessionsList';
 
 export const getUser = () => async dispatch => {
   try {
@@ -39,6 +40,12 @@ export const getPatientConcerns = id => async dispatch => {
   } catch (error) {
     console.log(error);
   }
+}
+
+export const getConcern = concernId => async dispatch => {
+  const concern = await loadPatientConcernById(concernId);
+  const sessions = await loadSessionsList(concernId);
+  console.log(concern, session)
 }
 
 export const currentPatientToStore = patient => ({
