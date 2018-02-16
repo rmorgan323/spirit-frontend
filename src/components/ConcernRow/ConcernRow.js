@@ -10,46 +10,48 @@ class ConcernRow extends Component {
 
     this.state = {
       hover: false
-    }
+    };
   }
 
   selectEnter = () => {
-    this.setState({hover: true})
+    this.setState({ hover: true });
 
     let activeDomains = Object.keys(this.props).reduce((accum, prop) => {
       if (prop.length === 2 && this.props[prop]) {
         const y = [...prop].pop();
-        accum.push(y)
+        accum.push(y);
       }
       return accum;
-    },[])
+    }, []);
 
-    const samDots = [].slice.call(document.querySelectorAll('.sam-dots'))
+    const samDots = [].slice.call(document.querySelectorAll('.sam-dots'));
     samDots.forEach((dot, index) => {
       if (activeDomains.includes((index + 1).toString())) {
-        document.querySelector(`.sam-dot-${index + 1}`).classList.add('sam-hover')
+        document
+          .querySelector(`.sam-dot-${index + 1}`)
+          .classList.add('sam-hover');
       }
-    })
-  }
+    });
+  };
 
   selectLeave = () => {
-    this.setState({hover: false})
+    this.setState({ hover: false });
 
-    const samDots = [].slice.call(document.querySelectorAll('.sam-dots'))
+    const samDots = [].slice.call(document.querySelectorAll('.sam-dots'));
     samDots.forEach(dot => {
-      dot.classList.remove('sam-hover')
-    })
-  }
+      dot.classList.remove('sam-hover');
+    });
+  };
 
   determineDomainClass = (domain, hover) => {
     if (!domain) {
       return 'domains';
     } else if (!hover) {
-      return 'domains domains-true'
+      return 'domains domains-true';
     } else {
-      return 'domains domains-true domains-hover'
+      return 'domains domains-true domains-hover';
     }
-  }
+  };
 
   render() {
     const { id, concern, d1, d2, d3, d4, d5, d6, notes } = this.props;
@@ -73,19 +75,20 @@ class ConcernRow extends Component {
         <Link to={`/spirit/concerns/${id}/sessions`}>
           <button
             className="select-concern-button"
-            onClick={(id) => this.props.setConcern(id)}
+            onClick={id => this.props.setConcern(id)}
             onMouseEnter={() => this.selectEnter()}
-            onMouseOut={() => this.selectLeave()}>
+            onMouseOut={() => this.selectLeave()}
+          >
             SELECT
           </button>
         </Link>
       </div>
-    )
+    );
   }
 }
 
 const mapDispatchToProps = (dispatch, concernId) => ({
   // setConcern: (concernId) => dispatch(actions.setConcern(concernId))
-})
+});
 
 export default connect(null, mapDispatchToProps)(ConcernRow);
