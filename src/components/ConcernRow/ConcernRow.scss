@@ -7,6 +7,7 @@
   .domains {
     opacity: 0;
     cursor: unset;
+    @include std-transition;
   }
 
   .domains-true {
