@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import * as actions from '../../actions/index';
 import './ConcernRow.css';
 
 class ConcernRow extends Component {
@@ -55,14 +57,14 @@ class ConcernRow extends Component {
           <span className={ d6 === false ? "domains" : (hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>6</span>
         </p>
         <p className="concern-notes">{notes}</p>
-        <button onClick={console.log(id)} onMouseEnter={() => this.selectEnter()} onMouseOut={() => this.selectLeave()} className="select-concern-button">SELECT</button>
+        <Link to={`/spirit/concerns/${id}/sessions`}><button onClick={(id) => this.props.setConcern(id)} onMouseEnter={() => this.selectEnter()} onMouseOut={() => this.selectLeave()} className="select-concern-button">SELECT</button></Link>
       </div>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-
+const mapDispatchToProps = (dispatch, concernId) => ({
+  setConcern: (concernId) => dispatch(actions.setConcern(concernId))
 })
 
 export default connect(null, mapDispatchToProps)(ConcernRow);
