@@ -14,7 +14,7 @@ const loadSessionsList = async primaryConcernId => {
     );
     const jsonSessionsList = await fetchedSessionsList.json();
 
-    return jsonSessions;
+    return jsonSessionsList;
   } catch (error) {
     throw new Error(
       `Error fetching sessions by primary concern id ${primaryConcernId}: ${error}`
