@@ -60,6 +60,7 @@ class Routes extends Component {
           <Route path="/spirit/sessions/:session_id/executive" component={Executive} />
           <Route path="/spirit/sessions/:session_id/postural" component={Postural} />
           <Route path="/spirit/sessions/:session_id/social" component={Social} />
+          {/* <Route path="/spirit/concerns/:concernId/sessions" component={Sessions} /> */}
           <Route path="/spirit/patients/:patient_id" component={PatientDashboard} />
           <Route exact path="/spirit/users/:user_id/join" component={Join} />
           <Route exact path="/spirit/users/:user_id/create" component={Create} />
