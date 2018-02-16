@@ -42,15 +42,31 @@ export const getPatientConcerns = id => async dispatch => {
   }
 }
 
-export const getConcern = concernId => async dispatch => {
-  const concern = await loadPatientConcernById(concernId);
-  const sessions = await loadSessionsList(concernId);
-  console.log(concern, session)
-}
-
 export const currentPatientToStore = patient => ({
   type: 'CURRENT_PATIENT_TO_STORE',
   patient
+})
+
+export const concernArrayToStore = concerns => ({
+  type: 'CONCERN_ARRAY_TO_STORE',
+  concerns
+})
+
+export const getConcern = concernId => async dispatch => {
+  const concern = await loadPatientConcernById(concernId);
+  dispatch(selectedConcernToStore(concern));
+  const sessions = await loadSessionsList(concernId);
+  dispatch(sessionsArrayToStore(sessions));
+}
+
+export const selectedConcernToStore = selectedConcern => ({
+  type: 'SELECTED_CONCERN_TO_STORE',
+  selectedConcern
+})
+
+export const sessionsArrayToStore = sessions => ({
+  type: 'SESSIONS_TO_STORE',
+  sessions
 })
 
 export const addConcern = concern => async dispatch => {
@@ -58,11 +74,6 @@ export const addConcern = concern => async dispatch => {
   console.log(newConcern)
   dispatch(concernToStore(concern))
 };
-
-export const concernArrayToStore = concerns => ({
-  type: 'CONCERN_ARRAY_TO_STORE',
-  concerns
-})
 
 export const concernToStore = concern => ({
   type: 'CONCERN_TO_STORE',
