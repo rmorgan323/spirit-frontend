@@ -40,18 +40,20 @@ class ConcernRow extends Component {
   }
 
   render() {
+    const { id, concern, d1, d2, d3, d4, d5, d6, notes } = this.props;
+
     return (
       <div className="ConcernRow">
-        <p className="concern-left">{this.props.concern}</p>
+        <p className="concern-left">{concern}</p>
         <p>
-          <span className={ this.props.d1 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>1</span>
-          <span className={ this.props.d2 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>2</span>
-          <span className={ this.props.d3 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>3</span>
-          <span className={ this.props.d4 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>4</span>
-          <span className={ this.props.d5 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>5</span>
-          <span className={ this.props.d6 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>6</span>
+          <span className={ d1 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>1</span>
+          <span className={ d2 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>2</span>
+          <span className={ d3 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>3</span>
+          <span className={ d4 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>4</span>
+          <span className={ d5 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>5</span>
+          <span className={ d6 === false ? "domains" : (this.state.hover === false ? "domains domains-true" : "domains domains-true domains-hover") }>6</span>
         </p>
-        <p className="concern-notes">{this.props.notes}</p>
+        <p className="concern-notes">{notes}</p>
         <button onClick={console.log(this.props)} onMouseEnter={() => this.selectEnter()} onMouseOut={() => this.selectLeave()} className="select-concern-button">SELECT</button>
       </div>
     )
