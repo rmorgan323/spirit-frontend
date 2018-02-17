@@ -30,7 +30,7 @@ export const Sessions = (props) => {
     <div className="Sessions">
       <h1>Sessions</h1>
       {renderedSessions}
-      <button onClick={() => this.props.createSession(selectedConcern.id)} className="create-session">Create New Session</button>
+      <button onClick={() => props.createSession(selectedConcern.id)} className="create-session">Create New Session</button>
     </div>
   )
 }
@@ -44,4 +44,4 @@ const mapDispatchToProps = dispatch => ({
   createSession: selectedConcernId => dispatch(actions.createSession(selectedConcernId))
 })
 
-export default connect(mapStateToProps, null)(Sessions);
+export default connect(mapStateToProps, mapDispatchToProps)(Sessions);
