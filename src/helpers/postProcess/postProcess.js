@@ -17,7 +17,7 @@ const postProcess = async sessionId => {
     return jsonProcessId;
   } catch (error) {
     throw new Error(
-      `Error creating process by session id ${primaryConcernId}: ${error}`
+      `Error creating process by session id ${sessionId}: ${error}`
     );
   }
 };
