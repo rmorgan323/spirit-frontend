@@ -6,11 +6,10 @@ import './Sessions.css';
 
 export const Sessions = (props) => {
   const { selectedConcern } = props;
-  console.log(selectedConcern.id)
 
   const renderedSessions = props.sessions.map(session => {
     return (
-      <div className="session">
+      <div className="session" key={session.id}>
         <span className="session-number">Session {session.id}</span>
         <span className="session-date">Last updated: {session.updated_at}</span>
         <span className="session-status">{session.completed ? 'Completed' : 'In Progress'}</span>
