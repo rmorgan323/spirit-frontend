@@ -108,7 +108,14 @@ let defaultStore = {
   pos_3_frontal: null,
   pos_3_transverse: null,
   pos_3_midlines: null,
-  pos_4_diagram: null,
+  pos_4_core: null,
+  pos_4_shoulder: null,
+  pos_4_pelvic: null,
+  pos_4_head: null,
+  pos_4_eyes: null,
+  pos_4_hand: null,
+  pos_4_lower: null,
+  pos_4_foot: null,
   pos_5_suck: null,
   pos_5_ocular: null,
   pos_5_antigravity: null,
@@ -122,7 +129,6 @@ let defaultStore = {
   pos_6_grasp: null,
   pos_6_strength: null,
   pos_6_effortful: null,
-  
   soc_1_regulation: null,
   soc_1_engagement: null,
   soc_1_reciprocity: null,
@@ -142,6 +148,7 @@ let defaultStore = {
   soc_2_metalizing: null,
   soc_2_empathy: null,
   soc_2_social_motivators: null,
+  soc_2_social_perspective: null,
   soc_2_pro_social: null,
   soc_3_affective: null,
   soc_3_emotional_contagion: null,
@@ -164,7 +171,7 @@ const patientSliders = (store = defaultStore, action) => {
     case "UPDATE_SLIDER_VALUE":
       defaultStore[Object.keys(action.slider)[0]] = Object.values(action.slider)[0]
       return defaultStore;
-
+      
     default:
       return store;
   }

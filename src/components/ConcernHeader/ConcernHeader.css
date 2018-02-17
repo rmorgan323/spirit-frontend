@@ -40,7 +40,7 @@ p {
 
 /***  MIXINS  ***/
 .ConcernHeader {
-  background-color: #DFD7E7; }
+  background-color: #f1f2f2; }
   .ConcernHeader .concern-header-holder {
     display: flex;
     align-items: center;

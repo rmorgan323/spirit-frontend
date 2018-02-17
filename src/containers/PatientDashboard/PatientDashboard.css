@@ -120,20 +120,20 @@ p {
     border-radius: 100px;
     position: absolute;
     font-weight: bold;
-    color: #BFAFD0;
+    color: #EAE5F0;
     transition: all .3s ease-in-out; }
   .PatientDashboard .sam-dot-1 {
-    top: 10px;
-    left: 106px; }
-  .PatientDashboard .sam-dot-2 {
-    top: 126px;
-    left: 370px; }
-  .PatientDashboard .sam-dot-3 {
     top: 125px;
     left: 2px; }
-  .PatientDashboard .sam-dot-4 {
+  .PatientDashboard .sam-dot-2 {
     top: 127px;
     left: 181px; }
+  .PatientDashboard .sam-dot-3 {
+    top: 126px;
+    left: 370px; }
+  .PatientDashboard .sam-dot-4 {
+    top: 10px;
+    left: 106px; }
   .PatientDashboard .sam-dot-5 {
     top: 6px;
     left: 239px; }
@@ -141,5 +141,4 @@ p {
     top: 9px;
     right: 3px; }
   .PatientDashboard .sam-hover {
-    border: 5px solid #7F60A4;
-    color: #EAE5F0; }
+    border: 5px solid #7F60A4; }
