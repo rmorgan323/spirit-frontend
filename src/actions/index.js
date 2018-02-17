@@ -118,7 +118,10 @@ export const selectedTreatmentPlanToStore = selectedTreatmentPlan => ({
 
 export const addConcern = concern => async dispatch => {
   const newConcern = await postPatientConcern(concern)
-  dispatch(concernToStore(concern))
+  dispatch(concernToStore(concern));
+
+  const newConcernsArray = await loadPatientConcerns(id);
+  dispatch(concernArrayToStore(concernArray));
 };
 
 export const concernToStore = concern => ({
