@@ -21,3 +21,5 @@ const postTherapyGoal = async sessionId => {
     );
   }
 }
+
+export default postTherapyGoal;
