@@ -177,7 +177,7 @@ class BodyDiagram extends Component {
 
 const mapDispatchToProps = dispatch => ({
   updateSlider: (data) => {
-    // dispatch(actions.updateSlider(data));
+    dispatch(actions.updateSlider(data));
   }
 })
 
