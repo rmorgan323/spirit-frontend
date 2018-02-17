@@ -14,8 +14,10 @@ const Modulation = () => {
       />
       <div className="category-content">
         <CategorySliders 
-          slidersArray={['Defensiveness', 'Over', 'Under', 'Variable']}
-          databaseNamesArray={['mod_1_defensiveness', 'mod_1_over', 'mod_1_under', 'mod_1_variable']}
+          slidersArray={['Defensiveness', 'Over', 'Under', 'Variable', 'Arousability']}
+          databaseNamesArray={['mod_1_defensiveness', 'mod_1_over', 'mod_1_under', 'mod_1_variable', 'mod_1_arousability']}
+          reminderAsterisk={[null, '*', '*', '*', '*']}
+          reminder={'* If selected, remember to make a hypothesized arousal chart.'}
         />
         <CategorySliders 
           title={'Capacities'}
