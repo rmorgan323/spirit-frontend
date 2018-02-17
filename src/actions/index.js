@@ -83,6 +83,15 @@ export const createSession = selectedConcernId => async dispatch => {
   dispatch(sessionsArrayToStore(newSessionsArray));
 }
 
+export const getSession = selectedSession => async dispatch => {
+  dispatch(selectedSessionToStore(selectedSession));
+}
+
+export const selectedSessionToStore = selectedSession => ({
+  type: 'SELECTED_SESSION_TO_STORE',
+  selectedSession
+})
+
 export const addConcern = concern => async dispatch => {
   const newConcern = await postPatientConcern(concern)
   dispatch(concernToStore(concern))
