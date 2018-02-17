@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import * as actions from '../../actions/index';
 import './Sessions.css';
 
 export const Sessions = (props) => {
@@ -25,6 +26,7 @@ export const Sessions = (props) => {
     <div className="Sessions">
       <h1>Sessions</h1>
       {renderedSessions}
+      <button class="create-session">Create New Session</button>
     </div>
   )
 }
@@ -34,7 +36,7 @@ const mapStateToProps = store => ({
 })
 
 const mapDispatchToProps = () => ({
-
+  createSession: () => dispatch(actions.createSession())
 })
 
 export default connect(mapStateToProps, null)(Sessions);
