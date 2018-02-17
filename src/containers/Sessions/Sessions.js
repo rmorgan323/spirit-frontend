@@ -17,7 +17,7 @@ export const Sessions = (props) => {
         <Link to={`/spirit/sessions/${session.id}/sam`}>
           <button
             className="select-session-button"
-            onClick={() => console.log('boom')}
+            onClick={() => props.getSession(session)}
           >
             SELECT
           </button>
@@ -41,7 +41,8 @@ const mapStateToProps = store => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  createSession: selectedConcernId => dispatch(actions.createSession(selectedConcernId))
+  createSession: selectedConcernId => dispatch(actions.createSession(selectedConcernId)),
+  getSession: selectedSessionId => dispatch(actions.getSession(selectedSessionId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sessions);
