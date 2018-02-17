@@ -14,6 +14,9 @@ import postSession from '../helpers/postSession/postSession';
 import postProcess from '../helpers/postProcess/postProcess';
 import postTherapyGoal from '../helpers/postTherapyGoal/postTherapyGoal';
 import postTreamentPlan from '../helpers/postTreatmentPlan/postTreatmentPlan';
+import loadProcessBySession from '../helpers/loadProcessBySession/loadProcessBySession';
+import loadTherapyGoalBySession from '../helpers/loadTherapyGoalBySession/loadTherapyGoalBySession';
+import loadTreatmentPlanBySession from '../helpers/loadTreatmentPlanBySession/loadTreatmentPlanBySession';
 
 export const getUser = () => async dispatch => {
   try {
@@ -85,11 +88,11 @@ export const createSession = selectedConcernId => async dispatch => {
 
 export const getSession = selectedSession => async dispatch => {
   dispatch(selectedSessionToStore(selectedSession));
-  // const selectedProcess = await loadProcessById(selectedSession.id);
-  // dispatch(selectedProcessToStore(selectedProcess));
-  const selectedTherapyGoal = await loadTherapyGoalById(selectedSession.id);
+  const selectedProcess = await loadProcessBySession(selectedSession.id);
+  dispatch(selectedProcessToStore(selectedProcess));
+  const selectedTherapyGoal = await loadTherapyGoalBySession(selectedSession.id);
   dispatch(selectedTherapyGoalToStore(selectedTherapyGoal));
-  const selectedTreatmentPlan = await loadTreatmentPlanById(selectedSession.id);
+  const selectedTreatmentPlan = await loadTreatmentPlanBySession(selectedSession.id);
   dispatch(selectedTreatmentPlanToStore(selectedTreatmentPlan));
 }
 
