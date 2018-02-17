@@ -169,9 +169,13 @@ let defaultStore = {
 const patientSliders = (store = defaultStore, action) => {
   switch (action.type) {
     case "UPDATE_SLIDER_VALUE":
-      defaultStore[Object.keys(action.slider)[0]] = Object.values(action.slider)[0]
-      return defaultStore;
-      
+      let updatedStore = {...store}
+      const keys = Object.keys(action.slider);
+      for (let i = 0; i < keys.length; i++) {
+        updatedStore[keys[i]] = action.slider[keys[i]];
+      }
+      return updatedStore;
+
     default:
       return store;
   }
