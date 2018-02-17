@@ -56,6 +56,7 @@ class SliderTen extends Component {
             />
           </div>
           <h5>{this.props.sliderTitle}</h5>
+          <h5>{this.props.reminderAsterisk}</h5>
         </div>
         <p style={this.state.value === 0 ? {'opacity': 0} : null} >{this.state.value}</p>
         <Range
