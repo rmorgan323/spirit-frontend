@@ -12,6 +12,8 @@ import loadPatientConcernById from '../helpers/loadPatientConcernById/loadPatien
 import loadSessionsList from '../helpers/loadSessionsList/loadSessionsList';
 import postSession from '../helpers/postSession/postSession';
 import postProcess from '../helpers/postProcess/postProcess';
+import postTherapyGoal from '../helpers/postTherapyGoal/postTherapyGoal';
+import postTreamentPlan from '../helpers/postTreatmentPlan/postTreatmentPlan';
 
 export const getUser = () => async dispatch => {
   try {
@@ -71,11 +73,14 @@ export const sessionsArrayToStore = sessions => ({
   sessions
 })
 
-export const createSession = async selectedConcernId => {
+export const createSession = selectedConcernId => async dispatch => {
   const newSession = await postSession(selectedConcernId);
-  const newProcess = await postProcess(newSession[0]);
-  //const newTherapyGoals = await postTherapyGoal(newSession[0]);
-  //const newTreatmentPlan = await postTreamentPlan(newSession[0]);
+  await postProcess(newSession[0]);
+  await postTherapyGoal(newSession[0]);
+  await postTreamentPlan(newSession[0]);
+
+  const newSessionsArray = await loadSessionsList(selectedConcernId);
+  dispatch(sessionsArrayToStore(newSessionsArray));
 }
 
 export const addConcern = concern => async dispatch => {
