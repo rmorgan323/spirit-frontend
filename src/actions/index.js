@@ -85,6 +85,12 @@ export const createSession = selectedConcernId => async dispatch => {
 
 export const getSession = selectedSession => async dispatch => {
   dispatch(selectedSessionToStore(selectedSession));
+  const selectedProcess = await loadProcessById(selectedSession.id);
+  dispatch(selectedProcessToStore(selectedProcess));
+  const selectedTherapyGoal = await loadTherapyGoalById(selectedSession.id);
+  dispatch(selectedTherapyGoalToStore(selectedTherapyGoal));
+  const selectedTreatmentPlan = await loadTreatmentPlanById(selectedSession.id);
+  dispatch(selectedTreatmentPlanToStore(selectedTreatmentPlan));
 }
 
 export const selectedSessionToStore = selectedSession => ({
