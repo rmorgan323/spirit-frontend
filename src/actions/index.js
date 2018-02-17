@@ -17,6 +17,7 @@ import postTreamentPlan from '../helpers/postTreatmentPlan/postTreatmentPlan';
 import loadProcessBySession from '../helpers/loadProcessBySession/loadProcessBySession';
 import loadTherapyGoalBySession from '../helpers/loadTherapyGoalBySession/loadTherapyGoalBySession';
 import loadTreatmentPlanBySession from '../helpers/loadTreatmentPlanBySession/loadTreatmentPlanBySession';
+import updateProcess from '../helpers/updateProcess/updateProcess';
 
 export const getUser = () => async dispatch => {
   try {
@@ -119,15 +120,22 @@ export const selectedTreatmentPlanToStore = selectedTreatmentPlan => ({
 export const addConcern = concern => async dispatch => {
   const newConcern = await postPatientConcern(concern)
   dispatch(concernToStore(concern));
-
-  const newConcernsArray = await loadPatientConcerns(id);
-  dispatch(concernArrayToStore(concernArray));
 };
 
 export const concernToStore = concern => ({
   type: 'CONCERN_TO_STORE',
   concern
 })
+
+export const updateProcessPerformanceComponents = updatedComponent => async dispatch => {
+  await updateProcess(updatedComponent);
+  dispatch(updateProcess(updatedComponent));
+}
+
+export const updateProcess = updatedComponent => {
+  type: 'UPDATE_PROCESS_COMPONENT',
+  updatedComponent
+}
 
 export const updateSlider = slider => ({
   type: 'UPDATE_SLIDER_VALUE',
