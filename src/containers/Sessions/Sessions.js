@@ -5,6 +5,9 @@ import * as actions from '../../actions/index';
 import './Sessions.css';
 
 export const Sessions = (props) => {
+  const { selectedConcern } = props;
+  console.log(selectedConcern.id)
+
   const renderedSessions = props.sessions.map(session => {
     return (
       <div className="session">
@@ -21,22 +24,24 @@ export const Sessions = (props) => {
         </Link>
       </div>
     )
-  })
+  });
+
   return (
     <div className="Sessions">
       <h1>Sessions</h1>
       {renderedSessions}
-      <button class="create-session">Create New Session</button>
+      <button onClick={() => this.props.createSession(selectedConcern.id)} className="create-session">Create New Session</button>
     </div>
   )
 }
 
 const mapStateToProps = store => ({
+  selectedConcern: store.selectedConcern,
   sessions: store.sessions
 })
 
-const mapDispatchToProps = () => ({
-  createSession: () => dispatch(actions.createSession())
+const mapDispatchToProps = dispatch => ({
+  createSession: selectedConcernId => dispatch(actions.createSession(selectedConcernId))
 })
 
 export default connect(mapStateToProps, null)(Sessions);
