@@ -18,6 +18,8 @@ import Sessions from '../../containers/Sessions/Sessions';
 import PatientHeader from '../../components/PatientHeader/PatientHeader';
 import ConcernHeader from '../../components/ConcernHeader/ConcernHeader';
 import Sam from '../Sam/Sam';
+import SessionTabs from '../../components/SessionTabs/SessionTabs';
+import Finish from '../Finish/Finish';
 import * as actions from '../../actions';
 
 class Routes extends Component {
@@ -61,6 +63,7 @@ class Routes extends Component {
 
           <Route path="/spirit/concerns" component={ConcernHeader} />
           <Route path="/spirit/sessions" component={ConcernHeader} />
+          <Route path="/spirit/sessions/:session_id" component={SessionTabs} />
         <Switch>
           {/*  <Route path="/spirit/sessions/:sessionId/therapygoals" component={Therapy} /> */}
           {/*  <Route path="/spirit/sessions/:sessionId/treatmentplans" component={Treatment} /> */}
@@ -71,6 +74,7 @@ class Routes extends Component {
           <Route path="/spirit/sessions/:session_id/executive" component={Executive} />
           <Route path="/spirit/sessions/:session_id/postural" component={Postural} />
           <Route path="/spirit/sessions/:session_id/social" component={Social} />
+          <Route path="/spirit/sessions/:session_id/finish" component={Finish} />
           <Route path="/spirit/concerns/:concernId/sessions" component={Sessions} />
           <Route path="/spirit/patients/:patient_id" component={PatientDashboard} />
           <Route exact path="/spirit/users/:user_id/join" component={Join} />
