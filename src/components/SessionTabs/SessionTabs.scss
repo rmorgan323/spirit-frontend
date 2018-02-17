@@ -1,0 +1,32 @@
+@import '../../variables.scss';
+
+.SessionTabs {
+  border-top: 10px solid $purple6;
+  display: flex;
+
+  a {
+    text-decoration: none;
+  }
+
+  h2 {
+    @include match-h4;
+    color: $purple1;
+    margin: 8px 0 5px;
+  }
+
+  .session-tabs {
+    width: 120px;
+    margin: 0 1px;
+    background-color: $purple3;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .tab-active {
+    background-color: $purple5;
+  }
+
+  .session-tabs:hover {
+    background-color: $purple5;
+  }
+}

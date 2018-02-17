@@ -1,0 +1,61 @@
+/******  GLOBAL CSS VARIABLES  ******/
+/***  COLORS  ***/
+/***  FONTS  ***/
+* {
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  outline: none;
+  color: #6d6e71; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.3; }
+
+h1 {
+  font-size: 44px; }
+
+h2 {
+  font-size: 30px; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 18px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  font-size: 10px; }
+
+p {
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 900; }
+
+::placeholder {
+  opacity: .5;
+  text-align: center; }
+
+/***  MIXINS  ***/
+.SessionTabs {
+  border-top: 10px solid #5E378C;
+  display: flex; }
+  .SessionTabs a {
+    text-decoration: none; }
+  .SessionTabs h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    color: #EAE5F0;
+    margin: 8px 0 5px; }
+  .SessionTabs .session-tabs {
+    width: 120px;
+    margin: 0 1px;
+    background-color: #BFAFD0;
+    text-align: center;
+    cursor: pointer; }
+  .SessionTabs .tab-active {
+    background-color: #7F60A4; }
+  .SessionTabs .session-tabs:hover {
+    background-color: #7F60A4; }
