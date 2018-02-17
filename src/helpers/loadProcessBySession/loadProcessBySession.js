@@ -17,7 +17,7 @@ const loadProcessBySession = async sessionId => {
     return jsonProcess;
   } catch (error) {
     throw new Error(
-      `Error fetching process by session id ${primaryConcernId}: ${error}`
+      `Error fetching process by session id ${sessionId}: ${error}`
     );
   }
 };
