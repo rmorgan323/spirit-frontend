@@ -10,6 +10,8 @@ import loadPatient from '../helpers/loadPatient/loadPatient';
 import postPatientConcern from '../helpers/postPatientConcern/postPatientConcern';
 import loadPatientConcernById from '../helpers/loadPatientConcernById/loadPatientConcernById';
 import loadSessionsList from '../helpers/loadSessionsList/loadSessionsList';
+import postSession from '../helpers/postSession/postSession';
+import postProcess from '../helpers/postProcess/postProcess';
 
 export const getUser = () => async dispatch => {
   try {
@@ -68,6 +70,13 @@ export const sessionsArrayToStore = sessions => ({
   type: 'SESSIONS_TO_STORE',
   sessions
 })
+
+export const createSession = async selectedConcernId => {
+  const newSession = await postSession(selectedConcernId);
+  const newProcess = await postProcess(newSession[0]);
+  //const newTherapyGoals = await postTherapyGoal(newSession[0]);
+  //const newTreatmentPlan = await postTreamentPlan(newSession[0]);
+}
 
 export const addConcern = concern => async dispatch => {
   const newConcern = await postPatientConcern(concern)
