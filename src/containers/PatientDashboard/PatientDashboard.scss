@@ -114,28 +114,28 @@
     border-radius: 100px;
     position: absolute;
     font-weight: bold;
-    color: $purple3;
+    color: $purple1;
     @include std-transition;
   }
 
   .sam-dot-1 {
-    top: 10px;
-    left: 106px;
-  }
-
-  .sam-dot-2 {
-    top: 126px;
-    left: 370px;
-  }
-
-  .sam-dot-3 {
     top: 125px;
     left: 2px;
   }
 
-  .sam-dot-4 {
+  .sam-dot-2 {
     top: 127px;
     left: 181px;
+  }
+
+  .sam-dot-3 {
+    top: 126px;
+    left: 370px;
+  }
+
+  .sam-dot-4 {
+    top: 10px;
+    left: 106px;
   }
 
   .sam-dot-5 {
@@ -150,7 +150,6 @@
 
   .sam-hover {
     border: 5px solid $purple5;
-    color: $purple1;
   }
 
 }

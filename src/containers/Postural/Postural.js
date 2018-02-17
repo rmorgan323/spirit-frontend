@@ -2,6 +2,7 @@ import React from 'react';
 import SessionHeader from '../SessionHeader/SessionHeader';
 import CategorySliders from '../../components/CategorySliders/CategorySliders';
 import './Postural.css';
+import BodyDiagram from '../BodyDiagram/BodyDiagram';
 
 const Postural = () => {
   
@@ -28,11 +29,7 @@ const Postural = () => {
           slidersArray={['Sagittal: Flex/Ext', 'Frontal: Lateral', 'Transverse: Rotational', 'Midlines of each plane']}
           databaseNamesArray={['pos_3_sagittal', 'pos_3_frontal', 'pos_3_transverse', 'pos_3_midlines']}
         />
-        <CategorySliders 
-          title={'Diagram'}
-          slidersArray={['Diagram']}
-          databaseNamesArray={['pos_4_diagram']}
-        />
+        <BodyDiagram />
         <CategorySliders
           title={'Automatic Actions'}
           slidersArray={['Suck/Swallow/Breath', 'Ocular within Postural Control', 'Antigravity Control', 'Reflex Integration/Sensory Motor Patterns', 'Alignment/COG over BOS', 'Alignment/Orient to Stimulus or Goal', 'Anticipatory Control', 'Interactive Oscillator and Imitative Action']}
