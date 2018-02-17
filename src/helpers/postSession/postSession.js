@@ -3,7 +3,7 @@ import getKeyFromLS from '../getKeyFromLS';
 const postSession = async primaryConcernId => {
   try {
     const fetchedSessionId = await fetch(
-      `http://localhost:3000/api/v1/${primaryConcernId}/sessions`,
+      `http://localhost:3000/api/v1/primary-concerns/${primaryConcernId}/sessions`,
       {
         method: 'POST',
         headers: {

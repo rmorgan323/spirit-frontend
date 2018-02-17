@@ -1,9 +1,9 @@
 import getKeyFromLS from '../getKeyFromLS';
 
-const loadProcessBySession = async sessionId => {
+const loadTreatmentPlanBySession = async sessionId => {
   try {
-    const fetchedProcess = await fetch(
-      `http://localhost:3000/api/v1/sessions/${sessionId}/processes`,
+    const fetchedTreatmentPlan = await fetch(
+      `http://localhost:3000/api/v1/sessions/${sessionId}/treatment-plans`,
       {
         method: 'GET',
         headers: {
@@ -12,9 +12,9 @@ const loadProcessBySession = async sessionId => {
         }
       }
     );
-    const jsonProcess = await fetchedProcess.json();
+    const jsonTreatmentPlan = await fetchedTreatmentPlan.json();
 
-    return jsonProcess;
+    return jsonTreatmentPlan;
   } catch (error) {
     throw new Error(
       `Error fetching process by session id ${sessionId}: ${error}`
@@ -22,4 +22,4 @@ const loadProcessBySession = async sessionId => {
   }
 };
 
-export default loadProcessBySession;
+export default loadTreatmentPlanBySession;

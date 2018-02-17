@@ -6,18 +6,17 @@ import './Sessions.css';
 
 export const Sessions = (props) => {
   const { selectedConcern } = props;
-  console.log(selectedConcern.id)
 
   const renderedSessions = props.sessions.map(session => {
     return (
-      <div className="session">
+      <div className="session" key={session.id}>
         <span className="session-number">Session {session.id}</span>
         <span className="session-date">Last updated: {session.updated_at}</span>
         <span className="session-status">{session.completed ? 'Completed' : 'In Progress'}</span>
         <Link to={`/spirit/sessions/${session.id}/sam`}>
           <button
             className="select-session-button"
-            onClick={() => console.log('boom')}
+            onClick={() => props.getSession(session)}
           >
             SELECT
           </button>
@@ -30,7 +29,7 @@ export const Sessions = (props) => {
     <div className="Sessions">
       <h1>Sessions</h1>
       {renderedSessions}
-      <button onClick={() => this.props.createSession(selectedConcern.id)} className="create-session">Create New Session</button>
+      <button onClick={() => props.createSession(selectedConcern.id)} className="create-session">Create New Session</button>
     </div>
   )
 }
@@ -41,7 +40,8 @@ const mapStateToProps = store => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  createSession: selectedConcernId => dispatch(actions.createSession(selectedConcernId))
+  createSession: selectedConcernId => dispatch(actions.createSession(selectedConcernId)),
+  getSession: selectedSessionId => dispatch(actions.getSession(selectedSessionId))
 })
 
-export default connect(mapStateToProps, null)(Sessions);
+export default connect(mapStateToProps, mapDispatchToProps)(Sessions);

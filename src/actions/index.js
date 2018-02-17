@@ -12,6 +12,11 @@ import loadPatientConcernById from '../helpers/loadPatientConcernById/loadPatien
 import loadSessionsList from '../helpers/loadSessionsList/loadSessionsList';
 import postSession from '../helpers/postSession/postSession';
 import postProcess from '../helpers/postProcess/postProcess';
+import postTherapyGoal from '../helpers/postTherapyGoal/postTherapyGoal';
+import postTreamentPlan from '../helpers/postTreatmentPlan/postTreatmentPlan';
+import loadProcessBySession from '../helpers/loadProcessBySession/loadProcessBySession';
+import loadTherapyGoalBySession from '../helpers/loadTherapyGoalBySession/loadTherapyGoalBySession';
+import loadTreatmentPlanBySession from '../helpers/loadTreatmentPlanBySession/loadTreatmentPlanBySession';
 
 export const getUser = () => async dispatch => {
   try {
@@ -71,12 +76,45 @@ export const sessionsArrayToStore = sessions => ({
   sessions
 })
 
-export const createSession = async selectedConcernId => {
+export const createSession = selectedConcernId => async dispatch => {
   const newSession = await postSession(selectedConcernId);
-  const newProcess = await postProcess(newSession[0]);
-  //const newTherapyGoals = await postTherapyGoal(newSession[0]);
-  //const newTreatmentPlan = await postTreamentPlan(newSession[0]);
+  await postProcess(newSession[0]);
+  await postTherapyGoal(newSession[0]);
+  await postTreamentPlan(newSession[0]);
+
+  const newSessionsArray = await loadSessionsList(selectedConcernId);
+  dispatch(sessionsArrayToStore(newSessionsArray));
 }
+
+export const getSession = selectedSession => async dispatch => {
+  dispatch(selectedSessionToStore(selectedSession));
+  const selectedProcess = await loadProcessBySession(selectedSession.id);
+  dispatch(selectedProcessToStore(selectedProcess[0]));
+  const selectedTherapyGoal = await loadTherapyGoalBySession(selectedSession.id);
+  dispatch(selectedTherapyGoalToStore(selectedTherapyGoal[0]));
+  const selectedTreatmentPlan = await loadTreatmentPlanBySession(selectedSession.id);
+  dispatch(selectedTreatmentPlanToStore(selectedTreatmentPlan[0]));
+}
+
+export const selectedSessionToStore = selectedSession => ({
+  type: 'SELECTED_SESSION_TO_STORE',
+  selectedSession
+})
+
+export const selectedProcessToStore = selectedProcess => ({
+  type: 'SELECTED_PROCESS_TO_STORE',
+  selectedProcess
+})
+
+export const selectedTherapyGoalToStore = selectedTherapyGoal => ({
+  type: 'SELECTED_THERAPY_GOAL_TO_STORE',
+  selectedTherapyGoal
+})
+
+export const selectedTreatmentPlanToStore = selectedTreatmentPlan => ({
+  type: 'SELECTED_TREATMENT_PLAN_TO_STORE',
+  selectedTreatmentPlan
+})
 
 export const addConcern = concern => async dispatch => {
   const newConcern = await postPatientConcern(concern)
