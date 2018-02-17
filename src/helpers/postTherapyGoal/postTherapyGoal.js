@@ -1,9 +1,9 @@
 import getKeyFromLS from '../getKeyFromLS';
 
 const postTherapyGoal = async sessionId => {
-  try{
+  try {
     const fetchedTherapyGoalId = await fetch(
-      `http://localhost:3000/api/v1/sessions/${sessionId}/processes`,
+      `http://localhost:3000/api/v1/sessions/${sessionId}/therapy-goals`,
       {
         method: 'POST',
         headers: {
@@ -20,6 +20,6 @@ const postTherapyGoal = async sessionId => {
       `Error creating therapy goal by session id ${sessionId}: ${error}`
     );
   }
-}
+};
 
 export default postTherapyGoal;
