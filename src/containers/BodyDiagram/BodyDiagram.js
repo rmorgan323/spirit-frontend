@@ -33,20 +33,20 @@ class BodyDiagram extends Component {
     const bodyPropertiesArray = [ 'pos_4_core', 'pos_4_shoulder', 'pos_4_pelvic', 'pos_4_head', 'pos_4_eyes', 'pos_4_hand', 'pos_4_lower', 'pos_4_foot' ];
     const matchedComponentValues = bodyPropertiesArray.map(componentName => {
       const matchedComponent = Object.keys(selectedProcess).find(component => component === componentName);
+      const valueFromStore = selectedProcess[matchedComponent];
 
-      return selectedProcess[matchedComponent];
+      return valueFromStore === 'true' ? true : false;
     });
 
-    console.log(matchedComponentValues)
-
-    // this.loadComponentValue(matchedComponentValue);
+    this.loadComponentValue(matchedComponentValues);
   }
 
-  loadComponentValue = matchedComponentValue => {
-    // if (matchedComponentValue !== null) {
-    //   const yesNo = matchedComponentValue
-    //   this.setState({yesNo})
-    // }
+  loadComponentValue = matchedComponentValues => {
+    const bodyPartsState = [ 'part1', 'part2', 'part3', 'part4', 'part5', 'part6', 'part7', 'part8' ];
+
+    bodyPartsState.forEach((bodyPart, index) => {
+      this.setState({[bodyPart]: matchedComponentValues[index]})
+    })
   }
 
   hoverMe = (num) => {
