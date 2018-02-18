@@ -24,7 +24,6 @@ class SliderTen extends Component {
 
   handleSliderUpdate = (previousValue, previousFair) => {
     if (this.state.value !== previousValue || this.state.fair !== previousFair) {
-      // this.props.updateSlider({[this.props.databaseName]: this.state.value.toString() + this.state.fair})
       this.props.updateProcessPerformanceComponent(this.props.selectedProcess.id, {[this.props.databaseName]: this.state.value.toString() + this.state.fair})
     }
 
@@ -40,28 +39,31 @@ class SliderTen extends Component {
   }
 
   render() {
+    const { value, previousValue, fair, previousFair, displayDefinition } = this.state;
+    const { sliderTitle, reminderAsterisk } = this.props;
+
     return (
       <div
         className="SliderTen"
-        onMouseLeave={() => this.handleSliderUpdate(this.state.previousValue, this.state.previousFair)}
+        onMouseLeave={() => this.handleSliderUpdate(previousValue, previousFair)}
       >
         <div className="slider-heading">
-          <img 
-            className="definition-image" 
+          <img
+            className="definition-image"
             src="/assets/mag-glass.svg"
             onClick={() => this.toggleDefinition()}
           />
-          <div className={this.state.displayDefinition === true ? "definition-holder display-definition" : "definition-holder"}>
+          <div className={displayDefinition === true ? "definition-holder display-definition" : "definition-holder"}>
             <Definition
-              title={this.props.sliderTitle}
+              title={sliderTitle}
             />
           </div>
-          <h5>{this.props.sliderTitle}</h5>
-          <h5>{this.props.reminderAsterisk}</h5>
+          <h5>{sliderTitle}</h5>
+          <h5>{reminderAsterisk}</h5>
         </div>
-        <p style={this.state.value === 0 ? {'opacity': 0} : null} >{this.state.value}</p>
+        <p style={value === 0 ? {'opacity': 0} : null} >{value}</p>
         <Range
-          value={this.state.value}
+          value={value}
           fillColor={{
             r: 180,
             g: 180,
@@ -83,10 +85,10 @@ class SliderTen extends Component {
           max={10}
         />
         <h2>
-          <span onClick={() => this.chooseFair('f')} className={this.state.fair === 'f' ? "button-fair button-active" : "button-fair"}>F</span>
-          <span onClick={() => this.chooseFair('a')} className={this.state.fair === 'a' ? "button-fair button-active" : "button-fair"}>A</span>
-          <span onClick={() => this.chooseFair('i')} className={this.state.fair === 'i' ? "button-fair button-active" : "button-fair"}>I</span>
-          <span onClick={() => this.chooseFair('r')} className={this.state.fair === 'r' ? "button-fair button-active" : "button-fair"}>R</span>
+          <span onClick={() => this.chooseFair('f')} className={fair === 'f' ? "button-fair button-active" : "button-fair"}>F</span>
+          <span onClick={() => this.chooseFair('a')} className={fair === 'a' ? "button-fair button-active" : "button-fair"}>A</span>
+          <span onClick={() => this.chooseFair('i')} className={fair === 'i' ? "button-fair button-active" : "button-fair"}>I</span>
+          <span onClick={() => this.chooseFair('r')} className={fair === 'r' ? "button-fair button-active" : "button-fair"}>R</span>
         </h2>
       </div>
     );
@@ -98,9 +100,6 @@ const mapStateToProps = store => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  // updateSlider: (slider) => {
-  //   dispatch(actions.updateSlider(slider));
-  // },
   updateProcessPerformanceComponent: (processId, updatedProcess) => {
     dispatch(actions.updateProcessPerformanceComponent(processId, updatedProcess));
   }
