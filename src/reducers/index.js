@@ -10,7 +10,6 @@ import selectedSession from './selectedSession';
 import selectedProcess from './selectedProcess';
 import selectedTherapyGoal from './selectedTherapyGoal';
 import selectedTreatmentPlan from './selectedTreatmentPlan';
-import patientSliders from './patientSliders';
 import definitions from './definitions';
 
 const rootReducer = combineReducers({
@@ -25,7 +24,6 @@ const rootReducer = combineReducers({
   selectedProcess,
   selectedTherapyGoal,
   selectedTreatmentPlan,
-  patientSliders,
   definitions
 });
 

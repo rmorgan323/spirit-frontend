@@ -8,18 +8,18 @@ const Social = () => {
   
   return (
     <div className="Social">
-      <SessionHeader 
+      <SessionHeader
         title={'Social/Emotional Developmental Capacities'}
         headings={[]}
         databaseNamesArray={[]}
       />
       <div className="category-content">
-        <CategorySliders 
+        <CategorySliders
           title={"DIR FEDLS's"}
           slidersArray={['Regulation', 'Engagement', 'Reciprocity', 'Problem Solving', 'Representational/Symbolic Thinking', 'Triangular Thinking', 'Comparative Thinking', 'Reflective']}
           databaseNamesArray={['soc_1_regulation', 'soc_1_engagement', 'soc_1_reciprocity', 'soc_1_problem', 'soc_1_representation', 'soc_1_triangular', 'soc_1_comparative', 'soc_1_reflective']}
         />
-        <CategorySliders 
+        <CategorySliders
           title={'Implicit/Explicit'}
           slidersArray={[]}
           databaseNamesArray={[]}
@@ -29,7 +29,7 @@ const Social = () => {
           slidersArray={['Self/Other Awareness', 'Joint Attention', 'Social Referencing', 'Imitation', 'Inferential Thinking/Intention', 'Contingent Interaction/Reciprocal Actions', 'Theory of Mind', 'Central Coherence', 'Metalizing', 'Empathy', 'Social Perspective', 'Social Motivators AAAA', 'Pro-Social Motivation - Moral']}
           databaseNamesArray={['soc_2_self_awareness', 'soc_2_joint', 'soc_2_social_referencing', 'soc_2_imitation', 'soc_2_inferential', 'soc_2_contingent', 'soc_2_theory', 'soc_2_central', 'soc_2_metalizing', 'soc_2_empathy', 'soc_2_social_perspective', 'soc_2_social_motivators', 'soc_2_pro_social']}
         />
-        <CategorySliders 
+        <CategorySliders
           title={'Emotional Processing'}
           slidersArray={['Affective/Valence Response', 'Emotional Contagion', 'Activation of Low-Routes', 'Emotional Cascade', 'Activation of High-Routes', 'Emotional Differentiation', 'Emotional Association and Memory', 'Self-Control', 'Self-Regulation', 'Self-Compassion']}
           databaseNamesArray={['soc_3_affective', 'soc_3_emotional_contagion', 'soc_3_activation_low', 'soc_3_emotional_cascade', 'soc_3_activation_high', 'soc_3_emotional_differentiation', 'soc_3_emotional_association', 'soc_3_self_control', 'soc_3_self_regulation', 'soc_3_self_compassion']}

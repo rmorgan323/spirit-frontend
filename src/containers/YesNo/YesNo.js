@@ -9,35 +9,75 @@ class YesNo extends Component {
 
     this.state = {
       yesNo: null
-    }
+    };
   }
 
-  handleChange = (boolean) => {
-    this.props.updateSlider({[this.props.databaseName]: boolean})
-    this.setState({yesNo: boolean})
+  componentDidMount() {
+    const { selectedProcess, databaseName } = this.props;
+    const matchedComponentValue =
+      selectedProcess[
+        Object.keys(selectedProcess).find(
+          component => component === databaseName
+        )
+      ];
+
+    this.loadComponentValue(matchedComponentValue);
   }
+
+  loadComponentValue = matchedComponentValue => {
+    if (matchedComponentValue !== null) {
+      const yesNo = matchedComponentValue;
+      this.setState({ yesNo });
+    }
+  };
+
+  handleChange = boolean => {
+    const {
+      updateProcessPerformanceComponent,
+      selectedProcess,
+      databaseName
+    } = this.props;
+
+    updateProcessPerformanceComponent(selectedProcess.id, {
+      [databaseName]: boolean
+    });
+    this.setState({ yesNo: boolean });
+  };
 
   render() {
+    const { question } = this.props;
+    const { yesNo } = this.state;
+
     return (
       <div className="YesNo">
-        <h5>{this.props.question}</h5>
-        <button 
-          className={this.state.yesNo === true ? "yes-no yes-no-active" : "yes-no"} 
-          onClick={() => this.handleChange(true)} 
-        ><span className="yes-span">YES</span></button>
-        <button 
-          className={this.state.yesNo === false ? "yes-no yes-no-active" : "yes-no"} 
-          onClick={() => this.handleChange(false)} 
-        ><span className="no-span">NO</span></button>
+        <h5>{question}</h5>
+        <button
+          className={yesNo === true ? 'yes-no yes-no-active' : 'yes-no'}
+          onClick={() => this.handleChange(true)}
+        >
+          <span className="yes-span">YES</span>
+        </button>
+        <button
+          className={yesNo === false ? 'yes-no yes-no-active' : 'yes-no'}
+          onClick={() => this.handleChange(false)}
+        >
+          <span className="no-span">NO</span>
+        </button>
       </div>
-    )
+    );
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  updateSlider: (slider) => {
-    dispatch(actions.updateSlider(slider));
-  }
-})
+const mapStateToProps = store => ({
+  selectedProcess: store.selectedProcess
+});
 
-export default connect(null, mapDispatchToProps)(YesNo);
+const mapDispatchToProps = dispatch => ({
+  updateProcessPerformanceComponent: (processId, updatedProcess) => {
+    dispatch(
+      actions.updateProcessPerformanceComponent(processId, updatedProcess)
+    );
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(YesNo);
