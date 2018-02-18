@@ -122,7 +122,7 @@ export const selectedTreatmentPlanToStore = selectedTreatmentPlan => ({
 });
 
 export const addConcern = concern => async dispatch => {
-  const newConcern = await postPatientConcern(concern);
+  await postPatientConcern(concern);
   dispatch(concernToStore(concern));
 };
 
@@ -162,7 +162,7 @@ export const saveClinic = (clinicObject, userId) => async dispatch => {
   try {
     const id = await postClinic(clinicObject);
     const clinic = Object.assign({}, { clinic_id: id }, clinicObject);
-    const response = await addClinicInfoToUser(clinic, userId);
+    await addClinicInfoToUser(clinic, userId);
     dispatch(clinicToStore(clinic));
     dispatch(
       userToStore({
