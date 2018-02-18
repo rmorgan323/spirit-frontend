@@ -12,6 +12,20 @@ class YesNo extends Component {
     }
   }
 
+  componentDidMount() {
+    const { selectedProcess, databaseName } = this.props;
+    const matchedComponentValue = selectedProcess[Object.keys(selectedProcess).find(component => component === databaseName)];
+
+    this.loadComponentValue(matchedComponentValue);
+  }
+
+  loadComponentValue = matchedComponentValue => {
+    if (matchedComponentValue !== null) {
+      const yesNo = matchedComponentValue
+      this.setState({yesNo})
+    }
+  }
+
   handleChange = (boolean) => {
     this.props.updateProcessPerformanceComponent(this.props.selectedProcess.id, {[this.props.databaseName]: boolean});
     this.setState({yesNo: boolean})
@@ -21,7 +35,7 @@ class YesNo extends Component {
     return (
       <div className="YesNo">
         <h5>{this.props.question}</h5>
-        <button 
+        <button
           className={this.state.yesNo === true ? "yes-no yes-no-active" : "yes-no"} 
           onClick={() => this.handleChange(true)} 
         ><span className="yes-span">YES</span></button>

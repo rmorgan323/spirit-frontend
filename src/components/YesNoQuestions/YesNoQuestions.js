@@ -6,7 +6,7 @@ const YesNoQuestions = ({ title, questionsArray, databaseNamesArray }) => {
 
   const display = questionsArray.map((question, index) => {
     return (
-      <YesNo 
+      <YesNo
         question={question}
         databaseName={databaseNamesArray[index]}
         key={index}
