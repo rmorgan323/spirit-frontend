@@ -127,8 +127,8 @@ const mapStateToProps = store => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  addConcern: (concernObject) => {
-    dispatch(actions.addConcern(concernObject));
+  addConcern: (patientId, concernObject) => {
+    dispatch(actions.addConcern(patientId, concernObject));
   }
 });
 
