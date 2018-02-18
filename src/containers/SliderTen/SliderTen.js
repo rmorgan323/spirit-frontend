@@ -22,6 +22,10 @@ class SliderTen extends Component {
     this.setState({value})
   }
 
+  loadComponentValue = matchedComponentValue => {
+
+  }
+
   handleSliderUpdate = (previousValue, previousFair) => {
     if (this.state.value !== previousValue || this.state.fair !== previousFair) {
       this.props.updateProcessPerformanceComponent(this.props.selectedProcess.id, {[this.props.databaseName]: this.state.value.toString() + this.state.fair})
@@ -40,7 +44,8 @@ class SliderTen extends Component {
 
   render() {
     const { value, previousValue, fair, previousFair, displayDefinition } = this.state;
-    const { sliderTitle, reminderAsterisk } = this.props;
+    const { sliderTitle, reminderAsterisk, selectedProcess, databaseName } = this.props;
+    const matchedComponentValue = selectedProcess[Object.keys(selectedProcess).find(component => component === databaseName)];
 
     return (
       <div
