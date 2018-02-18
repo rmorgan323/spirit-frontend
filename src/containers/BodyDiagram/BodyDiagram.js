@@ -185,4 +185,4 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(null, mapDispatchToProps)(BodyDiagram);
+export default connect(mapStateToProps, mapDispatchToProps)(BodyDiagram);
