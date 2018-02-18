@@ -27,7 +27,7 @@ const Social = () => {
         <CategorySliders
           title={'Social Cognition Core Components'}
           slidersArray={['Self/Other Awareness', 'Joint Attention', 'Social Referencing', 'Imitation', 'Inferential Thinking/Intention', 'Contingent Interaction/Reciprocal Actions', 'Theory of Mind', 'Central Coherence', 'Metalizing', 'Empathy', 'Social Perspective', 'Social Motivators AAAA', 'Pro-Social Motivation - Moral']}
-          databaseNamesArray={['soc_2_self_awareness', 'soc_2_joint', 'soc_2_social_referencing', 'soc_2_imitation', 'soc_2_inferential', 'soc_2_contingent', 'soc_2_theory', 'soc_2_central', 'soc_2_metalizing', 'soc_2_empathy', 'soc_2_social_perspective', 'soc_2_social_motivators', 'soc_2_pro_social']}
+          databaseNamesArray={['soc_2_self_awareness', 'soc_2_joint', 'soc_2_social_referencing', 'soc_2_imitation', 'soc_2_inferential', 'soc_2_contingent', 'soc_2_theory', 'soc_2_central', 'soc_2_mentalizing', 'soc_2_empathy', 'soc_2_social_perspective', 'soc_2_social_motivators', 'soc_2_pro_social']}
         />
         <CategorySliders
           title={'Emotional Processing'}
@@ -37,7 +37,7 @@ const Social = () => {
         <YesNoQuestions
           title={'Other Questions'}
           questionsArray={['Mental Health Support Indicated?', 'Thoughts and/or emotions require intervention or medication?', 'Attachment related care needed?', 'Trauma informed care needed?']}
-          databaseNamesArray={['soc_4_mental', 'soc_4_thoughts', 'soc_4_attachment', 'soc_4_trauma']}
+          databaseNamesArray={['soc_4_mental', 'soc_4_thoughts', 'soc_4_attachments', 'soc_4_trauma']}
         />
       </div>
     </div>
