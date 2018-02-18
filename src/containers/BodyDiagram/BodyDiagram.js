@@ -175,6 +175,10 @@ class BodyDiagram extends Component {
   }
 }
 
+const mapStateToProps = store => ({
+  selectedProcess: store.selectedProcess
+})
+
 const mapDispatchToProps = dispatch => ({
   updateProcessPerformanceComponent: (processId, updatedProcess) => {
     dispatch(actions.updateProcessPerformanceComponent(processId, updatedProcess));
