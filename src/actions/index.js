@@ -127,15 +127,15 @@ export const concernToStore = concern => ({
   concern
 })
 
-export const updateProcessPerformanceComponents = updatedComponent => async dispatch => {
-  await updateProcess(updatedComponent);
-  dispatch(updateProcess(updatedComponent));
+export const updateProcessPerformanceComponent = (processId, updatedProcess) => async dispatch => {
+  await updateProcess(processId, updatedProcess);
+  dispatch(updateProcessComponent(updatedProcess));
 }
 
-export const updateProcess = updatedComponent => {
+export const updateProcessComponent = updatedProcess => ({
   type: 'UPDATE_PROCESS_COMPONENT',
-  updatedComponent
-}
+  updatedProcess
+})
 
 export const updateSlider = slider => ({
   type: 'UPDATE_SLIDER_VALUE',
