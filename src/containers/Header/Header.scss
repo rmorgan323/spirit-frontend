@@ -1,8 +1,9 @@
 @import '../../variables.scss';
 
 .Header {
-  background-color: $purple6;
+  background-color: $purple3;
   padding: 7px 20px;
+  border-bottom: 5px solid $purple5;
 
   .header-wordmark {
     margin: 0;

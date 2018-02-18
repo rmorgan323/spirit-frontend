@@ -12,7 +12,7 @@ const PatientHeader = (props) => {
     const sinceDisplay = moment(props.currentPatient.created_at).format('LL')
     display = (
       <div className="patient-header-holder">
-      <h4>PATIENT:<span className="patient-header-span">{patientDisplay}</span>SINCE:<span className="patient-header-span">{sinceDisplay}</span></h4>
+      <h4>PATIENT:<span className="patient-header-span">{patientDisplay}</span></h4>
       </div>
     )
   }
