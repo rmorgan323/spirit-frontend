@@ -31,9 +31,7 @@ class SliderTen extends Component {
       const value = valueArray[0];
       const fair = valueArray[1];
 
-      console.log(value, fair)
-
-      // this.setState({value, fair})
+      this.setState({value, fair})
     }
   }
 
