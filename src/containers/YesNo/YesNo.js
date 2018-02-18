@@ -39,9 +39,6 @@ const mapStateToProps = store => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  // updateSlider: (slider) => {
-  //   dispatch(actions.updateSlider(slider));
-  // },
   updateProcessPerformanceComponent: (processId, updatedProcess) => {
     dispatch(actions.updateProcessPerformanceComponent(processId, updatedProcess));
   }
