@@ -9,7 +9,7 @@ const updateProcess = async (processId, updatedProcess) => {
         'x-token': getKeyFromLS(),
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({updatedProcess})
+      body: JSON.stringify(updatedProcess)
     });
     const jsonProcess = await fetchedProcess.json();
 
