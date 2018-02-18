@@ -18,12 +18,18 @@ class SliderTen extends Component {
     };
   }
 
-  onRangeChanged = (value) => {
-    this.setState({value})
+  loadComponentValue = matchedComponentValue => {
+    if (matchedComponentValue !== null) {
+      const valueArray = matchedComponentValue.split('');
+      const value = valueArray[0];
+      const fair = valueArray[1];
+
+      this.setState({value, fair})
+    }
   }
 
-  loadComponentValue = matchedComponentValue => {
-
+  onRangeChanged = (value) => {
+    this.setState({value})
   }
 
   handleSliderUpdate = (previousValue, previousFair) => {
