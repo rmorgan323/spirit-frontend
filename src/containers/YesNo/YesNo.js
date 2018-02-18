@@ -13,7 +13,7 @@ class YesNo extends Component {
   }
 
   handleChange = (boolean) => {
-    this.props.updateSlider({[this.props.databaseName]: boolean})
+    this.props.updateProcessPerformanceComponent(this.props.selectedProcess.id, {[this.props.databaseName]: boolean});
     this.setState({yesNo: boolean})
   }
 
@@ -34,9 +34,16 @@ class YesNo extends Component {
   }
 }
 
+const mapStateToProps = store => ({
+  selectedProcess: store.selectedProcess
+})
+
 const mapDispatchToProps = dispatch => ({
-  updateSlider: (slider) => {
-    dispatch(actions.updateSlider(slider));
+  // updateSlider: (slider) => {
+  //   dispatch(actions.updateSlider(slider));
+  // },
+  updateProcessPerformanceComponent: (processId, updatedProcess) => {
+    dispatch(actions.updateProcessPerformanceComponent(processId, updatedProcess));
   }
 })
 
