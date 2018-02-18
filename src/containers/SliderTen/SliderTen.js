@@ -18,13 +18,22 @@ class SliderTen extends Component {
     };
   }
 
+  componentDidMount() {
+    const { selectedProcess, databaseName } = this.props;
+    const matchedComponentValue = selectedProcess[Object.keys(selectedProcess).find(component => component === databaseName)];
+
+    this.loadComponentValue(matchedComponentValue);
+  }
+
   loadComponentValue = matchedComponentValue => {
-    if (matchedComponentValue !== null) {
+    if (matchedComponentValue) {
       const valueArray = matchedComponentValue.split('');
       const value = valueArray[0];
       const fair = valueArray[1];
 
-      this.setState({value, fair})
+      console.log(value, fair)
+
+      // this.setState({value, fair})
     }
   }
 
@@ -50,8 +59,7 @@ class SliderTen extends Component {
 
   render() {
     const { value, previousValue, fair, previousFair, displayDefinition } = this.state;
-    const { sliderTitle, reminderAsterisk, selectedProcess, databaseName } = this.props;
-    const matchedComponentValue = selectedProcess[Object.keys(selectedProcess).find(component => component === databaseName)];
+    const { sliderTitle, reminderAsterisk } = this.props;
 
     return (
       <div
