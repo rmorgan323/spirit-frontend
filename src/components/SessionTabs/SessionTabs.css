@@ -41,20 +41,21 @@ p {
 /***  MIXINS  ***/
 .SessionTabs {
   border-top: 5px solid #7F60A4;
-  display: flex; }
-  .SessionTabs a {
-    text-decoration: none; }
-  .SessionTabs p {
-    border: 5px solid #7F60A4;
+  display: flex;
+  /*p {
+    border: 5px solid $purple5;
     padding: 5px 10px 15px;
     margin: 0 auto;
     width: 9px;
     height: 9px;
-    color: #EAE5F0;
-    background-color: #BFAFD0;
+    color: $purple1;
+    background-color: $purple3;
     border-radius: 50px;
     font-size: 16px;
-    position: relative; }
+    position: relative;
+  }*/ }
+  .SessionTabs a {
+    text-decoration: none; }
   .SessionTabs h2 {
     font-family: "Josefin Sans", sans-serif;
     font-size: 18px;
@@ -66,8 +67,9 @@ p {
     background-color: #BFAFD0;
     text-align: center;
     cursor: pointer;
-    height: 49px;
-    border-bottom: 5px solid #7F60A4; }
+    height: 39px;
+    transition: all .3s ease-in-out;
+    /*border-bottom: 5px solid $purple5;*/ }
   .SessionTabs .tab-active {
     background-color: #7F60A4; }
   .SessionTabs .session-tabs:hover {
