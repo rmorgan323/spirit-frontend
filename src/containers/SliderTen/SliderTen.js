@@ -24,9 +24,10 @@ class SliderTen extends Component {
 
   handleSliderUpdate = (previousValue, previousFair) => {
     if (this.state.value !== previousValue || this.state.fair !== previousFair) {
-      this.props.updateSlider({[this.props.databaseName]: this.state.value.toString() + this.state.fair})
+      // this.props.updateSlider({[this.props.databaseName]: this.state.value.toString() + this.state.fair})
+      this.props.updateProcessPerformanceComponent(this.props.selectedProcess.id, {[this.props.databaseName]: this.state.value.toString() + this.state.fair})
     }
-  
+
     this.setState({previousValue: this.state.value, previousFair: this.state.fair})
   }
 
@@ -40,7 +41,7 @@ class SliderTen extends Component {
 
   render() {
     return (
-      <div 
+      <div
         className="SliderTen"
         onMouseLeave={() => this.handleSliderUpdate(this.state.previousValue, this.state.previousFair)}
       >
@@ -51,7 +52,7 @@ class SliderTen extends Component {
             onClick={() => this.toggleDefinition()}
           />
           <div className={this.state.displayDefinition === true ? "definition-holder display-definition" : "definition-holder"}>
-            <Definition 
+            <Definition
               title={this.props.sliderTitle}
             />
           </div>
@@ -92,13 +93,20 @@ class SliderTen extends Component {
   }
 }
 
+const mapStateToProps = store => ({
+  selectedProcess: store.selectedProcess
+})
+
 const mapDispatchToProps = dispatch => ({
-  updateSlider: (slider) => {
-    dispatch(actions.updateSlider(slider));
+  // updateSlider: (slider) => {
+  //   dispatch(actions.updateSlider(slider));
+  // },
+  updateProcessPerformanceComponent: (processId, updatedProcess) => {
+    dispatch(actions.updateProcessPerformanceComponent(processId, updatedProcess));
   }
 })
 
-export default connect(null, mapDispatchToProps)(SliderTen);
+export default connect(mapStateToProps, mapDispatchToProps)(SliderTen);
 
 
 
