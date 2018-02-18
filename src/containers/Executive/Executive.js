@@ -25,8 +25,8 @@ const Executive = () => {
           databaseNamesArray={['exe_2b_verbal', 'exe_2b_spatial', 'exe_2b_general', 'exe_2b_global', 'exe_2b_flexibility']}
         />
         <CategorySliders 
-          slidersArray={['Inhibition', 'Shifting', 'Sequencing', 'Monitoring']}
-          databaseNamesArray={['exe_3_inhibition', 'exe_3_shifting', 'exe_3_sequencing', 'exe_3_monitoring']}
+          slidersArray={['Initiation', 'Planning', 'Sequencing', 'Monitoring']}
+          databaseNamesArray={['exe_3_initiation', 'exe_3_planning', 'exe_3_sequencing', 'exe_3_monitoring']}
         />
         <CategorySliders 
           slidersArray={['Future-Oriented/Goal-Directed', 'Spatial/Temporal Organization', 'Problem Solving', 'Reflective Thinking', 'Internalized Language']}
