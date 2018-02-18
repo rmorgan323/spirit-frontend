@@ -40,11 +40,14 @@ class SliderTen extends Component {
   }
 
   handleSliderUpdate = (previousValue, previousFair) => {
-    if (this.state.value !== previousValue || this.state.fair !== previousFair) {
-      this.props.updateProcessPerformanceComponent(this.props.selectedProcess.id, {[this.props.databaseName]: this.state.value.toString() + this.state.fair})
+    const { value, fair } = this.state;
+    const { updateProcessPerformanceComponent, selectedProcess, databaseName } = this.props;
+
+    if (value !== previousValue || fair !== previousFair) {
+      updateProcessPerformanceComponent(selectedProcess.id, {[databaseName]: value.toString() + fair})
     }
 
-    this.setState({previousValue: this.state.value, previousFair: this.state.fair})
+    this.setState({previousValue: value, previousFair: fair})
   }
 
   chooseFair = (letter) => {
@@ -52,7 +55,9 @@ class SliderTen extends Component {
   }
 
   toggleDefinition = () => {
-    this.setState({displayDefinition: !this.state.displayDefinition})
+    const { displayDefinition } = this.state;
+
+    this.setState({displayDefinition: !displayDefinition})
   }
 
   render() {
