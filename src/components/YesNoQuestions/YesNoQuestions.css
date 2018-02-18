@@ -1,0 +1,8 @@
+.YesNoQuestions {
+  margin: 10px; }
+  .YesNoQuestions .category-title {
+    height: 72px;
+    background-color: #eee;
+    margin-bottom: 20px;
+    padding: 5px 2px;
+    text-align: center; }

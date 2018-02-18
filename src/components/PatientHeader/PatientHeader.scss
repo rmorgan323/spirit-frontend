@@ -1,7 +1,7 @@
 @import '../../variables.scss';
 
 .PatientHeader {
-  background-color: $grey1;
+  background-color: $purple6;
 
   .patient-header-holder {
     padding: 10px 20px 8px;
@@ -14,7 +14,7 @@
   }
 
   .patient-header-span {
-    color: $purple6;
+    color: $purple1;
     font-size: 18px;
     margin: 0 30px 0 10px;
   }

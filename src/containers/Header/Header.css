@@ -40,8 +40,9 @@ p {
 
 /***  MIXINS  ***/
 .Header {
-  background-color: #5E378C;
-  padding: 7px 20px; }
+  background-color: #BFAFD0;
+  padding: 7px 20px;
+  border-bottom: 5px solid #7F60A4; }
   .Header .header-wordmark {
     margin: 0;
     width: 150px; }

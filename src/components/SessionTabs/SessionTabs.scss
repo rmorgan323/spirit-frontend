@@ -1,17 +1,30 @@
 @import '../../variables.scss';
 
 .SessionTabs {
-  border-top: 10px solid $purple6;
+  border-top: 5px solid $purple5;
   display: flex;
 
   a {
     text-decoration: none;
   }
 
+  p {
+    border: 5px solid $purple5;
+    padding: 5px 10px 15px;
+    margin: 0 auto;
+    width: 9px;
+    height: 9px;
+    color: $purple1;
+    background-color: $purple3;
+    border-radius: 50px;
+    font-size: 16px;
+    position: relative;
+  }
+
   h2 {
     @include match-h4;
     color: $purple1;
-    margin: 8px 0 5px;
+    margin: 8px 0 0px;
   }
 
   .session-tabs {
@@ -20,6 +33,8 @@
     background-color: $purple3;
     text-align: center;
     cursor: pointer;
+    height: 49px;
+    border-bottom: 5px solid $purple5;
   }
 
   .tab-active {

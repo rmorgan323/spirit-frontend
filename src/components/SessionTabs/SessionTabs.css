@@ -40,21 +40,34 @@ p {
 
 /***  MIXINS  ***/
 .SessionTabs {
-  border-top: 10px solid #5E378C;
+  border-top: 5px solid #7F60A4;
   display: flex; }
   .SessionTabs a {
     text-decoration: none; }
+  .SessionTabs p {
+    border: 5px solid #7F60A4;
+    padding: 5px 10px 15px;
+    margin: 0 auto;
+    width: 9px;
+    height: 9px;
+    color: #EAE5F0;
+    background-color: #BFAFD0;
+    border-radius: 50px;
+    font-size: 16px;
+    position: relative; }
   .SessionTabs h2 {
     font-family: "Josefin Sans", sans-serif;
     font-size: 18px;
     color: #EAE5F0;
-    margin: 8px 0 5px; }
+    margin: 8px 0 0px; }
   .SessionTabs .session-tabs {
     width: 120px;
     margin: 0 1px;
     background-color: #BFAFD0;
     text-align: center;
-    cursor: pointer; }
+    cursor: pointer;
+    height: 49px;
+    border-bottom: 5px solid #7F60A4; }
   .SessionTabs .tab-active {
     background-color: #7F60A4; }
   .SessionTabs .session-tabs:hover {

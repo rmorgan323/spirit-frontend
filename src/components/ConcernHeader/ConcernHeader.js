@@ -19,7 +19,7 @@ const ConcernHeader = (props) => {
           <span className={props.selectedConcern.domain_5 === false ? "display-none" : null} >5</span>
           <span className={props.selectedConcern.domain_6 === false ? "display-none" : null} >6</span>
         </div>
-        <h4>CREATED:<span className="concern-header-span">{moment(props.selectedConcern.created_at).format('LL')}</span></h4>
+        <h4>UPDATED:<span className="concern-header-span">{moment(props.selectedConcern.updated_at).format('LL')}</span></h4>
       </div>
     )
   }

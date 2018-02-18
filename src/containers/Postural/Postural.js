@@ -3,6 +3,7 @@ import SessionHeader from '../SessionHeader/SessionHeader';
 import CategorySliders from '../../components/CategorySliders/CategorySliders';
 import './Postural.css';
 import BodyDiagram from '../BodyDiagram/BodyDiagram';
+import YesNoQuestions from '../../components/YesNoQuestions/YesNoQuestions';
 
 const Postural = () => {
   
@@ -14,9 +15,9 @@ const Postural = () => {
         databaseNamesArray={['pos_h_vestibular', 'pos_h_proprioception', 'pos_h_tactile', 'pos_h_auditory', 'pos_h_visual', 'pos_h_intero']}
       />
       <div className="category-content">
-        <CategorySliders 
+        <YesNoQuestions
           title={'Core Development'}
-          slidersArray={['Outer Core', 'Inner Core']}
+          questionsArray={['Outer Core', 'Inner Core']}
           databaseNamesArray={['pos_1_outer', 'pos_1_inner']}
         />
         <CategorySliders 
