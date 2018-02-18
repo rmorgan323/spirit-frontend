@@ -137,11 +137,6 @@ export const updateProcessComponent = updatedProcess => ({
   updatedProcess
 })
 
-export const updateSlider = slider => ({
-  type: 'UPDATE_SLIDER_VALUE',
-  slider
-});
-
 export const getDefinitions = () => async dispatch => {
   try {
     const definitions = await loadDefinitions();
