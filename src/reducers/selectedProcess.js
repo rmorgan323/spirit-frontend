@@ -12,13 +12,13 @@ const selectedProcess = (store = {}, action) => {
         if (component === componentKey) {
           newProcess[componentKey] = componentValue;
         }
-      })
+      });
 
       return newProcess;
 
     default:
       return store;
   }
-}
+};
 
 export default selectedProcess;
