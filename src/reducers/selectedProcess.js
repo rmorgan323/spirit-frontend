@@ -5,8 +5,8 @@ const selectedProcess = (store = {}, action) => {
 
     case 'UPDATE_PROCESS_COMPONENT':
       let newProcess = store;
-      const componentKey = Object.keys(action.updatedComponent);
-      const componentValue = Object.values(action.updatedComponent);
+      const componentKey = Object.keys(action.updatedProcess)[0];
+      const componentValue = Object.values(action.updatedProcess)[0];
 
       Object.keys(newProcess).forEach(component => {
         if (component === componentKey) {
