@@ -39,19 +39,19 @@ p {
   text-align: center; }
 
 /***  MIXINS  ***/
-::placeholder {
+.TreatmentPlanModule ::placeholder {
   text-align: left; }
 
-.treatment-rows {
+.TreatmentPlanModule .treatment-rows {
   display: flex;
   padding: 5px; }
-  .treatment-rows h4 {
+  .TreatmentPlanModule .treatment-rows h4 {
     width: 140px;
     text-align: right;
     margin-right: 22px;
     color: #fff; }
 
-textarea {
+.TreatmentPlanModule textarea {
   padding: 10px;
   border: none;
   resize: none;

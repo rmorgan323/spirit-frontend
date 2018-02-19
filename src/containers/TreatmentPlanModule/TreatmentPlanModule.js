@@ -19,6 +19,18 @@ class TreatmentPlanModule extends Component {
     }
   }
 
+  componentDidMount = () => {
+    this.setState({
+      sensory: this.props.selectedTreatmentPlan[`${this.props.type}sensory`],
+      task: this.props.selectedTreatmentPlan[`${this.props.type}task`],
+      environment: this.props.selectedTreatmentPlan[`${this.props.type}environment`],
+      predictability: this.props.selectedTreatmentPlan[`${this.props.type}predictability`],
+      self_regulation: this.props.selectedTreatmentPlan[`${this.props.type}self_regulation`],
+      interaction: this.props.selectedTreatmentPlan[`${this.props.type}interaction`],
+      JRC_AR_notes: this.props.selectedTreatmentPlan[`${this.props.type}JRC_AR_notes`]
+    })
+  }
+
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({[name]: value, changed: true})
@@ -26,7 +38,7 @@ class TreatmentPlanModule extends Component {
 
   handleSave = (type) => {
     if (this.state.changed === true) {
-      this.props.updateTreatmentPlans({
+      this.props.getTreatmentPlan(this.props.selectedTreatmentPlan.id, {
         [`${type}sensory`]: this.state.sensory, 
         [`${type}task`]: this.state.task,
         [`${type}environment`]: this.state.environment, 
@@ -41,7 +53,7 @@ class TreatmentPlanModule extends Component {
 
   render() {
     return (
-      <div className="treatment-save-box" onMouseLeave={() => this.handleSave(this.props.type)}>
+      <div className="TreatmentPlanModule treatment-save-box" onMouseLeave={() => this.handleSave(this.props.type)}>
         <div className="treatment-rows">
           <h4>Sensory Motor</h4>
           <textarea 
@@ -110,11 +122,14 @@ class TreatmentPlanModule extends Component {
   }
 }
 
+const mapStateToProps = store => ({
+  selectedTreatmentPlan: store.selectedTreatmentPlan
+})
+
 const mapDispatchToProps = dispatch => ({
-  updateTreatmentPlans: (treatmentPlanObject) => {
-    console.log(treatmentPlanObject)
-    // dispatch(actions.updateTreatmentPlans(stuff))
+  getTreatmentPlan: (id, treatmentPlanObject) => {
+    dispatch(actions.getTreatmentPlan(id, treatmentPlanObject))
   }
 })
 
-export default connect(null, mapDispatchToProps)(TreatmentPlanModule);
+export default connect(mapStateToProps, mapDispatchToProps)(TreatmentPlanModule);
