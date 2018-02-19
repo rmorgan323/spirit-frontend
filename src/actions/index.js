@@ -18,6 +18,7 @@ import loadProcessBySession from '../helpers/loadProcessBySession/loadProcessByS
 import loadTherapyGoalBySession from '../helpers/loadTherapyGoalBySession/loadTherapyGoalBySession';
 import loadTreatmentPlanBySession from '../helpers/loadTreatmentPlanBySession/loadTreatmentPlanBySession';
 import updateProcess from '../helpers/updateProcess/updateProcess';
+import updateTreatmentPlan from '../helpers/updateTreatmentPlan/updateTreatmentPlan';
 
 export const getUser = () => async dispatch => {
   try {
@@ -145,6 +146,19 @@ export const updateProcessPerformanceComponent = (
 export const updateProcessComponent = updatedProcess => ({
   type: 'UPDATE_PROCESS_COMPONENT',
   updatedProcess
+});
+
+export const getTreatmentPlan = (
+  treatmentPlanId,
+  updatedTreatmentPlan
+) => async dispatch => {
+  await updateTreatmentPlan(treatmentPlanId, updatedTreatmentPlan);
+  dispatch(updatedTreatmentPlanToStore(updatedTreatmentPlan));
+};
+
+export const updatedTreatmentPlanToStore = updatedTreatmentPlan => ({
+  type: 'UPDATE_TREATMENT_PLAN',
+  updatedTreatmentPlan
 });
 
 export const getDefinitions = () => async dispatch => {
