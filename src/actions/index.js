@@ -19,6 +19,7 @@ import loadTherapyGoalBySession from '../helpers/loadTherapyGoalBySession/loadTh
 import loadTreatmentPlanBySession from '../helpers/loadTreatmentPlanBySession/loadTreatmentPlanBySession';
 import updateProcess from '../helpers/updateProcess/updateProcess';
 import updateTreatmentPlan from '../helpers/updateTreatmentPlan/updateTreatmentPlan';
+import updatedTherapyGoal from '../helpers/updateTherapyGoal/updateTherapyGoal';
 
 export const getUser = () => async dispatch => {
   try {
@@ -117,14 +118,6 @@ export const selectedTherapyGoalToStore = selectedTherapyGoal => ({
   selectedTherapyGoal
 });
 
-export const getTreatmentPlan = (
-  treatmentPlanId,
-  updatedTreatmentPlan
-) => async dispatch => {
-  await updateTreatmentPlan(treatmentPlanId, updatedTreatmentPlan);
-  dispatch(updatedTreatmentPlanToStore(updatedTreatmentPlan));
-};
-
 export const selectedTreatmentPlanToStore = selectedTreatmentPlan => ({
   type: 'SELECTED_TREATMENT_PLAN_TO_STORE',
   selectedTreatmentPlan
@@ -156,9 +149,30 @@ export const updateProcessComponent = updatedProcess => ({
   updatedProcess
 });
 
+export const getTreatmentPlan = (
+  treatmentPlanId,
+  updatedTreatmentPlan
+) => async dispatch => {
+  await updateTreatmentPlan(treatmentPlanId, updatedTreatmentPlan);
+  dispatch(updatedTreatmentPlanToStore(updatedTreatmentPlan));
+};
+
 export const updatedTreatmentPlanToStore = updatedTreatmentPlan => ({
   type: 'UPDATE_TREATMENT_PLAN',
   updatedTreatmentPlan
+});
+
+export const getTherapyGoal = (
+  therapyGoalId,
+  updatedTherapyGoal
+) => async dispatch => {
+  await updatedTherapyGoal(therapyGoalId, updatedTherapyGoal);
+  dispatch(updatedTherapyGoalToStore(updatedTherapyGoal));
+};
+
+export const updatedTherapyGoalToStore = updatedTherapyGoal => ({
+  type: 'UPDATE_THERAPY_GOAL',
+  updatedTherapyGoal
 });
 
 export const getDefinitions = () => async dispatch => {
