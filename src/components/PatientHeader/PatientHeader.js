@@ -1,7 +1,7 @@
 import React from 'react'
 import './PatientHeader.css';
 import { connect } from 'react-redux';
-import moment from 'moment';
+// import moment from 'moment';
 
 const PatientHeader = (props) => {
 
@@ -9,7 +9,7 @@ const PatientHeader = (props) => {
 
   if (props.currentPatient.id !== undefined) {
     const patientDisplay = props.currentPatient.abstracted_name;
-    const sinceDisplay = moment(props.currentPatient.created_at).format('LL')
+    // const sinceDisplay = moment(props.currentPatient.created_at).format('LL')
     display = (
       <div className="patient-header-holder">
       <h4>PATIENT:<span className="patient-header-span">{patientDisplay}</span></h4>

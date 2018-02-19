@@ -12,9 +12,9 @@ const Definition = (props) => {
       return def.term.match(firstWord)[0].toLowerCase() === props.title.match(firstWord)[0].toLowerCase()
     })
     !relevantDefs.length ? relevantDefs = [{term: 'No Definitions Found', definition: ''}] : null
-    display = relevantDefs.map(def => {
+    display = relevantDefs.map((def, index) => {
       return (
-        <div>
+        <div key={index}>
           <h5>{def.term}</h5>
           <p>{def.definition}</p>
           <hr />
