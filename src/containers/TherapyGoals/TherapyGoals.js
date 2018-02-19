@@ -9,7 +9,7 @@ class TherapyGoals extends Component {
     super(props);
 
     this.state = {
-      goals: '',
+      goal: '',
       ot_importance: 0,
       parent_importance: 0,
       ot_performance: 0,
@@ -20,20 +20,34 @@ class TherapyGoals extends Component {
     }
   }
 
+  componentDidMount = () => {
+    const type = this.props.category
+
+    this.setState({
+      goal: this.props.selectedTherapyGoal[`${type}goal`],
+      ot_importance: this.props.selectedTherapyGoal[`${type}ot_importance`],
+      parent_importance: this.props.selectedTherapyGoal[`${type}parent_importance`],
+      ot_performance: this.props.selectedTherapyGoal[`${type}ot_performance`],
+      parent_performance: this.props.selectedTherapyGoal[`${type}parent_performance`],
+      ot_satisfaction: this.props.selectedTherapyGoal[`${type}ot_satisfaction`],
+      parent_satisfaction: this.props.selectedTherapyGoal[`${type}parent_satisfaction`],
+    })
+  }
+
   handleRangeChange = (value, type) => {
     this.setState({ [type]: value, changed: true });
   };
 
   handleGoalsChange = (event) => {
-    this.setState({goals: event.target.value, changed: true})
+    this.setState({goal: event.target.value, changed: true})
   }
 
-  handleTherapyGoalsUpdate = (goals, oti, pi, otp, pp, ots, ps) => {
+  handleTherapyGoalsUpdate = (goal, oti, pi, otp, pp, ots, ps) => {
     const type = this.props.category
 
     if (this.state.changed === true) {
-      this.props.updateTherapyGoal(this.props.selectedTherapyGoal.id, {
-        [`${type}goals`]: goals,
+      this.props.getTherapyGoal(this.props.selectedTherapyGoal.id, {
+        [`${type}goal`]: goal,
         [`${type}ot_importance`]: oti,
         [`${type}parent_importance`]: pi,
         [`${type}ot_performance`]: otp,
@@ -47,20 +61,20 @@ class TherapyGoals extends Component {
   }
 
   render() {
-    const { goals, ot_importance, parent_importance, ot_performance, parent_performance, ot_satisfaction, parent_satisfaction } = this.state;
+    const { goal, ot_importance, parent_importance, ot_performance, parent_performance, ot_satisfaction, parent_satisfaction } = this.state;
     const impArray = ['-', '1 - not at all important', '2 - not important', '3 - not very important', '4 - somewhat important', '5 - somewhat important', '6 - important', '7 - important', '8 - very important', '9 - very important', '10 - extremely important']
     const perArray = ['-', '1 - unable to perform', '2 - limited performance', '3 - limited performance', '4 - somewhat able to perform', '5 - somewhat able to perform', '6 - able to perform', '7 - able to perform', '8 - performs well', '9 - performs very well', '10 - performs extremely well']
     const satArray = ['-', '1 - not at all satisfied', '2 - not satisfied', '3 - not very satisfied', '4 - somewhat satisfied', '5 - somewhat satisfied', '6 - satisfied', '7 - satisfied', '8 - very satisfied', '9 - very satisfied', '10 - extremely satisfied']
 
     return (
-      <div onMouseLeave={() => this.handleTherapyGoalsUpdate(goals, ot_importance, parent_importance, ot_performance, parent_performance, ot_satisfaction, parent_satisfaction)} className="TherapyGoals">
+      <div onMouseLeave={() => this.handleTherapyGoalsUpdate(goal, ot_importance, parent_importance, ot_performance, parent_performance, ot_satisfaction, parent_satisfaction)} className="TherapyGoals">
 
           <div className="therapy-domain">
             <div className="therapy-domain-header">
               <p>{this.props.number}</p>
               <h4>{this.props.title}</h4>
             </div>
-            <textarea onChange={(event) => this.handleGoalsChange(event)} value={this.state.goals} className="modulation-goal" placeholder="goals"></textarea>
+            <textarea onChange={(event) => this.handleGoalsChange(event)} value={this.state.goal} className="modulation-goal" placeholder="goals"></textarea>
           </div>
 
           <div className="therapy-importance">
@@ -169,9 +183,8 @@ const mapStateToProps = store => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  updateTherapyGoal: (id, goalObj) => {
-    console.log(id, goalObj)
-    // dispatch(actions.updateTherapyGoal(id, goalsObj))
+  getTherapyGoal: (id, goalObj) => {
+    dispatch(actions.getTherapyGoal(id, goalObj))
   }
 })
 

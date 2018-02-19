@@ -19,7 +19,7 @@ import loadTherapyGoalBySession from '../helpers/loadTherapyGoalBySession/loadTh
 import loadTreatmentPlanBySession from '../helpers/loadTreatmentPlanBySession/loadTreatmentPlanBySession';
 import updateProcess from '../helpers/updateProcess/updateProcess';
 import updateTreatmentPlan from '../helpers/updateTreatmentPlan/updateTreatmentPlan';
-import updatedTherapyGoal from '../helpers/updateTherapyGoal/updateTherapyGoal';
+import updateTherapyGoal from '../helpers/updateTherapyGoal/updateTherapyGoal';
 
 export const getUser = () => async dispatch => {
   try {
@@ -164,10 +164,10 @@ export const updatedTreatmentPlanToStore = updatedTreatmentPlan => ({
 
 export const getTherapyGoal = (
   therapyGoalId,
-  updatedTherapyGoal
+  goalObj
 ) => async dispatch => {
-  await updatedTherapyGoal(therapyGoalId, updatedTherapyGoal);
-  dispatch(updatedTherapyGoalToStore(updatedTherapyGoal));
+  await updateTherapyGoal(therapyGoalId, goalObj);
+  dispatch(updatedTherapyGoalToStore(goalObj));
 };
 
 export const updatedTherapyGoalToStore = updatedTherapyGoal => ({
