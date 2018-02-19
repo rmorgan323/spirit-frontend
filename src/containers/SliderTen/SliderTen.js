@@ -94,6 +94,7 @@ class SliderTen extends Component {
             className="definition-image"
             src="/assets/mag-glass.svg"
             onClick={() => this.toggleDefinition()}
+            alt="definition"
           />
           <div
             className={

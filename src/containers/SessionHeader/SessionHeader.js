@@ -6,11 +6,10 @@ const SessionHeader = ({ title, headings, databaseNamesArray }) => {
 
   const headingsDisplay = headings.map((heading, index) => {
     return (
-      <div className="slider-holder">
+      <div key={index} className="slider-holder">
         <SliderTen 
           sliderTitle={heading}
           databaseName={databaseNamesArray[index]}
-          key={index}
         />
       </div>
     )

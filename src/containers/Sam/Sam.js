@@ -3,15 +3,12 @@ import './Sam.css';
 import { Link } from 'react-router-dom';
 
 class Sam extends Component {
-  constructor() {
-    super();
-  }
 
   render() {
     return(
       <div className="Sam">
         <div className="sam-image-holder">
-          <img className="sam-big-image" src="/assets/sam-new.svg" />
+          <img className="sam-big-image" src="/assets/sam-new.svg" alt="sam-diagram" />
 
           <Link to="modulation">
           <p className="sam-session-dots session-dots-1">1</p>

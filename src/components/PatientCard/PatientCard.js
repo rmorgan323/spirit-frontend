@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './PatientCard.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';

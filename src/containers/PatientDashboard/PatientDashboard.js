@@ -3,7 +3,6 @@ import './PatientDashboard.css';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import Concerns from '../../components/Concerns/Concerns';
-import Sam from '../Sam/Sam';
 
 class PatientDashboard extends Component {
   constructor() {
@@ -107,7 +106,7 @@ class PatientDashboard extends Component {
         </div>
 
         <div className="sam-holder">
-          <img className="sam-image" src="/assets/sam-new.svg" />
+          <img className="sam-image" src="/assets/sam-new.svg" alt="sam-big" />
           <div className="sam-dot-1 sam-dots">1</div>
           <div className="sam-dot-2 sam-dots">2</div>
           <div className="sam-dot-3 sam-dots">3</div>

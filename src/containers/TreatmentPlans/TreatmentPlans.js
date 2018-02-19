@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './TreatmentPlans.css';
-import { connect } from 'react-redux';
 import TreatmentPlanModule from '../TreatmentPlanModule/TreatmentPlanModule';
 
 class TreatmentPlans extends Component {
