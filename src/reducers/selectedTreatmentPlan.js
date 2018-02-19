@@ -5,14 +5,12 @@ const selectedTreatmentPlan = (store = {}, action) => {
 
     case 'UPDATE_TREATMENT_PLAN':
       let newTreatmentPlan = store;
-      const updatedKey = Object.keys(action.updatedTreatmentPlan)[0];
-      const updatedValue = Object.values(action.updatedTreatmentPlan)[0];
+      const updatedKeys = Object.keys(action.updatedTreatmentPlan);
+      const updatedValues = Object.values(action.updatedTreatmentPlan);
 
-      Object.keys(newTreatmentPlan).forEach(key => {
-        if (key === updatedKey) {
-          newTreatmentPlan[updatedKey] = updatedValue;
-        }
-      });
+      updatedKeys.forEach((key, index) => {
+        newTreatmentPlan[key] = updatedValues[index]
+      })
 
       return newTreatmentPlan;
 

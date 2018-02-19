@@ -117,6 +117,14 @@ export const selectedTherapyGoalToStore = selectedTherapyGoal => ({
   selectedTherapyGoal
 });
 
+export const getTreatmentPlan = (
+  treatmentPlanId,
+  updatedTreatmentPlan
+) => async dispatch => {
+  await updateTreatmentPlan(treatmentPlanId, updatedTreatmentPlan);
+  dispatch(updatedTreatmentPlanToStore(updatedTreatmentPlan));
+};
+
 export const selectedTreatmentPlanToStore = selectedTreatmentPlan => ({
   type: 'SELECTED_TREATMENT_PLAN_TO_STORE',
   selectedTreatmentPlan
@@ -147,14 +155,6 @@ export const updateProcessComponent = updatedProcess => ({
   type: 'UPDATE_PROCESS_COMPONENT',
   updatedProcess
 });
-
-export const getTreatmentPlan = (
-  treatmentPlanId,
-  updatedTreatmentPlan
-) => async dispatch => {
-  await updateTreatmentPlan(treatmentPlanId, updatedTreatmentPlan);
-  dispatch(updatedTreatmentPlanToStore(updatedTreatmentPlan));
-};
 
 export const updatedTreatmentPlanToStore = updatedTreatmentPlan => ({
   type: 'UPDATE_TREATMENT_PLAN',
