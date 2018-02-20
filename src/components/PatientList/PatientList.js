@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import PatientCard from '../PatientCard/PatientCard';
+import { PropTypes } from 'prop-types';
 import './PatientList.css';
 
 const PatientList = props => {
@@ -28,3 +29,7 @@ const mapStateToProps = store => ({
 });
 
 export default connect(mapStateToProps, null)(PatientList);
+
+PatientList.propTypes = {
+  patientList: PropTypes.array
+};
