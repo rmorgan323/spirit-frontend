@@ -1,6 +1,7 @@
 import React from 'react';
-import './PatientHeader.css';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import './PatientHeader.css';
 // import moment from 'moment';
 
 const PatientHeader = props => {
@@ -26,3 +27,7 @@ const mapStateToProps = store => ({
 });
 
 export default connect(mapStateToProps, null)(PatientHeader);
+
+PatientHeader.propTypes = {
+  currentPatient: PropTypes.object
+};
