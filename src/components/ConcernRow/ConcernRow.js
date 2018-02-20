@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import * as actions from '../../actions/index';
 import './ConcernRow.css';
 
@@ -92,3 +93,16 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(ConcernRow);
+
+ConcernRow.propTypes = {
+  id: PropTypes.number,
+  concern: PropTypes.string,
+  d1: PropTypes.bool,
+  d2: PropTypes.bool,
+  d3: PropTypes.bool,
+  d4: PropTypes.bool,
+  d5: PropTypes.bool,
+  d6: PropTypes.bool,
+  notes: PropTypes.string,
+  getConcern: PropTypes.func
+};
