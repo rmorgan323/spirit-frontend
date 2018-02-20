@@ -312,5 +312,5 @@ export default connect(mapStateToProps, mapDispatchToProps)(BodyDiagram);
 
 BodyDiagram.propTypes = {
   selectedProcess: PropTypes.object,
-  updateProcessPerformanceComponent: PropTypes.object
+  updateProcessPerformanceComponent: PropTypes.func
 };

@@ -36,6 +36,6 @@ CategorySliders.propTypes = {
   title: PropTypes.string,
   slidersArray: PropTypes.array,
   databaseNamesArray: PropTypes.array,
-  reminderAsterisk: PropTypes.string,
+  reminderAsterisk: PropTypes.array,
   reminder: PropTypes.string
 };

@@ -304,6 +304,6 @@ TherapyGoals.propTypes = {
   category: PropTypes.string,
   selectedTherapyGoal: PropTypes.object,
   getTherapyGoal: PropTypes.func,
-  number: PropTypes.number,
+  number: PropTypes.string,
   title: PropTypes.string
 };
