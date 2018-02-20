@@ -7,24 +7,24 @@ import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
 
 import PatientDashboard from '../PatientDashboard/PatientDashboard';
-import Sensory from '../Sensory/Sensory';
-import Modulation from '../Modulation/Modulation';
-import Executive from '../Executive/Executive';
-import Postural from '../Postural/Postural';
-import Social from '../Social/Social.js';
-import Spirit from '../Spirit/Spirit.js';
-import Join from '../Join/Join.js';
-import Create from '../Create/Create.js';
+import Sensory from '../../components/Sensory/Sensory';
+import Modulation from '../../components/Modulation/Modulation';
+import Executive from '../../components/Executive/Executive';
+import Postural from '../../components/Postural/Postural';
+import Social from '../../components/Social/Social.js';
+import Spirit from '../../components/Spirit/Spirit.js';
+import Join from '../Join/Join';
+import Create from '../Create/Create';
 import UserDashboard from '../UserDashboard/UserDashboard';
 import clearLocalStorage from '../../helpers/clearLocalStorage/clearLocalStorage';
 import Users from '../Users/Users';
 import Header from '../Header/Header';
-import Sessions from '../../containers/Sessions/Sessions';
-import PatientHeader from '../../components/PatientHeader/PatientHeader';
-import ConcernHeader from '../../components/ConcernHeader/ConcernHeader';
-import Sam from '../Sam/Sam';
+import Sessions from '../Sessions/Sessions';
+import PatientHeader from '../PatientHeader/PatientHeader';
+import ConcernHeader from '../ConcernHeader/ConcernHeader';
+import Sam from '../../components/Sam/Sam';
 import SessionTabs from '../../components/SessionTabs/SessionTabs';
-import Finish from '../Finish/Finish';
+import Finish from '../../components/Finish/Finish';
 
 class Routes extends Component {
   componentDidMount = async () => {

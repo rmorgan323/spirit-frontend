@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import PatientList from '../../components/PatientList/PatientList';
+import PatientList from '../PatientList/PatientList';
 import * as actions from '../../actions';
 import './UserDashboard.css';
 
