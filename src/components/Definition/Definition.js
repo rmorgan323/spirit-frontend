@@ -4,21 +4,23 @@ import { PropTypes } from 'prop-types';
 import './Definition.css';
 
 const Definition = props => {
-  let relevantDefs;
+  let relevantDefinitions;
   let display;
   const firstWord = new RegExp(/^([\w\-]+)/);
 
   if (props.definitions.length) {
-    relevantDefs = props.definitions.filter(def => {
+    relevantDefinitions = props.definitions.filter(def => {
       return (
         def.term.match(firstWord)[0].toLowerCase() ===
         props.title.match(firstWord)[0].toLowerCase()
       );
     });
-    !relevantDefs.length
-      ? (relevantDefs = [{ term: 'No Definitions Found', definition: '' }])
-      : null;
-    display = relevantDefs.map((def, index) => {
+
+    if (!relevantDefinitions.length) {
+      relevantDefinitions = [{ term: 'No Definitions Found', definition: '' }];
+    }
+
+    display = relevantDefinitions.map((def, index) => {
       return (
         <div key={index}>
           <h5>{def.term}</h5>
