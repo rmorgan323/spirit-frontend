@@ -1,13 +1,15 @@
 import React from 'react';
-import './CategorySliders.css';
+import { PropTypes } from 'prop-types';
 import SliderTen from '../../containers/SliderTen/SliderTen';
+import './CategorySliders.css';
 
 const CategorySliders = ({
   title,
   slidersArray,
   databaseNamesArray,
   reminderAsterisk,
-  reminder}) => {
+  reminder
+}) => {
   const display = slidersArray.map((slider, index) => {
     return (
       <SliderTen
@@ -29,3 +31,11 @@ const CategorySliders = ({
 };
 
 export default CategorySliders;
+
+CategorySliders.propTypes = {
+  title: PropTypes.string,
+  slidersArray: PropTypes.array,
+  databaseNamesArray: PropTypes.array,
+  reminderAsterisk: PropTypes.array,
+  reminder: PropTypes.string
+};

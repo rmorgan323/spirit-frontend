@@ -223,19 +223,17 @@ export const patientToStore = patient => ({
 export const updateUserStore = clinicData => ({
   type: 'UPDATE_USER_STORE',
   clinicData
-})
+});
 
 export const joinExistingClinic = (passcode, userId) => async dispatch => {
-  try {
-    const updatedClinic = await joinClinic(passcode, userId);
-    dispatch(updateUserStore(updatedClinic))
-    dispatch(clinicToStore({
+  const updatedClinic = await joinClinic(passcode, userId);
+  dispatch(updateUserStore(updatedClinic));
+  dispatch(
+    clinicToStore({
       id: updatedClinic.clinic_id,
       name: updatedClinic.clinic,
       abbreviation: updatedClinic.clinic_abbreviation,
       passcode: updatedClinic.clinic_passcode
-    }))
-  } catch (error) {
-    console.log(error)
-  }
-}
+    })
+  );
+};

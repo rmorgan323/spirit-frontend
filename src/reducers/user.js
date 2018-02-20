@@ -5,15 +5,16 @@ const user = (store = {}, action) => {
     return updatedUser;
   }
 
-  case "UPDATE_USER_STORE":
-    let newStore = store
-    const keys = Object.keys(action.clinicData)
-    const values = Object.values(action.clinicData)
+  case "UPDATE_USER_STORE": {
+    let newStore = store;
+    const keys = Object.keys(action.clinicData);
+    const values = Object.values(action.clinicData);
 
-    for (let i = 0; i < keys.length; i++) {
-      newStore[keys[i]] = values[i]
-    }
+    keys.forEach((key, index) => {
+      newStore[key] = values[index];
+    });
     return newStore;
+  }
 
   default:
     return store;

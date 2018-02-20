@@ -1,9 +1,12 @@
+/*eslint-disable id-length*/
+
 import React, { Component } from 'react';
 import Range from 'react-range-progress';
-import './SliderTen.css';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import { PropTypes } from 'prop-types';
 import Definition from '../../components/Definition/Definition';
+import * as actions from '../../actions';
+import './SliderTen.css';
 
 class SliderTen extends Component {
   constructor(props) {
@@ -96,6 +99,7 @@ class SliderTen extends Component {
             onClick={() => this.toggleDefinition()}
             alt="definition"
           />
+
           <div
             className={
               displayDefinition === true
@@ -105,10 +109,14 @@ class SliderTen extends Component {
           >
             <Definition title={sliderTitle} />
           </div>
+
           <h5>{sliderTitle}</h5>
+
           <h5>{reminderAsterisk}</h5>
         </div>
+
         <p style={value === 0 ? { opacity: 0 } : null}>{value}</p>
+
         <Range
           value={value}
           fillColor={{
@@ -131,6 +139,7 @@ class SliderTen extends Component {
           min={0}
           max={10}
         />
+
         <h2>
           <span
             onClick={() => this.chooseFair('f')}
@@ -140,6 +149,7 @@ class SliderTen extends Component {
           >
             F
           </span>
+
           <span
             onClick={() => this.chooseFair('a')}
             className={
@@ -148,6 +158,7 @@ class SliderTen extends Component {
           >
             A
           </span>
+
           <span
             onClick={() => this.chooseFair('i')}
             className={
@@ -156,6 +167,7 @@ class SliderTen extends Component {
           >
             I
           </span>
+
           <span
             onClick={() => this.chooseFair('r')}
             className={
@@ -183,3 +195,11 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SliderTen);
+
+SliderTen.propTypes = {
+  selectedProcess: PropTypes.object,
+  databaseName: PropTypes.string,
+  updateProcessPerformanceComponent: PropTypes.func,
+  sliderTitle: PropTypes.string,
+  reminderAsterisk: PropTypes.string
+};

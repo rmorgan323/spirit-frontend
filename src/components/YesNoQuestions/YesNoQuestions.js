@@ -1,6 +1,7 @@
 import React from 'react';
-import './YesNoQuestions.css';
 import YesNo from '../../containers/YesNo/YesNo';
+import { PropTypes } from 'prop-types';
+import './YesNoQuestions.css';
 
 const YesNoQuestions = ({ title, questionsArray, databaseNamesArray }) => {
   const display = questionsArray.map((question, index) => {
@@ -22,3 +23,9 @@ const YesNoQuestions = ({ title, questionsArray, databaseNamesArray }) => {
 };
 
 export default YesNoQuestions;
+
+YesNoQuestions.propTypes = {
+  title: PropTypes.string,
+  questionsArray: PropTypes.array,
+  databaseNamesArray: PropTypes.array
+};

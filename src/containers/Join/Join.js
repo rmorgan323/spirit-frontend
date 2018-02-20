@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './Join.css';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
+import './Join.css';
 
 class Join extends Component {
   constructor() {
@@ -10,51 +11,68 @@ class Join extends Component {
 
     this.state = {
       clinicPasscode: ''
-    }
+    };
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { name, value } = event.target;
-    this.setState({[name]: value})
-  }
+    this.setState({ [name]: value });
+  };
 
   joinClinic = (event, passcode) => {
     event.preventDefault();
-    this.props.joinExistingClinic({passcode: passcode}, this.props.user.id);
-  }
+    const { joinExistingClinic, user } = this.props;
+
+    joinExistingClinic({ passcode: passcode }, user.id);
+  };
 
   render() {
+    const { clinicPasscode } = this.state;
+    const { user } = this.props;
+
     return (
       <div className="Join">
         <h4>Join a Clinic</h4>
+
         <form>
-          <input 
+          <input
             className="input-password"
-            onChange={(event) => this.handleChange(event)}
-            value={this.state.clinicPasscode}
+            onChange={event => this.handleChange(event)}
+            value={clinicPasscode}
             name="clinicPasscode"
             placeholder="Enter Passcode"
           />
-          <button 
+
+          <button
             className="submit-button"
             type="submit"
-            onClick={(event) => this.joinClinic(event, this.state.clinicPasscode)}
-          >SUBMIT</button>
+            onClick={event => this.joinClinic(event, clinicPasscode)}
+          >
+            SUBMIT
+          </button>
         </form>
-        <NavLink className="join-link" to={`/spirit/users/${this.props.user.id}/create`}>CREATE NEW CLINIC</NavLink>
+
+        <NavLink className="join-link" to={`/spirit/users/${user.id}/create`}>
+          CREATE NEW CLINIC
+        </NavLink>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = store => ({
   user: store.user
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   joinExistingClinic: (passcode, userId) => {
-    dispatch(actions.joinExistingClinic(passcode, userId))
+    dispatch(actions.joinExistingClinic(passcode, userId));
   }
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Join);
+
+Join.propTypes = {
+  joinExistingClinic: PropTypes.func,
+  user: PropTypes.object
+};

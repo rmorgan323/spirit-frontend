@@ -1,7 +1,10 @@
+/*eslint-disable camelcase*/
+
 import React, { Component } from 'react';
-import './BodyDiagram.css';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
+import './BodyDiagram.css';
 
 class BodyDiagram extends Component {
   constructor() {
@@ -306,3 +309,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BodyDiagram);
+
+BodyDiagram.propTypes = {
+  selectedProcess: PropTypes.object,
+  updateProcessPerformanceComponent: PropTypes.func
+};
