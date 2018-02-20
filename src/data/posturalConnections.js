@@ -1,4 +1,4 @@
-const postureConnections = {
+const posturalConnections = {
   pos_1_inner: {
     marked: false,
     connections: []
@@ -153,4 +153,4 @@ const postureConnections = {
   }
 };
 
-export default postureConnections;
+export default posturalConnections;
