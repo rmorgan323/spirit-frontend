@@ -1,6 +1,6 @@
 import React from 'react';
 import SessionHeader from '../SessionHeader/SessionHeader';
-import CategorySliders from '../../components/CategorySliders/CategorySliders';
+import CategorySliders from '../CategorySliders/CategorySliders';
 import './Executive.css';
 
 const Executive = () => {

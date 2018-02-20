@@ -1,8 +1,8 @@
 import React from 'react';
 import SessionHeader from '../SessionHeader/SessionHeader';
-import CategorySliders from '../../components/CategorySliders/CategorySliders';
-import BodyDiagram from '../BodyDiagram/BodyDiagram';
-import YesNoQuestions from '../../components/YesNoQuestions/YesNoQuestions';
+import CategorySliders from '../CategorySliders/CategorySliders';
+import BodyDiagram from '../../containers/BodyDiagram/BodyDiagram';
+import YesNoQuestions from '../YesNoQuestions/YesNoQuestions';
 import './Postural.css';
 
 const Postural = () => {

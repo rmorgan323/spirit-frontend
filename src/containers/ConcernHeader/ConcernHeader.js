@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import moment from 'moment';
 import { PropTypes } from 'prop-types';
+import moment from 'moment';
 import './ConcernHeader.css';
 
 const ConcernHeader = props => {

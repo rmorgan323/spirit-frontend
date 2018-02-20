@@ -1,6 +1,6 @@
 import React from 'react';
-import SliderTen from '../SliderTen/SliderTen';
 import { PropTypes } from 'prop-types';
+import SliderTen from '../../containers/SliderTen/SliderTen';
 import './SessionHeader.css';
 
 const SessionHeader = ({ title, headings, databaseNamesArray }) => {

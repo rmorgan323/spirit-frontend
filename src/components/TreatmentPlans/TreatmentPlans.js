@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TreatmentPlanModule from '../TreatmentPlanModule/TreatmentPlanModule';
+import TreatmentPlanModule from '../../containers/TreatmentPlanModule/TreatmentPlanModule';
 import './TreatmentPlans.css';
 
 class TreatmentPlans extends Component {

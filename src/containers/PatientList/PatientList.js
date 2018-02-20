@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import moment from 'moment';
-import PatientCard from '../PatientCard/PatientCard';
 import { PropTypes } from 'prop-types';
+import PatientCard from '../PatientCard/PatientCard';
+import moment from 'moment';
 import './PatientList.css';
 
 const PatientList = props => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ConcernRow from '../ConcernRow/ConcernRow';
 import { PropTypes } from 'prop-types';
+import ConcernRow from '../ConcernRow/ConcernRow';
 
 const Concerns = props => {
   let displayConcernRows;

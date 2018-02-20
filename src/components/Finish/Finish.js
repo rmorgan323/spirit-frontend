@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Finish.css';
-import TreatmentPlans from '../../containers/TreatmentPlans/TreatmentPlans';
+import TreatmentPlans from '../TreatmentPlans/TreatmentPlans';
 import TherapyGoals from '../../containers/TherapyGoals/TherapyGoals';
 
 class Finish extends Component {
