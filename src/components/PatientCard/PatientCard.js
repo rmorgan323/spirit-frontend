@@ -1,8 +1,9 @@
 import React from 'react';
-import './PatientCard.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
+import './PatientCard.css';
 
 const PatientCard = props => {
   const { abstractedName, lastAppt, id } = props;
@@ -36,3 +37,10 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(PatientCard);
+
+PatientCard.propTypes = {
+  abstractedName: PropTypes.string,
+  lastAppt: PropTypes.string,
+  id: PropTypes.number,
+  getPatientConcerns: PropTypes.func
+};
