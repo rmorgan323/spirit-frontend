@@ -97,27 +97,27 @@ const modulationConnects = {
   },
   mod_h_auditory: {
     marked: false,
-    connections: ['Posture', 'Sensory', 'Social', 'Executive']
+    connections: ['Postural', 'Sensory', 'Social', 'Executive']
   },
   mod_h_intero: {
     marked: false,
-    connections: ['Posture', 'Sensory', 'Social', 'Executive']
+    connections: ['Postural', 'Sensory', 'Social', 'Executive']
   },
   mod_h_proprioception: {
     marked: false,
-    connections: ['Posture', 'Sensory', 'Social', 'Executive']
+    connections: ['Postural', 'Sensory', 'Social', 'Executive']
   },
   mod_h_tactile: {
     marked: false,
-    connections: ['Posture', 'Sensory', 'Social', 'Executive']
+    connections: ['Postural', 'Sensory', 'Social', 'Executive']
   },
   mod_h_vestibular: {
     marked: false,
-    connections: ['Posture', 'Sensory', 'Social', 'Executive']
+    connections: ['Postural', 'Sensory', 'Social', 'Executive']
   },
   mod_h_visual: {
     marked: false,
-    connections: ['Posture', 'Sensory', 'Social', 'Executive']
+    connections: ['Postural', 'Sensory', 'Social', 'Executive']
   }
 };
 
