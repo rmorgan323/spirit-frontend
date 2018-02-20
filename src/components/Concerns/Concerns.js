@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ConcernRow from '../ConcernRow/ConcernRow';
+import { PropTypes } from 'prop-types';
 
 const Concerns = props => {
   let displayConcernRows;
@@ -32,3 +33,7 @@ const mapStateToProps = store => ({
 });
 
 export default connect(mapStateToProps, null)(Concerns);
+
+Concerns.propTypes = {
+  patientConcerns: PropTypes.array
+};
