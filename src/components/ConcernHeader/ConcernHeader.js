@@ -1,9 +1,10 @@
 /*eslint-disable camelcase*/
 
 import React from 'react';
-import './ConcernHeader.css';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import { PropTypes } from 'prop-types';
+import './ConcernHeader.css';
 
 const ConcernHeader = props => {
   let display;
@@ -49,3 +50,7 @@ const mapStateToProps = store => ({
 });
 
 export default connect(mapStateToProps, null)(ConcernHeader);
+
+ConcernHeader.propTypes = {
+  selectedConcern: PropTypes.object
+};
