@@ -17,7 +17,7 @@ const loadProcessById = async processId => {
     return jsonProcess;
   } catch (error) {
     throw new Error(
-      `Error fetching process by id ${primaryConcernId}: ${error}`
+      `Error fetching process by id ${processId}: ${error}`
     );
   }
 };

@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const postPatient = async (absName, userId) => {

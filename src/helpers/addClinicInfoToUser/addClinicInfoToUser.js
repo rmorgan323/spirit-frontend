@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const addClinicInfoToUser = async (clinic, userId) => {
