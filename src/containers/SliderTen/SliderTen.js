@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Range from 'react-range-progress';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import Definition from '../../components/Definition/Definition';
+import Definition from '../Definition/Definition';
 import * as actions from '../../actions';
 import './SliderTen.css';
 
