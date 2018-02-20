@@ -31,12 +31,12 @@ const posturalConnections = {
   pos_6_grasp: ['pos_6_push'],
   pos_6_push: ['pos_5_antigravity', 'pos_5_reflex', 'pos_5_alignment_COG', 'pos_6_grasp'],
   pos_6_strength: [],
-  pos_h_auditory: ['Modulation', 'Sensory', 'Social', 'Executive'],
-  pos_h_intero: ['Modulation', 'Sensory', 'Social', 'Executive'],
-  pos_h_proprioception: ['Modulation', 'Sensory', 'Social', 'Executive'],
-  pos_h_tactile: ['Modulation', 'Sensory', 'Social', 'Executive'],
-  pos_h_vestibular: ['Modulation', 'Sensory', 'Social', 'Executive'],
-  pos_h_visual: ['Modulation', 'Sensory', 'Social', 'Executive']
+  pos_h_auditory: ['modulation', 'sensory', 'social', 'executive'],
+  pos_h_intero: ['modulation', 'sensory', 'social', 'executive'],
+  pos_h_proprioception: ['modulation', 'sensory', 'social', 'executive'],
+  pos_h_tactile: ['modulation', 'sensory', 'social', 'executive'],
+  pos_h_vestibular: ['modulation', 'sensory', 'social', 'executive'],
+  pos_h_visual: ['modulation', 'sensory', 'social', 'executive']
 };
 
 export default posturalConnections;
