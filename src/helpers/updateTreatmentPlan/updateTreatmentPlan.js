@@ -17,7 +17,9 @@ const updateTreatmentPlan = async (treatmentPlanId, updatedTreatmentPlan) => {
 
     return jsonTreatmentPlan;
   } catch (error) {
-    throw new Error(`Error updating treatment plan by id ${treatmentPlanId}: ${error}`);
+    throw new Error(
+      `Error updating treatment plan by id ${treatmentPlanId}: ${error}`
+    );
   }
 };
 

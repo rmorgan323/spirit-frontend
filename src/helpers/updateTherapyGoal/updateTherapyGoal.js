@@ -17,7 +17,9 @@ const updateTherapyGoal = async (therapyGoalId, updatedTherapyGoal) => {
 
     return jsonTherapyGoal;
   } catch (error) {
-    throw new Error(`Error updating treatment plan by id ${therapyGoalId}: ${error}`);
+    throw new Error(
+      `Error updating treatment plan by id ${therapyGoalId}: ${error}`
+    );
   }
 };
 
