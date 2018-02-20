@@ -3,7 +3,7 @@ const selectedTherapyGoal = (store = {}, action) => {
   case 'SELECTED_THERAPY_GOAL_TO_STORE':
     return action.selectedTherapyGoal;
 
-  case 'UPDATE_THERAPY_GOAL':
+  case 'UPDATE_THERAPY_GOAL': {
     let newTherapyGoal = store;
     const updatedKeys = Object.keys(action.updatedTherapyGoal);
     const updatedValues = Object.values(action.updatedTherapyGoal);
@@ -13,6 +13,7 @@ const selectedTherapyGoal = (store = {}, action) => {
     });
 
     return newTherapyGoal;
+  }
 
   default:
     return store;

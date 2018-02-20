@@ -3,7 +3,7 @@ const selectedProcess = (store = {}, action) => {
   case 'SELECTED_PROCESS_TO_STORE':
     return action.selectedProcess;
 
-  case 'UPDATE_PROCESS_COMPONENT':
+  case 'UPDATE_PROCESS_COMPONENT': {
     let newProcess = store;
     const componentKey = Object.keys(action.updatedProcess)[0];
     const componentValue = Object.values(action.updatedProcess)[0];
@@ -15,6 +15,7 @@ const selectedProcess = (store = {}, action) => {
     });
 
     return newProcess;
+  }
 
   default:
     return store;

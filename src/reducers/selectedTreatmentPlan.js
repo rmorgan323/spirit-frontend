@@ -3,7 +3,7 @@ const selectedTreatmentPlan = (store = {}, action) => {
   case 'SELECTED_TREATMENT_PLAN_TO_STORE':
     return action.selectedTreatmentPlan;
 
-  case 'UPDATE_TREATMENT_PLAN':
+  case 'UPDATE_TREATMENT_PLAN': {
     let newTreatmentPlan = store;
     const updatedKeys = Object.keys(action.updatedTreatmentPlan);
     const updatedValues = Object.values(action.updatedTreatmentPlan);
@@ -13,6 +13,7 @@ const selectedTreatmentPlan = (store = {}, action) => {
     });
 
     return newTreatmentPlan;
+  }
 
   default:
     return store;
