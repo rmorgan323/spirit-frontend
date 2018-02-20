@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './SessionTabs.css';
 
@@ -92,8 +91,4 @@ const SessionTabs = () => {
   );
 };
 
-const mapStateToProps = store => ({
-  // selectedSession: store.selectedSession
-});
-
-export default connect(mapStateToProps, null)(SessionTabs);
+export default SessionTabs;
