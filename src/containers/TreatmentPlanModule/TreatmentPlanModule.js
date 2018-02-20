@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -70,7 +72,6 @@ class TreatmentPlanModule extends Component {
   render() {
     const { type } = this.props;
     const {
-      changed,
       sensory,
       task,
       environment,
