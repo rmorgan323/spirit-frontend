@@ -1,8 +1,11 @@
+/*eslint-disable camelcase*/
+
 import React, { Component } from 'react';
-import './PatientDashboard.css';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import { PropTypes } from 'prop-types';
 import Concerns from '../../components/Concerns/Concerns';
+import * as actions from '../../actions';
+import './PatientDashboard.css';
 
 class PatientDashboard extends Component {
   constructor() {
@@ -133,3 +136,7 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(PatientDashboard);
 
+PatientDashboard.propTypes = {
+  addConcern: PropTypes.func,
+  currentPatient: PropTypes.object
+};
