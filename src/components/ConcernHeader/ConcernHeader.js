@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 import React from 'react';
 import './ConcernHeader.css';
 import { connect } from 'react-redux';
