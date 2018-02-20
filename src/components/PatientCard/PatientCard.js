@@ -5,13 +5,13 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 const PatientCard = props => {
-  const { absName, lastAppt, id } = props;
+  const { abstractedName, lastAppt, id } = props;
 
   return (
     <div className="PatientCard">
       <p>
         <span>Patient Id: </span>
-        {absName}{' '}
+        {abstractedName}{' '}
       </p>
 
       <p>
