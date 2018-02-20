@@ -1,19 +1,23 @@
-import React from 'react'
+import React from 'react';
 import './CategorySliders.css';
 import SliderTen from '../../containers/SliderTen/SliderTen';
 
-const CategorySliders = ({ title, slidersArray, databaseNamesArray, reminderAsterisk, reminder }) => {
-
+const CategorySliders = ({
+  title,
+  slidersArray,
+  databaseNamesArray,
+  reminderAsterisk,
+  reminder}) => {
   const display = slidersArray.map((slider, index) => {
     return (
-      <SliderTen 
+      <SliderTen
         sliderTitle={slider}
         databaseName={databaseNamesArray[index]}
         reminderAsterisk={reminderAsterisk ? reminderAsterisk[index] : null}
         key={index}
       />
-    )
-  })
+    );
+  });
 
   return (
     <div className="CategorySliders">
@@ -21,7 +25,7 @@ const CategorySliders = ({ title, slidersArray, databaseNamesArray, reminderAste
       {display}
       <h5 className="reminder-message">{reminder}</h5>
     </div>
-  )
-}
+  );
+};
 
 export default CategorySliders;
