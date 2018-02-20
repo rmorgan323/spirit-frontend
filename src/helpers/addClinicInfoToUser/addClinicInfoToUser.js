@@ -15,7 +15,8 @@ const addClinicInfoToUser = async (clinic, userId) => {
         body: JSON.stringify({
           clinic: clinic.name,
           clinic_abbreviation: clinic.abbreviation,
-          clinic_id: clinic.clinic_id
+          clinic_id: clinic.clinic_id,
+          clinic_passcode: clinic.passcode
         })
       }
     );

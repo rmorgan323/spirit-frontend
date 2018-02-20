@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import { NavLink } from 'react-router-dom';
 import './Create.css';
+import generator from 'generate-password'
 
 class Create extends Component {
   constructor() {
@@ -22,7 +23,15 @@ class Create extends Component {
 
   saveNewClinic = (event, name, abbr) => {
     event.preventDefault();
-    this.props.saveClinic({name: name, abbreviation: abbr}, this.props.user.id);
+    const password = generator.generate({
+      length: 8,
+      uppercase: false,
+      numbers: true,
+      excludeSimilarCharacters: true
+    })
+
+    console.log(password)
+    this.props.saveClinic({name: name, abbreviation: abbr, passcode: password}, this.props.user.id);
   }
 
   displayClinic = () => {
@@ -31,7 +40,7 @@ class Create extends Component {
         <div>
           <h4><span className="clinic-span">You are a member of: </span>{this.props.user.clinic}</h4>
           <h4><span className="clinic-span">Clinic Abbreviation: </span>{this.props.user.clinic_abbreviation}</h4>
-          <h4><span className="clinic-span">Clinic Passcode: </span>sample</h4>
+          <h4><span className="clinic-span">Clinic Passcode: </span>{this.props.user.clinic_passcode}</h4>
         </div>
       )
     }

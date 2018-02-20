@@ -56,9 +56,9 @@
     display: block;
     background-color: $purple4;
     color: #fff;
-    @include std-transition;
     cursor: pointer;
     border: none;
+    @include std-transition;
   }
 
   .create-session-button:hover {

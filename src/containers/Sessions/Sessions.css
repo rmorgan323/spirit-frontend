@@ -81,8 +81,8 @@ p {
     display: block;
     background-color: #9E87BA;
     color: #fff;
-    transition: all .3s ease-in-out;
     cursor: pointer;
-    border: none; }
+    border: none;
+    transition: all .3s ease-in-out; }
   .Sessions .create-session-button:hover {
     background-color: #5E378C; }
