@@ -11,8 +11,8 @@ const user = (store = {}, action) => {
     const values = Object.values(action.clinicData);
 
     keys.forEach((key, index) => {
-      newStore[key] = values[index]
-    })
+      newStore[key] = values[index];
+    });
     return newStore;
   }
 
