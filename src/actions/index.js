@@ -24,6 +24,7 @@ import updateProcess from '../helpers/updateProcess/updateProcess';
 import updateTreatmentPlan from '../helpers/updateTreatmentPlan/updateTreatmentPlan';
 import updateTherapyGoal from '../helpers/updateTherapyGoal/updateTherapyGoal';
 import joinClinic from '../helpers/joinClinic/joinClinic';
+import updateSessionStatus from '../helpers/updateSessionStatus/updateSessionStatus';
 
 export const getUser = () => async dispatch => {
   try {
@@ -105,6 +106,16 @@ export const getSession = selectedSession => async dispatch => {
   );
   dispatch(selectedTreatmentPlanToStore(selectedTreatmentPlan[0]));
 };
+
+export const updateSession = (sessionId, status) => async dispatch => {
+  const response = await updateSessionStatus(sessionId, status);
+  dispatch(updateSelectedSession(status))
+}
+
+export const updateSelectedSession = body => ({
+  type: 'UPDATE_SELECTED_SESSION',
+  body
+})
 
 export const selectedSessionToStore = selectedSession => ({
   type: 'SELECTED_SESSION_TO_STORE',
