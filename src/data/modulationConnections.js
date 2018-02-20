@@ -1,123 +1,123 @@
 const modulationConnects = {
   mod_1_defensiveness: {
     marked: false,
-    connections: [d2]
+    connections: ['soc_1_engagement']
   },
   mod_1_over: {
     marked: false,
-    connections: [d2]
+    connections: ['soc_1_engagement']
   },
   mod_1_under: {
     marked: false,
-    connections: [d2]
+    connections: ['soc_1_engagement']
   },
   mod_1_variable: {
     marked: false,
-    connections: [d2]
+    connections: ['soc_1_engagement']
   },
   mod_2_action: {
     marked: false,
-    connections: [b1, d1, f1]
+    connections: ['Posture', 'Social']
   },
   mod_2_affect: {
     marked: false,
-    connections: [d1, a14]
+    connections: ['Social', 'mod_3_emotional']
   },
   mod_2_arousability: {
     marked: false,
-    connections: [d1, e3, e20, ]
+    connections: ['Social', 'exe_1_inhibition', 'exe_4b_motivational' ]
   },
   mod_2_attention: {
     marked: false,
-    connections: [d2, d5, e1, e8,]
+    connections: ['soc_1_engagement', 'soc_1_problem', 'Executive', 'exe_2a_shifting']
   },
   mod_2_autonomic: {
     marked: false,
-    connections: [a11, a31, ]
+    connections: ['mod_3_physiological', 'mod_h_intero']
   },
   mod_3_cognitive: {
     marked: false,
-    connections: [e1]
+    connections: ['Executive']
   },
   mod_3_emotional: {
     marked: false,
-    connections: [d1]
+    connections: ['Social']
   },
   mod_3_motor: {
     marked: false,
-    connections: [b1]
+    connections: ['Posture']
   },
   mod_3_physiological: {
     marked: false,
-    connections: [a9, a31]
+    connections: ['mod_2_autonomic', 'mod_h_intero']
   },
   mod_3_prosocial: {
     marked: false,
-    connections: [d22, d10, e1]
+    connections: ['soc_3_affective', 'soc_2_self_awareness', 'Executive']
   },
   mod_3_sensory: {
     marked: false,
-    connections: [c1, a26, a27, a28, a31]
+    connections: ['Sensory', 'mod_h_vestibular', 'mod_h_proprioception', 'mod_h_tactile', 'mod_h_intero']
   },
   mod_3_social: {
     marked: false,
-    connections: [d1]
+    connections: ['Social']
   },
   mod_4a_adaptive: {
     marked: false,
-    connections: [a21]
+    connections: ['mod_4b_self_regulation']
   },
   mod_4a_approach: {
     marked: false,
-    connections: [a21]
+    connections: ['mod_4b_self_regulation']
   },
   mod_4a_co_regulation: {
     marked: false,
-    connections: [a21, d2, d3, d4, d10]
+    connections: ['mod_4b_self_regulation', 'soc_1_engagement', 'soc_1_engagement', 'soc_1_reciprocity', 'soc_2_self_awareness']
   },
   mod_4a_passive: {
     marked: false,
-    connections: [a21]
+    connections: ['mod_4b_self_regulation']
   },
   mod_4b_active: {
     marked: false,
-    connections: [a21]
+    connections: ['mod_4b_self_regulation']
   },
   mod_4b_avoid: {
     marked: false,
-    connections: [a21]
+    connections: ['mod_4b_self_regulation']
   },
   mod_4b_maladaptive: {
     marked: false,
-    connections: [a21]
+    connections: ['mod_4b_self_regulation']
   },
   mod_4b_self_regulation: {
     marked: false,
-    connections: [d30, e23]
+    connections: ['soc_3_self_regulation', 'exe_4b_self_regulation']
   },
   mod_h_auditory: {
     marked: false,
-    connections: [b1, c1, d1, e1]
+    connections: ['Posture', 'Sensory', 'Social', 'Executive']
   },
   mod_h_intero: {
     marked: false,
-    connections: [b1, c1, d1, e1]
+    connections: ['Posture', 'Sensory', 'Social', 'Executive']
   },
   mod_h_proprioception: {
     marked: false,
-    connections: [b1, c1, d1, e1]
+    connections: ['Posture', 'Sensory', 'Social', 'Executive']
   },
   mod_h_tactile: {
     marked: false,
-    connections: [b1, c1, d1, e1]
+    connections: ['Posture', 'Sensory', 'Social', 'Executive']
   },
   mod_h_vestibular: {
     marked: false,
-    connections: [b1, c1, d1, e1]
+    connections: ['Posture', 'Sensory', 'Social', 'Executive']
   },
   mod_h_visual: {
     marked: false,
-    connections: [b1, c1, d1, e1]
+    connections: ['Posture', 'Sensory', 'Social', 'Executive']
   }
 };
 
