@@ -1,8 +1,12 @@
+/*eslint-disable camelcase*/
+/*eslint-disable id-length*/
+
 import React, { Component } from 'react';
-import './TherapyGoals.css';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import Range from 'react-range-progress';
 import * as actions from '../../actions';
+import './TherapyGoals.css';
 
 class TherapyGoals extends Component {
   constructor(props) {
@@ -189,3 +193,11 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TherapyGoals);
+
+TherapyGoals.propTypes = {
+  category: PropTypes.string,
+  selectedTherapyGoal: PropTypes.object,
+  getTherapyGoal: PropTypes.func,
+  number: PropTypes.number,
+  title: PropTypes.string
+};
