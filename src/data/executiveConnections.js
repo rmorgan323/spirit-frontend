@@ -1,11 +1,11 @@
 const executiveConnections = {
   exe_1_inhibition: {
     marked: false,
-    connections: [a1, b1, c1, d1]
+    connections: ['Modulation', 'Postural', 'Sensory', 'Social']
   },
   exe_1_orient: {
     marked: false,
-    connections: [a1, b1, c1]
+    connections: ['Modulation', 'Postural', 'Sensory']
   },
   exe_2a_shifting: {
     marked: false,
@@ -13,7 +13,7 @@ const executiveConnections = {
   },
   exe_2a_working: {
     marked: false,
-    connections: [e3]
+    connections: ['exe_1_inhibition']
   },
   exe_2b_flexibility: {
     marked: false,
@@ -33,19 +33,19 @@ const executiveConnections = {
   },
   exe_2b_verbal: {
     marked: false,
-    connections: [e19]
+    connections: ['exe_4a_internalized']
   },
   exe_3_initiation: {
     marked: false,
-    connections: [a1]
+    connections: ['Modulation']
   },
   exe_3_monitoring: {
     marked: false,
-    connections: [d10]
+    connections: ['soc_2_self_awareness']
   },
   exe_3_planning: {
     marked: false,
-    connections: [b17, e15]
+    connections: ['pos_5_anticipatory', 'exe_4a_future']
   },
   exe_3_sequencing: {
     marked: false,
@@ -53,7 +53,7 @@ const executiveConnections = {
   },
   exe_4a_future: {
     marked: false,
-    connections: [a1, d1, d20]
+    connections: ['Modulation', 'Social', 'soc_2_social_motivators']
   },
   exe_4a_internalized: {
     marked: false,
@@ -61,35 +61,35 @@ const executiveConnections = {
   },
   exe_4a_problem: {
     marked: false,
-    connections: [d5]
+    connections: ['soc_1_problem']
   },
   exe_4a_reflective: {
     marked: false,
-    connections: [d9]
+    connections: ['soc_1_reflective']
   },
   exe_4a_spatial: {
     marked: false,
-    connections: [c1]
+    connections: ['Sensory']
   },
   exe_4b_effortful: {
     marked: false,
-    connections: [a7, e3]
+    connections: ['mod_2_action', 'exe_1_inhibition']
   },
   exe_4b_motivational: {
     marked: false,
-    connections: [a1, d1, d20]
+    connections: ['Modulation', 'Social', 'soc_2_social_motivators']
   },
   exe_4b_self_compassion: {
     marked: false,
-    connections: [d32]
+    connections: ['soc_3_self_compassion']
   },
   exe_4b_self_control: {
     marked: false,
-    connections: [d30]
+    connections: ['soc_3_self_control']
   },
   exe_4b_self_regulation: {
     marked: false,
-    connections: [a21, d31]
+    connections: ['mod_4b_self_regulation', 'soc_3_self_regulation']
   }
 };
 
