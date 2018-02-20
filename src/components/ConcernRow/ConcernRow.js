@@ -88,7 +88,7 @@ class ConcernRow extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getConcern: (concernId) => dispatch(actions.getConcern(concernId))
+  getConcern: concernId => dispatch(actions.getConcern(concernId))
 });
 
 export default connect(null, mapDispatchToProps)(ConcernRow);

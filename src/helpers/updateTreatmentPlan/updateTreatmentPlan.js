@@ -1,4 +1,4 @@
-import getKeyFromLS from '../getKeyFromLS';
+import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const updateTreatmentPlan = async (treatmentPlanId, updatedTreatmentPlan) => {
   try {
@@ -17,7 +17,9 @@ const updateTreatmentPlan = async (treatmentPlanId, updatedTreatmentPlan) => {
 
     return jsonTreatmentPlan;
   } catch (error) {
-    throw new Error(`Error updating treatment plan by id ${treatmentPlanId}: ${error}`);
+    throw new Error(
+      `Error updating treatment plan by id ${treatmentPlanId}: ${error}`
+    );
   }
 };
 

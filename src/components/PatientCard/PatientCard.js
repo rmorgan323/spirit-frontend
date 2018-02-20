@@ -4,21 +4,35 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-const PatientCard = (props) => {
+const PatientCard = props => {
+  const { absName, lastAppt, id } = props;
 
   return (
     <div className="PatientCard">
-      <p><span>Patient Id: </span>{props.absName} </p>
-      <p><span>Last update: </span>{props.lastAppt}</p>
-      <Link onClick={() => props.getPatientConcerns(props.id)} to={`/spirit/patients/${props.id}`}>SELECT</Link>
+      <p>
+        <span>Patient Id: </span>
+        {absName}{' '}
+      </p>
+
+      <p>
+        <span>Last update: </span>
+        {lastAppt}
+      </p>
+
+      <Link
+        onClick={() => props.getPatientConcerns(id)}
+        to={`/spirit/patients/${id}`}
+      >
+        SELECT
+      </Link>
     </div>
-  ) 
-}
+  );
+};
 
 const mapDispatchToProps = dispatch => ({
-  getPatientConcerns: (id) => {
-    dispatch(actions.getPatientConcerns(id))
+  getPatientConcerns: id => {
+    dispatch(actions.getPatientConcerns(id));
   }
-})
+});
 
 export default connect(null, mapDispatchToProps)(PatientCard);

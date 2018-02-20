@@ -1,11 +1,10 @@
 import React from 'react';
-import './PatientList.css';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import PatientCard from '../PatientCard/PatientCard';
+import './PatientList.css';
 
-const PatientList = (props) => {
-
+const PatientList = props => {
   let patientListDisplay;
 
   if (props.patientList.length) {
@@ -17,19 +16,15 @@ const PatientList = (props) => {
           absName={patient.abstracted_name}
           lastAppt={moment(patient.updated_at).format('ll')}
         />
-      )
-    })
+      );
+    });
   }
 
-  return (
-    <div className="PatientList">
-      {patientListDisplay}
-    </div>
-  )
-}
+  return <div className="PatientList">{patientListDisplay}</div>;
+};
 
 const mapStateToProps = store => ({
   patientList: store.patientList
-})
+});
 
 export default connect(mapStateToProps, null)(PatientList);

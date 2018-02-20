@@ -11,7 +11,7 @@ import Spirit from '../Spirit/Spirit.js';
 import Join from '../Join/Join.js';
 import Create from '../Create/Create.js';
 import UserDashboard from '../UserDashboard/UserDashboard';
-import clearLocalStorage from '../../helpers/clearLocalStorage';
+import clearLocalStorage from '../../helpers/clearLocalStorage/clearLocalStorage';
 import Users from '../Users/Users';
 import Header from '../Header/Header';
 import Sessions from '../../containers/Sessions/Sessions';
