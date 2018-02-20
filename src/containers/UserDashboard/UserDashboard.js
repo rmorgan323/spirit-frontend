@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './UserDashboard.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import * as actions from '../../actions';
+import { PropTypes } from 'prop-types';
 import PatientList from '../../components/PatientList/PatientList';
+import * as actions from '../../actions';
+import './UserDashboard.css';
 
 class UserDashboard extends Component {
   constructor() {
@@ -55,3 +56,8 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDashboard);
+
+UserDashboard.propTypes = {
+  savePatient: PropTypes.func,
+  user: PropTypes.object
+};
