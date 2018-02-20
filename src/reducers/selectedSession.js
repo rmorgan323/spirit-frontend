@@ -6,6 +6,6 @@ const selectedSession = (store = {}, action) => {
     default:
       return store;
   }
-}
+};
 
 export default selectedSession;

@@ -6,6 +6,6 @@ const selectedConcern = (store = {}, action) => {
     default:
       return store;
   }
-}
+};
 
 export default selectedConcern;

@@ -9,8 +9,8 @@ const selectedTreatmentPlan = (store = {}, action) => {
       const updatedValues = Object.values(action.updatedTreatmentPlan);
 
       updatedKeys.forEach((key, index) => {
-        newTreatmentPlan[key] = updatedValues[index]
-      })
+        newTreatmentPlan[key] = updatedValues[index];
+      });
 
       return newTreatmentPlan;
 

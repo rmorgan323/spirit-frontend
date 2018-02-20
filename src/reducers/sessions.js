@@ -6,6 +6,6 @@ const sessions = (store = [], action) => {
     default:
       return store;
   }
-}
+};
 
 export default sessions;

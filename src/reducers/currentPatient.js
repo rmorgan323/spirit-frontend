@@ -1,6 +1,6 @@
 const currentPatient = (store = {}, action) => {
   switch (action.type) {
-    case "CURRENT_PATIENT_TO_STORE":
+    case 'CURRENT_PATIENT_TO_STORE':
       return action.patient;
 
     default:
