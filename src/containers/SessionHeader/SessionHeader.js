@@ -1,5 +1,6 @@
 import React from 'react';
 import SliderTen from '../SliderTen/SliderTen';
+import { PropTypes } from 'prop-types';
 import './SessionHeader.css';
 
 const SessionHeader = ({ title, headings, databaseNamesArray }) => {
@@ -24,3 +25,9 @@ const SessionHeader = ({ title, headings, databaseNamesArray }) => {
 }
 
 export default SessionHeader;
+
+SessionHeader.propTypes = {
+  title: PropTypes.string,
+  headings: PropTypes.array,
+  databaseNamesArray: PropTypes.array
+};
