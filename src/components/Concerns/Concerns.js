@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ConcernRow from '../ConcernRow/ConcernRow';
 
-const Concerns = (props) => {
-
+const Concerns = props => {
   let displayConcernRows;
 
   if (props.patientConcerns.length) {
@@ -21,19 +20,15 @@ const Concerns = (props) => {
           notes={concern.notes}
           key={index}
         />
-      )
-    })
+      );
+    });
   }
 
-  return (
-    <div>
-      {displayConcernRows}
-    </div>
-  )
-}
+  return <div>{displayConcernRows}</div>;
+};
 
 const mapStateToProps = store => ({
   patientConcerns: store.patientConcerns
-})
+});
 
 export default connect(mapStateToProps, null)(Concerns);

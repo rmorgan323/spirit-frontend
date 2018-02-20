@@ -1,4 +1,4 @@
-import getKeyFromLS from '../getKeyFromLS';
+import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const loadProcessById = async processId => {
   try {
@@ -17,7 +17,7 @@ const loadProcessById = async processId => {
     return jsonProcess;
   } catch (error) {
     throw new Error(
-      `Error fetching process by id ${primaryConcernId}: ${error}`
+      `Error fetching process by id ${processId}: ${error}`
     );
   }
 };

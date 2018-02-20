@@ -1,3 +1,6 @@
+/*eslint-disable max-len*/
+/*eslint-disable camelcase*/
+
 import loadUser from '../helpers/loadUser/loadUser';
 import loadDefinitions from '../helpers/loadDefinitions/loadDefinitions';
 import postClinic from '../helpers/postClinic/postClinic';
@@ -42,14 +45,10 @@ export const userToStore = user => ({
 });
 
 export const getPatientConcerns = id => async dispatch => {
-  try {
-    const concernArray = await loadPatientConcerns(id);
-    dispatch(concernArrayToStore(concernArray));
-    const patient = await loadPatient(id);
-    dispatch(currentPatientToStore(patient));
-  } catch (error) {
-    console.log(error);
-  }
+  const concernArray = await loadPatientConcerns(id);
+  dispatch(concernArrayToStore(concernArray));
+  const patient = await loadPatient(id);
+  dispatch(currentPatientToStore(patient));
 };
 
 export const currentPatientToStore = patient => ({
@@ -91,12 +90,15 @@ export const createSession = selectedConcernId => async dispatch => {
 
 export const getSession = selectedSession => async dispatch => {
   dispatch(selectedSessionToStore(selectedSession));
+
   const selectedProcess = await loadProcessBySession(selectedSession.id);
   dispatch(selectedProcessToStore(selectedProcess[0]));
+
   const selectedTherapyGoal = await loadTherapyGoalBySession(
     selectedSession.id
   );
   dispatch(selectedTherapyGoalToStore(selectedTherapyGoal[0]));
+
   const selectedTreatmentPlan = await loadTreatmentPlanBySession(
     selectedSession.id
   );
@@ -162,10 +164,7 @@ export const updatedTreatmentPlanToStore = updatedTreatmentPlan => ({
   updatedTreatmentPlan
 });
 
-export const getTherapyGoal = (
-  therapyGoalId,
-  goalObj
-) => async dispatch => {
+export const getTherapyGoal = (therapyGoalId, goalObj) => async dispatch => {
   await updateTherapyGoal(therapyGoalId, goalObj);
   dispatch(updatedTherapyGoalToStore(goalObj));
 };
@@ -176,12 +175,8 @@ export const updatedTherapyGoalToStore = updatedTherapyGoal => ({
 });
 
 export const getDefinitions = () => async dispatch => {
-  try {
-    const definitions = await loadDefinitions();
-    dispatch(definitionsToStore(definitions));
-  } catch (error) {
-    console.log(error);
-  }
+  const definitions = await loadDefinitions();
+  dispatch(definitionsToStore(definitions));
 };
 
 export const definitionsToStore = definitions => ({
@@ -190,21 +185,17 @@ export const definitionsToStore = definitions => ({
 });
 
 export const saveClinic = (clinicObject, userId) => async dispatch => {
-  try {
-    const id = await postClinic(clinicObject);
-    const clinic = Object.assign({}, { clinic_id: id }, clinicObject);
-    await addClinicInfoToUser(clinic, userId);
-    dispatch(clinicToStore(clinic));
-    dispatch(
-      userToStore({
-        clinic: clinic.name,
-        clinic_abbreviation: clinic.abbreviation,
-        clinic_id: clinic.clinic_id
-      })
-    );
-  } catch (error) {
-    console.log(error);
-  }
+  const id = await postClinic(clinicObject);
+  const clinic = Object.assign({}, { clinic_id: id }, clinicObject);
+  await addClinicInfoToUser(clinic, userId);
+  dispatch(clinicToStore(clinic));
+  dispatch(
+    userToStore({
+      clinic: clinic.name,
+      clinic_abbreviation: clinic.abbreviation,
+      clinic_id: clinic.clinic_id
+    })
+  );
 };
 
 export const clinicToStore = clinic => ({
@@ -218,12 +209,8 @@ export const savePatient = (
   user,
   clinicAbbr
 ) => async dispatch => {
-  try {
-    const patient = await postPatient(clinicAbbr + first + last, user);
-    dispatch(patientToStore([patient]));
-  } catch (error) {
-    console.log(error);
-  }
+  const patient = await postPatient(clinicAbbr + first + last, user);
+  dispatch(patientToStore([patient]));
 };
 
 export const patientToStore = patient => ({

@@ -1,16 +1,20 @@
-import getKeyFromLS from '../getKeyFromLS';
+import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const loadDefinitions = async () => {
-  const definitions = await fetch('http://localhost:3000/api/v1/terms/all', {
-    method: 'GET',
-    headers: {
-      "x-token": getKeyFromLS(),
-      "Content-Type": "application/json"
-    }
-  });
-  const jsonDefinitions = await definitions.json();
+  try {
+    const definitions = await fetch('http://localhost:3000/api/v1/terms/all', {
+      method: 'GET',
+      headers: {
+        'x-token': getKeyFromLS(),
+        'Content-Type': 'application/json'
+      }
+    });
+    const jsonDefinitions = await definitions.json();
 
-  return jsonDefinitions;
-}
+    return jsonDefinitions;
+  } catch (error) {
+    throw new Error(`Error fetching definitions: ${error}`);
+  }
+};
 
 export default loadDefinitions;

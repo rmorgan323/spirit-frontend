@@ -1,4 +1,4 @@
-import getKeyFromLS from '../getKeyFromLS';
+import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const updateTherapyGoal = async (therapyGoalId, updatedTherapyGoal) => {
   try {
@@ -17,7 +17,9 @@ const updateTherapyGoal = async (therapyGoalId, updatedTherapyGoal) => {
 
     return jsonTherapyGoal;
   } catch (error) {
-    throw new Error(`Error updating treatment plan by id ${therapyGoalId}: ${error}`);
+    throw new Error(
+      `Error updating treatment plan by id ${therapyGoalId}: ${error}`
+    );
   }
 };
 
