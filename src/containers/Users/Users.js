@@ -20,5 +20,5 @@ export default connect(mapStateToProps, null)(Users);
 
 Users.propTypes = {
   user: PropTypes.object,
-  histroy: PropTypes.object
+  history: PropTypes.object
 };
