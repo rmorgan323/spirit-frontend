@@ -16,12 +16,14 @@ class TreatmentPlans extends Component {
   };
 
   render() {
+    const { currentTab } = this.state;
+
     return (
       <div className="TreatmentPlans">
         <div className="treatment-header-tabs">
           <div
             className={
-              this.state.currentTab === 'modulation'
+              currentTab === 'modulation'
                 ? 'treatment-header treatment-header-active treatment-header-modulation'
                 : 'treatment-header treatment-header-modulation'
             }
@@ -32,7 +34,7 @@ class TreatmentPlans extends Component {
 
           <div
             className={
-              this.state.currentTab === 'postural'
+              currentTab === 'postural'
                 ? 'treatment-header treatment-header-active'
                 : 'treatment-header'
             }
@@ -43,7 +45,7 @@ class TreatmentPlans extends Component {
 
           <div
             className={
-              this.state.currentTab === 'sensory'
+              currentTab === 'sensory'
                 ? 'treatment-header treatment-header-active'
                 : 'treatment-header'
             }
@@ -54,7 +56,7 @@ class TreatmentPlans extends Component {
 
           <div
             className={
-              this.state.currentTab === 'social'
+              currentTab === 'social'
                 ? 'treatment-header treatment-header-active'
                 : 'treatment-header'
             }
@@ -65,7 +67,7 @@ class TreatmentPlans extends Component {
 
           <div
             className={
-              this.state.currentTab === 'executive'
+              currentTab === 'executive'
                 ? 'treatment-header treatment-header-active treatment-header-executive'
                 : 'treatment-header treatment-header-executive'
             }
@@ -78,7 +80,7 @@ class TreatmentPlans extends Component {
         <div className="module-container">
           <div
             className={
-              this.state.currentTab === 'modulation'
+              currentTab === 'modulation'
                 ? 'treatment-body'
                 : 'treatment-body display-none'
             }
@@ -88,7 +90,7 @@ class TreatmentPlans extends Component {
 
           <div
             className={
-              this.state.currentTab === 'postural'
+              currentTab === 'postural'
                 ? 'treatment-body'
                 : 'treatment-body display-none'
             }
@@ -98,7 +100,7 @@ class TreatmentPlans extends Component {
 
           <div
             className={
-              this.state.currentTab === 'sensory'
+              currentTab === 'sensory'
                 ? 'treatment-body'
                 : 'treatment-body display-none'
             }
@@ -108,7 +110,7 @@ class TreatmentPlans extends Component {
 
           <div
             className={
-              this.state.currentTab === 'social'
+              currentTab === 'social'
                 ? 'treatment-body'
                 : 'treatment-body display-none'
             }
@@ -118,7 +120,7 @@ class TreatmentPlans extends Component {
 
           <div
             className={
-              this.state.currentTab === 'executive'
+              currentTab === 'executive'
                 ? 'treatment-body'
                 : 'treatment-body display-none'
             }
