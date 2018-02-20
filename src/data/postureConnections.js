@@ -77,23 +77,23 @@ const postureConnections = {
   },
   pos_5_alignment_COG: {
     marked: false,
-    connections: [b1, b13, b14]
+    connections: ['pos_5_antigravity', 'pos_5_reflex']
   },
   pos_5_alignment_orient: {
     marked: false,
-    connections: [b1, b13, b14, b15]
+    connections: ['pos_5_antigravity', 'pos_5_reflex', 'pos_5_alignment_COG']
   },
   pos_5_anticipatory: {
     marked: false,
-    connections: [e15]
+    connections: ['exe_4a_future']
   },
   pos_5_antigravity: {
     marked: false,
-    connections: [b1, b24, b25, b26, b27]
+    connections: ['pos_h_vestibular', 'pos_h_proprioception', 'pos_h_tactile', 'pos_h_auditory']
   },
   pos_5_interactive: {
     marked: false,
-    connections: [c9, d13, d15]
+    connections: ['sen_2_imitation', 'soc_2_imitation', 'soc_2_contingent']
   },
   pos_5_ocular: {
     marked: false,
@@ -101,27 +101,27 @@ const postureConnections = {
   },
   pos_5_reflex: {
     marked: false,
-    connections: [b1, b24, b25, b26, b27]
+    connections: ['pos_h_vestibular', 'pos_h_proprioception', 'pos_h_tactile', 'pos_h_auditory']
   },
   pos_5_suck: {
     marked: false,
-    connections: [c23]
+    connections: ['sen_5_oral']
   },
   pos_6_bilateral: {
     marked: false,
-    connections: [b13, b14]
+    connections: ['pos_5_antigravity', 'pos_5_reflex']
   },
   pos_6_effortful: {
     marked: false,
-    connections: [a7, e21]
+    connections: ['mod_2_action', 'exe_4b_effortful']
   },
   pos_6_grasp: {
     marked: false,
-    connections: [b19]
+    connections: ['pos_6_push']
   },
   pos_6_push: {
     marked: false,
-    connections: [b13, b14, b15, b21]
+    connections: ['pos_5_antigravity', 'pos_5_reflex', 'pos_5_alignment_COG', 'pos_6_grasp']
   },
   pos_6_strength: {
     marked: false,
@@ -129,27 +129,27 @@ const postureConnections = {
   },
   pos_h_auditory: {
     marked: false,
-    connections: [a1, b1, c1, d1, e1]
+    connections: ['Modulation', 'Sensory', 'Social', 'Executive']
   },
   pos_h_intero: {
     marked: false,
-    connections: [a1, b1, c1, d1, e1]
+    connections: ['Modulation', 'Sensory', 'Social', 'Executive']
   },
   pos_h_proprioception: {
     marked: false,
-    connections: [a1, b1, c1, d1, e1]
+    connections: ['Modulation', 'Sensory', 'Social', 'Executive']
   },
   pos_h_tactile: {
     marked: false,
-    connections: [a1, b1, c1, d1, e1]
+    connections: ['Modulation', 'Sensory', 'Social', 'Executive']
   },
   pos_h_vestibular: {
     marked: false,
-    connections: [a1, b1, c1, d1, e1]
+    connections: ['Modulation', 'Sensory', 'Social', 'Executive']
   },
   pos_h_visual: {
     marked: false,
-    connections: [a1, b1, c1, d1, e1]
+    connections: ['Modulation', 'Sensory', 'Social', 'Executive']
   }
 };
 
