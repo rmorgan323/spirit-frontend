@@ -25,28 +25,49 @@ class Create extends Component {
     this.props.saveClinic({name: name, abbreviation: abbr}, this.props.user.id);
   }
 
+  displayClinic = () => {
+    if (Object.keys(this.props.user).length) {
+      return (
+        <div>
+          <h4><span className="clinic-span">You are a member of: </span>{this.props.user.clinic}</h4>
+          <h4><span className="clinic-span">Clinic Abbreviation: </span>{this.props.user.clinic_abbreviation}</h4>
+          <h4><span className="clinic-span">Clinic Passcode: </span>sample</h4>
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
-      <div>
+      <div className="Create">
+
+        {this.displayClinic()}
+
         <form>
-          <input 
+          <input
+            className="input-clinic-name"
             onChange={(event) => this.handleChange(event)} 
             value={this.state.clinicName} 
             name="clinicName" 
-            placeholder="Add NEW clinic">
+            placeholder="Add NEW Clinic"
+            maxLength={30}>
           </input>
           <input 
+            className="input-abbreviation"
             onChange={(event) => this.handleChange(event)} 
             value={this.state.clinicAbbreviation} 
             name="clinicAbbreviation" 
-            placeholder="Choose a 3-letter abbreviation for your clinic">
+            placeholder="Choose a 3-letter abbreviation for your clinic"
+            maxLength={3}>
           </input>
           <button 
+            className="submit-button"
             type="submit"
             onClick={(event) => this.saveNewClinic(event, this.state.clinicName, this.state.clinicAbbreviation)}
           >SUBMIT</button>
         </form>
-        <NavLink to={`/spirit/users/${this.props.user.id}/join`}>JOIN EXISTING CLINIC</NavLink>
+
+        <NavLink className="join-link" to={`/spirit/users/${this.props.user.id}/join`}>JOIN EXISTING CLINIC</NavLink>
       </div>
     )
   }

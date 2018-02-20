@@ -1,1 +1,73 @@
- 
+@import '../../variables.scss';
+
+.Create {
+  @include small-content;
+
+  .clinic-span {
+    margin-right: 10px;
+    @include match-h5;
+    color: $grey3;
+  }
+
+  ::placeholder {
+    color: #fff;
+    font-size: 18px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .input-clinic-name, .submit-button {
+    height: 40px;
+    margin: 10px 0;
+    border: none;
+  }
+
+  .input-abbreviation::placeholder {
+    font-size: 18px;
+    letter-spacing: 0px;
+    position: relative;
+    right: 12px;
+  }
+
+  .input-clinic-name, .input-abbreviation {
+    padding: 5px 10px;
+    background-color: $grey3;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .input-abbreviation {
+    height: 80px;
+    border: none;
+    font-size: 70px;
+    padding-left: 37px;
+    letter-spacing: 30px;
+  }
+
+  .submit-button {
+    background-color: $purple2;
+    cursor: pointer;
+    color: $purple5;
+    @include std-transition;
+    font-weight: 900;
+  }
+
+  .submit-button:hover {
+    color: #fff;
+    background-color: $purple3;
+  }
+
+  a.join-link {
+    text-decoration: none;
+    color: red;
+  }
+
+  a.join-link:hover {
+    color: darken(red, 18%);
+  }
+} 
