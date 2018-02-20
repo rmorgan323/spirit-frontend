@@ -19,8 +19,8 @@ class ConcernRow extends Component {
 
     let activeDomains = Object.keys(this.props).reduce((accum, prop) => {
       if (prop.length === 2 && this.props[prop]) {
-        const y = [...prop].pop();
-        accum.push(y);
+        const activeDomain = [...prop].pop();
+        accum.push(activeDomain);
       }
       return accum;
     }, []);
