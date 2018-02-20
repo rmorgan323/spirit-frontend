@@ -41,6 +41,6 @@ const mapStateToProps = store => ({
 export default connect(mapStateToProps, null)(Definition);
 
 Definition.propTypes = {
-  definitions: PropTypes.array,
+  definitions: PropTypes.object,
   title: PropTypes.string
 };
