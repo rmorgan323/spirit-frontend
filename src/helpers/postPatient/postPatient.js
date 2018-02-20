@@ -1,4 +1,4 @@
-import getKeyFromLS from '../getKeyFromLS';
+import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const postPatient = async (absName, userId) => {
   try {
