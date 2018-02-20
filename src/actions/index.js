@@ -20,6 +20,7 @@ import loadTreatmentPlanBySession from '../helpers/loadTreatmentPlanBySession/lo
 import updateProcess from '../helpers/updateProcess/updateProcess';
 import updateTreatmentPlan from '../helpers/updateTreatmentPlan/updateTreatmentPlan';
 import updateTherapyGoal from '../helpers/updateTherapyGoal/updateTherapyGoal';
+import joinClinic from '../helpers/joinClinic/joinClinic';
 
 export const getUser = () => async dispatch => {
   try {
@@ -193,13 +194,15 @@ export const saveClinic = (clinicObject, userId) => async dispatch => {
   try {
     const id = await postClinic(clinicObject);
     const clinic = Object.assign({}, { clinic_id: id }, clinicObject);
+    console.log(clinic)
     await addClinicInfoToUser(clinic, userId);
     dispatch(clinicToStore(clinic));
     dispatch(
-      userToStore({
+      updateUserStore({
         clinic: clinic.name,
         clinic_abbreviation: clinic.abbreviation,
-        clinic_id: clinic.clinic_id
+        clinic_id: clinic.clinic_id,
+        clinic_passcode: clinic.passcode
       })
     );
   } catch (error) {
@@ -230,3 +233,23 @@ export const patientToStore = patient => ({
   type: 'PATIENT_TO_STORE',
   patient
 });
+
+export const updateUserStore = clinicData => ({
+  type: 'UPDATE_USER_STORE',
+  clinicData
+})
+
+export const joinExistingClinic = (passcode, userId) => async dispatch => {
+  try {
+    const updatedClinic = await joinClinic(passcode, userId);
+    dispatch(updateUserStore(updatedClinic))
+    dispatch(clinicToStore({
+      id: updatedClinic.clinic_id,
+      name: updatedClinic.clinic,
+      abbreviation: updatedClinic.clinic_abbreviation,
+      passcode: updatedClinic.clinic_passcode
+    }))
+  } catch (error) {
+    console.log(error)
+  }
+}

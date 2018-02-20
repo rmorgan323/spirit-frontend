@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Join.css';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import * as actions from '../../actions';
 
 class Join extends Component {
   constructor() {
@@ -52,8 +53,7 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => ({
   joinExistingClinic: (passcode, userId) => {
-    console.log(passcode, userId)
-    // dispatch(actions.joinExistingClinic(passcode, userId))
+    dispatch(actions.joinExistingClinic(passcode, userId))
   }
 })
 
