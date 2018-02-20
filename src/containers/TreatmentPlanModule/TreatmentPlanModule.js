@@ -20,14 +20,16 @@ class TreatmentPlanModule extends Component {
   }
 
   componentDidMount = () => {
+    const { selectedTreatmentPlan, type } = this.props;
+
     this.setState({
-      sensory: this.props.selectedTreatmentPlan[`${this.props.type}sensory`],
-      task: this.props.selectedTreatmentPlan[`${this.props.type}task`],
-      environment: this.props.selectedTreatmentPlan[`${this.props.type}environment`],
-      predictability: this.props.selectedTreatmentPlan[`${this.props.type}predictability`],
-      self_regulation: this.props.selectedTreatmentPlan[`${this.props.type}self_regulation`],
-      interaction: this.props.selectedTreatmentPlan[`${this.props.type}interaction`],
-      JRC_AR_notes: this.props.selectedTreatmentPlan[`${this.props.type}JRC_AR_notes`]
+      sensory: selectedTreatmentPlan[`${type}sensory`],
+      task: selectedTreatmentPlan[`${type}task`],
+      environment: selectedTreatmentPlan[`${type}environment`],
+      predictability: selectedTreatmentPlan[`${type}predictability`],
+      self_regulation: selectedTreatmentPlan[`${type}self_regulation`],
+      interaction: selectedTreatmentPlan[`${type}interaction`],
+      JRC_AR_notes: selectedTreatmentPlan[`${type}JRC_AR_notes`]
     })
   }
 
@@ -37,30 +39,36 @@ class TreatmentPlanModule extends Component {
   }
 
   handleSave = (type) => {
-    if (this.state.changed === true) {
-      this.props.getTreatmentPlan(this.props.selectedTreatmentPlan.id, {
-        [`${type}sensory`]: this.state.sensory, 
-        [`${type}task`]: this.state.task,
-        [`${type}environment`]: this.state.environment, 
-        [`${type}predictability`]: this.state.predictability, 
-        [`${type}self_regulation`]: this.state.self_regulation, 
-        [`${type}interaction`]: this.state.interaction, 
-        [`${type}JRC_AR_notes`]: this.state.JRC_AR_notes
+    const { getTreatmentPlan, selectedTreatmentPlan } = this.props;
+    const { changed, sensory, task, environment, predictability, self_regulation, interaction, JRC_AR_notes } = this.state;
+
+    if (changed === true) {
+      getTreatmentPlan(selectedTreatmentPlan.id, {
+        [`${type}sensory`]: sensory, 
+        [`${type}task`]: task,
+        [`${type}environment`]: environment, 
+        [`${type}predictability`]: predictability, 
+        [`${type}self_regulation`]: self_regulation, 
+        [`${type}interaction`]: interaction, 
+        [`${type}JRC_AR_notes`]: JRC_AR_notes
       })
       this.setState({changed: false})
     }
   }
 
   render() {
+    const { type } = this.props;
+    const { changed, sensory, task, environment, predictability, self_regulation, interaction, JRC_AR_notes } = this.state;
+
     return (
-      <div className="TreatmentPlanModule treatment-save-box" onMouseLeave={() => this.handleSave(this.props.type)}>
+      <div className="TreatmentPlanModule treatment-save-box" onMouseLeave={() => this.handleSave(type)}>
         <div className="treatment-rows">
           <h4>Sensory Motor</h4>
           <textarea 
             placeholder="notes"
             name="sensory"
             onChange={(event) => this.handleChange(event)}
-            value={this.state.sensory}
+            value={sensory}
           ></textarea>
         </div>
         <div className="treatment-rows">
@@ -69,7 +77,7 @@ class TreatmentPlanModule extends Component {
             placeholder="notes"
             name="task"
             onChange={(event) => this.handleChange(event)}
-            value={this.state.task}
+            value={task}
           ></textarea>
         </div>
         <div className="treatment-rows">
@@ -78,7 +86,7 @@ class TreatmentPlanModule extends Component {
             placeholder="notes"
             name="environment"
             onChange={(event) => this.handleChange(event)}
-            value={this.state.environment}
+            value={environment}
           ></textarea>
         </div>
         <div className="treatment-rows">
@@ -87,7 +95,7 @@ class TreatmentPlanModule extends Component {
             placeholder="notes"
             name="predictability"
             onChange={(event) => this.handleChange(event)}
-            value={this.state.predictability}
+            value={predictability}
           ></textarea>
         </div>
         <div className="treatment-rows">
@@ -96,7 +104,7 @@ class TreatmentPlanModule extends Component {
             placeholder="notes"
             name="self_regulation"
             onChange={(event) => this.handleChange(event)}
-            value={this.state.self_regulation}
+            value={self_regulation}
           ></textarea>
         </div>
         <div className="treatment-rows">
@@ -105,7 +113,7 @@ class TreatmentPlanModule extends Component {
             placeholder="notes"
             name="interaction"
             onChange={(event) => this.handleChange(event)}
-            value={this.state.interaction}
+            value={interaction}
           ></textarea>
         </div>
         <div className="treatment-rows">
@@ -114,7 +122,7 @@ class TreatmentPlanModule extends Component {
             placeholder="notes"
             name="JRC_AR_notes"
             onChange={(event) => this.handleChange(event)}
-            value={this.state.JRC_AR_notes}
+            value={JRC_AR_notes}
           ></textarea>
         </div>
       </div>
