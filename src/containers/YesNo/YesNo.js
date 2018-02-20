@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './YesNo.css';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
+import './YesNo.css';
 
 class YesNo extends Component {
   constructor(props) {
@@ -81,3 +82,10 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(YesNo);
+
+YesNo.propTypes = {
+  selectedProcess: PropTypes.object,
+  databaseName: PropTypes.string,
+  updateProcessPerformanceComponent: PropTypes.func,
+  question: PropTypes.string
+};
