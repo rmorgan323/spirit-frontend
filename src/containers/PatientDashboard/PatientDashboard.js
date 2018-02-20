@@ -97,7 +97,7 @@ class PatientDashboard extends Component {
 
           <p>
             <span
-              onClick={event => this.toggleDomain('domain1')}
+              onClick={() => this.toggleDomain('domain1')}
               className={
                 domain1 === false ? 'domains' : 'domains sam-1 domains-true'
               }
@@ -106,7 +106,7 @@ class PatientDashboard extends Component {
             </span>
 
             <span
-              onClick={event => this.toggleDomain('domain2')}
+              onClick={() => this.toggleDomain('domain2')}
               className={
                 domain2 === false ? 'domains' : 'domains sam-2 domains-true'
               }
@@ -115,7 +115,7 @@ class PatientDashboard extends Component {
             </span>
 
             <span
-              onClick={event => this.toggleDomain('domain3')}
+              onClick={() => this.toggleDomain('domain3')}
               className={
                 domain3 === false ? 'domains' : 'domains sam-3 domains-true'
               }
@@ -124,7 +124,7 @@ class PatientDashboard extends Component {
             </span>
 
             <span
-              onClick={event => this.toggleDomain('domain4')}
+              onClick={() => this.toggleDomain('domain4')}
               className={
                 domain4 === false ? 'domains' : 'domains sam-4 domains-true'
               }
@@ -133,7 +133,7 @@ class PatientDashboard extends Component {
             </span>
 
             <span
-              onClick={event => this.toggleDomain('domain5')}
+              onClick={() => this.toggleDomain('domain5')}
               className={
                 domain5 === false ? 'domains' : 'domains sam-5 domains-true'
               }
@@ -142,7 +142,7 @@ class PatientDashboard extends Component {
             </span>
 
             <span
-              onClick={event => this.toggleDomain('domain6')}
+              onClick={() => this.toggleDomain('domain6')}
               className={
                 domain6 === false ? 'domains' : 'domains sam-6 domains-true'
               }
