@@ -1,16 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = (props) => {
 
   return (
     <div className="Header">
-      <img className="header-wordmark" src="/assets/Spirit-Wordmark-White.png" alt="SpIRiT-wordmark" />
+      <Link to="/spirit/index">
+        <img className="header-wordmark" src="/assets/Spirit-Wordmark-White.png" alt="SpIRiT-wordmark" />
+      </Link>
       {
         props.user.name &&
         <div>
-          <h5 className="header-welcome-user">Welcome, {props.user.name}!</h5>
+          <Link to={`/spirit/users/${props.user.id}`}>
+            <h5 className="header-welcome-user">Welcome, {props.user.name}!</h5>
+          </Link>
           <h5 className="header-welcome-clinic">Clinic: {props.user.clinic}</h5>
         </div>
       }

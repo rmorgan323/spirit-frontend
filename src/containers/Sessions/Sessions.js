@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from '../../actions/index';
 import './Sessions.css';
+import moment from 'moment';
 
 export const Sessions = (props) => {
   const { selectedConcern } = props;
@@ -10,9 +11,9 @@ export const Sessions = (props) => {
   const renderedSessions = props.sessions.map(session => {
     return (
       <div className="session" key={session.id}>
-        <span className="session-number">Session {session.id}</span>
-        <span className="session-date">Last updated: {session.updated_at}</span>
-        <span className="session-status">{session.completed ? 'Completed' : 'In Progress'}</span>
+        <p className="session-number">Session {session.id}</p>
+        <p className="session-date"><span className="date-span">Last update: </span>{moment(session.updated_at).format('LL')}</p>
+        <p className="session-status">{session.completed ? 'Completed' : 'In Progress'}</p>
         <Link to={`/spirit/sessions/${session.id}/sam`}>
           <button
             className="select-session-button"
@@ -21,15 +22,16 @@ export const Sessions = (props) => {
             SELECT
           </button>
         </Link>
+
       </div>
     )
   });
 
   return (
     <div className="Sessions">
-      <h1>Sessions</h1>
+      <h3>Sessions</h3>
       {renderedSessions}
-      <button onClick={() => props.createSession(selectedConcern.id)} className="create-session">Create New Session</button>
+      <button onClick={() => props.createSession(selectedConcern.id)} className="create-session-button">Create New Session</button>
     </div>
   )
 }
