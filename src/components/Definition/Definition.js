@@ -1,6 +1,7 @@
 import React from 'react';
-import './Definition.css';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import './Definition.css';
 
 const Definition = props => {
   let relevantDefs;
@@ -36,3 +37,8 @@ const mapStateToProps = store => ({
 });
 
 export default connect(mapStateToProps, null)(Definition);
+
+Definition.propTypes = {
+  definitions: PropTypes.array,
+  title: PropTypes.string
+};
