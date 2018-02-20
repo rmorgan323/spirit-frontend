@@ -32,7 +32,7 @@ const CategorySliders = ({
 
 export default CategorySliders;
 
-CategorySliders.proptypes = {
+CategorySliders.propTypes = {
   title: PropTypes.string,
   slidersArray: PropTypes.array,
   databaseNamesArray: PropTypes.array,
