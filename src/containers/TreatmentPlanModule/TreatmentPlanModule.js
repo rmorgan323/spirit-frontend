@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './TreatmentPlanModule.css';
-import * as actions from '../../actions';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import * as actions from '../../actions';
+import './TreatmentPlanModule.css';
 
 class TreatmentPlanModule extends Component {
   constructor(props) {
@@ -141,3 +142,9 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TreatmentPlanModule);
+
+TreatmentPlanModule.propTypes = {
+  selectedTreatmentPlan: PropTypes.object,
+  type: PropTypes.string,
+  getTreatmentPlan: PropTypes.func
+};
