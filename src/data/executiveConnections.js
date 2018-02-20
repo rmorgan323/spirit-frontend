@@ -22,6 +22,6 @@ const executiveConnections = {
   exe_4b_self_compassion: {},
   exe_4b_self_control: {},
   exe_4b_self_regulation: {}
-}
+};
 
 export default executiveConnections;
