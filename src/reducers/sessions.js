@@ -1,10 +1,10 @@
 const sessions = (store = [], action) => {
   switch (action.type) {
-    case 'SESSIONS_TO_STORE':
-      return action.sessions;
+  case 'SESSIONS_TO_STORE':
+    return action.sessions;
 
-    default:
-      return store;
+  default:
+    return store;
   }
 };
 

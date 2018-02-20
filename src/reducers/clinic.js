@@ -1,10 +1,10 @@
 const clinic = (store = {}, action) => {
   switch (action.type) {
-    case 'CLINIC_TO_STORE':
-      return action.clinic;
+  case 'CLINIC_TO_STORE':
+    return action.clinic;
 
-    default:
-      return store;
+  default:
+    return store;
   }
 };
 
