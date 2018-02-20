@@ -104,6 +104,11 @@ p {
   margin: 20px auto;
 }
 
+@mixin medium-content {
+  width: 645px;
+  margin: 20px auto;
+}
+
 @mixin small-content {
   width: 400px;
   margin: 20px auto;

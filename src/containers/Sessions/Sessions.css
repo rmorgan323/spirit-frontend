@@ -1,0 +1,88 @@
+/******  GLOBAL CSS VARIABLES  ******/
+/***  COLORS  ***/
+/***  FONTS  ***/
+* {
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  outline: none;
+  color: #6d6e71; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.3; }
+
+h1 {
+  font-size: 44px; }
+
+h2 {
+  font-size: 30px; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 18px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  font-size: 10px; }
+
+p {
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 900; }
+
+::placeholder {
+  opacity: .5;
+  text-align: center; }
+
+/***  MIXINS  ***/
+.Sessions {
+  width: 645px;
+  margin: 20px auto;
+  /*p {
+    margin: 0;
+  }*/ }
+  .Sessions .session {
+    display: flex;
+    align-items: center;
+    border-bottom: 10px solid #f1f2f2; }
+  .Sessions .session-number {
+    width: 120px;
+    font-size: 20px; }
+  .Sessions .session-date {
+    width: 290px;
+    margin-right: 20px;
+    font-size: 20px; }
+  .Sessions .date-span {
+    color: #a7a9ac;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    font-size: 16px; }
+  .Sessions .session-status {
+    margin-right: 20px;
+    width: 120px;
+    font-size: 20px; }
+  .Sessions .select-session-button {
+    text-decoration: none;
+    color: red;
+    background: none;
+    border: none;
+    cursor: pointer; }
+  .Sessions .select-session-button:hover {
+    color: #a30000; }
+  .Sessions .create-session-button {
+    width: 300px;
+    height: 40px;
+    margin: 30px auto;
+    display: block;
+    background-color: #9E87BA;
+    color: #fff;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    border: none; }
+  .Sessions .create-session-button:hover {
+    background-color: #5E378C; }

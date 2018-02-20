@@ -1,3 +1,67 @@
+@import '../../variables.scss';
+
 .Sessions {
-  
+  @include medium-content;
+
+  .session {
+    display: flex;
+    align-items: center;
+    border-bottom: 10px solid $grey1;
+  }
+
+  /*p {
+    margin: 0;
+  }*/
+
+  .session-number {
+    width: 120px;
+    font-size: 20px;
+  }
+
+  .session-date {
+    width: 290px;
+    margin-right: 20px;
+    font-size: 20px;
+  }
+
+  .date-span {
+    color: $grey3;
+    @include match-h5;
+    font-weight: 900;
+    font-size: 16px;
+  }
+
+  .session-status {
+    margin-right: 20px;
+    width: 120px;
+    font-size: 20px;
+  }
+
+  .select-session-button {
+    text-decoration: none;
+    color: red;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .select-session-button:hover {
+    color: darken(red, 18%);
+  }
+
+  .create-session-button {
+    width: 300px;
+    height: 40px;
+    margin: 30px auto;
+    display: block;
+    background-color: $purple4;
+    color: #fff;
+    @include std-transition;
+    cursor: pointer;
+    border: none;
+  }
+
+  .create-session-button:hover {
+    background-color: $purple6;
+  }
 }
