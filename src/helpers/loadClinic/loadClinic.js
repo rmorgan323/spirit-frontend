@@ -1,16 +1,20 @@
 import getKeyFromLS from '../getKeyFromLS';
 
-const loadClinic = async (id) => {
-  const clinic = await fetch(`http://localhost:3000/api/v1/clinics/${id}`, {
-    method: 'GET',
-    headers: {
-      "x-token": getKeyFromLS(),
-      "Content-Type": "application/json"
-    }
-  });
-  const jsonClinic = await clinic.json();
+const loadClinic = async id => {
+  try {
+    const clinic = await fetch(`http://localhost:3000/api/v1/clinics/${id}`, {
+      method: 'GET',
+      headers: {
+        'x-token': getKeyFromLS(),
+        'Content-Type': 'application/json'
+      }
+    });
+    const jsonClinic = await clinic.json();
 
-  return jsonClinic[0];
-}
+    return jsonClinic[0];
+  } catch (error) {
+    throw new Error(`Error fetching clinic by id ${id}: ${error}`);
+  }
+};
 
 export default loadClinic;
