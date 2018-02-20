@@ -25,16 +25,17 @@ class TherapyGoals extends Component {
   }
 
   componentDidMount = () => {
-    const type = this.props.category
+    const type = this.props.category;
+    const { selectedTherapyGoal } = this.props;
 
     this.setState({
-      goal: this.props.selectedTherapyGoal[`${type}goal`],
-      ot_importance: this.props.selectedTherapyGoal[`${type}ot_importance`],
-      parent_importance: this.props.selectedTherapyGoal[`${type}parent_importance`],
-      ot_performance: this.props.selectedTherapyGoal[`${type}ot_performance`],
-      parent_performance: this.props.selectedTherapyGoal[`${type}parent_performance`],
-      ot_satisfaction: this.props.selectedTherapyGoal[`${type}ot_satisfaction`],
-      parent_satisfaction: this.props.selectedTherapyGoal[`${type}parent_satisfaction`],
+      goal: selectedTherapyGoal[`${type}goal`],
+      ot_importance: selectedTherapyGoal[`${type}ot_importance`],
+      parent_importance: selectedTherapyGoal[`${type}parent_importance`],
+      ot_performance: selectedTherapyGoal[`${type}ot_performance`],
+      parent_performance: selectedTherapyGoal[`${type}parent_performance`],
+      ot_satisfaction: selectedTherapyGoal[`${type}ot_satisfaction`],
+      parent_satisfaction: selectedTherapyGoal[`${type}parent_satisfaction`],
     })
   }
 
@@ -47,10 +48,12 @@ class TherapyGoals extends Component {
   }
 
   handleTherapyGoalsUpdate = (goal, oti, pi, otp, pp, ots, ps) => {
-    const type = this.props.category
+    const type = this.props.category;
+    const { changed } = this.state;
+    const { getTherapyGoal, selectedTherapyGoal } = this.props;
 
-    if (this.state.changed === true) {
-      this.props.getTherapyGoal(this.props.selectedTherapyGoal.id, {
+    if (changed === true) {
+      getTherapyGoal(selectedTherapyGoal.id, {
         [`${type}goal`]: goal,
         [`${type}ot_importance`]: oti,
         [`${type}parent_importance`]: pi,
@@ -66,6 +69,8 @@ class TherapyGoals extends Component {
 
   render() {
     const { goal, ot_importance, parent_importance, ot_performance, parent_performance, ot_satisfaction, parent_satisfaction } = this.state;
+    const { number, title } = this.props;
+
     const impArray = ['-', '1 - not at all important', '2 - not important', '3 - not very important', '4 - somewhat important', '5 - somewhat important', '6 - important', '7 - important', '8 - very important', '9 - very important', '10 - extremely important']
     const perArray = ['-', '1 - unable to perform', '2 - limited performance', '3 - limited performance', '4 - somewhat able to perform', '5 - somewhat able to perform', '6 - able to perform', '7 - able to perform', '8 - performs well', '9 - performs very well', '10 - performs extremely well']
     const satArray = ['-', '1 - not at all satisfied', '2 - not satisfied', '3 - not very satisfied', '4 - somewhat satisfied', '5 - somewhat satisfied', '6 - satisfied', '7 - satisfied', '8 - very satisfied', '9 - very satisfied', '10 - extremely satisfied']
@@ -75,10 +80,10 @@ class TherapyGoals extends Component {
 
           <div className="therapy-domain">
             <div className="therapy-domain-header">
-              <p>{this.props.number}</p>
-              <h4>{this.props.title}</h4>
+              <p>{number}</p>
+              <h4>{title}</h4>
             </div>
-            <textarea onChange={(event) => this.handleGoalsChange(event)} value={this.state.goal} className="modulation-goal" placeholder="goals"></textarea>
+            <textarea onChange={(event) => this.handleGoalsChange(event)} value={goal} className="modulation-goal" placeholder="goals"></textarea>
           </div>
 
           <div className="therapy-importance">
