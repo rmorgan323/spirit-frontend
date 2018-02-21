@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import './SessionTabs.css';
 
 const SessionTabs = props => {
-  const { selectedProcess } = props;
+  const { storedThreadConnections } = props;
   const navNames = [
     'sam',
     'modulation',
@@ -24,7 +24,7 @@ const SessionTabs = props => {
   ];
 
   const navLinks = navNames.map((link, index) => {
-    const currentClass = selectedProcess[link]
+    const currentClass = storedThreadConnections[link]
       ? `session-tabs session-tab-${link} thread-connection`
       : `session-tabs session-tab-${link}`;
     return (
@@ -41,7 +41,7 @@ const SessionTabs = props => {
 };
 
 export const mapStateToProps = store => ({
-  selectedProcess: store.selectedProcess
+  storedThreadConnections: store.storedThreadConnections
 });
 
 export default connect(mapStateToProps, null)(SessionTabs);
