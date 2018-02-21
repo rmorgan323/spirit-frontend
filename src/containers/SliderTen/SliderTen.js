@@ -83,7 +83,12 @@ class SliderTen extends Component {
       displayDefinition
     } = this.state;
 
-    const { sliderTitle, reminderAsterisk } = this.props;
+    const {
+      sliderTitle,
+      reminderAsterisk,
+      databaseName,
+      storedThreadConnections
+    } = this.props;
 
     return (
       <div
@@ -92,7 +97,13 @@ class SliderTen extends Component {
           this.handleSliderUpdate(previousValue, previousFair)
         }
       >
-        <div className="slider-heading">
+        <div
+          className={
+            storedThreadConnections[databaseName]
+              ? 'slider-heading thread-connection'
+              : 'slider-heading'
+          }
+        >
           <img
             className="definition-image"
             src="/assets/mag-glass.svg"
@@ -183,7 +194,8 @@ class SliderTen extends Component {
 }
 
 const mapStateToProps = store => ({
-  selectedProcess: store.selectedProcess
+  selectedProcess: store.selectedProcess,
+  storedThreadConnections: store.storedThreadConnections
 });
 
 const mapDispatchToProps = dispatch => ({
