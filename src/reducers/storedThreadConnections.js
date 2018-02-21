@@ -26,11 +26,13 @@ const storedThreadConnections = (store = markedThreadConnections, action) => {
   }
 
   case 'UPDATE_THREAD_CONNECTIONS': {
-    let newConnections = store;
+    const connectionsObject = action.threadConnections.reduce((connectionsObject, connection) => {
+      connectionsObject[connection] = true;
 
-    action.threadConnections.forEach(
-      connection => (newConnections[connection] = true)
-    );
+      return connectionsObject
+    }, {});
+    console.log(connectionsObject)
+    const newConnections = Object.assign({}, store, connectionsObject);
 
     return newConnections;
   }
