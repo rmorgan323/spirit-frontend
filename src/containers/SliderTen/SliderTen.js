@@ -213,5 +213,6 @@ SliderTen.propTypes = {
   databaseName: PropTypes.string,
   updateProcessPerformanceComponent: PropTypes.func,
   sliderTitle: PropTypes.string,
-  reminderAsterisk: PropTypes.string
+  reminderAsterisk: PropTypes.string,
+  storedThreadConnections: PropTypes.object
 };

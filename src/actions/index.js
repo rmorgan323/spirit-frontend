@@ -95,7 +95,7 @@ export const getSession = selectedSession => async dispatch => {
 
   const selectedProcess = await loadProcessBySession(selectedSession.id);
   dispatch(selectedProcessToStore(selectedProcess[0]));
-  dispatch(checkThreadConnections(selectedProcess[0]))
+  dispatch(checkThreadConnections(selectedProcess[0]));
 
   const selectedTherapyGoal = await loadTherapyGoalBySession(
     selectedSession.id
