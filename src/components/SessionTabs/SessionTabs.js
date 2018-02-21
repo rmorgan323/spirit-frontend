@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 import './SessionTabs.css';
 
 const SessionTabs = props => {
@@ -29,6 +30,7 @@ const SessionTabs = props => {
       : `session-tabs session-tab-${link}`;
     return (
       <NavLink
+        key={index}
         to={`/spirit/sessions/:sessionId/${link}`}
         className={currentClass}
       >
@@ -45,3 +47,7 @@ export const mapStateToProps = store => ({
 });
 
 export default connect(mapStateToProps, null)(SessionTabs);
+
+SessionTabs.propTypes = {
+  storedThreadConnections: PropTypes.object
+};
