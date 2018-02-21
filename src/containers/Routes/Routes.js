@@ -23,7 +23,7 @@ import Sessions from '../Sessions/Sessions';
 import PatientHeader from '../PatientHeader/PatientHeader';
 import ConcernHeader from '../ConcernHeader/ConcernHeader';
 import Sam from '../../components/Sam/Sam';
-import SessionTabs from '../../components/SessionTabs/SessionTabs';
+import SessionTabs from '../SessionTabs/SessionTabs';
 import Finish from '../../components/Finish/Finish';
 
 class Routes extends Component {
