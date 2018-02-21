@@ -6,13 +6,16 @@ const storedThreadConnections = (store = markedThreadConnections, action) => {
   case 'CHECK_THREAD_CONNECTIONS': {
     let selectedConnections = store;
     const processKeys = Object.keys(action.selectedProcess);
+    const storeKeys = Object.keys(selectedConnections)
 
     processKeys.forEach(component => {
-      if (action.selectedProcess[component] !== null) {
-        const threadConnections = getThreadConnections(action.selectedProcess[component]);
+      storeKeys.forEach(key => {
+        if (component === key && action.selectedProcess[component] !== null) {
+          const threadConnections = getThreadConnections({[component]: action.selectedProcess[component]});
 
-        threadConnections.forEach(connection => selectedConnections[connection] = true);
-      }
+          threadConnections.forEach(connection => selectedConnections[connection] = true);
+        }
+      })
     })
 
     return selectedConnections;

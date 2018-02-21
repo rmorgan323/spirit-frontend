@@ -33,6 +33,16 @@ class SliderTen extends Component {
     this.loadComponentValue(matchedComponentValue);
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log('in componentWillReceiveProps')
+    // const { databaseName } = this.props;
+    // const firstState = this.props.selectedProcess[databaseName]
+    // const secondState = this.nextProps.selectedProcess[databaseName]
+
+    // console.log( {firstState} );
+    // console.log( {secondState} )
+  }
+
   loadComponentValue = matchedComponentValue => {
     if (matchedComponentValue) {
       const valueArray = matchedComponentValue.split('');
