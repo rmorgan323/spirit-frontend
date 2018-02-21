@@ -14,7 +14,8 @@ const getThreadConnections = processComponent => {
   };
 
   const category = processComponent.split('_')[0];
-  const threadConnections = SAM[category][processComponent];
+  const processKey = Object.keys(processComponent)[0];
+  const threadConnections = SAM[category][processKey];
 
   return threadConnections;
 };
