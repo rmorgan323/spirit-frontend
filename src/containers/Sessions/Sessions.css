@@ -41,10 +41,7 @@ p {
 /***  MIXINS  ***/
 .Sessions {
   width: 645px;
-  margin: 20px auto;
-  /*p {
-    margin: 0;
-  }*/ }
+  margin: 20px auto; }
   .Sessions .session {
     display: flex;
     align-items: center;
@@ -86,3 +83,57 @@ p {
     transition: all .3s ease-in-out; }
   .Sessions .create-session-button:hover {
     background-color: #5E378C; }
+  .Sessions .compare-button-holder {
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+    margin-right: 2px;
+    width: 30px;
+    top: 2px; }
+  .Sessions .compare-button-holder input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer; }
+  .Sessions .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 13px;
+    width: 13px;
+    background-color: #f1f2f2;
+    border-radius: 50px;
+    border: 2px solid #d1d3d4;
+    box-shadow: inset 0px 0px 4px -1px rgba(0, 0, 0, 0.77);
+    transition: all .3s ease-in-out; }
+  .Sessions .compare-button-holder:hover input ~ .checkmark {
+    background-color: #d1d3d4; }
+  .Sessions .compare-button-holder input:checked ~ .checkmark {
+    background-color: #a8ed8a; }
+  .Sessions .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; }
+  .Sessions .compare-button-holder input:checked ~ .checkmark:after {
+    display: block; }
+  .Sessions .button-holder {
+    height: 40px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 26px; }
+  .Sessions .compare-sessions-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    background-color: #3cd52e;
+    font-size: 14px;
+    width: 88px;
+    border: none;
+    color: #fff;
+    transition: all .3s ease-in-out;
+    cursor: pointer; }
+  .Sessions .compare-sessions-button:hover {
+    background-color: #2a9c1f; }

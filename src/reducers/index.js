@@ -12,6 +12,7 @@ import selectedTherapyGoal from './selectedTherapyGoal';
 import selectedTreatmentPlan from './selectedTreatmentPlan';
 import storedThreadConnections from './storedThreadConnections';
 import definitions from './definitions';
+import comparisonData from './comparisonData';
 
 const rootReducer = combineReducers({
   clinic,
@@ -26,7 +27,8 @@ const rootReducer = combineReducers({
   selectedTherapyGoal,
   selectedTreatmentPlan,
   storedThreadConnections,
-  definitions
+  definitions,
+  comparisonData
 });
 
 export default rootReducer;
