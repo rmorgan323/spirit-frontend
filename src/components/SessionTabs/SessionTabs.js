@@ -4,12 +4,6 @@ import { NavLink } from 'react-router-dom';
 import './SessionTabs.css';
 
 const SessionTabs = () => {
-  const getPathname = () => {
-    return window.location.pathname.split('/')[
-      window.location.pathname.split('/').length - 1
-    ];
-  };
-
   const navLinks = [ 'sam', 'modulation', 'postural', 'sensory', 'social', 'executive' ]
 
   return (
