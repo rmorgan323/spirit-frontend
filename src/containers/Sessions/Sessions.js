@@ -5,6 +5,7 @@ import { PropTypes } from 'prop-types';
 import moment from 'moment';
 import * as actions from '../../actions/index';
 import './Sessions.css';
+import GoalsChart from '../../components/GoalsChart/GoalsChart';
 
 export class Sessions extends Component {
   constructor(props) {
@@ -81,6 +82,12 @@ export class Sessions extends Component {
     }
   }
 
+  compareTherapyGoals = () => {
+    if (Object.keys(this.props.comparisonData).length) {
+      return <GoalsChart />
+    }
+  }
+
   render() {
     return (
       <div className="Sessions">
@@ -93,12 +100,14 @@ export class Sessions extends Component {
           Create New Session
         </button>
         {this.compareButton()}
+        {this.compareTherapyGoals()}
       </div>
     );
   }
 };
 
 const mapStateToProps = store => ({
+  comparisonData: store.comparisonData,
   selectedConcern: store.selectedConcern,
   sessions: store.sessions
 });
