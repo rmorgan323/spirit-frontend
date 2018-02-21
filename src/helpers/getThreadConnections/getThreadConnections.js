@@ -13,8 +13,8 @@ const getThreadConnections = processComponent => {
     exe: executiveConnections
   };
 
-  const category = processComponent.split('_')[0];
   const processKey = Object.keys(processComponent)[0];
+  const category = processKey.split('_')[0];
   const threadConnections = SAM[category][processKey];
 
   return threadConnections;
