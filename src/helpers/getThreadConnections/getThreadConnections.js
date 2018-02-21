@@ -18,3 +18,5 @@ const getThreadConnections = processComponent => {
 
   return threadConnections;
 };
+
+export default getThreadConnections;
