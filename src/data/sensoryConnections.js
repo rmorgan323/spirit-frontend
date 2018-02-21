@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 const sensoryConnections = {
   sen_1_ability: ['sen_2_affordance', 'exe_2b_global', 'sen_6_visual'],
   sen_1_classification: ['sen_1_ability', 'executive'],
@@ -28,11 +30,27 @@ const sensoryConnections = {
   sen_5_postural: ['postural'],
   sen_5_projected: ['postural'],
   sen_5_tool: ['postural', 'sen_5_postural', 'sen_5_limb'],
-  sen_6_bmc: ['postural', 'sen_h_vestibular', 'sen_h_proprioception', 'sen_h_tactile'],
+  sen_6_bmc: [
+    'postural',
+    'sen_h_vestibular',
+    'sen_h_proprioception',
+    'sen_h_tactile'
+  ],
   sen_6_generalized: ['postural', 'executive'],
   sen_6_praxis: ['executive'],
-  sen_6_somatodyspraxia: ['postural', 'sen_h_vestibular', 'sen_h_proprioception', 'sen_h_tactile'],
-  sen_6_visual: ['postural', 'sen_1_ability', 'sen_1_match', 'sen_1_classification', 'sen_1_spatial'],
+  sen_6_somatodyspraxia: [
+    'postural',
+    'sen_h_vestibular',
+    'sen_h_proprioception',
+    'sen_h_tactile'
+  ],
+  sen_6_visual: [
+    'postural',
+    'sen_1_ability',
+    'sen_1_match',
+    'sen_1_classification',
+    'sen_1_spatial'
+  ],
   sen_h_auditory: ['modulation', 'postural', 'social', 'executive'],
   sen_h_intero: ['modulation', 'postural', 'social', 'executive'],
   sen_h_proprioception: ['modulation', 'postural', 'social', 'executive'],

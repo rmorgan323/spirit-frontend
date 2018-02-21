@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 const executiveConnections = {
   exe_1_inhibition: ['modulation', 'postural', 'sensory', 'social'],
   exe_1_orient: ['modulation', 'postural', 'sensory'],

@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 const markedThreadConnections = {
   modulation: false,
   postural: false,
