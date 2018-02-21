@@ -70,6 +70,8 @@ p {
     height: 39px;
     transition: all .3s ease-in-out;
     /*border-bottom: 5px solid $purple5;*/ }
+  .SessionTabs .thread-connection {
+    background-color: lightblue; }
   .SessionTabs .active {
     background-color: #7F60A4; }
   .SessionTabs .session-tabs:hover {
