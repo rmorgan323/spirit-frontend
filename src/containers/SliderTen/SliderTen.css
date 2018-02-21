@@ -50,6 +50,8 @@ p {
     display: flex;
     align-items: flex-start;
     position: relative; }
+  .SliderTen .thread-connection {
+    background-color: lightblue; }
   .SliderTen .definition-holder {
     display: none; }
   .SliderTen .display-definition {
