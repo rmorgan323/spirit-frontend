@@ -23,66 +23,42 @@ const SessionTabs = () => {
 
       <NavLink
         to="/spirit/sessions/:sessionId/modulation"
-        className={
-          getPathname() === 'modulation'
-            ? 'session-tabs session-tab-modulation tab-active'
-            : 'session-tabs session-tab-modulation'
-        }
+        className='session-tabs session-tab-modulation'
       >
         <h2>Modulation</h2>
       </NavLink>
 
       <NavLink
         to="/spirit/sessions/:sessionId/postural"
-        className={
-          getPathname() === 'postural'
-            ? 'session-tabs session-tab-postural tab-active'
-            : 'session-tabs session-tab-postural'
-        }
+        className='session-tabs session-tab-postural'
       >
         <h2>Postural</h2>
       </NavLink>
 
       <NavLink
         to="/spirit/sessions/:sessionId/sensory"
-        className={
-          getPathname() === 'sensory'
-            ? 'session-tabs session-tab-sensory tab-active'
-            : 'session-tabs session-tab-sensory'
-        }
+        className='session-tabs session-tab-sensory'
       >
         <h2>Sensory</h2>
       </NavLink>
 
       <NavLink
         to="/spirit/sessions/:sessionId/social"
-        className={
-          getPathname() === 'social'
-            ? 'session-tabs session-tab-social tab-active'
-            : 'session-tabs session-tab-social'
-        }
+        className='session-tabs session-tab-social'
       >
         <h2>Social</h2>
       </NavLink>
 
       <NavLink
         to="/spirit/sessions/:sessionId/executive"
-        className={
-          getPathname() === 'executive'
-            ? 'session-tabs session-tab-executive tab-active'
-            : 'session-tabs session-tab-executive'
-        }
+        className='session-tabs session-tab-executive'
       >
         <h2>Executive</h2>
       </NavLink>
 
       <NavLink
         to="/spirit/sessions/:sessionId/finish"
-        className={
-          getPathname() === 'finish'
-            ? 'session-tabs session-tab-finish tab-active'
-            : 'session-tabs session-tab-finish'
-        }
+        className='session-tabs session-tab-finish'
       >
         <h2>Finish</h2>
       </NavLink>
