@@ -1,4 +1,5 @@
 import markedThreadConnections from '../data/markedThreadConnections';
+import getThreadConnections from '../helpers/getThreadConnections/getThreadConnections';
 
 const storedThreadConnections = (store = markedThreadConnections, action) => {
   switch (action.type) {
@@ -8,7 +9,9 @@ const storedThreadConnections = (store = markedThreadConnections, action) => {
 
     processKeys.forEach(component => {
       if (action.selectedProcess[component] !== null) {
-        selectedConnections[component] = true;
+        const threadConnections = getThreadConnections(action.selectedProcess[component]);
+
+        threadConnections.forEach(connection => selectedConnections[connection] = true);
       }
     })
 
