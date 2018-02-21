@@ -1,1 +1,19 @@
-  
+@import '../../variables.scss';
+
+.Finish {
+  .complete-session-button {
+    height: 40px;
+    width: 199px;
+    background-color: $purple4;
+    border: none;
+    color: #fff;
+    margin: 50px auto 100px;
+    display: block;
+    cursor: pointer;
+    @include std-transition;
+  }
+
+  .complete-session-button:hover {
+    background-color: $purple6;
+  }
+}
