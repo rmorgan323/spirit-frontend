@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import './SessionTabs.css';
 
 const SessionTabs = () => {
@@ -9,21 +10,19 @@ const SessionTabs = () => {
     ];
   };
 
+  const navLinks = [ 'sam', 'modulation', 'postural', 'sensory', 'social', 'executive' ]
+
   return (
     <div className="SessionTabs">
-      <Link
-        to="sam"
-        className={
-          getPathname() === 'sam'
-            ? 'session-tabs session-tab-sam tab-active'
-            : 'session-tabs session-tab-sam'
-        }
+      <NavLink
+        to="/spirit/sessions/:sessionId/sam"
+        className='session-tabs session-tab-sam'
       >
         <h2>SAM</h2>
-      </Link>
+      </NavLink>
 
-      <Link
-        to="modulation"
+      <NavLink
+        to="/spirit/sessions/:sessionId/modulation"
         className={
           getPathname() === 'modulation'
             ? 'session-tabs session-tab-modulation tab-active'
@@ -31,10 +30,10 @@ const SessionTabs = () => {
         }
       >
         <h2>Modulation</h2>
-      </Link>
+      </NavLink>
 
-      <Link
-        to="postural"
+      <NavLink
+        to="/spirit/sessions/:sessionId/postural"
         className={
           getPathname() === 'postural'
             ? 'session-tabs session-tab-postural tab-active'
@@ -42,10 +41,10 @@ const SessionTabs = () => {
         }
       >
         <h2>Postural</h2>
-      </Link>
+      </NavLink>
 
-      <Link
-        to="sensory"
+      <NavLink
+        to="/spirit/sessions/:sessionId/sensory"
         className={
           getPathname() === 'sensory'
             ? 'session-tabs session-tab-sensory tab-active'
@@ -53,10 +52,10 @@ const SessionTabs = () => {
         }
       >
         <h2>Sensory</h2>
-      </Link>
+      </NavLink>
 
-      <Link
-        to="social"
+      <NavLink
+        to="/spirit/sessions/:sessionId/social"
         className={
           getPathname() === 'social'
             ? 'session-tabs session-tab-social tab-active'
@@ -64,10 +63,10 @@ const SessionTabs = () => {
         }
       >
         <h2>Social</h2>
-      </Link>
+      </NavLink>
 
-      <Link
-        to="executive"
+      <NavLink
+        to="/spirit/sessions/:sessionId/executive"
         className={
           getPathname() === 'executive'
             ? 'session-tabs session-tab-executive tab-active'
@@ -75,10 +74,10 @@ const SessionTabs = () => {
         }
       >
         <h2>Executive</h2>
-      </Link>
+      </NavLink>
 
-      <Link
-        to="finish"
+      <NavLink
+        to="/spirit/sessions/:sessionId/finish"
         className={
           getPathname() === 'finish'
             ? 'session-tabs session-tab-finish tab-active'
@@ -86,9 +85,13 @@ const SessionTabs = () => {
         }
       >
         <h2>Finish</h2>
-      </Link>
+      </NavLink>
     </div>
   );
 };
 
-export default SessionTabs;
+export const mapStateToProps = store => ({
+  selectedProcess: store.selectedProcess
+})
+
+export default connect(mapStateToProps, null)(SessionTabs);
