@@ -151,6 +151,11 @@ export const updateProcessPerformanceComponent = (
   dispatch(updateThreadConnections(threadConnections));
 };
 
+export const checkThreadConnections = selectedProcess => ({
+  type: 'CHECK_THREAD_CONNECTIONS',
+  selectedProcess
+});
+
 export const updateThreadConnections = threadConnections => ({
   type: 'UPDATE_THREAD_CONNECTIONS',
   threadConnections
