@@ -20,6 +20,7 @@ import postTreamentPlan from '../helpers/postTreatmentPlan/postTreatmentPlan';
 import loadProcessBySession from '../helpers/loadProcessBySession/loadProcessBySession';
 import loadTherapyGoalBySession from '../helpers/loadTherapyGoalBySession/loadTherapyGoalBySession';
 import loadTreatmentPlanBySession from '../helpers/loadTreatmentPlanBySession/loadTreatmentPlanBySession';
+import getThreadConnections from '../helpers/getThreadConnections/getThreadConnections';
 import updateProcess from '../helpers/updateProcess/updateProcess';
 import updateTreatmentPlan from '../helpers/updateTreatmentPlan/updateTreatmentPlan';
 import updateTherapyGoal from '../helpers/updateTherapyGoal/updateTherapyGoal';
@@ -145,7 +146,15 @@ export const updateProcessPerformanceComponent = (
 ) => async dispatch => {
   await updateProcess(processId, updatedProcess);
   dispatch(updateProcessComponent(updatedProcess));
+
+  const threadConnections = await getThreadConnections(updatedProcess);
+  dispatch(updateThreadConnections(threadConnections));
 };
+
+export const updateThreadConnections = threadConnections => ({
+  type: 'UPDATE_THREAD_CONNECTIONS',
+  threadConnections
+});
 
 export const updateProcessComponent = updatedProcess => ({
   type: 'UPDATE_PROCESS_COMPONENT',
