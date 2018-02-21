@@ -18,10 +18,10 @@ export class Sessions extends Component {
   toggleCheckBox = (id) => {
     const currentState = this.state.checkedIds;
     if (currentState.includes(id)) {
-      let newState = currentState.filter(num => num !== id)
+      let newState = currentState.filter(num => num !== id).sort((a, b) => a - b);
       this.setState({ checkedIds: newState })
     } else {
-      let newState = [...currentState, id]
+      let newState = [...currentState, id].sort((a, b) => a - b);
       this.setState({ checkedIds: newState })
     }
   }
@@ -71,6 +71,15 @@ export class Sessions extends Component {
     return renderThis;
   };
 
+  compareButton = () => {
+    if (this.state.checkedIds.length >= 2) {
+      return (
+        <button
+          onClick={() => this.props.compareSessionData(this.state.checkedIds)}
+        >Compare Sessions</button>
+      )
+    }
+  }
 
   render() {
     return (
@@ -83,6 +92,7 @@ export class Sessions extends Component {
         >
           Create New Session
         </button>
+        {this.compareButton()}
       </div>
     );
   }
@@ -97,7 +107,9 @@ const mapDispatchToProps = dispatch => ({
   createSession: selectedConcernId =>
     dispatch(actions.createSession(selectedConcernId)),
   getSession: selectedSessionId =>
-    dispatch(actions.getSession(selectedSessionId))
+    dispatch(actions.getSession(selectedSessionId)),
+  compareSessionData: idArray =>
+    dispatch(actions.compareSessionData(idArray))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sessions);

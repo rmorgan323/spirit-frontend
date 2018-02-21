@@ -25,6 +25,8 @@ import updateTreatmentPlan from '../helpers/updateTreatmentPlan/updateTreatmentP
 import updateTherapyGoal from '../helpers/updateTherapyGoal/updateTherapyGoal';
 import joinClinic from '../helpers/joinClinic/joinClinic';
 import updateSessionStatus from '../helpers/updateSessionStatus/updateSessionStatus';
+import loadSessionsForComparison from '../helpers/loadSessionsForComparison/loadSessionsForComparison';
+import processSessionGoals from '../helpers/processSessionGoals/processSessionGoals';
 
 export const getUser = () => async dispatch => {
   try {
@@ -248,3 +250,14 @@ export const joinExistingClinic = (passcode, userId) => async dispatch => {
     })
   );
 };
+
+export const compareSessionData = idArray => async dispatch => {
+  const sessionGoalsData = await loadSessionsForComparison(idArray);
+  const cleanData = processSessionGoals(sessionGoalsData);
+  dispatch(comparisonDataToStore(cleanData));
+}
+
+export const comparisonDataToStore = cleanData => ({
+  type: 'COMPARISON_DATA_TO_STORE',
+  cleanData
+})

@@ -11,6 +11,7 @@ import selectedProcess from './selectedProcess';
 import selectedTherapyGoal from './selectedTherapyGoal';
 import selectedTreatmentPlan from './selectedTreatmentPlan';
 import definitions from './definitions';
+import comparisonData from './comparisonData';
 
 const rootReducer = combineReducers({
   clinic,
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
   selectedProcess,
   selectedTherapyGoal,
   selectedTreatmentPlan,
-  definitions
+  definitions,
+  comparisonData
 });
 
 export default rootReducer;
