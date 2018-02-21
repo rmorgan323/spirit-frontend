@@ -38,7 +38,12 @@ export class Sessions extends Component {
 
   renderCheckBox = (id, completed) => {
     if (completed) {
-      return ( <input type="checkbox" checked={this.checkedStatus(id) ? true : false} onChange={() => this.toggleCheckBox(id)} /> )
+      return ( 
+        <label className="compare-button-holder">
+          <input type="checkbox" checked={this.checkedStatus(id) ? true : false} onChange={() => this.toggleCheckBox(id)} /> 
+          <span className="checkmark"></span>
+        </label>
+      )
     }
   }
 
@@ -46,7 +51,9 @@ export class Sessions extends Component {
     const renderThis = this.props.sessions.map(session => {
       return (
         <div className="session" key={session.id}>
-          {this.renderCheckBox(session.id, session.completed)}
+          <div className="compare-button-holder">
+            {this.renderCheckBox(session.id, session.completed)}
+          </div>
           <p className="session-number">Session {session.id}</p>
 
           <p className="session-date">
@@ -76,6 +83,7 @@ export class Sessions extends Component {
     if (this.state.checkedIds.length >= 2) {
       return (
         <button
+          className="compare-sessions-button"
           onClick={() => this.props.compareSessionData(this.state.checkedIds)}
         >Compare Sessions</button>
       )
@@ -93,13 +101,15 @@ export class Sessions extends Component {
       <div className="Sessions">
         <h3>Sessions</h3>
         {this.renderedSessions()}
-        <button
-          onClick={() => this.props.createSession(this.props.selectedConcern.id)}
-          className="create-session-button"
-        >
-          Create New Session
-        </button>
-        {this.compareButton()}
+        <div className="button-holder">
+          <button
+            onClick={() => this.props.createSession(this.props.selectedConcern.id)}
+            className="create-session-button"
+          >
+            Create New Session
+          </button>
+          {this.compareButton()}
+        </div>
         {this.compareTherapyGoals()}
       </div>
     );
