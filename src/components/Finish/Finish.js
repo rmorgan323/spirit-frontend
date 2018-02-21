@@ -9,6 +9,7 @@ class Finish extends Component {
 
   completeSessionNow = () => {
     this.props.updateSession(this.props.selectedSession.id, {completed: true})
+    this.props.history.push(`/spirit/concerns/${this.props.selectedConcern.id}/sessions`);
   }
 
   render() {
@@ -48,7 +49,8 @@ class Finish extends Component {
 }
 
 const mapStateToProps = store => ({
-  selectedSession: store.selectedSession
+  selectedSession: store.selectedSession,
+  selectedConcern: store.selectedConcern
 })
 
 const mapDispatchToProps = dispatch => ({

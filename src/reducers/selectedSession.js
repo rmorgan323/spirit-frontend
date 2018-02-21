@@ -4,7 +4,7 @@ const selectedSession = (store = {}, action) => {
     return action.selectedSession;
 
   case 'UPDATE_SELECTED_SESSION':
-    let updatedStore = store;
+    let updatedStore = Object.assign({}, store);
     const updatedKeys = Object.keys(action.body);
     const updatedValues = Object.values(action.body);
 
