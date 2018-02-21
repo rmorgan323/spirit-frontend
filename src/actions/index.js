@@ -111,8 +111,15 @@ export const getSession = selectedSession => async dispatch => {
 
 export const updateSession = (sessionId, status) => async dispatch => {
   const response = await updateSessionStatus(sessionId, status);
-  dispatch(updateSelectedSession(status))
+  dispatch(updateSelectedSession(status));
+  dispatch(updateSessionsArray(sessionId, status));
 }
+
+export const updateSessionsArray = (sessionId, status) => ({
+  type: 'UPDATE_SESSIONS_ARRAY',
+  sessionId,
+  status
+})
 
 export const updateSelectedSession = body => ({
   type: 'UPDATE_SELECTED_SESSION',
