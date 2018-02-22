@@ -49,8 +49,13 @@ class BodyDiagram extends Component {
       );
       const valueFromStore = selectedProcess[matchedComponent];
 
-      return valueFromStore === true ? true : false;
+      if (valueFromStore === 'true' || valueFromStore === true) {
+        return true
+      } else {
+        return false
+      }
     });
+    console.log(matchedComponentValues);
 
     this.loadComponentValue(matchedComponentValues);
   }
@@ -107,31 +112,6 @@ class BodyDiagram extends Component {
     }
   };
 
-  checkThreadConnections = () => {
-    let className;
-    const { storedThreadConnections } = this.props;
-    const bodyPropertiesArray = [
-      'pos_4_core',
-      'pos_4_shoulder',
-      'pos_4_pelvic',
-      'pos_4_head',
-      'pos_4_eyes',
-      'pos_4_hand',
-      'pos_4_lower',
-      'pos_4_foot'
-    ];
-
-    const matchedConnections = bodyPropertiesArray.map(bodyPart => {
-      return { [bodyPart]: storedThreadConnections[bodyPart]}
-    });
-
-    const markedValues = matchedConnections.filter(object => Object.values(object)[0] !== false);
-
-    markedValues.length ? className = 'body-key thread-connection' : className = 'body-key';
-
-    return className
-  }
-
   render() {
     const {
       part1,
@@ -172,7 +152,7 @@ class BodyDiagram extends Component {
         }
       >
         <h4 className="category-title">Body Parts</h4>
-        <div className={this.checkThreadConnections()}>
+        <div className="body-key">
           <h6
             className={part1 || hover1 ? 'hover-purple-color' : null}
             onClick={() => this.togglePart(1)}
@@ -325,8 +305,7 @@ class BodyDiagram extends Component {
 }
 
 const mapStateToProps = store => ({
-  selectedProcess: store.selectedProcess,
-  storedThreadConnections: store.storedThreadConnections
+  selectedProcess: store.selectedProcess
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -341,6 +320,5 @@ export default connect(mapStateToProps, mapDispatchToProps)(BodyDiagram);
 
 BodyDiagram.propTypes = {
   selectedProcess: PropTypes.object,
-  updateProcessPerformanceComponent: PropTypes.func,
-  storedThreadConnections: PropTypes.object
+  updateProcessPerformanceComponent: PropTypes.func
 };
