@@ -17,8 +17,10 @@ const SessionHeader = ({ title, headings, databaseNamesArray }) => {
 
   return (
     <div className="SessionHeader">
-      <h3 className="session-title">{title}</h3>
-      {headingsDisplay}
+      <h2 className="session-title">{title}</h2>
+      <div className="session-header-container">
+        {headingsDisplay}
+      </div>
     </div>
   );
 };

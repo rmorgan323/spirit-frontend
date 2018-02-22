@@ -71,13 +71,15 @@ p {
 
 .Sessions .select-session-button {
   text-decoration: none;
-  color: red;
+  color: #5cba47;
   background: none;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative;
+  top: 4px; }
 
 .Sessions .select-session-button:hover {
-  color: #a30000; }
+  color: #468c41; }
 
 .Sessions .create-session-button {
   width: 300px;
@@ -146,7 +148,7 @@ p {
   bottom: 0;
   left: 0;
   height: 40px;
-  background-color: #3cd52e;
+  background-color: #5cba47;
   font-size: 14px;
   width: 88px;
   border: none;
@@ -155,7 +157,7 @@ p {
   cursor: pointer; }
 
 .Sessions .compare-sessions-button:hover {
-  background-color: #2a9c1f; }
+  background-color: #2e5b2a; }
 
 .Sessions .goals-chart {
   width: 645px;

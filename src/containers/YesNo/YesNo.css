@@ -39,39 +39,37 @@ p {
   text-align: center; }
 
 /***  MIXINS  ***/
-.YesNo h5 {
-  margin-bottom: 0; }
-
-.YesNo .yes-no {
-  border: none;
-  background-color: none;
-  height: 50px;
-  margin: 0 10px;
-  width: 50px;
-  text-align: center;
-  border-radius: 100px;
-  cursor: pointer;
-  position: relative;
-  border: 3px solid rgba(255, 255, 255, 0); }
-
-.YesNo .yes-no .yes-span, .YesNo .yes-no .no-span {
-  color: #d1d3d4; }
-
-.YesNo .yes-no .yes-span:hover, .YesNo .yes-no .no-span:hover {
-  color: #808285; }
-
-.YesNo .yes-no-active {
-  border: 3px solid #808285; }
-
-.YesNo .yes-no-active .yes-span, .YesNo .yes-no-active .no-span {
-  color: #808285; }
-
-.YesNo .yes-span {
-  position: absolute;
-  top: 14px;
-  left: 6px; }
-
-.YesNo .no-span {
-  position: absolute;
-  top: 14px;
-  left: 10px; }
+.YesNo {
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px 0; }
+  .YesNo h5 {
+    margin-bottom: 0;
+    margin-top: 0; }
+  .YesNo .yes-no {
+    border: none;
+    background-color: none;
+    height: 50px;
+    margin: 0 10px;
+    width: 50px;
+    text-align: center;
+    border-radius: 100px;
+    cursor: pointer;
+    position: relative;
+    border: 3px solid rgba(255, 255, 255, 0); }
+  .YesNo .yes-no .yes-span, .YesNo .yes-no .no-span {
+    color: #d1d3d4; }
+  .YesNo .yes-no .yes-span:hover, .YesNo .yes-no .no-span:hover {
+    color: #808285; }
+  .YesNo .yes-no-active {
+    border: 3px solid #808285; }
+  .YesNo .yes-no-active .yes-span, .YesNo .yes-no-active .no-span {
+    color: #808285; }
+  .YesNo .yes-span {
+    position: absolute;
+    top: 14px;
+    left: 6px; }
+  .YesNo .no-span {
+    position: absolute;
+    top: 14px;
+    left: 10px; }
