@@ -5,14 +5,12 @@ const selectedProcess = (store = {}, action) => {
 
   case 'UPDATE_PROCESS_COMPONENT': {
     let newProcess = store;
-    const componentKey = Object.keys(action.updatedProcess)[0];
-    const componentValue = Object.values(action.updatedProcess)[0];
+    const componentKeys = Object.keys(action.updatedProcess);
+    const componentValues = Object.values(action.updatedProcess);
 
-    Object.keys(newProcess).forEach(component => {
-      if (component === componentKey) {
-        newProcess[componentKey] = componentValue;
-      }
-    });
+    componentKeys.forEach((key, index) => {
+      newProcess[key] = componentValues[index]
+    })
 
     return newProcess;
   }
