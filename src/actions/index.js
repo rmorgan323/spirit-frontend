@@ -28,6 +28,8 @@ import joinClinic from '../helpers/joinClinic/joinClinic';
 import updateSessionStatus from '../helpers/updateSessionStatus/updateSessionStatus';
 import loadSessionsForComparison from '../helpers/loadSessionsForComparison/loadSessionsForComparison';
 import processSessionGoals from '../helpers/processSessionGoals/processSessionGoals';
+import loadProcessesForComparison from '../helpers/loadProcessesForComparison/loadProcessesForComparison';
+import processProcessesData from '../helpers/processProcessesData/processProcessesData';
 
 export const getUser = () => async dispatch => {
   try {
@@ -286,11 +288,22 @@ export const joinExistingClinic = (passcode, userId) => async dispatch => {
 
 export const compareSessionData = idArray => async dispatch => {
   const sessionGoalsData = await loadSessionsForComparison(idArray);
+  const processesData = await loadProcessesForComparison(idArray);
   const cleanData = processSessionGoals(sessionGoalsData);
+  const cleanProcesses = processProcessesData(processesData);
   dispatch(comparisonDataToStore(cleanData));
+  console.log(cleanProcesses)
+  dispatch(processesDataToStore(cleanProcesses));
 }
+
+export const processesDataToStore = cleanProcesses => ({
+  type: 'PROCESSES_DATA_TO_STORE',
+  cleanProcesses
+})
 
 export const comparisonDataToStore = cleanData => ({
   type: 'COMPARISON_DATA_TO_STORE',
   cleanData
 })
+
+

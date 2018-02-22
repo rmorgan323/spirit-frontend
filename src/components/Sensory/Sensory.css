@@ -1,2 +1,4 @@
 .Sensory .category-content {
-  display: flex; }
+  display: flex;
+  margin: auto;
+  width: fit-content; }

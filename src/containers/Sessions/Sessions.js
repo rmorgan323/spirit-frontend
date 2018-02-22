@@ -6,6 +6,7 @@ import moment from 'moment';
 import * as actions from '../../actions/index';
 import './Sessions.css';
 import GoalsChart from '../../components/GoalsChart/GoalsChart';
+import SessionsComparison from '../../components/SessionsComparison/SessionsComparison';
 
 export class Sessions extends Component {
   constructor(props) {
@@ -92,23 +93,32 @@ export class Sessions extends Component {
 
   compareTherapyGoals = () => {
     if (Object.keys(this.props.comparisonData).length) {
-      return <GoalsChart />
+      return (
+        <div>
+          <div className="goals-chart">
+            <GoalsChart />
+          </div>
+          <SessionsComparison />
+        </div>
+      )
     }
   }
 
   render() {
     return (
       <div className="Sessions">
-        <h3>Sessions</h3>
-        {this.renderedSessions()}
-        <div className="button-holder">
-          <button
-            onClick={() => this.props.createSession(this.props.selectedConcern.id)}
-            className="create-session-button"
-          >
-            Create New Session
-          </button>
-          {this.compareButton()}
+        <div className="sessions-main-holder">
+          <h3>Sessions</h3>
+          {this.renderedSessions()}
+          <div className="button-holder">
+            <button
+              onClick={() => this.props.createSession(this.props.selectedConcern.id)}
+              className="create-session-button"
+            >
+              Create New Session
+            </button>
+            {this.compareButton()}
+          </div>
         </div>
         {this.compareTherapyGoals()}
       </div>
