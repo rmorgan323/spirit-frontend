@@ -12,7 +12,8 @@ const SessionTabs = props => {
     'postural',
     'sensory',
     'social',
-    'executive'
+    'executive',
+    'finish'
   ];
 
   const navHeader = [
@@ -21,7 +22,8 @@ const SessionTabs = props => {
     'Postural',
     'Sensory',
     'Social',
-    'Executive'
+    'Executive',
+    'Finish'
   ];
 
   const navLinks = navNames.map((link, index) => {
