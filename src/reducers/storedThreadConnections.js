@@ -17,9 +17,7 @@ const storedThreadConnections = (store = markedThreadConnections, action) => {
 
           threadConnections.forEach(
             connection => {
-              console.log(selectedConnections[connection])
-              selectedConnections[connection] = true
-              console.log(selectedConnections[connection])
+              selectedConnections[connection] = true;
             }
           );
         }
