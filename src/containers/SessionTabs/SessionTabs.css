@@ -73,9 +73,11 @@ p {
     /*border-bottom: 5px solid $purple5;*/ }
     .SessionTabs .session-tabs:hover {
       background-color: #7F60A4; }
-  .SessionTabs .thread-connection {
-    background-color: #5cba47; }
-    .SessionTabs .thread-connection:hover {
-      background-color: #468c41; }
+  .SessionTabs .thread-connection-tab {
+    background-color: #9ed18f; }
+    .SessionTabs .thread-connection-tab h2 {
+      color: #FFF; }
+    .SessionTabs .thread-connection-tab:hover {
+      background-color: #5cba47; }
   .SessionTabs .active {
     background-color: #7F60A4; }
