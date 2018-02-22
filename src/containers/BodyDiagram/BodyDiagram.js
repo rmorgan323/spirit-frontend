@@ -111,9 +111,15 @@ class BodyDiagram extends Component {
     }
   };
 
-  checkThreadConnections = bodyCheck => {
+  checkThreadConnections = () => {
+    const { selectedProcess, storedThreadConnections } = this.props;
+    const bodyCheck = selectedProcess['pos_4_core'];
+
+    if (bodyCheck !== null) {
+      return 'body-key'
+    }
+
     let className;
-    const { storedThreadConnections } = this.props;
     const bodyPropertiesArray = [
       'pos_4_core',
       'pos_4_shoulder',
