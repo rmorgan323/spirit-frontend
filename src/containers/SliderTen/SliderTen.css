@@ -44,7 +44,8 @@ p {
   width: 100%;
   border: 4px solid #fff;
   border-radius: 5px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  transition: all .3s ease-in-out; }
   .SliderTen h2 {
     text-align: center;
     margin-top: 0;
@@ -59,8 +60,6 @@ p {
     align-items: flex-start;
     position: relative;
     padding: 7px; }
-  .SliderTen .thread-connection {
-    background-color: #a8ed8a; }
   .SliderTen .definition-holder {
     display: none; }
   .SliderTen .display-definition {
@@ -90,3 +89,6 @@ p {
     font-size: 16px;
     margin: 5px 0 0;
     color: #aaa; }
+
+.thread-connection {
+  border: 4px solid #9ed18f; }

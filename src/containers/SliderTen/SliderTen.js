@@ -78,11 +78,11 @@ class SliderTen extends Component {
 
   checkThreadConnection = (value, fair, threadConnection) => {
     if (threadConnection && value !== 0 && fair !== '') {
-      return 'slider-heading';
+      return 'SliderTen';
     } else if (threadConnection) {
-      return 'slider-heading thread-connection';
+      return 'SliderTen thread-connection';
     } else {
-      return 'slider-heading';
+      return 'SliderTen';
     }
   };
 
@@ -104,17 +104,17 @@ class SliderTen extends Component {
 
     return (
       <div
-        className="SliderTen"
+        className={this.checkThreadConnection(
+          value,
+          fair,
+          storedThreadConnections[databaseName]
+        )}
         onMouseLeave={() =>
           this.handleSliderUpdate(previousValue, previousFair)
         }
       >
         <div
-          className={this.checkThreadConnection(
-            value,
-            fair,
-            storedThreadConnections[databaseName]
-          )}
+          className="slider-heading"
         >
           <img
             className="definition-image"
