@@ -42,14 +42,10 @@
     }
   }
 
-  .thread-connection h2 {
-    color: $grey1;
-  }
-
   .thread-connection {
-    background-color: $green1;
+    background-color: $green4;
     &:hover {
-      background-color: $green2;
+      background-color: $green5;
     }
   }
 
