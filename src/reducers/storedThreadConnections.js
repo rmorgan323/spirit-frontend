@@ -23,7 +23,6 @@ const storedThreadConnections = (store = markedThreadConnections, action) => {
         }
       });
     });
-    console.log(selectedConnections)
     return selectedConnections;
   }
 
