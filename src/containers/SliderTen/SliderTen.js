@@ -37,9 +37,11 @@ class SliderTen extends Component {
     if (matchedComponentValue) {
       const valueArray = matchedComponentValue.split('');
       const value = valueArray[0];
+      const previousValue = valueArray[0];
       const fair = valueArray[1];
+      const previousFair = valueArray[1];
 
-      this.setState({ value, fair });
+      this.setState({ value, previousValue, fair, previousFair });
     }
   };
 
