@@ -188,6 +188,11 @@ export const updateThreadConnections = threadConnections => ({
   threadConnections
 });
 
+export const updateThreadDomain = domain => ({
+  type: 'UPDATE_THREAD_DOMAIN',
+  domain
+});
+
 export const updateProcessComponent = updatedProcess => ({
   type: 'UPDATE_PROCESS_COMPONENT',
   updatedProcess
