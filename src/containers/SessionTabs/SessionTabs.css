@@ -59,8 +59,8 @@ p {
   .SessionTabs h2 {
     font-family: "Josefin Sans", sans-serif;
     font-size: 18px;
-    color: #EAE5F0;
-    margin: 8px 0 0px; }
+    margin: 8px 0 0px;
+    color: #EAE5F0; }
   .SessionTabs .session-tabs {
     width: 120px;
     margin: 0 1px;
@@ -70,9 +70,13 @@ p {
     height: 39px;
     transition: all .3s ease-in-out;
     /*border-bottom: 5px solid $purple5;*/ }
+    .SessionTabs .session-tabs:hover {
+      background-color: #7F60A4; }
+  .SessionTabs .thread-connection h2 {
+    color: #f1f2f2; }
   .SessionTabs .thread-connection {
-    background-color: lightblue; }
+    background-color: #a8ed8a; }
+    .SessionTabs .thread-connection:hover {
+      background-color: #3cd52e; }
   .SessionTabs .active {
-    background-color: #7F60A4; }
-  .SessionTabs .session-tabs:hover {
     background-color: #7F60A4; }
