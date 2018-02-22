@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import './SessionTabs.css';
 
 const SessionTabs = props => {
-  const { storedThreadConnections } = props;
+  const { storedThreadConnections, selectedSession } = props;
   const navNames = [
     'sam',
     'modulation',
@@ -26,15 +26,28 @@ const SessionTabs = props => {
     'Finish'
   ];
 
+  const getClass = (route, threadConnection) => {
+    const { pathname } = props.location;
+    console.log(pathname)
+
+    if (threadConnection && pathname === route) {
+      return 'session-tabs';
+    } else if (threadConnection) {
+      return 'session-tabs thread-connection';
+    } else {
+      return 'session-tabs';
+    }
+  };
+
   const navLinks = navNames.map((link, index) => {
-    const currentClass = storedThreadConnections[link]
-      ? `session-tabs session-tab-${link} thread-connection`
-      : `session-tabs session-tab-${link}`;
+    const sessionId = selectedSession.id;
+    const route = `/spirit/sessions/${sessionId}/${link}`;
+
     return (
       <NavLink
         key={index}
-        to={`/spirit/sessions/:sessionId/${link}`}
-        className={currentClass}
+        to={route}
+        className={getClass(route, storedThreadConnections[link])}
       >
         <h2>{navHeader[index]}</h2>
       </NavLink>
@@ -45,11 +58,13 @@ const SessionTabs = props => {
 };
 
 export const mapStateToProps = store => ({
-  storedThreadConnections: store.storedThreadConnections
+  storedThreadConnections: store.storedThreadConnections,
+  selectedSession: store.selectedSession
 });
 
 export default connect(mapStateToProps, null)(SessionTabs);
 
 SessionTabs.propTypes = {
-  storedThreadConnections: PropTypes.object
+  storedThreadConnections: PropTypes.object,
+  selectedSession: PropTypes.object
 };
