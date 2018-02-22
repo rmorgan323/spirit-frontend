@@ -27,6 +27,14 @@ const storedThreadConnections = (store = markedThreadConnections, action) => {
     return selectedConnections;
   }
 
+  case 'CONFIRM_MARKED_THREAD_CONNECTION': {
+    const markedConnectionKey = Object.keys(action.updatedProcess)[0];
+    const markedConnectionObject = { [markedConnectionKey]: false }
+    const newConnections = Object.assign({}, store, markedConnectionObject);
+
+    return newConnections;
+  }
+
   case 'UPDATE_THREAD_CONNECTIONS': {
     const connectionsObject = action.threadConnections.reduce(
       (connectionsObject, connection) => {
