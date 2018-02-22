@@ -50,18 +50,24 @@
   }
 
   .button-fair {
-    margin: 0 5px;
-    color: #eee;
+    margin: 0 1px;
+    color: $grey2;
     font-size: 22px;
     cursor: pointer;
+    background-color: #fff;
+    display: inline-block;
+    width: 27px;
+    border-radius: 50px;
   }
 
   .button-fair:hover {
-    color: $grey5;
+    color: $purple5;
+    background-color: $purple1;
   }
 
   .button-active {
-    color: $grey5;
+    color: $purple5;
+    background-color: $purple1;
   }
 
   h5 {
@@ -69,12 +75,16 @@
     overflow: hidden;
   }
 
-  p {
-    width: 100%;
+  .slider-number {
+    width: 20px;
     text-align: center;
     font-size: 16px;
-    margin: 5px 0 0;
-    color: #aaa;
+    margin: 5px auto 0;
+    color: $purple5;
+    background-color: $purple1;
+    border-radius: 40px;
+    height: 20px;
+    padding: 1px 1px 0;
   }
 
 }

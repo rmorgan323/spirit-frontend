@@ -61,9 +61,7 @@ class UserDashboard extends Component {
         <PatientList />
 
         <div className="link-holder">
-          <Link to={`/spirit/users/${user.id}/create`}>ADD CLINIC</Link>
-
-          <Link to={`/spirit/users/${user.id}/join`}>JOIN CLINIC</Link>
+          <Link to={`/spirit/users/${user.id}/create`}>SEE CLINIC INFO</Link>
         </div>
       </div>
     );

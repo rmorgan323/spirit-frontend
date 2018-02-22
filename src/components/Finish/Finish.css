@@ -52,3 +52,6 @@ p {
 
 .Finish .complete-session-button:hover {
   background-color: #5E378C; }
+
+.Finish .finish-headings {
+  text-align: center; }

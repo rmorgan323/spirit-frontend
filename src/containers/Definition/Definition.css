@@ -42,16 +42,16 @@ p {
 .Definition {
   background-color: rgba(150, 150, 150, 0.9);
   position: absolute;
-  top: 20px;
+  top: 26px;
   left: 0;
   z-index: 10;
   width: 300px;
   padding: 10px; }
-  .Definition h5 {
+  .Definition .definition-title {
     color: #fff;
     margin: 0;
     font-size: 18px; }
-  .Definition p {
+  .Definition .definition-body {
     color: #fff;
     text-align: left;
     margin: 10px 0 0;

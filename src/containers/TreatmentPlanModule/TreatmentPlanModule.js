@@ -90,7 +90,7 @@ class TreatmentPlanModule extends Component {
           <h4>Sensory Motor</h4>
 
           <textarea
-            placeholder="notes"
+            placeholder="plan"
             name="sensory"
             onChange={event => this.handleChange(event)}
             value={sensory}
@@ -101,7 +101,7 @@ class TreatmentPlanModule extends Component {
           <h4>Task</h4>
 
           <textarea
-            placeholder="notes"
+            placeholder="plan"
             name="task"
             onChange={event => this.handleChange(event)}
             value={task}
@@ -112,7 +112,7 @@ class TreatmentPlanModule extends Component {
           <h4>Environment</h4>
 
           <textarea
-            placeholder="notes"
+            placeholder="plan"
             name="environment"
             onChange={event => this.handleChange(event)}
             value={environment}
@@ -122,7 +122,7 @@ class TreatmentPlanModule extends Component {
         <div className="treatment-rows">
           <h4>Predictability</h4>
           <textarea
-            placeholder="notes"
+            placeholder="plan"
             name="predictability"
             onChange={event => this.handleChange(event)}
             value={predictability}
@@ -132,7 +132,7 @@ class TreatmentPlanModule extends Component {
           <h4>Self-Regulation</h4>
 
           <textarea
-            placeholder="notes"
+            placeholder="plan"
             name="self_regulation"
             onChange={event => this.handleChange(event)}
             value={self_regulation}
@@ -143,7 +143,7 @@ class TreatmentPlanModule extends Component {
           <h4>Interaction</h4>
 
           <textarea
-            placeholder="notes"
+            placeholder="plan"
             name="interaction"
             onChange={event => this.handleChange(event)}
             value={interaction}
@@ -154,7 +154,7 @@ class TreatmentPlanModule extends Component {
           <h4>JRC/AR</h4>
 
           <textarea
-            placeholder="notes"
+            placeholder="plan"
             name="JRC_AR_notes"
             onChange={event => this.handleChange(event)}
             value={JRC_AR_notes}

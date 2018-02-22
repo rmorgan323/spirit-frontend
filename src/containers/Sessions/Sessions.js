@@ -108,7 +108,7 @@ export class Sessions extends Component {
     return (
       <div className="Sessions">
         <div className="sessions-main-holder">
-          <h3>Sessions</h3>
+          <h2>Sessions</h2>
           {this.renderedSessions()}
           <div className="button-holder">
             <button

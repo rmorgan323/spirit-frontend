@@ -47,8 +47,19 @@
     background-color: $purple6;
   }
 
-  .link-holder {
+  .link-holder a {
+    text-decoration: none;
+    background-color: $green4;
+    height: 40px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+    width: 200px;
+    margin: auto;
+  }
+
+  .link-holder a:hover {
+    background-color: $green5;
   }
  } 

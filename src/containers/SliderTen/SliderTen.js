@@ -138,7 +138,7 @@ class SliderTen extends Component {
           <h5>{reminderAsterisk}</h5>
         </div>
 
-        <p style={value === 0 ? { opacity: 0 } : null}>{value}</p>
+        <p className="slider-number" style={value === 0 ? { opacity: 0 } : null}>{value}</p>
 
         <div className="range-container">
           <Range
