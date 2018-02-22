@@ -49,7 +49,7 @@ class BodyDiagram extends Component {
       );
       const valueFromStore = selectedProcess[matchedComponent];
 
-      return valueFromStore === 'true' ? true : false;
+      return valueFromStore === true ? true : false;
     });
 
     this.loadComponentValue(matchedComponentValues);
@@ -86,19 +86,22 @@ class BodyDiagram extends Component {
   };
 
   handleDataUpdate = (p1, p2, p3, p4, p5, p6, p7, p8) => {
+    const bodyObject = {
+      pos_4_core: p1,
+      pos_4_shoulder: p2,
+      pos_4_pelvic: p3,
+      pos_4_head: p4,
+      pos_4_eyes: p5,
+      pos_4_hand: p6,
+      pos_4_lower: p7,
+      pos_4_foot: p8
+    };
+
     if (this.state.changed === true) {
+      console.log(bodyObject)
       this.props.updateProcessPerformanceComponent(
         this.props.selectedProcess.id,
-        {
-          pos_4_core: p1,
-          pos_4_shoulder: p2,
-          pos_4_pelvic: p3,
-          pos_4_head: p4,
-          pos_4_eyes: p5,
-          pos_4_hand: p6,
-          pos_4_lower: p7,
-          pos_4_foot: p8
-        }
+        bodyObject
       );
       this.setState({ changed: false });
     }
