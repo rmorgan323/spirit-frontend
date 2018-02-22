@@ -40,7 +40,7 @@ const SessionTabs = props => {
 
       return 'session-tabs';
     } else if (threadConnection) {
-      return 'session-tabs thread-connection';
+      return 'session-tabs thread-connection-tab';
     } else {
       return 'session-tabs';
     }

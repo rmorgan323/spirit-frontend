@@ -14,7 +14,13 @@
     background-size: 82%;
     background-position: right top;
     padding: 5px;
+    border: 4px solid #FFF;
     border-radius: 5px;
+    @include std-transition;
+  }
+
+  .thread-connection {
+    border: 4px solid $green3;
   }
 
   h6 {

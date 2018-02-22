@@ -52,7 +52,11 @@ p {
     background-size: 82%;
     background-position: right top;
     padding: 5px;
-    border-radius: 5px; }
+    border: 4px solid #FFF;
+    border-radius: 5px;
+    transition: all .3s ease-in-out; }
+  .BodyDiagram .thread-connection {
+    border: 4px solid #9ed18f; }
   .BodyDiagram h6 {
     font-size: 12px;
     margin: 6px 0;
