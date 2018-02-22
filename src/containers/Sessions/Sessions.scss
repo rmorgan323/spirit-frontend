@@ -1,7 +1,12 @@
 @import '../../variables.scss';
 
 .Sessions {
-  @include medium-content;
+
+  .sessions-main-holder {
+    @include medium-content;
+  }
+
+
 
   .session {
     display: flex;
@@ -135,5 +140,9 @@
 
   .compare-sessions-button:hover {
     background-color: darken($green2, 14%);
+  }
+
+  .goals-chart {
+    @include medium-content;
   }
 }
