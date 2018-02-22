@@ -128,28 +128,30 @@ class SliderTen extends Component {
 
         <p style={value === 0 ? { opacity: 0 } : null}>{value}</p>
 
-        <Range
-          value={value}
-          fillColor={{
-            r: 180,
-            g: 180,
-            b: 180,
-            a: 1
-          }}
-          trackColor={{
-            r: 220,
-            g: 220,
-            b: 220,
-            a: 1
-          }}
-          height={6}
-          width="100%"
-          thumbSize={14}
-          thumbColor={{ r: 200, g: 200, b: 200, a: 1 }}
-          onChange={this.onRangeChanged}
-          min={0}
-          max={10}
-        />
+        <div className="range-container">
+          <Range
+            value={value}
+            fillColor={{
+              r: 180,
+              g: 180,
+              b: 180,
+              a: 1
+            }}
+            trackColor={{
+              r: 220,
+              g: 220,
+              b: 220,
+              a: 1
+            }}
+            height={6}
+            width="100%"
+            thumbSize={14}
+            thumbColor={{ r: 200, g: 200, b: 200, a: 1 }}
+            onChange={this.onRangeChanged}
+            min={0}
+            max={10}
+          />
+        </div>
 
         <h2>
           <span

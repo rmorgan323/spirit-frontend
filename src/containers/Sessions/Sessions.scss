@@ -6,8 +6,6 @@
     @include medium-content;
   }
 
-
-
   .session {
     display: flex;
     align-items: center;
@@ -40,14 +38,16 @@
 
   .select-session-button {
     text-decoration: none;
-    color: red;
+    color: $green4;
     background: none;
     border: none;
     cursor: pointer;
+    position: relative;
+    top: 4px;
   }
 
   .select-session-button:hover {
-    color: darken(red, 18%);
+    color: $green5;
   }
 
   .create-session-button {
@@ -129,7 +129,7 @@
     bottom: 0;
     left: 0;
     height: 40px;
-    background-color: $green2;
+    background-color: $green4;
     font-size: 14px;
     width: 88px;
     border: none;
@@ -139,7 +139,7 @@
   }
 
   .compare-sessions-button:hover {
-    background-color: darken($green2, 14%);
+    background-color: darken($green5, 14%);
   }
 
   .goals-chart {
