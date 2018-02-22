@@ -18,6 +18,8 @@ const storedThreadConnections = (store = markedThreadConnections, action) => {
           threadConnections.forEach(
             connection => (selectedConnections[connection] = true)
           );
+        } else {
+          selectedConnections[key] = false;
         }
       });
     });
