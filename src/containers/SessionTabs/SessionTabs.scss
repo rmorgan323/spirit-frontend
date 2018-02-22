@@ -24,8 +24,8 @@
 
   h2 {
     @include match-h4;
-    color: $purple1;
     margin: 8px 0 0px;
+    color: $purple1;
   }
 
   .session-tabs {
@@ -37,17 +37,23 @@
     height: 39px;
     @include std-transition;
     /*border-bottom: 5px solid $purple5;*/
+    &:hover {
+      background-color: $purple5;
+    }
+  }
+
+  .thread-connection h2 {
+    color: $grey1;
   }
 
   .thread-connection {
-    background-color: lightblue;
+    background-color: $green1;
+    &:hover {
+      background-color: $green2;
+    }
   }
 
   .active {
-    background-color: $purple5;
-  }
-
-  .session-tabs:hover {
     background-color: $purple5;
   }
 }

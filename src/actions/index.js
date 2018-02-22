@@ -171,6 +171,7 @@ export const updateProcessPerformanceComponent = (
   dispatch(updateProcessComponent(updatedProcess));
 
   const threadConnections = await getThreadConnections(updatedProcess);
+  dispatch(confirmMarkedThreadConnection(updatedProcess));
   dispatch(updateThreadConnections(threadConnections));
 };
 
@@ -179,9 +180,19 @@ export const checkThreadConnections = selectedProcess => ({
   selectedProcess
 });
 
+export const confirmMarkedThreadConnection = updatedProcess => ({
+  type: 'CONFIRM_MARKED_THREAD_CONNECTION',
+  updatedProcess
+});
+
 export const updateThreadConnections = threadConnections => ({
   type: 'UPDATE_THREAD_CONNECTIONS',
   threadConnections
+});
+
+export const updateThreadDomain = domain => ({
+  type: 'UPDATE_THREAD_DOMAIN',
+  domain
 });
 
 export const updateProcessComponent = updatedProcess => ({

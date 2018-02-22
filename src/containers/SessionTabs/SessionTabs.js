@@ -2,10 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+import * as actions from '../../actions';
 import './SessionTabs.css';
 
 const SessionTabs = props => {
-  const { storedThreadConnections } = props;
+  const {
+    storedThreadConnections,
+    selectedSession,
+    updateThreadDomain
+  } = props;
+
   const navNames = [
     'sam',
     'modulation',
@@ -26,15 +32,29 @@ const SessionTabs = props => {
     'Finish'
   ];
 
+  const getClass = (domain, route, threadConnection) => {
+    const { pathname } = props.location;
+
+    if (threadConnection && pathname === route) {
+      updateThreadDomain(domain);
+
+      return 'session-tabs';
+    } else if (threadConnection) {
+      return 'session-tabs thread-connection';
+    } else {
+      return 'session-tabs';
+    }
+  };
+
   const navLinks = navNames.map((link, index) => {
-    const currentClass = storedThreadConnections[link]
-      ? `session-tabs session-tab-${link} thread-connection`
-      : `session-tabs session-tab-${link}`;
+    const sessionId = selectedSession.id;
+    const route = `/spirit/sessions/${sessionId}/${link}`;
+
     return (
       <NavLink
         key={index}
-        to={`/spirit/sessions/:sessionId/${link}`}
-        className={currentClass}
+        to={route}
+        className={getClass(link, route, storedThreadConnections[link])}
       >
         <h2>{navHeader[index]}</h2>
       </NavLink>
@@ -45,11 +65,20 @@ const SessionTabs = props => {
 };
 
 export const mapStateToProps = store => ({
-  storedThreadConnections: store.storedThreadConnections
+  storedThreadConnections: store.storedThreadConnections,
+  selectedSession: store.selectedSession
 });
 
-export default connect(mapStateToProps, null)(SessionTabs);
+export const mapDispatchToProps = dispatch => ({
+  updateThreadDomain: domain => {
+    dispatch(actions.updateThreadDomain(domain));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SessionTabs);
 
 SessionTabs.propTypes = {
-  storedThreadConnections: PropTypes.object
+  storedThreadConnections: PropTypes.object,
+  selectedSession: PropTypes.object,
+  updateThreadDomain: PropTypes.func
 };

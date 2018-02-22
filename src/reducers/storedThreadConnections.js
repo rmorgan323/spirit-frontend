@@ -4,25 +4,34 @@ import getThreadConnections from '../helpers/getThreadConnections/getThreadConne
 const storedThreadConnections = (store = markedThreadConnections, action) => {
   switch (action.type) {
   case 'CHECK_THREAD_CONNECTIONS': {
-    let selectedConnections = store;
+    let selectedConnections = Object.assign({}, store);
     const processKeys = Object.keys(action.selectedProcess);
     const storeKeys = Object.keys(selectedConnections);
 
     processKeys.forEach(component => {
       storeKeys.forEach(key => {
-        if (component === key && action.selectedProcess[component] !== null) {
+        if (component === key && action.selectedProcess[component]) {
           const threadConnections = getThreadConnections({
             [component]: action.selectedProcess[component]
           });
 
           threadConnections.forEach(
-            connection => (selectedConnections[connection] = true)
+            connection => {
+              selectedConnections[connection] = true;
+            }
           );
         }
       });
     });
-
     return selectedConnections;
+  }
+
+  case 'CONFIRM_MARKED_THREAD_CONNECTION': {
+    const markedConnectionKey = Object.keys(action.updatedProcess)[0];
+    const markedConnectionObject = { [markedConnectionKey]: false };
+    const newConnections = Object.assign({}, store, markedConnectionObject);
+
+    return newConnections;
   }
 
   case 'UPDATE_THREAD_CONNECTIONS': {
@@ -36,6 +45,13 @@ const storedThreadConnections = (store = markedThreadConnections, action) => {
     );
 
     const newConnections = Object.assign({}, store, connectionsObject);
+
+    return newConnections;
+  }
+
+  case 'UPDATE_THREAD_DOMAIN': {
+    const updatedDomain = { [action.domain]: false };
+    const newConnections = Object.assign({}, store, updatedDomain);
 
     return newConnections;
   }
