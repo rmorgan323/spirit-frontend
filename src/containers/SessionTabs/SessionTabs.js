@@ -2,10 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+import * as actions from '../../actions';
 import './SessionTabs.css';
 
 const SessionTabs = props => {
-  const { storedThreadConnections, selectedSession } = props;
+  const {
+    storedThreadConnections,
+    selectedSession,
+    updateThreadDomain
+  } = props;
+
   const navNames = [
     'sam',
     'modulation',
@@ -26,11 +32,13 @@ const SessionTabs = props => {
     'Finish'
   ];
 
-  const getClass = (route, threadConnection) => {
+  const getClass = (domain, route, threadConnection) => {
     const { pathname } = props.location;
-    console.log(pathname)
+    console.log(pathname);
 
     if (threadConnection && pathname === route) {
+      updateThreadDomain(domain);
+
       return 'session-tabs';
     } else if (threadConnection) {
       return 'session-tabs thread-connection';
@@ -47,7 +55,7 @@ const SessionTabs = props => {
       <NavLink
         key={index}
         to={route}
-        className={getClass(route, storedThreadConnections[link])}
+        className={getClass(link, route, storedThreadConnections[link])}
       >
         <h2>{navHeader[index]}</h2>
       </NavLink>
@@ -63,12 +71,15 @@ export const mapStateToProps = store => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  updateThreadDomain: domain => dispatch(updateThreadDomain(domain))
-})
+  updateThreadDomain: domain => {
+    dispatch(actions.updateThreadDomain(domain));
+  }
+});
 
-export default connect(mapStateToProps, null)(SessionTabs);
+export default connect(mapStateToProps, mapDispatchToProps)(SessionTabs);
 
 SessionTabs.propTypes = {
   storedThreadConnections: PropTypes.object,
-  selectedSession: PropTypes.object
+  selectedSession: PropTypes.object,
+  updateThreadDomain: PropTypes.func
 };
