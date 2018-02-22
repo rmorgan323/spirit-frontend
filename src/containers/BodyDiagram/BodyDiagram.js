@@ -300,7 +300,8 @@ class BodyDiagram extends Component {
 }
 
 const mapStateToProps = store => ({
-  selectedProcess: store.selectedProcess
+  selectedProcess: store.selectedProcess,
+  storedThreadConnections: store.storedThreadConnections
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -315,5 +316,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(BodyDiagram);
 
 BodyDiagram.propTypes = {
   selectedProcess: PropTypes.object,
-  updateProcessPerformanceComponent: PropTypes.func
+  updateProcessPerformanceComponent: PropTypes.func,
+  storedThreadConnections: PropTypes.object
 };
