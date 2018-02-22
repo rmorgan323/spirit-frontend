@@ -16,10 +16,13 @@
     display: flex;
     align-items: flex-start;
     position: relative;
+    padding: 5px;
+    border-radius: 5px;
+    @include std-transition;
   }
 
   .thread-connection {
-    background-color: lightblue;
+    background-color: $green1;
   }
 
   .definition-holder {

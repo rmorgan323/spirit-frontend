@@ -49,9 +49,12 @@ p {
   .SliderTen .slider-heading {
     display: flex;
     align-items: flex-start;
-    position: relative; }
+    position: relative;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all .3s ease-in-out; }
   .SliderTen .thread-connection {
-    background-color: lightblue; }
+    background-color: #a8ed8a; }
   .SliderTen .definition-holder {
     display: none; }
   .SliderTen .display-definition {
