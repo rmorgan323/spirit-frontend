@@ -1,39 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
 import './SessionTabs.css';
 
-const SessionTabs = props => {
-  const {
-    storedThreadConnections,
-    selectedSession,
-    updateThreadDomain
-  } = props;
+class SessionTabs extends Component {
+  constructor() {
+    super();
+    this.state = {
 
-  const navNames = [
-    'sam',
-    'modulation',
-    'postural',
-    'sensory',
-    'social',
-    'executive',
-    'finish'
-  ];
+    };
+  }
 
-  const navHeader = [
-    'SAM',
-    'Modulation',
-    'Postural',
-    'Sensory',
-    'Social',
-    'Executive',
-    'Finish'
-  ];
-
-  const getClass = (domain, route, threadConnection) => {
-    const { pathname } = props.location;
+  getClass = (domain, route, threadConnection) => {
+    const { updateThreadDomain } = this.props;
+    const { pathname } = this.props.location;
 
     if (threadConnection && pathname === route) {
       updateThreadDomain(domain);
@@ -46,22 +28,50 @@ const SessionTabs = props => {
     }
   };
 
-  const navLinks = navNames.map((link, index) => {
-    const sessionId = selectedSession.id;
-    const route = `/spirit/sessions/${sessionId}/${link}`;
+  render() {
+    const {
+      storedThreadConnections,
+      selectedSession,
+      updateThreadDomain
+    } = this.props;
 
-    return (
-      <NavLink
-        key={index}
-        to={route}
-        className={getClass(link, route, storedThreadConnections[link])}
-      >
-        <h2>{navHeader[index]}</h2>
-      </NavLink>
-    );
-  });
+    const navNames = [
+      'sam',
+      'modulation',
+      'postural',
+      'sensory',
+      'social',
+      'executive',
+      'finish'
+    ];
 
-  return <div className="SessionTabs">{navLinks}</div>;
+    const navHeader = [
+      'SAM',
+      'Modulation',
+      'Postural',
+      'Sensory',
+      'Social',
+      'Executive',
+      'Finish'
+    ];
+
+    const navLinks = navNames.map((link, index) => {
+      const sessionId = selectedSession.id;
+      const route = `/spirit/sessions/${sessionId}/${link}`;
+
+      return (
+        <NavLink
+          key={index}
+          to={route}
+          className={this.getClass(link, route, storedThreadConnections[link])}
+        >
+          <h2>{navHeader[index]}</h2>
+        </NavLink>
+      );
+    });
+
+    return <div className="SessionTabs">{navLinks}</div>;
+  }
 };
 
 export const mapStateToProps = store => ({
