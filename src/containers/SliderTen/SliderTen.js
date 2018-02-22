@@ -74,6 +74,16 @@ class SliderTen extends Component {
     this.setState({ displayDefinition: !displayDefinition });
   };
 
+  checkThreadConnection = (value, fair, threadConnection) => {
+    if (threadConnection && value !== 0 && fair !== '') {
+      return 'slider-heading';
+    } else if (threadConnection) {
+      return 'slider-heading thread-connection';
+    } else {
+      return 'slider-heading';
+    }
+  };
+
   render() {
     const {
       value,
@@ -98,11 +108,11 @@ class SliderTen extends Component {
         }
       >
         <div
-          className={
+          className={this.checkThreadConnection(
+            value,
+            fair,
             storedThreadConnections[databaseName]
-              ? 'slider-heading thread-connection'
-              : 'slider-heading'
-          }
+          )}
         >
           <img
             className="definition-image"
