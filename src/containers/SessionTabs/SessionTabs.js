@@ -34,7 +34,6 @@ const SessionTabs = props => {
 
   const getClass = (domain, route, threadConnection) => {
     const { pathname } = props.location;
-    console.log(pathname);
 
     if (threadConnection && pathname === route) {
       updateThreadDomain(domain);
