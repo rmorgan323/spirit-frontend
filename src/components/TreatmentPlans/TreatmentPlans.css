@@ -42,7 +42,7 @@ p {
 .TreatmentPlans {
   width: 875px;
   display: block;
-  margin: 50px auto; }
+  margin: 0 auto 50px; }
   .TreatmentPlans .treatment-header-tabs {
     display: flex; }
   .TreatmentPlans h4 {

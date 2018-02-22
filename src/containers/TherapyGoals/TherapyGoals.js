@@ -148,7 +148,7 @@ class TherapyGoals extends Component {
             onChange={event => this.handleGoalsChange(event)}
             value={goal}
             className="modulation-goal"
-            placeholder="goals"
+            placeholder="goal"
           />
         </div>
 

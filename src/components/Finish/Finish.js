@@ -15,7 +15,12 @@ class Finish extends Component {
   render() {
     return (
       <div className="Finish">
+
+        <h2 className="finish-headings">Treatment Plans</h2>
+
         <TreatmentPlans />
+
+        <h2 className="finish-headings">Therapy Goals</h2>
 
         <TherapyGoals category="modulation_" title="Modulation" number="1" />
 

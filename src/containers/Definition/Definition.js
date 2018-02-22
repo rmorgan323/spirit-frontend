@@ -25,8 +25,8 @@ const Definition = props => {
     display = relevantDefinitions.map((def, index) => {
       return (
         <div key={index}>
-          <h5>{def.term}</h5>
-          <p>{def.definition}</p>
+          <h5 className="definition-title">{def.term}</h5>
+          <p className="definition-body">{def.definition}</p>
           <hr />
         </div>
       );

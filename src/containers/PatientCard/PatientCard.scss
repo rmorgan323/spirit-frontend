@@ -19,10 +19,10 @@
 
   a {
     text-decoration: none;
-    color: red;
+    color: $green4;
   }
 
   a:hover {
-    color: darken(red, 18%);
+    color: $green5;
   }
  } 

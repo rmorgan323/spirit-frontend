@@ -64,10 +64,10 @@
 
   a.join-link {
     text-decoration: none;
-    color: red;
+    color: $green4;
   }
 
   a.join-link:hover {
-    color: darken(red, 18%);
+    color: $green5;
   }
 } 

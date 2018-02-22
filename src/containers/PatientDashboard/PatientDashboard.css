@@ -92,14 +92,14 @@ p {
   .PatientDashboard .save-primary-concern {
     border: none;
     background: none;
-    color: red;
+    color: #5cba47;
     cursor: pointer;
     width: 130px;
     margin-left: 20px;
     text-align: center;
     font-size: 20px; }
   .PatientDashboard .save-primary-concern:hover {
-    color: #b30000; }
+    color: #468c41; }
   .PatientDashboard .select-primary-concern {
     padding: 0 17px;
     border: none;
