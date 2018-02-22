@@ -74,6 +74,15 @@ p {
     transition: all .3s ease-in-out; }
   .UserDashboard button:hover {
     background-color: #5E378C; }
-  .UserDashboard .link-holder {
+  .UserDashboard .link-holder a {
+    text-decoration: none;
+    background-color: #5cba47;
+    height: 40px;
     display: flex;
-    justify-content: space-between; }
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+    width: 200px;
+    margin: auto; }
+  .UserDashboard .link-holder a:hover {
+    background-color: #468c41; }

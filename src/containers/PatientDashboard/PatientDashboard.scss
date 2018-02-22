@@ -76,7 +76,7 @@
   .save-primary-concern {
     border: none;
     background: none;
-    color: red;
+    color: $green4;
     cursor: pointer;
     width: 130px;
     margin-left: 20px;
@@ -85,7 +85,7 @@
   }
 
   .save-primary-concern:hover {
-    color: darken(red, 15%);
+    color: $green5;
   }
 
   .select-primary-concern {

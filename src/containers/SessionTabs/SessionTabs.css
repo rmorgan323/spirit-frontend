@@ -76,8 +76,8 @@ p {
   .SessionTabs .thread-connection h2 {
     color: #f1f2f2; }
   .SessionTabs .thread-connection {
-    background-color: #a8ed8a; }
+    background-color: #f0f7ee; }
     .SessionTabs .thread-connection:hover {
-      background-color: #3cd52e; }
+      background-color: #deeed9; }
   .SessionTabs .active {
     background-color: #7F60A4; }

@@ -53,6 +53,6 @@ p {
     margin-right: 4px; }
   .PatientCard a {
     text-decoration: none;
-    color: red; }
+    color: #5cba47; }
   .PatientCard a:hover {
-    color: #a30000; }
+    color: #468c41; }
