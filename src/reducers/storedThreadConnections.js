@@ -29,7 +29,7 @@ const storedThreadConnections = (store = markedThreadConnections, action) => {
 
   case 'CONFIRM_MARKED_THREAD_CONNECTION': {
     const markedConnectionKey = Object.keys(action.updatedProcess)[0];
-    const markedConnectionObject = { [markedConnectionKey]: false }
+    const markedConnectionObject = { [markedConnectionKey]: false };
     const newConnections = Object.assign({}, store, markedConnectionObject);
 
     return newConnections;
@@ -46,6 +46,13 @@ const storedThreadConnections = (store = markedThreadConnections, action) => {
     );
 
     const newConnections = Object.assign({}, store, connectionsObject);
+
+    return newConnections;
+  }
+
+  case 'UPDATE_THREAD_DOMAIN': {
+    const updatedDomain = { [action.domain]: false };
+    const newConnections = Object.assign({}, store, updatedDomain);
 
     return newConnections;
   }
