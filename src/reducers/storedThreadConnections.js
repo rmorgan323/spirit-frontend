@@ -4,7 +4,7 @@ import getThreadConnections from '../helpers/getThreadConnections/getThreadConne
 const storedThreadConnections = (store = markedThreadConnections, action) => {
   switch (action.type) {
   case 'CHECK_THREAD_CONNECTIONS': {
-    let selectedConnections = store;
+    let selectedConnections = Object.assign({}, store);
     const processKeys = Object.keys(action.selectedProcess);
     const storeKeys = Object.keys(selectedConnections);
 
