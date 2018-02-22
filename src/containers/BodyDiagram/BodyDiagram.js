@@ -55,7 +55,6 @@ class BodyDiagram extends Component {
         return false
       }
     });
-    console.log(matchedComponentValues);
 
     this.loadComponentValue(matchedComponentValues);
   }
@@ -112,6 +111,32 @@ class BodyDiagram extends Component {
     }
   };
 
+  checkThreadConnections = bodyCheck => {
+    let className;
+    const { storedThreadConnections } = this.props;
+    const bodyPropertiesArray = [
+      'pos_4_core',
+      'pos_4_shoulder',
+      'pos_4_pelvic',
+      'pos_4_head',
+      'pos_4_eyes',
+      'pos_4_hand',
+      'pos_4_lower',
+      'pos_4_foot'
+    ];
+
+    const matchedConnections = bodyPropertiesArray.map(bodyPart => {
+      return { [bodyPart]: storedThreadConnections[bodyPart]}
+    });
+
+    const markedValues = matchedConnections.filter(object => Object.values(object)[0] !== false);
+    console.log('re-render')
+
+    markedValues.length ? className = 'body-key thread-connection' : className = 'body-key';
+
+    return className
+  }
+
   render() {
     const {
       part1,
@@ -152,7 +177,7 @@ class BodyDiagram extends Component {
         }
       >
         <h4 className="category-title">Body Parts</h4>
-        <div className="body-key">
+        <div className={this.checkThreadConnections()}>
           <h6
             className={part1 || hover1 ? 'hover-purple-color' : null}
             onClick={() => this.togglePart(1)}
@@ -305,7 +330,8 @@ class BodyDiagram extends Component {
 }
 
 const mapStateToProps = store => ({
-  selectedProcess: store.selectedProcess
+  selectedProcess: store.selectedProcess,
+  storedThreadConnections: store.storedThreadConnections
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -320,5 +346,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(BodyDiagram);
 
 BodyDiagram.propTypes = {
   selectedProcess: PropTypes.object,
-  updateProcessPerformanceComponent: PropTypes.func
+  updateProcessPerformanceComponent: PropTypes.func,
+  storedThreadConnections: PropTypes.object
 };
