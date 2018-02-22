@@ -62,6 +62,10 @@ export const mapStateToProps = store => ({
   selectedSession: store.selectedSession
 });
 
+export const mapDispatchToProps = dispatch => ({
+  updateThreadDomain: domain => dispatch(updateThreadDomain(domain))
+})
+
 export default connect(mapStateToProps, null)(SessionTabs);
 
 SessionTabs.propTypes = {
