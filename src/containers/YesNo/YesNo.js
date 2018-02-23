@@ -36,7 +36,8 @@ class YesNo extends Component {
     const {
       updateProcessPerformanceComponent,
       selectedProcess,
-      databaseName
+      databaseName,
+      storedThreadConnections
     } = this.props;
 
     updateProcessPerformanceComponent(selectedProcess.id, {
@@ -70,7 +71,8 @@ class YesNo extends Component {
 }
 
 const mapStateToProps = store => ({
-  selectedProcess: store.selectedProcess
+  selectedProcess: store.selectedProcess,
+  storedThreadConnections: store.storedThreadConnections
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -87,5 +89,6 @@ YesNo.propTypes = {
   selectedProcess: PropTypes.object,
   databaseName: PropTypes.string,
   updateProcessPerformanceComponent: PropTypes.func,
-  question: PropTypes.string
+  question: PropTypes.string,
+  storedThreadConnections: PropTypes.object
 };
