@@ -61,7 +61,12 @@ class YesNo extends Component {
     const { yesNo } = this.state;
 
     return (
-      <div className="YesNo">
+      <div
+        className={this.checkThreadConnection(
+          yesNo,
+          storedThreadConnections[databaseName]
+        )}
+      >
         <h5>{question}</h5>
         <button
           className={yesNo === true ? 'yes-no yes-no-active' : 'yes-no'}
