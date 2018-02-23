@@ -57,7 +57,7 @@ class YesNo extends Component {
   };
 
   render() {
-    const { question } = this.props;
+    const { question, storedThreadConnections, databaseName } = this.props;
     const { yesNo } = this.state;
 
     return (
