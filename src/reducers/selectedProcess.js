@@ -15,6 +15,9 @@ const selectedProcess = (store = {}, action) => {
     return newProcess;
   }
 
+  case 'EMPTY_SELECTED_PROCESS':
+    return {};
+
   default:
     return store;
   }
