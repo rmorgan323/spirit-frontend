@@ -306,6 +306,16 @@ export const comparisonDataToStore = cleanData => ({
   cleanData
 });
 
+export const wipeStoreFromPatientDashboard = () => async dispatch => {
+  dispatch(resetThreadConnections());
+  dispatch(emptySelectedTreatmentPlan());
+  dispatch(emptySelectedTherapyGoal());
+  dispatch(emptySelectedProcess());
+  dispatch(emptySelectedSession());
+  dispatch(emptySessions());
+  dispatch(emptySelectedConcern());
+};
+
 export const wipeStoreFromSessions = () => async dispatch => {
   dispatch(resetThreadConnections());
   dispatch(emptySelectedTreatmentPlan());
@@ -333,3 +343,11 @@ export const emptySelectedProcess = () => ({
 export const emptySelectedSession = () => ({
   type: 'EMPTY_SELECTED_SESSION'
 });
+
+export const emptySessions = () => ({
+  type: 'EMPTY_SESSIONS'
+});
+
+export const emptySelectedConcern = () => ({
+  type: 'EMPTY_SELECTED_CONCERN'
+})
