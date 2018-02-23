@@ -69,7 +69,7 @@ const sensoryConnections = {
     'pos_4_shoulder',
     'sen_5_gross',
     'sen_5_fine',
-    'sen_5_postural',
+    'sen_5_postural'
   ],
   sen_5_ocular: [
     'exectuive',

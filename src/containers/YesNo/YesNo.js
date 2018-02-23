@@ -32,6 +32,16 @@ class YesNo extends Component {
     }
   };
 
+  checkThreadConnection = (yesNo, threadConnection) => {
+    if (threadConnection && yesNo !== null) {
+      return 'YesNo';
+    } else if (threadConnection) {
+      return 'YesNo thread-connection-yesno';
+    } else {
+      return 'YesNo';
+    }
+  };
+
   handleChange = boolean => {
     const {
       updateProcessPerformanceComponent,
@@ -46,11 +56,16 @@ class YesNo extends Component {
   };
 
   render() {
-    const { question } = this.props;
+    const { question, storedThreadConnections, databaseName } = this.props;
     const { yesNo } = this.state;
 
     return (
-      <div className="YesNo">
+      <div
+        className={this.checkThreadConnection(
+          yesNo,
+          storedThreadConnections[databaseName]
+        )}
+      >
         <h5>{question}</h5>
         <button
           className={yesNo === true ? 'yes-no yes-no-active' : 'yes-no'}
@@ -70,7 +85,8 @@ class YesNo extends Component {
 }
 
 const mapStateToProps = store => ({
-  selectedProcess: store.selectedProcess
+  selectedProcess: store.selectedProcess,
+  storedThreadConnections: store.storedThreadConnections
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -87,5 +103,6 @@ YesNo.propTypes = {
   selectedProcess: PropTypes.object,
   databaseName: PropTypes.string,
   updateProcessPerformanceComponent: PropTypes.func,
-  question: PropTypes.string
+  question: PropTypes.string,
+  storedThreadConnections: PropTypes.object
 };

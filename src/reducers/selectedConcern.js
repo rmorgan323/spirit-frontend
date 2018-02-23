@@ -3,6 +3,9 @@ const selectedConcern = (store = {}, action) => {
   case 'SELECTED_CONCERN_TO_STORE':
     return action.selectedConcern;
 
+  case 'EMPTY_SELECTED_CONCERN':
+    return {};
+
   default:
     return store;
   }

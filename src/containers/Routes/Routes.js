@@ -24,7 +24,7 @@ import PatientHeader from '../PatientHeader/PatientHeader';
 import ConcernHeader from '../ConcernHeader/ConcernHeader';
 import Sam from '../../components/Sam/Sam';
 import SessionTabs from '../SessionTabs/SessionTabs';
-import Finish from '../../components/Finish/Finish';
+import Finish from '../Finish/Finish';
 
 class Routes extends Component {
   componentDidMount = async () => {
