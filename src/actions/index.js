@@ -114,7 +114,7 @@ export const getSession = selectedSession => async dispatch => {
 };
 
 export const updateSession = (sessionId, status) => async dispatch => {
-  const response = await updateSessionStatus(sessionId, status);
+  await updateSessionStatus(sessionId, status);
   dispatch(updateSelectedSession(status));
   dispatch(updateSessionsArray(sessionId, status));
 };
@@ -292,7 +292,6 @@ export const compareSessionData = idArray => async dispatch => {
   const cleanData = processSessionGoals(sessionGoalsData);
   const cleanProcesses = processProcessesData(processesData);
   dispatch(comparisonDataToStore(cleanData));
-  console.log(cleanProcesses);
   dispatch(processesDataToStore(cleanProcesses));
 };
 
