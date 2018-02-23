@@ -18,7 +18,7 @@ export class Sessions extends Component {
   }
 
   componentDidMount() {
-    this.props.wipeStorefromSessions();
+    this.props.wipeStoreFromSessions();
   }
 
   toggleCheckBox = (id) => {
@@ -143,8 +143,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.getSession(selectedSessionId)),
   compareSessionData: idArray =>
     dispatch(actions.compareSessionData(idArray)),
-    wipeStorefromSessions: () => {
-    dispatch(actions.wipeStorefromSessions())
+    wipeStoreFromSessions: () => {
+    dispatch(actions.wipeStoreFromSessions())
   }
 });
 

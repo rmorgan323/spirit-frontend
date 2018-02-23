@@ -117,18 +117,18 @@ export const updateSession = (sessionId, status) => async dispatch => {
   const response = await updateSessionStatus(sessionId, status);
   dispatch(updateSelectedSession(status));
   dispatch(updateSessionsArray(sessionId, status));
-}
+};
 
 export const updateSessionsArray = (sessionId, status) => ({
   type: 'UPDATE_SESSIONS_ARRAY',
   sessionId,
   status
-})
+});
 
 export const updateSelectedSession = body => ({
   type: 'UPDATE_SELECTED_SESSION',
   body
-})
+});
 
 export const selectedSessionToStore = selectedSession => ({
   type: 'SELECTED_SESSION_TO_STORE',
@@ -292,18 +292,44 @@ export const compareSessionData = idArray => async dispatch => {
   const cleanData = processSessionGoals(sessionGoalsData);
   const cleanProcesses = processProcessesData(processesData);
   dispatch(comparisonDataToStore(cleanData));
-  console.log(cleanProcesses)
+  console.log(cleanProcesses);
   dispatch(processesDataToStore(cleanProcesses));
-}
+};
 
 export const processesDataToStore = cleanProcesses => ({
   type: 'PROCESSES_DATA_TO_STORE',
   cleanProcesses
-})
+});
 
 export const comparisonDataToStore = cleanData => ({
   type: 'COMPARISON_DATA_TO_STORE',
   cleanData
-})
+});
 
+export const wipeStoreFromSessions = () => async dispatch => {
+  dispatch(resetThreadConnections());
+  dispatch(emptySelectedTreatmentPlan());
+  dispatch(emptySelectedTherapyGoal());
+  dispatch(emptySelectedProcess());
+  dispatch(emptySelectedSession());
+};
 
+export const resetThreadConnections = () => ({
+  type: 'RESET_THREAD_CONNECTIONS'
+});
+
+export const emptySelectedTreatmentPlan = () => ({
+  type: 'EMPTY_SELECTED_TREATMENT_PLAN'
+});
+
+export const emptySelectedTherapyGoal = () => ({
+  type: 'EMPTY_SELECTED_THERAPY_GOAL'
+});
+
+export const emptySelectedProcess = () => ({
+  type: 'EMPTY_SELECTED_PROCESS'
+});
+
+export const emptySelectedSession = () => ({
+  type: 'EMPTY_SELECTED_SESSION'
+});
