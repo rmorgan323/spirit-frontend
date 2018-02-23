@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import TreatmentPlans from '../TreatmentPlans/TreatmentPlans';
-import TherapyGoals from '../../containers/TherapyGoals/TherapyGoals';
+import TreatmentPlans from '../../components/TreatmentPlans/TreatmentPlans';
+import TherapyGoals from '../TherapyGoals/TherapyGoals';
 import * as actions from '../../actions';
 import './Finish.css';
 
