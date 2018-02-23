@@ -3,7 +3,7 @@ const sessions = (store = [], action) => {
   case 'SESSIONS_TO_STORE':
     return action.sessions;
 
-  case 'UPDATE_SESSIONS_ARRAY':
+  case 'UPDATE_SESSIONS_ARRAY': {
     let newStore = [].slice.call(store);
     const id = action.sessionId;
     const status = action.status;
@@ -11,8 +11,10 @@ const sessions = (store = [], action) => {
     sessionToUpdate[Object.keys(action.status)] = Object.values(action.status)[0]
 
     return newStore;
+  }
 
-
+  case 'EMPTY_SESSIONS':
+    return [];
 
   default:
     return store;
