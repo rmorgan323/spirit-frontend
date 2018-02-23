@@ -73,7 +73,7 @@ class Create extends Component {
             onChange={event => this.handleChange(event)}
             value={clinicName}
             name="clinicName"
-            placeholder="Add NEW Clinic"
+            placeholder="Switch to NEW Clinic"
             maxLength={30}
           />
           <input
