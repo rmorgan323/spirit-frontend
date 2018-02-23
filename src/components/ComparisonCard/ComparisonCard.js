@@ -14,7 +14,7 @@ const ComparisonCard = ({ dateArray, title, values }) => {
       val = 'no';
     } else if (val === true) {
       val = 'yes';
-    } else if (val === null || val === 0 || val === undefined || val === '' ) {
+    } else if (val === null || val === 0 || val === undefined || val === '' || val === '0undefined') {
       val = '-'
     }
 
