@@ -2,7 +2,7 @@ import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const loadProcessById = async processId => {
   try {
-    const fetchedProcess = fetch(
+    const fetchedProcess = await fetch(
       `http://localhost:3000/api/v1/processes/${processId}`,
       {
         method: 'GET',
@@ -12,7 +12,7 @@ const loadProcessById = async processId => {
         }
       }
     );
-    const jsonProcess = fetchedProcess.json();
+    const jsonProcess = await fetchedProcess.json();
 
     return jsonProcess;
   } catch (error) {
