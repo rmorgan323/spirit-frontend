@@ -15,6 +15,9 @@ const selectedTreatmentPlan = (store = {}, action) => {
     return newTreatmentPlan;
   }
 
+  case 'EMPTY_SELECTED_TREATMENT_PLAN':
+    return {};
+
   default:
     return store;
   }
