@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import moment from 'moment';
 import GoalsChart from '../GoalsChart/GoalsChart';
-import SessionsComparison from '../../components/SessionsComparison/SessionsComparison';
+import SessionsComparison from '../SessionsComparison/SessionsComparison';
 import * as actions from '../../actions/index';
 import './Sessions.css';
 

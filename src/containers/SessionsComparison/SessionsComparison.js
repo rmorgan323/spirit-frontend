@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import ComparisonCard from '../ComparisonCard/ComparisonCard';
+import ComparisonCard from '../../components/ComparisonCard/ComparisonCard';
 import './SessionsComparison.css';
 
 const SessionsComparison = props => {
