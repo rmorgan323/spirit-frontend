@@ -46,8 +46,7 @@ class YesNo extends Component {
     const {
       updateProcessPerformanceComponent,
       selectedProcess,
-      databaseName,
-      storedThreadConnections
+      databaseName
     } = this.props;
 
     updateProcessPerformanceComponent(selectedProcess.id, {

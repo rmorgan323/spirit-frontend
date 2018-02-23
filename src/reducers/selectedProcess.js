@@ -9,8 +9,8 @@ const selectedProcess = (store = {}, action) => {
     const componentValues = Object.values(action.updatedProcess);
 
     componentKeys.forEach((key, index) => {
-      newProcess[key] = componentValues[index]
-    })
+      newProcess[key] = componentValues[index];
+    });
 
     return newProcess;
   }

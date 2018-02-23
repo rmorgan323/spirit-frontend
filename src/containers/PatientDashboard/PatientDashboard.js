@@ -215,5 +215,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(PatientDashboard);
 
 PatientDashboard.propTypes = {
   addConcern: PropTypes.func,
-  currentPatient: PropTypes.object
+  currentPatient: PropTypes.object,
+  wipeStoreFromPatientDashboard: PropTypes.func
 };

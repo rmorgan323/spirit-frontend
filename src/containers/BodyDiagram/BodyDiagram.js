@@ -50,9 +50,9 @@ class BodyDiagram extends Component {
       const valueFromStore = selectedProcess[matchedComponent];
 
       if (valueFromStore === 'true' || valueFromStore === true) {
-        return true
+        return true;
       } else {
-        return false
+        return false;
       }
     });
 
@@ -102,7 +102,6 @@ class BodyDiagram extends Component {
     };
 
     if (this.state.changed === true) {
-      console.log(bodyObject)
       this.props.updateProcessPerformanceComponent(
         this.props.selectedProcess.id,
         bodyObject
@@ -116,7 +115,7 @@ class BodyDiagram extends Component {
     const bodyCheck = selectedProcess['pos_4_core'];
 
     if (bodyCheck !== null) {
-      return 'body-key'
+      return 'body-key';
     }
 
     let className;
@@ -132,16 +131,19 @@ class BodyDiagram extends Component {
     ];
 
     const matchedConnections = bodyPropertiesArray.map(bodyPart => {
-      return { [bodyPart]: storedThreadConnections[bodyPart]}
+      return { [bodyPart]: storedThreadConnections[bodyPart] };
     });
 
-    const markedValues = matchedConnections.filter(object => Object.values(object)[0] !== false);
-    console.log('re-render')
+    const markedValues = matchedConnections.filter(
+      object => Object.values(object)[0] !== false
+    );
 
-    markedValues.length ? className = 'body-key thread-connection' : className = 'body-key';
+    markedValues.length
+      ? (className = 'body-key thread-connection')
+      : (className = 'body-key');
 
-    return className
-  }
+    return className;
+  };
 
   render() {
     const {
