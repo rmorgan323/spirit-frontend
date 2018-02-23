@@ -32,6 +32,16 @@ class YesNo extends Component {
     }
   };
 
+  checkThreadConnection = (yesNo, threadConnection) => {
+    if (threadConnection && yesNo !== null) {
+      return 'YesNo';
+    } else if (threadConnection) {
+      return 'YesNo thread-connection-yesno';
+    } else {
+      return 'YesNo';
+    }
+  };
+
   handleChange = boolean => {
     const {
       updateProcessPerformanceComponent,
