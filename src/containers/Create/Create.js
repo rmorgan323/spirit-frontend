@@ -51,7 +51,7 @@ class Create extends Component {
     });
 
     error = '';
-    success = `Clinic successfully added! Your clinic passcode is ${passcode}.`
+    success = `Clinic successfully added! Your clinic passcode is ${passcode}.`;
     this.setState({ error, success, clinicName: '', clinicAbbreviation: '' });
 
     saveClinic({ name, abbreviation, passcode }, user.id);
