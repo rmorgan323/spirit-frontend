@@ -329,8 +329,8 @@ export const wipeStoreFromPatientDashboard = () => async dispatch => {
 
 export const wipeStoreFromSessions = () => async dispatch => {
   dispatch(resetThreadConnections());
-  dispath(emptyProcessData());
-  dispath(emptyComparisonData());
+  dispatch(emptyProcessData());
+  dispatch(emptyComparisonData());
   dispatch(emptySelectedTreatmentPlan());
   dispatch(emptySelectedTherapyGoal());
   dispatch(emptySelectedProcess());
