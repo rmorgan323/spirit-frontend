@@ -17,7 +17,22 @@ class Join extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
+    const oldClinc = this.props.user.clinic;
+    const newClinic = nextProps.user.clinic;
+    let error;
+    let success;
+
+    if (oldClinc === newClinic) {
+      success = '';
+      error =
+        'Clinic not found. Please double check the clinic passcode or contact your clinic administrator.';
+      this.setState({ error, success });
+      return;
+    } else if (oldClinc !== newClinic) {
+      error = '';
+      success = `You have successfully joined ${newClinic}!`;
+      this.setState({ error, success });
+    }
   }
 
   handleChange = event => {
