@@ -13,7 +13,8 @@ class Create extends Component {
     this.state = {
       clinicName: '',
       clinicAbbreviation: '',
-      successMessage: ''
+      successMessage: '',
+      error: ''
     };
   }
 
@@ -22,18 +23,27 @@ class Create extends Component {
     this.setState({ [name]: value });
   };
 
-  saveNewClinic = (event, name, abbr) => {
+  saveNewClinic = (event, name, abbreviation) => {
     event.preventDefault();
     const { saveClinic, user } = this.props;
+    let error;
 
-    const password = generator.generate({
+    if (!name || !abbreviation) {
+      error = 'Please enter a clinic name and abbreviation';
+      this.setState({ error });
+    }
+
+    const passcode = generator.generate({
       length: 8,
       uppercase: false,
       numbers: true,
       excludeSimilarCharacters: true
     });
 
-    saveClinic({ name: name, abbreviation: abbr, passcode: password }, user.id);
+    error = '';
+    this.setState({ error });
+
+    saveClinic({ name, abbreviation, passcode }, user.id);
   };
 
   displayClinic = () => {
