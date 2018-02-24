@@ -96,16 +96,22 @@ const ViewSession = (props) => {
       }
     })
     therapyGoal = therapyGoal.map(obj => {
-      if (obj.value !== null && obj.dbName !== 'created_at') {
+      if (obj.value !== null && obj.dbName !== 'created_at' && obj.dbName.split('_')[obj.dbName.split('_').length - 1] !== 'goal') {
         return (
-          <div>
-            <p className="text-small-2">{obj.title}: </p>
+          <div className="data-holder">
+            <p className="text-small text-small-3">{obj.title}: </p>
+            <p>{obj.value}</p>
+          </div>
+        )
+      } else if (obj.value !== null && obj.dbName !== 'created_at' && obj.dbName.split('_')[obj.dbName.split('_').length - 1] === 'goal'){
+        return (
+          <div className="data-holder-wide">
+            <p className="text-small-wide">{obj.title}: </p>
             <p>{obj.value}</p>
           </div>
         )
       }
     })
-
   } 
 
   return (
@@ -154,13 +160,13 @@ const ViewSession = (props) => {
           </div>
         </div>
 
-          <h3>Treatment Plans</h3>
+        <h3>Treatment Plans</h3>
         <div className="view-treatment">
           {treatmentPlan}
         </div>
 
+        <h3>Therapy Goals</h3>
         <div className="view-therapy">
-          <h3>Therapy Goals</h3>
           {therapyGoal}
         </div>
     </div>

@@ -96,6 +96,21 @@ p {
   display: flex;
   flex-wrap: wrap; }
 
+.ViewSession .view-therapy {
+  display: flex;
+  flex-wrap: wrap; }
+
+.ViewSession .data-holder-wide {
+  width: 430px;
+  margin: 2px;
+  background-color: #f1f2f2;
+  padding: 3px; }
+  .ViewSession .data-holder-wide .text-small-wide {
+    font-size: 12px;
+    text-align: left;
+    color: #a7a9ac;
+    margin: 0; }
+
 .ViewSession .data-holder {
   width: 100px;
   margin: 2px;
@@ -114,6 +129,8 @@ p {
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis; }
+  .ViewSession .data-holder .text-small-3 {
+    height: 60px; }
 
 .ViewSession .text-small-2 {
   font-size: 12px;

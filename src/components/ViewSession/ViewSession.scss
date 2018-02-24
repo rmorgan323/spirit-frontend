@@ -80,6 +80,25 @@
     flex-wrap: wrap;
   }
 
+  .view-therapy {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .data-holder-wide {
+    width: 430px;
+    margin: 2px;
+    background-color: $grey1;
+    padding: 3px;
+
+    .text-small-wide {
+      font-size: 12px;
+      text-align: left;
+      color: $grey3;
+      margin: 0;
+    }
+  }
+
   .data-holder {
     width: 100px;
     margin: 2px;
@@ -101,6 +120,10 @@
       word-break: break-word;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    .text-small-3 {
+      height: 60px;
     }
   }
 
@@ -126,6 +149,8 @@
       margin: 0;
     }
   }
+
+
 
 }
 
