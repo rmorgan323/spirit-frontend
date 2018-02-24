@@ -29,14 +29,17 @@ class Create extends Component {
     const { saveClinic, user } = this.props;
     const { clinicName, clinicAbbreviation } = this.state;
     let error;
+    let success;
 
     if (!clinicName || !clinicAbbreviation) {
+      success = '';
       error = 'Please enter a clinic name and abbreviation';
-      this.setState({ error });
+      this.setState({ error, success });
       return;
     } else if (clinicAbbreviation.length !== 3) {
+      success = '';
       error = 'Clinic abbreviation must be three characters long';
-      this.setState({ error });
+      this.setState({ error, success });
       return;
     }
 
