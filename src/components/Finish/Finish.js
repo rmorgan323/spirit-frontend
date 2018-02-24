@@ -3,6 +3,7 @@ import './Finish.css';
 import TreatmentPlans from '../TreatmentPlans/TreatmentPlans';
 import TherapyGoals from '../../containers/TherapyGoals/TherapyGoals';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import * as actions from '../../actions';
 
 class Finish extends Component {
@@ -48,6 +49,14 @@ class Finish extends Component {
           className="complete-session-button"
           onClick={() => this.completeSessionNow()}
         >COMPLETE SESSION</button>
+
+
+        <NavLink className="join-link" to={`/spirit/sessions/${this.props.selectedSession.id}/view`}>
+          <button 
+            className="session-result-button"
+          >SEE ALL SESSION RESULTS
+          </button>
+        </NavLink>
       </div>
     );
   }
