@@ -14,6 +14,16 @@
     font-size: 18px;
   }
 
+  .new-clinic-form {
+    margin-top: 20px;
+  }
+
+  .add-clinic-directions {
+    @include match-p;
+    padding: 10px 0;
+    text-indent: 20px;
+  }
+
   form {
     display: flex;
     flex-direction: column;

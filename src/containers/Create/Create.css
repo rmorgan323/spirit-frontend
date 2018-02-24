@@ -50,6 +50,13 @@ p {
   .Create ::placeholder {
     color: #fff;
     font-size: 18px; }
+  .Create .new-clinic-form {
+    margin-top: 20px; }
+  .Create .add-clinic-directions {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    padding: 10px 0;
+    text-indent: 20px; }
   .Create form {
     display: flex;
     flex-direction: column;

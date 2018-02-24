@@ -42,6 +42,7 @@ class Create extends Component {
     if (Object.keys(user).length) {
       return (
         <div>
+          <h2 className="current-clinic-header">Your Current Clinic</h2>
           <h4>
             <span className="clinic-span">You are a member of: </span>
             {user.clinic}
@@ -67,13 +68,23 @@ class Create extends Component {
       <div className="Create">
         {this.displayClinic()}
 
-        <form>
+        <form className="new-clinic-form">
+          <h2>Add a New Clinic</h2>
+          <div className="add-clinic-directions">
+            To add a new clinic, you must provide a clinic name and three letter
+            abbreviation. This abbreviation will be used to abstract your
+            patient's when adding them to SpIRiT©.
+          </div>
+          <div className="add-clinic-directions">
+            After submission, you will be provided with a passcode. This
+            passcode will be used by other members in order to join your clinic.
+          </div>
           <input
             className="input-clinic-name"
             onChange={event => this.handleChange(event)}
             value={clinicName}
             name="clinicName"
-            placeholder="Switch to NEW Clinic"
+            placeholder="New Clinic Name"
             maxLength={30}
           />
           <input
