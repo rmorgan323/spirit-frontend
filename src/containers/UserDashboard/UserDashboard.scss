@@ -1,5 +1,5 @@
 @import '../../variables.scss';
- 
+
  .UserDashboard {
   @include primary-content;
 
@@ -47,6 +47,23 @@
     background-color: $purple6;
   }
 
+  .patient-name-description {
+    @include match-h5;
+    display: flex;
+    max-width: 550px;
+    margin: 0 auto 10px;
+    padding: 10px;
+  }
+
+  .error-message {
+    @include match-h5;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 10px;
+    color: #C00E0E;
+  }
+
   .link-holder a {
     text-decoration: none;
     background-color: $green4;
@@ -62,4 +79,4 @@
   .link-holder a:hover {
     background-color: $green5;
   }
- } 
+ }

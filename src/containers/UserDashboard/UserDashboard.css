@@ -74,6 +74,21 @@ p {
     transition: all .3s ease-in-out; }
   .UserDashboard button:hover {
     background-color: #5E378C; }
+  .UserDashboard .patient-name-description {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    display: flex;
+    max-width: 550px;
+    margin: 0 auto 10px;
+    padding: 10px; }
+  .UserDashboard .error-message {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 10px;
+    color: #C00E0E; }
   .UserDashboard .link-holder a {
     text-decoration: none;
     background-color: #5cba47;

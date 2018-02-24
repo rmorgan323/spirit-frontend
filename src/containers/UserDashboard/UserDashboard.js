@@ -31,10 +31,8 @@ class UserDashboard extends Component {
     const { savePatient, user } = this.props;
     let error;
 
-    console.log(firstInitial, lastInitial)
-
     if (!firstInitial || !lastInitial) {
-      error = "Please enter a first and last patient initial"
+      error = 'Please enter a first and last patient initial';
       this.setState({ error });
       return;
     }
@@ -73,11 +71,16 @@ class UserDashboard extends Component {
           <button onClick={() => this.handleSubmit()} type="submit">
             SUBMIT
           </button>
-          {
-            error &&
-            <span className="error-message">{error}</span>
-          }
         </div>
+
+        {error && <span className="error-message">{error}</span>}
+
+        <span className="patient-name-description">
+          Each patient name will be a combination of your clinic abbreviation,
+          the patient's first and last initial, and a unique number identifier
+          (ie CLI + AB + 10). Please keep this abstracted name in your personal
+          patient records for future reference.
+        </span>
 
         <PatientList />
 
