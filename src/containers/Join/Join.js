@@ -16,6 +16,10 @@ class Join extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
+  }
+
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -61,6 +65,7 @@ class Join extends Component {
             value={clinicPasscode}
             name="clinicPasscode"
             placeholder="Enter Passcode"
+            maxLength={8}
           />
 
           <button
