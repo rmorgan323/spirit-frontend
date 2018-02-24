@@ -33,6 +33,10 @@ class Create extends Component {
       error = 'Please enter a clinic name and abbreviation';
       this.setState({ error });
       return;
+    } else if (!clinicAbbreviation.length !== 3) {
+      error = 'Clinic abbreviation must be three characters long';
+      this.setState({ error });
+      return;
     }
 
     const passcode = generator.generate({
