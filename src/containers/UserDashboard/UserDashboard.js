@@ -12,7 +12,8 @@ class UserDashboard extends Component {
 
     this.state = {
       firstInitial: '',
-      lastInitial: ''
+      lastInitial: '',
+      error: ''
     };
   }
 
@@ -28,12 +29,24 @@ class UserDashboard extends Component {
   handleSubmit = () => {
     const { firstInitial, lastInitial } = this.state;
     const { savePatient, user } = this.props;
+    let error;
+
+    console.log(firstInitial, lastInitial)
+
+    if (!firstInitial || !lastInitial) {
+      error = "Please enter a first and last patient initial"
+      this.setState({ error });
+      return;
+    }
+
+    error = '';
+    this.setState({ error });
 
     savePatient(firstInitial, lastInitial, user.id, user.clinic_abbreviation);
   };
 
   render() {
-    const { firstInitial, lastInitial } = this.state;
+    const { firstInitial, lastInitial, error } = this.state;
     const { user } = this.props;
 
     return (
@@ -60,6 +73,10 @@ class UserDashboard extends Component {
           <button onClick={() => this.handleSubmit()} type="submit">
             SUBMIT
           </button>
+          {
+            error &&
+            <span className="error-message">{error}</span>
+          }
         </div>
 
         <PatientList />
