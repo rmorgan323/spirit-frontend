@@ -94,7 +94,7 @@ class Create extends Component {
           <div className="add-clinic-directions">
             To add a new clinic, you must provide a clinic name and three letter
             abbreviation. This abbreviation will be used to abstract your
-            patient's when adding them to SpIRiT©.
+            patient's real name when adding them to SpIRiT©.
           </div>
           <div className="add-clinic-directions">
             After submission, you will be provided with a passcode. This
