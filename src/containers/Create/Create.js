@@ -26,11 +26,13 @@ class Create extends Component {
   saveNewClinic = (event, name, abbreviation) => {
     event.preventDefault();
     const { saveClinic, user } = this.props;
+    const { clinicName, clinicAbbreviation } = this.state;
     let error;
 
-    if (!name || !abbreviation) {
+    if (!clinicName || !clinicAbbreviation) {
       error = 'Please enter a clinic name and abbreviation';
       this.setState({ error });
+      return;
     }
 
     const passcode = generator.generate({
@@ -71,7 +73,7 @@ class Create extends Component {
   };
 
   render() {
-    const { clinicName, clinicAbbreviation } = this.state;
+    const { clinicName, clinicAbbreviation, error } = this.state;
     const { user } = this.props;
 
     return (
@@ -115,6 +117,8 @@ class Create extends Component {
             SUBMIT
           </button>
         </form>
+
+        {error && <span className="error-message">{error}</span>}
 
         <NavLink className="join-link" to={`/spirit/users/${user.id}/join`}>
           JOIN EXISTING CLINIC

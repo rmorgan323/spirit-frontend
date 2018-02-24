@@ -60,7 +60,7 @@ p {
   .Create form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px; }
+    margin-bottom: 10px; }
   .Create .input-clinic-name, .Create .submit-button {
     height: 40px;
     margin: 10px 0;
@@ -91,6 +91,14 @@ p {
   .Create .submit-button:hover {
     color: #fff;
     background-color: #BFAFD0; }
+  .Create .error-message {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #C00E0E; }
   .Create a.join-link {
     text-decoration: none;
     color: #5cba47; }

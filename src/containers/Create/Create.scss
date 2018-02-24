@@ -27,7 +27,7 @@
   form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   .input-clinic-name, .submit-button {
@@ -70,6 +70,15 @@
   .submit-button:hover {
     color: #fff;
     background-color: $purple3;
+  }
+
+  .error-message {
+    @include match-h5;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #C00E0E;
   }
 
   a.join-link {
