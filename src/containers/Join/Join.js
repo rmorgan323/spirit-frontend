@@ -10,7 +10,9 @@ class Join extends Component {
     super();
 
     this.state = {
-      clinicPasscode: ''
+      clinicPasscode: '',
+      error: '',
+      success: ''
     };
   }
 
@@ -22,17 +24,35 @@ class Join extends Component {
   joinClinic = (event, passcode) => {
     event.preventDefault();
     const { joinExistingClinic, user } = this.props;
+    let error;
 
-    joinExistingClinic({ passcode: passcode }, user.id);
+    if (passcode.length !== 8) {
+      error = 'A clinic passcode must be exactly eight characters in length';
+      this.setState({ error });
+      return;
+    }
+
+    const clinicMessage = joinExistingClinic({ passcode: passcode }, user.id);
   };
 
   render() {
-    const { clinicPasscode } = this.state;
+    const { clinicPasscode, error, success } = this.state;
     const { user } = this.props;
 
     return (
       <div className="Join">
-        <h4>Join a Clinic</h4>
+        <h2>Join a Clinic</h2>
+
+        <div className="join-clinic-directions">
+          To join an existing clinic on SpIRiT©, you must use a clinic's eight
+          digit passcode. If you do not know your clinic's passcode, please
+          contact your SpIRiT© administrator.
+        </div>
+
+        <div className="join-clinic-directions">
+          If your clinic has not been registered, click 'CREATE NEW CLINIC'
+          below to learn how you can add your clinic and start using SpIRiT©.
+        </div>
 
         <form>
           <input
@@ -51,6 +71,10 @@ class Join extends Component {
             SUBMIT
           </button>
         </form>
+
+        {error && <span className="error-message">{error}</span>}
+
+        {success && <span className="success-message">{success}</span>}
 
         <NavLink className="join-link" to={`/spirit/users/${user.id}/create`}>
           CREATE NEW CLINIC
