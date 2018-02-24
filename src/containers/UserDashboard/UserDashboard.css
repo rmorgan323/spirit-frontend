@@ -74,7 +74,7 @@ p {
     transition: all .3s ease-in-out; }
   .UserDashboard button:hover {
     background-color: #5E378C; }
-  .UserDashboard .patient-name-description {
+  .UserDashboard .patient-name-directions {
     font-family: "Josefin Sans", sans-serif;
     font-size: 14px;
     display: flex;

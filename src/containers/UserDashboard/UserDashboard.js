@@ -75,7 +75,7 @@ class UserDashboard extends Component {
 
         {error && <span className="error-message">{error}</span>}
 
-        <span className="patient-name-description">
+        <span className="patient-name-directions">
           Each patient name will be a combination of your clinic abbreviation,
           the patient's first and last initial, and a unique number identifier
           (ie CLI + AB + 10). Please keep this abstracted name in your personal
