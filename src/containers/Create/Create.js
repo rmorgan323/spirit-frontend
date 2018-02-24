@@ -14,7 +14,8 @@ class Create extends Component {
       clinicName: '',
       clinicAbbreviation: '',
       successMessage: '',
-      error: ''
+      error: '',
+      success: ''
     };
   }
 
@@ -33,7 +34,7 @@ class Create extends Component {
       error = 'Please enter a clinic name and abbreviation';
       this.setState({ error });
       return;
-    } else if (!clinicAbbreviation.length !== 3) {
+    } else if (clinicAbbreviation.length !== 3) {
       error = 'Clinic abbreviation must be three characters long';
       this.setState({ error });
       return;
@@ -47,7 +48,8 @@ class Create extends Component {
     });
 
     error = '';
-    this.setState({ error });
+    success = `Clinic successfully added! Your clinic passcode is ${passcode}.`
+    this.setState({ error, success });
 
     saveClinic({ name, abbreviation, passcode }, user.id);
   };
@@ -77,7 +79,7 @@ class Create extends Component {
   };
 
   render() {
-    const { clinicName, clinicAbbreviation, error } = this.state;
+    const { clinicName, clinicAbbreviation, error, success } = this.state;
     const { user } = this.props;
 
     return (
@@ -123,6 +125,8 @@ class Create extends Component {
         </form>
 
         {error && <span className="error-message">{error}</span>}
+
+        {success && <span className="success-message">{success}</span>}
 
         <NavLink className="join-link" to={`/spirit/users/${user.id}/join`}>
           JOIN EXISTING CLINIC

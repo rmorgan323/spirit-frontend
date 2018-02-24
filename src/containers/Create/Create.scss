@@ -72,13 +72,20 @@
     background-color: $purple3;
   }
 
-  .error-message {
+  .error-message, .success-message {
     @include match-h5;
     display: flex;
     justify-content: center;
     padding: 10px;
     margin-bottom: 20px;
+  }
+
+  .error-message {
     color: #C00E0E;
+  }
+
+  .success-message {
+    color: $green4;
   }
 
   a.join-link {

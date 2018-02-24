@@ -91,14 +91,17 @@ p {
   .Create .submit-button:hover {
     color: #fff;
     background-color: #BFAFD0; }
-  .Create .error-message {
+  .Create .error-message, .Create .success-message {
     font-family: "Josefin Sans", sans-serif;
     font-size: 14px;
     display: flex;
     justify-content: center;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; }
+  .Create .error-message {
     color: #C00E0E; }
+  .Create .success-message {
+    color: #5cba47; }
   .Create a.join-link {
     text-decoration: none;
     color: #5cba47; }
