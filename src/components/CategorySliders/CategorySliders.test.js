@@ -17,15 +17,17 @@ describe('CategorySliders tests', () => {
       databaseNamesArray={mockDatabaseNamesArray}
       reminderAsterisk={mockReminderAsterisk}
       reminder={mockReminder}
-    />)
+    />);
 
     expect(renderedApp).toMatchSnapshot();
-  })
+  });
 
   it('should match the snapshot if only some props are passed in', () => {
     const renderedApp = shallow(<CategorySliders 
       slidersArray={mockSlidersArray}
       databaseNamesArray={mockDatabaseNamesArray}
-    />)
-  })
-})
+    />);
+
+    expect(renderedApp).toMatchSnapshot();
+  });
+});

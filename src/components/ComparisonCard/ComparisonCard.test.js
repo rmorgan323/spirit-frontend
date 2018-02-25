@@ -9,9 +9,8 @@ describe('ComparisonCard tests', () => {
       dateArray={mockDataArray}
       title={mockTitle}
       values={mockValues}
-    />)
+    />);
     
     expect(renderedApp).toMatchSnapshot();
-  })
-
-})
+  });
+});

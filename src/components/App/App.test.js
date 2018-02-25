@@ -15,7 +15,7 @@ describe('app tests', () => {
 
   it('renders without crashing', () => {
     expect(renderedApp).toBeDefined();
-  })
+  });
 
   it('should render with the correct default elements', () => {
     expect(renderedApp.find('App').length).toEqual(1);

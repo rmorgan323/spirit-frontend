@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 export const mockConcern = {
   id: 5,
   description: "Concern 1",

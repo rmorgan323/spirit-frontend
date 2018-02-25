@@ -55,7 +55,10 @@ class Finish extends Component {
           >COMPLETE SESSION</button>
 
 
-          <NavLink className="join-link" to={`/spirit/sessions/${this.props.selectedSession.id}/view`}>
+          <NavLink 
+            className="join-link" 
+            to={`/spirit/sessions/${this.props.selectedSession.id}/view`}
+          >
             <button 
               className="session-result-button"
             >SEE SESSION RESULTS

@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 export const mockSession = {
   id: 10,
   concern_id: 5,

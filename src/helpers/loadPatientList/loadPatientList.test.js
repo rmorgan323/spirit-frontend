@@ -30,5 +30,5 @@ describe('loadPatientList tests', () => {
 
     await loadPatientList(1);
     expect(window.fetch).toHaveBeenCalledWith(...expected);
-  })
-})
+  });
+});

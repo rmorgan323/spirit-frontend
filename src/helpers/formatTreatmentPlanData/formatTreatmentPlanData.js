@@ -1,5 +1,7 @@
-const formatTreatmentPlanData = (data) => {
-  data = data.sort((a, b) => a.id - b.id)
+/*eslint-disable max-len*/
+
+const formatTreatmentPlanData = (rawData) => {
+  rawData = rawData.sort((aa, bb) => aa.id - bb.id);
 
   let treatmentPlans = [
     { title: 'Modulation - Sensory', dbName: 'modulation_sensory', value: null },
@@ -36,16 +38,16 @@ const formatTreatmentPlanData = (data) => {
     { title: 'Executive Functioning - Predictability', dbName: 'executive_functioning_predictability', value: null },
     { title: 'Executive Functioning - Self Regulation', dbName: 'executive_functioning_self_regulation', value: null },
     { title: 'Executive Functioning - Interaction', dbName: 'executive_functioning_interaction', value: null },
-    { title: 'Executive Functioning - JRC/AR Notes', dbName: 'executive_functioning_JRC_AR_notes', value: null },
-  ]
+    { title: 'Executive Functioning - JRC/AR Notes', dbName: 'executive_functioning_JRC_AR_notes', value: null }
+  ];
 
-  data.forEach(obj => {
+  rawData.forEach(object => {
     treatmentPlans.forEach(cleanObj => {
-      cleanObj.value = obj[cleanObj.dbName]
-    })
-  })
+      cleanObj.value = object[cleanObj.dbName];
+    });
+  });
 
   return treatmentPlans;
-}
+};
 
 export default formatTreatmentPlanData;

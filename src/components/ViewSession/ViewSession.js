@@ -5,16 +5,33 @@ import moment from 'moment';
 import processProcessesData from '../../helpers/processProcessesData/processProcessesData';
 import formatTherapyGoalData from '../../helpers/formatTherapyGoalData/formatTherapyGoalData';
 import formatTreatmentPlanData from '../../helpers/formatTreatmentPlanData/formatTreatmentPlanData';
+import { PropTypes } from 'prop-types';
 
 export const ViewSession = (props) => {
 
-  let date, clinic, patient, ids, concern, processValues, processValuesExec, processValuesMod, processValuesPos, processValuesSen, processValuesSoc, treatmentPlan, therapyGoal;
+  let 
+    date, 
+    clinic, 
+    patient, 
+    ids, 
+    concern, 
+    processValues, 
+    processValuesExec, 
+    processValuesMod, 
+    processValuesPos, 
+    processValuesSen, 
+    processValuesSoc, 
+    treatmentPlan, 
+    therapyGoal;
 
   if (props.selectedSession.id) {
-    patient = <h2>Patient: {props.currentPatient.abstracted_name}</h2>
-    date = <h4>{moment(props.selectedSession.created_at).format('LL')}</h4>
-    clinic = <h4>Clinic: {props.currentPatient.clinic_name}</h4>
-    ids = <h4>Concern ID: {props.selectedSession.concern_id}, Session ID: {props.selectedSession.id}</h4>
+    patient = <h2>Patient: {props.currentPatient.abstracted_name}</h2>;
+    date = <h4>{moment(props.selectedSession.created_at).format('LL')}</h4>;
+    clinic = <h4>Clinic: {props.currentPatient.clinic_name}</h4>;
+    ids = (
+      <h4>Concern ID: {props.selectedSession.concern_id}, Session ID: {props.selectedSession.id}
+      </h4>
+    );
     concern = (
       <div className="view-concern">
         <p className="view-concern-description">{props.selectedConcern.description}</p>
@@ -26,93 +43,101 @@ export const ViewSession = (props) => {
         <p className={props.selectedConcern.domain_6 ? "view-dots" : "view-dots opacity-zero"}>6</p>
         <p className="view-concern-notes">{props.selectedConcern.notes}</p>
       </div>
-    )
+    );
     processValues = processProcessesData([props.selectedProcess]);
     treatmentPlan = formatTreatmentPlanData([props.selectedTreatmentPlan]);
     therapyGoal = formatTherapyGoalData([props.selectedTherapyGoal]);
-    processValuesExec = processValues.executive.map(obj => {
-      if (obj.values[0] !== null && obj.dbName !== 'created_at') {
+    processValuesExec = processValues.executive.map(object => {
+      if (object.values[0] !== null && object.dbName !== 'created_at') {
         return (
           <div className="data-holder">
-            <p className="text-small">{obj.title}:</p>
-            <p>{obj.values[0]}</p>
+            <p className="text-small">{object.title}:</p>
+            <p>{object.values[0]}</p>
           </div>
-        )
+        );
       }
-    })
-    processValuesMod = processValues.modulation.map(obj => {
-      if (obj.values[0] !== null && obj.dbName !== 'created_at') {
+    });
+    processValuesMod = processValues.modulation.map(object => {
+      if (object.values[0] !== null && object.dbName !== 'created_at') {
         return (
           <div className="data-holder">
-            <p className="text-small">{obj.title}: </p>
-            <p>{obj.values[0]}</p>
+            <p className="text-small">{object.title}: </p>
+            <p>{object.values[0]}</p>
           </div>
-        )
+        );
       }
-    })
-    processValuesPos = processValues.postural.map(obj => {
-      if (obj.values[0] !== null && obj.dbName !== 'created_at') {
-        obj.values[0] === 'true' ? obj.values[0] = 'Yes' : null;
-        obj.values[0] === 'false' ? obj.values[0] = 'No' : null;
-        obj.values[0] === true ? obj.values[0] = 'Yes' : null;
-        obj.values[0] === false ? obj.values[0] = 'No' : null;
+    });
+    processValuesPos = processValues.postural.map(object => {
+      if (object.values[0] !== null && object.dbName !== 'created_at') {
+        object.values[0] === 'true' ? object.values[0] = 'Yes' : null;
+        object.values[0] === 'false' ? object.values[0] = 'No' : null;
+        object.values[0] === true ? object.values[0] = 'Yes' : null;
+        object.values[0] === false ? object.values[0] = 'No' : null;
         return (
           <div className="data-holder">
-            <p className="text-small">{obj.title}: </p>
-            <p>{obj.values[0]}</p>
+            <p className="text-small">{object.title}: </p>
+            <p>{object.values[0]}</p>
           </div>
-        )
+        );
       }
-    })
-    processValuesSen = processValues.sensory.map(obj => {
-      if (obj.values[0] !== null && obj.dbName !== 'created_at') {
+    });
+    processValuesSen = processValues.sensory.map(object => {
+      if (object.values[0] !== null && object.dbName !== 'created_at') {
         return (
           <div className="data-holder">
-            <p className="text-small">{obj.title}: </p>
-            <p>{obj.values[0]}</p>
+            <p className="text-small">{object.title}: </p>
+            <p>{object.values[0]}</p>
           </div>
-        )
+        );
       }
-    })
-    processValuesSoc = processValues.social.map(obj => {
-      if (obj.values[0] !== null && obj.dbName !== 'created_at') {
-        obj.values[0] === true ? obj.values[0] = 'Yes' : null;
-        obj.values[0] === false ? obj.values[0] = 'No' : null;
+    });
+    processValuesSoc = processValues.social.map(object => {
+      if (object.values[0] !== null && object.dbName !== 'created_at') {
+        object.values[0] === true ? object.values[0] = 'Yes' : null;
+        object.values[0] === false ? object.values[0] = 'No' : null;
         return (
           <div className="data-holder">
-            <p className="text-small">{obj.title}: </p>
-            <p>{obj.values[0]}</p>
+            <p className="text-small">{object.title}: </p>
+            <p>{object.values[0]}</p>
           </div>
-        )
+        );
       }
-    })
-    treatmentPlan = treatmentPlan.map(obj => {
-      if (obj.value !== null && obj.dbName !== 'created_at') {
+    });
+    treatmentPlan = treatmentPlan.map(object => {
+      if (object.value !== null && object.dbName !== 'created_at') {
         return (
           <div className="treatment-plan-text">
-            <p className="text-small-2">{obj.title}: </p>
-            <p>{obj.value}</p>
+            <p className="text-small-2">{object.title}: </p>
+            <p>{object.value}</p>
           </div>
-        )
+        );
       }
-    })
-    therapyGoal = therapyGoal.map(obj => {
-      if (obj.value !== null && obj.dbName !== 'created_at' && obj.dbName.split('_')[obj.dbName.split('_').length - 1] !== 'goal') {
+    });
+    therapyGoal = therapyGoal.map(object => {
+      if (
+        object.value !== null && 
+        object.dbName !== 'created_at' && 
+        object.dbName.split('_')[object.dbName.split('_').length - 1] !== 'goal'
+      ) {
         return (
           <div className="data-holder">
-            <p className="text-small text-small-3">{obj.title}: </p>
-            <p>{obj.value}</p>
+            <p className="text-small text-small-3">{object.title}: </p>
+            <p>{object.value}</p>
           </div>
-        )
-      } else if (obj.value !== null && obj.dbName !== 'created_at' && obj.dbName.split('_')[obj.dbName.split('_').length - 1] === 'goal'){
+        );
+      } else if (
+        object.value !== null && 
+        object.dbName !== 'created_at' && 
+        object.dbName.split('_')[object.dbName.split('_').length - 1] === 'goal'
+      ) {
         return (
           <div className="data-holder-wide">
-            <p className="text-small-wide">{obj.title}: </p>
-            <p>{obj.value}</p>
+            <p className="text-small-wide">{object.title}: </p>
+            <p>{object.value}</p>
           </div>
-        )
+        );
       }
-    })
+    });
   } 
 
   return (
@@ -195,8 +220,8 @@ export const ViewSession = (props) => {
       </div>
 
     </div>
-  )
-}
+  );
+};
 
 export const mapStateToProps = store => ({
   currentPatient: store.currentPatient,
@@ -205,6 +230,15 @@ export const mapStateToProps = store => ({
   selectedProcess: store.selectedProcess,
   selectedTherapyGoal: store.selectedTherapyGoal,
   selectedTreatmentPlan: store.selectedTreatmentPlan
-})
+});
 
 export default connect(mapStateToProps, null)(ViewSession);
+
+ViewSession.propTypes = {
+  currentPatient: PropTypes.object,
+  selectedConcern: PropTypes.object,
+  selectedSession: PropTypes.object,
+  selectedProcess: PropTypes.object,
+  selectedTherapyGoal: PropTypes.object,
+  selectedTreatmentPlan: PropTypes.object
+};

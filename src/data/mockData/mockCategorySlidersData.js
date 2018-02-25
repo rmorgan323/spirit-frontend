@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 export const mockTitle = 'Capacities';
 
 export const mockSlidersArray = [

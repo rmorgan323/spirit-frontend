@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 export const mockConcernData = {
   description: 'some description', 
   domain_1: true, 
@@ -8,7 +10,7 @@ export const mockConcernData = {
   domain_6: false, 
   notes: 'some notes', 
   patient_id: 1
-}
+};
 
 export const mockConcernDataWithoutPatientId = {
   description: 'some description', 
@@ -19,4 +21,4 @@ export const mockConcernDataWithoutPatientId = {
   domain_5: true, 
   domain_6: false, 
   notes: 'some notes'
-}
+};

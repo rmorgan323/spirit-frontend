@@ -25,11 +25,11 @@ describe('loadProcessesForComparison tests', () => {
           'x-token': null,
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ idArray: [1,2,3] })
+        body: JSON.stringify({ idArray: [1, 2, 3] })
       }
     ];
 
-    await loadProcessesForComparison([1,2,3]);
+    await loadProcessesForComparison([1, 2, 3]);
     expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
 });

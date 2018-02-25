@@ -1,5 +1,7 @@
-const formatTherapyGoalData = (data) => {
-  data = data.sort((a, b) => a.id - b.id)
+/*eslint-disable max-len*/
+
+const formatTherapyGoalData = (rawData) => {
+  rawData = rawData.sort((aa, bb) => aa.id - bb.id);
 
   let therapyGoals = [
     { title: 'Modulation Goal', dbName: 'modulation_goal', value: null },
@@ -37,15 +39,15 @@ const formatTherapyGoalData = (data) => {
     { title: 'Executive Functioning Performance - Parent', dbName: 'executive_functioning_parent_performance', value: null },
     { title: 'Executive Functioning Satisfaction - OT', dbName: 'executive_functioning_ot_satisfaction', value: null },
     { title: 'Executive Functioning Satisfaction - Parent', dbName: 'executive_functioning_parent_satisfaction', value: null }
-  ]
+  ];
 
-  data.forEach(obj => {
+  rawData.forEach(object => {
     therapyGoals.forEach(cleanObj => {
-      cleanObj.value = obj[cleanObj.dbName]
-    })
-  })
+      cleanObj.value = object[cleanObj.dbName];
+    });
+  });
 
   return therapyGoals;
-}
+};
 
 export default formatTherapyGoalData;

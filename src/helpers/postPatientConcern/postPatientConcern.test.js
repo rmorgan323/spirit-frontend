@@ -1,6 +1,9 @@
 import postPatientConcern from './postPatientConcern';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
-import { mockConcernData, mockConcernDataWithoutPatientId } from '../../data/mockData/mockConcernData';
+import { 
+  mockConcernData, 
+  mockConcernDataWithoutPatientId 
+} from '../../data/mockData/mockConcernData';
 
 global.localStorage = {
   getItem: () => null
