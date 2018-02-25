@@ -1,6 +1,10 @@
 @import '../../variables.scss';
 
 .ViewSession {
+  width: 1104px;
+  margin: auto;
+  padding-bottom: 50px;
+
   .view-header-top {
     display: flex;
     justify-content: space-between;
@@ -149,13 +153,43 @@
       margin: 0;
     }
   }
-
-
-
 }
 
+@media print {
+  @page {
+    size: landscape;
+  }
 
+  .Header, .PatientHeader, .ConcernHeader, .SessionTabs {
+    display: none;
+  }
 
+  .view-section-container {
+    page-break-inside: avoid;
+  }
+
+  .ViewSession {
+    .data-holder, .data-holder-wide {
+      border-bottom: 4px solid $grey1;
+      .text-small, .text-small-wide {
+        color: $grey3;
+        font-weight: 100;
+      }
+    }
+
+    .opacity-zero {
+      opacity: .1;
+    }
+
+    .treatment-plan-text {
+      .text-small-2 {
+        color: $grey3;
+        font-weight: 100;
+      }
+    }
+
+  }
+}
 
 
 
