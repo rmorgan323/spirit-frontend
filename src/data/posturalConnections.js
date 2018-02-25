@@ -113,7 +113,13 @@ const posturalConnections = {
     'pos_h_tactile',
     'pos_h_auditory'
   ],
-  pos_5_interactive: ['sensory', 'social', 'sen_2_imitation', 'soc_2_imitation', 'soc_2_contingent'],
+  pos_5_interactive: [
+    'sensory',
+    'social',
+    'sen_2_imitation',
+    'soc_2_imitation',
+    'soc_2_contingent'
+  ],
   pos_5_ocular: [],
   pos_5_reflex: [
     'pos_h_vestibular',
@@ -123,7 +129,12 @@ const posturalConnections = {
   ],
   pos_5_suck: ['sensory', 'sen_5_oral'],
   pos_6_bilateral: ['pos_5_antigravity', 'pos_5_reflex'],
-  pos_6_effortful: ['modulation', 'executive', 'mod_2_action', 'exe_4b_effortful'],
+  pos_6_effortful: [
+    'modulation',
+    'executive',
+    'mod_2_action',
+    'exe_4b_effortful'
+  ],
   pos_6_grasp: ['pos_6_push'],
   pos_6_push: [
     'pos_5_antigravity',

@@ -15,6 +15,9 @@ const selectedTherapyGoal = (store = {}, action) => {
     return newTherapyGoal;
   }
 
+  case 'EMPTY_SELECTED_THERAPY_GOAL':
+    return {};
+
   default:
     return store;
   }

@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-import './Finish.css';
-import TreatmentPlans from '../TreatmentPlans/TreatmentPlans';
-import TherapyGoals from '../../containers/TherapyGoals/TherapyGoals';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+import TreatmentPlans from '../../components/TreatmentPlans/TreatmentPlans';
+import TherapyGoals from '../TherapyGoals/TherapyGoals';
 import * as actions from '../../actions';
+import './Finish.css';
 
 class Finish extends Component {
-
   completeSessionNow = () => {
-    this.props.updateSession(this.props.selectedSession.id, {completed: true})
-    this.props.history.push(`/spirit/concerns/${this.props.selectedConcern.id}/sessions`);
-  }
+    this.props.updateSession(this.props.selectedSession.id, {
+      completed: true
+    });
+    this.props.history.push(
+      `/spirit/concerns/${this.props.selectedConcern.id}/sessions`
+    );
+  };
 
   render() {
     return (
       <div className="Finish">
-
         <h2 className="finish-headings">Treatment Plans</h2>
 
         <TreatmentPlans />
@@ -67,12 +70,19 @@ class Finish extends Component {
 const mapStateToProps = store => ({
   selectedSession: store.selectedSession,
   selectedConcern: store.selectedConcern
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   updateSession: (sessionId, status) => {
-    dispatch(actions.updateSession(sessionId, status))
+    dispatch(actions.updateSession(sessionId, status));
   }
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Finish);
+
+Finish.propTypes = {
+  updateSession: PropTypes.func,
+  selectedSession: PropTypes.object,
+  history: PropTypes.object,
+  selectedConcern: PropTypes.object
+};

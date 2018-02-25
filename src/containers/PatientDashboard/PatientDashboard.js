@@ -23,6 +23,10 @@ class PatientDashboard extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.wipeStoreFromPatientDashboard();
+  }
+
   toggleDomain = val => {
     this.state[val] === false
       ? this.setState({ [val]: true })
@@ -201,6 +205,9 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
   addConcern: (patientId, concernObject) => {
     dispatch(actions.addConcern(patientId, concernObject));
+  },
+  wipeStoreFromPatientDashboard: () => {
+    dispatch(actions.wipeStoreFromPatientDashboard());
   }
 });
 
@@ -208,5 +215,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(PatientDashboard);
 
 PatientDashboard.propTypes = {
   addConcern: PropTypes.func,
-  currentPatient: PropTypes.object
+  currentPatient: PropTypes.object,
+  wipeStoreFromPatientDashboard: PropTypes.func
 };

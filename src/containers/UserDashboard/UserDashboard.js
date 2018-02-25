@@ -16,6 +16,10 @@ class UserDashboard extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.wipeStoreFromUserDashboard();
+  }
+
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -75,6 +79,9 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
   savePatient: (first, last, user, clinicAbbr) => {
     dispatch(actions.savePatient(first, last, user, clinicAbbr));
+  },
+  wipeStoreFromUserDashboard: () => {
+    dispatch(actions.wipeStoreFromUserDashboard());
   }
 });
 
@@ -82,5 +89,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(UserDashboard);
 
 UserDashboard.propTypes = {
   savePatient: PropTypes.func,
-  user: PropTypes.object
+  user: PropTypes.object,
+  wipeStoreFromUserDashboard: PropTypes.func
 };
