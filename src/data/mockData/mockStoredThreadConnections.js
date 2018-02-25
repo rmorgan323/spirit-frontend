@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 export const mockStoredThreadConnections = {
   modulation: false,
   postural: false,
@@ -171,4 +173,4 @@ export const mockStoredThreadConnections = {
   exe_4b_self_control: true,
   exe_4b_self_regulation: true,
   exectuive: true
-}
+};

@@ -49,7 +49,7 @@ describe('SliderTen tests', () => {
     expect(renderedApp.state('value')).toEqual(expected);
   });
 
-  it('should set state of previousValue to match value and previousFair to fair when slider is updated', () => {
+  it('should set state of previousValue to value and previousFair to fair on update', () => {
     const renderedApp = shallow(
       <SliderTen 
         selectedProcess={mockProcess}
@@ -97,7 +97,7 @@ describe('SliderTen tests', () => {
     expect(renderedApp.state('displayDefinition')).toEqual(expected);
   });
 
-  it('should return a className that includes thread-connection when threadConnection is true', () => {
+  it('should return a className with thread-connection when threadConnection is true', () => {
     const renderedApp = shallow(
       <SliderTen 
         selectedProcess={mockProcess}
@@ -111,7 +111,7 @@ describe('SliderTen tests', () => {
     expect(renderedApp.instance().checkThreadConnection(0, '', true)).toEqual(expected);
   });
 
-  it('should return a className that does not thread-connection when threadConnection is false', () => {
+  it('should return a className without thread-connection when threadConnection is false', () => {
     const renderedApp = shallow(
       <SliderTen 
         selectedProcess={mockProcess}
@@ -125,7 +125,7 @@ describe('SliderTen tests', () => {
     expect(renderedApp.instance().checkThreadConnection(0, '', false)).toEqual(expected);
   });
 
-  it('should return a className that does not thread-connection when slider has been changed', () => {
+  it('should return a className without thread-connection when slider has been changed', () => {
     const renderedApp = shallow(
       <SliderTen 
         selectedProcess={mockProcess}
@@ -157,6 +157,6 @@ describe('mapDispatchToProps tests', () => {
     const result = mapDispatchToProps(mockDispatch);
 
     result.updateProcessPerformanceComponent(mockParams);
-    expect(mockDispatch).toHaveBeenCalled()
-  })
-})
+    expect(mockDispatch).toHaveBeenCalled();
+  });
+});
