@@ -16,9 +16,6 @@ const SessionsComparison = props => {
 
     modulationDisplay = props.processesData.modulation.map((object, index) => {
       if (index > 0) {
-        console.log(dateArray)
-        console.log(object.title)
-        console.log(object.values)
         return (
           <ComparisonCard
             dateArray={dateArray}
