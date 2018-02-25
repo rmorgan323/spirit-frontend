@@ -10,29 +10,11 @@ class Join extends Component {
     super();
 
     this.state = {
+      currentClinicPasscode: '',
       clinicPasscode: '',
       error: '',
       success: ''
     };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const oldClinc = this.props.user.clinic;
-    const newClinic = nextProps.user.clinic;
-    let error;
-    let success;
-
-    if (oldClinc === newClinic) {
-      success = '';
-      error =
-        'Clinic not found. Please double check the clinic passcode or contact your clinic administrator.';
-      this.setState({ error, success });
-      return;
-    } else if (oldClinc !== newClinic) {
-      error = '';
-      success = `You have successfully joined ${newClinic}!`;
-      this.setState({ error, success });
-    }
   }
 
   handleChange = event => {
@@ -40,18 +22,36 @@ class Join extends Component {
     this.setState({ [name]: value });
   };
 
-  joinClinic = (event, passcode) => {
+  joinClinic = async (event, passcode) => {
     event.preventDefault();
     const { joinExistingClinic, user } = this.props;
     let error;
+    let success;
 
     if (passcode.length !== 8) {
+      success = '';
       error = 'A clinic passcode must be exactly eight characters in length';
-      this.setState({ error });
+      this.setState({ error, success });
       return;
     }
 
-    const clinicMessage = joinExistingClinic({ passcode: passcode }, user.id);
+    const joinMessage = await joinExistingClinic(
+      { passcode: passcode },
+      user.id
+    );
+
+    if (joinMessage === 'Passcode does not match any existing clinics') {
+      success = '';
+      error = `No clinic found. Please check the passcode or contact your clinic administrator`;
+      this.setState({ error, success });
+      return;
+    } else {
+      const newClinicName = joinMessage.clinic;
+
+      error = '';
+      success = `You have successfully joined ${newClinicName}!`;
+      this.setState({ error, success });
+    }
   };
 
   render() {
@@ -109,8 +109,12 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  joinExistingClinic: (passcode, userId) => {
-    dispatch(actions.joinExistingClinic(passcode, userId));
+  joinExistingClinic: async (passcode, userId) => {
+    const joinMessage = await dispatch(
+      actions.joinExistingClinic(passcode, userId)
+    );
+
+    return joinMessage;
   }
 });
 
