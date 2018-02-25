@@ -9,11 +9,14 @@ const selectedProcess = (store = {}, action) => {
     const componentValues = Object.values(action.updatedProcess);
 
     componentKeys.forEach((key, index) => {
-      newProcess[key] = componentValues[index]
-    })
+      newProcess[key] = componentValues[index];
+    });
 
     return newProcess;
   }
+
+  case 'EMPTY_SELECTED_PROCESS':
+    return {};
 
   default:
     return store;

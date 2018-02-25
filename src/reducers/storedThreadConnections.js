@@ -56,6 +56,9 @@ const storedThreadConnections = (store = markedThreadConnections, action) => {
     return newConnections;
   }
 
+  case 'RESET_THREAD_CONNECTIONS':
+    return markedThreadConnections;
+
   default:
     return store;
   }

@@ -23,7 +23,12 @@ const executiveConnections = {
   exe_4b_motivational: ['modulation', 'social', 'soc_2_social_motivators'],
   exe_4b_self_compassion: ['social', 'soc_3_self_compassion'],
   exe_4b_self_control: ['social', 'soc_3_self_control'],
-  exe_4b_self_regulation: ['modulation', 'social', 'mod_4b_self_regulation', 'soc_3_self_regulation']
+  exe_4b_self_regulation: [
+    'modulation',
+    'social',
+    'mod_4b_self_regulation',
+    'soc_3_self_regulation'
+  ]
 };
 
 export default executiveConnections;
