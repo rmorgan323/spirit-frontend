@@ -24,7 +24,8 @@ import PatientHeader from '../PatientHeader/PatientHeader';
 import ConcernHeader from '../ConcernHeader/ConcernHeader';
 import Sam from '../../components/Sam/Sam';
 import SessionTabs from '../SessionTabs/SessionTabs';
-import Finish from '../Finish/Finish';
+import Finish from '../../components/Finish/Finish';
+import ViewSession from '../../components/ViewSession/ViewSession';
 
 class Routes extends Component {
   componentDidMount = async () => {
@@ -103,10 +104,16 @@ class Routes extends Component {
             component={Finish}
           />
 
+          <Route 
+            path="/spirit/sessions/:session_id/view"
+            component={ViewSession}
+          />
+
           <Route
             path="/spirit/concerns/:concernId/sessions"
             component={Sessions}
           />
+
           <Route
             path="/spirit/patients/:patient_id"
             component={PatientDashboard}
