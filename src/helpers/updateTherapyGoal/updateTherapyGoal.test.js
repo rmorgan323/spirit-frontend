@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 import updateTherapyGoal from './updateTherapyGoal';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 

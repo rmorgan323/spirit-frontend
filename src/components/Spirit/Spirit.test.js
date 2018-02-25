@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 describe('Spirit tests', () => {
   it('should match snapshot', () => {
-    const renderedApp = shallow(<Spirit />)
+    const renderedApp = shallow(<Spirit />);
 
     expect(renderedApp).toMatchSnapshot();
   });

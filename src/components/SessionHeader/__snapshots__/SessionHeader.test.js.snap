@@ -25,3 +25,11 @@ exports[`SessionHeader tests should match snapshot 1`] = `
   title="Sensory Discrimination Capacities"
 />
 `;
+
+exports[`SessionHeader tests should match snapshot if some props are empty arrays 1`] = `
+<SessionHeader
+  databaseNamesArray={Array []}
+  headings={Array []}
+  title="Sensory Discrimination Capacities"
+/>
+`;

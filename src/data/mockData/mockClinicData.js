@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 export const mockClinicData = {
   name: 'I Need Therapy',
   abbreviation: 'INT',

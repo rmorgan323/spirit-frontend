@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 export const mockTreatmentPlan = {
   id: 10,
   modulation_sensory: "Notes.",
@@ -38,4 +40,4 @@ export const mockTreatmentPlan = {
   session_id: 10,
   created_at: "2018-02-20T21:25:45.468Z",
   updated_at: "2018-02-20T21:25:45.468Z"
-}
+};

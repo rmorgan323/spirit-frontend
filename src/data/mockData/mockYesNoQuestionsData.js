@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 export const mockTitle = 'Core Development';
 export const mockQuestionsArray = [
   'Outer Core', 'Inner Core'

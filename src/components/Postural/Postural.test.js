@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 describe('Postural tests', () => {
   it('should match snapshot', () => {
-    const renderedApp = shallow(<Postural />)
+    const renderedApp = shallow(<Postural />);
 
     expect(renderedApp).toMatchSnapshot();
   });

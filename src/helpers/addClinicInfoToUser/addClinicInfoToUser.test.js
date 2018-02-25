@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 import addClinicInfoToUser from './addClinicInfoToUser';
 import { mockClinicData } from '../../data/mockData/mockClinicData';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';

@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 export const mockTitle = 'Sensory Discrimination Capacities';
 export const mockHeadings = [
   'Vestibular',

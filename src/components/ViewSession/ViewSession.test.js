@@ -1,4 +1,6 @@
-import React from 'react'
+/*eslint-disable max-len*/
+
+import React from 'react';
 import { ViewSession, mapStateToProps } from './ViewSession';
 import { shallow } from 'enzyme';
 import { mockPatient } from '../../data/mockData/mockPatient';
@@ -19,11 +21,11 @@ describe('ViewSession', () => {
         selectedTherapyGoal={mockTherapyGoal}
         selectedTreatmentPlan={mockTreatmentPlan}
       />
-    )
+    );
 
     expect(renderedApp).toMatchSnapshot();
-  })
-})
+  });
+});
 
 describe('mapStateToProps tests', () => {
   it('should pull currentPatient, selectedConcern, selectedSession, selectedProcess, selectedTherapyGoal, selectedTreatmentPlan, and comparisonData from store', () => {

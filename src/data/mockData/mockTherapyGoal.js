@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 export const mockTherapyGoal = {
   id: 8,
   modulation_goal: null,
@@ -38,4 +40,4 @@ export const mockTherapyGoal = {
   session_id: 10,
   created_at: "2018-02-20T21:25:45.461Z",
   updated_at: "2018-02-20T21:25:45.461Z"
-}
+};

@@ -41,7 +41,7 @@ class UserDashboard extends Component {
       return;
     }
 
-    success = 'Patient successfully added!'
+    success = 'Patient successfully added!';
     error = '';
     this.setState({ error, success });
 

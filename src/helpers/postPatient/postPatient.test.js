@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 import postPatient from './postPatient';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
