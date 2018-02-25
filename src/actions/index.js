@@ -275,6 +275,12 @@ export const updateUserStore = clinicData => ({
 
 export const joinExistingClinic = (passcode, userId) => async dispatch => {
   const updatedClinic = await joinClinic(passcode, userId);
+
+  if (updatedClinic.error) {
+    const { error } = updatedClinic;
+    return error;
+  }
+
   dispatch(updateUserStore(updatedClinic));
   dispatch(
     clinicToStore({
@@ -284,6 +290,8 @@ export const joinExistingClinic = (passcode, userId) => async dispatch => {
       passcode: updatedClinic.clinic_passcode
     })
   );
+
+  return updatedClinic;
 };
 
 export const compareSessionData = idArray => async dispatch => {
