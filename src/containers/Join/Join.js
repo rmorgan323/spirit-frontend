@@ -1,3 +1,5 @@
+/*eslint-disable react/no-unescaped-entities*/
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -10,7 +12,10 @@ class Join extends Component {
     super();
 
     this.state = {
-      clinicPasscode: ''
+      currentClinicPasscode: '',
+      clinicPasscode: '',
+      error: '',
+      success: ''
     };
   }
 
@@ -19,20 +24,62 @@ class Join extends Component {
     this.setState({ [name]: value });
   };
 
-  joinClinic = (event, passcode) => {
+  joinClinic = async (event, passcode) => {
     event.preventDefault();
     const { joinExistingClinic, user } = this.props;
+    let error;
+    let success;
 
-    joinExistingClinic({ passcode: passcode }, user.id);
+    if (passcode.length !== 8) {
+      success = '';
+      error = 'A clinic passcode must be exactly eight characters in length';
+      this.setState({ error, success });
+      return;
+    }
+
+    const joinMessage = await joinExistingClinic(
+      { passcode: passcode },
+      user.id
+    );
+
+    if (joinMessage === 'Passcode does not match any existing clinics') {
+      success = '';
+      error = `No clinic found. Please check the passcode or contact your clinic administrator`;
+      this.setState({ error, success });
+      return;
+
+    } else if (user.clinic === joinMessage.clinic) {
+      error = '';
+      success = `You are already a member of ${user.clinic}.`;
+      this.setState({ error, success });
+
+    } else {
+      const newClinicName = joinMessage.clinic;
+
+      error = '';
+      success = `You have successfully joined ${newClinicName}!`;
+      this.setState({ error, success });
+    }
   };
 
   render() {
-    const { clinicPasscode } = this.state;
+    const { clinicPasscode, error, success } = this.state;
     const { user } = this.props;
 
     return (
       <div className="Join">
-        <h4>Join a Clinic</h4>
+        <h2>Join a Clinic</h2>
+
+        <div className="join-clinic-directions">
+          To join an existing clinic on SpIRiT©, you must use a clinic's eight
+          digit passcode. If you do not know your clinic's passcode, please
+          contact your SpIRiT© administrator.
+        </div>
+
+        <div className="join-clinic-directions">
+          If your clinic has not been registered, click 'CREATE NEW CLINIC'
+          below to learn how you can add your clinic and start using SpIRiT©.
+        </div>
 
         <form>
           <input
@@ -41,6 +88,7 @@ class Join extends Component {
             value={clinicPasscode}
             name="clinicPasscode"
             placeholder="Enter Passcode"
+            maxLength={8}
           />
 
           <button
@@ -51,6 +99,10 @@ class Join extends Component {
             SUBMIT
           </button>
         </form>
+
+        {error && <span className="error-message">{error}</span>}
+
+        {success && <span className="success-message">{success}</span>}
 
         <NavLink className="join-link" to={`/spirit/users/${user.id}/create`}>
           CREATE NEW CLINIC
@@ -65,8 +117,12 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  joinExistingClinic: (passcode, userId) => {
-    dispatch(actions.joinExistingClinic(passcode, userId));
+  joinExistingClinic: async (passcode, userId) => {
+    const joinMessage = await dispatch(
+      actions.joinExistingClinic(passcode, userId)
+    );
+
+    return joinMessage;
   }
 });
 

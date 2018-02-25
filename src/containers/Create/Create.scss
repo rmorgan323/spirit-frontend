@@ -14,10 +14,20 @@
     font-size: 18px;
   }
 
+  .new-clinic-form {
+    margin-top: 20px;
+  }
+
+  .add-clinic-directions {
+    @include match-p;
+    padding: 10px 0;
+    text-indent: 20px;
+  }
+
   form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   .input-clinic-name, .submit-button {
@@ -60,6 +70,22 @@
   .submit-button:hover {
     color: #fff;
     background-color: $purple3;
+  }
+
+  .error-message, .success-message {
+    @include match-h5;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .error-message {
+    color: #C00E0E;
+  }
+
+  .success-message {
+    color: $green4;
   }
 
   a.join-link {

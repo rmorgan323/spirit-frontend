@@ -1,3 +1,5 @@
+/*eslint-disable react/no-unescaped-entities*/
+
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -13,7 +15,9 @@ class Create extends Component {
     this.state = {
       clinicName: '',
       clinicAbbreviation: '',
-      successMessage: ''
+      successMessage: '',
+      error: '',
+      success: ''
     };
   }
 
@@ -22,18 +26,37 @@ class Create extends Component {
     this.setState({ [name]: value });
   };
 
-  saveNewClinic = (event, name, abbr) => {
+  saveNewClinic = (event, name, abbreviation) => {
     event.preventDefault();
     const { saveClinic, user } = this.props;
+    const { clinicName, clinicAbbreviation } = this.state;
+    let error;
+    let success;
 
-    const password = generator.generate({
+    if (!clinicName || !clinicAbbreviation) {
+      success = '';
+      error = 'Please enter a clinic name and abbreviation';
+      this.setState({ error, success });
+      return;
+    } else if (clinicAbbreviation.length !== 3) {
+      success = '';
+      error = 'Clinic abbreviation must be three characters long';
+      this.setState({ error, success });
+      return;
+    }
+
+    const passcode = generator.generate({
       length: 8,
       uppercase: false,
       numbers: true,
       excludeSimilarCharacters: true
     });
 
-    saveClinic({ name: name, abbreviation: abbr, passcode: password }, user.id);
+    error = '';
+    success = `Clinic successfully added! Your clinic passcode is ${passcode}.`;
+    this.setState({ error, success, clinicName: '', clinicAbbreviation: '' });
+
+    saveClinic({ name, abbreviation, passcode }, user.id);
   };
 
   displayClinic = () => {
@@ -42,6 +65,7 @@ class Create extends Component {
     if (Object.keys(user).length) {
       return (
         <div>
+          <h2 className="current-clinic-header">Your Current Clinic</h2>
           <h4>
             <span className="clinic-span">You are a member of: </span>
             {user.clinic}
@@ -60,20 +84,30 @@ class Create extends Component {
   };
 
   render() {
-    const { clinicName, clinicAbbreviation } = this.state;
+    const { clinicName, clinicAbbreviation, error, success } = this.state;
     const { user } = this.props;
 
     return (
       <div className="Create">
         {this.displayClinic()}
 
-        <form>
+        <form className="new-clinic-form">
+          <h2>Add a New Clinic</h2>
+          <div className="add-clinic-directions">
+            To add a new clinic, you must provide a clinic name and three letter
+            abbreviation. This abbreviation will be used to abstract your
+            patient's real name when adding them to SpIRiT©.
+          </div>
+          <div className="add-clinic-directions">
+            After submission, you will be provided with a passcode. This
+            passcode will be used by other members in order to join your clinic.
+          </div>
           <input
             className="input-clinic-name"
             onChange={event => this.handleChange(event)}
             value={clinicName}
             name="clinicName"
-            placeholder="Switch to NEW Clinic"
+            placeholder="New Clinic Name"
             maxLength={30}
           />
           <input
@@ -94,6 +128,10 @@ class Create extends Component {
             SUBMIT
           </button>
         </form>
+
+        {error && <span className="error-message">{error}</span>}
+
+        {success && <span className="success-message">{success}</span>}
 
         <NavLink className="join-link" to={`/spirit/users/${user.id}/join`}>
           JOIN EXISTING CLINIC

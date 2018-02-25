@@ -1,5 +1,5 @@
 @import '../../variables.scss';
- 
+
  .UserDashboard {
   @include primary-content;
 
@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
     width: 380px;
-    margin: auto;
+    margin: 0 auto 10px;
   }
 
   input {
@@ -47,6 +47,30 @@
     background-color: $purple6;
   }
 
+  .patient-name-directions {
+    @include match-p;
+    display: flex;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 10px;
+    text-indent: 20px;
+  }
+
+  .error-message, .success-message {
+    @include match-h5;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .error-message {
+    color: #C00E0E;
+  }
+
+  .success-message {
+    color: $green4;
+  }
+
   .link-holder a {
     text-decoration: none;
     background-color: $green4;
@@ -62,4 +86,4 @@
   .link-holder a:hover {
     background-color: $green5;
   }
- } 
+ }

@@ -1,3 +1,5 @@
+/*eslint-disable react/no-unescaped-entities*/
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -12,7 +14,8 @@ class UserDashboard extends Component {
 
     this.state = {
       firstInitial: '',
-      lastInitial: ''
+      lastInitial: '',
+      error: ''
     };
   }
 
@@ -22,18 +25,31 @@ class UserDashboard extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    this.setState({ [name]: value.toUpperCase() });
   };
 
   handleSubmit = () => {
     const { firstInitial, lastInitial } = this.state;
     const { savePatient, user } = this.props;
+    let error;
+    let success;
+
+    if (!firstInitial || !lastInitial) {
+      success = '';
+      error = 'Please enter a first and last patient initial';
+      this.setState({ error, success });
+      return;
+    }
+
+    success = 'Patient successfully added!'
+    error = '';
+    this.setState({ error, success });
 
     savePatient(firstInitial, lastInitial, user.id, user.clinic_abbreviation);
   };
 
   render() {
-    const { firstInitial, lastInitial } = this.state;
+    const { firstInitial, lastInitial, error, success } = this.state;
     const { user } = this.props;
 
     return (
@@ -60,6 +76,21 @@ class UserDashboard extends Component {
           <button onClick={() => this.handleSubmit()} type="submit">
             SUBMIT
           </button>
+        </div>
+
+        {error && <span className="error-message">{error}</span>}
+
+        {success && <span className="success-message">{success}</span>}
+
+        <div className="patient-name-directions">
+          Each patient name will be a combination of your clinic abbreviation,
+          the patient's first and last initial, and a unique number identifier
+          (ie CLI + AB + 10).
+        </div>
+
+        <div className="patient-name-directions">
+          Please keep this abstracted name in your personal patient records for
+          future reference.
         </div>
 
         <PatientList />
