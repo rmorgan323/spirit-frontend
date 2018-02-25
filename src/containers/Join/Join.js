@@ -7,7 +7,7 @@ import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
 import './Join.css';
 
-class Join extends Component {
+export class Join extends Component {
   constructor() {
     super();
 
@@ -112,11 +112,11 @@ class Join extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   user: store.user
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   joinExistingClinic: async (passcode, userId) => {
     const joinMessage = await dispatch(
       actions.joinExistingClinic(passcode, userId)
