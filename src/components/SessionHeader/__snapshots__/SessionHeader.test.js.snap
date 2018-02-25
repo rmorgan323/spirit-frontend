@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SessionHeader tests should match snapshot 1`] = `
+<SessionHeader
+  databaseNamesArray={
+    Array [
+      "sen_h_vestibular",
+      "sen_h_proprioception",
+      "sen_h_tactile",
+      "sen_h_auditory",
+      "sen_h_visual",
+      "sen_h_intero",
+    ]
+  }
+  headings={
+    Array [
+      "Vestibular",
+      "Proprioception",
+      "Tactile",
+      "Auditory",
+      "Visual",
+      "Intero",
+    ]
+  }
+  title="Sensory Discrimination Capacities"
+/>
+`;
