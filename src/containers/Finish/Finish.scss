@@ -20,4 +20,29 @@
   .finish-headings {
     text-align: center;
   }
+
+  .finish-button-holder {
+    position: relative;
+    width: 875px;
+    margin: auto;
+  }
+
+  .join-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    button {
+      background-color: $green4;
+      height: 40px;
+      border: none;
+      color: #fff;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: $green5;
+    }
+  }
 }

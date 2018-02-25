@@ -3,7 +3,7 @@ const selectedSession = (store = {}, action) => {
   case 'SELECTED_SESSION_TO_STORE':
     return action.selectedSession;
 
-  case 'UPDATE_SELECTED_SESSION':
+  case 'UPDATE_SELECTED_SESSION': {
     let updatedStore = Object.assign({}, store);
     const updatedKeys = Object.keys(action.body);
     const updatedValues = Object.values(action.body);
@@ -13,6 +13,10 @@ const selectedSession = (store = {}, action) => {
     });
 
     return updatedStore;
+  }
+
+  case 'EMPTY_SELECTED_SESSION':
+    return {};
 
   default:
     return store;

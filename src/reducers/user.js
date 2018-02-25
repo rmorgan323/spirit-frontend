@@ -6,7 +6,7 @@ const user = (store = {}, action) => {
   }
 
   case "UPDATE_USER_STORE": {
-    let newStore = store;
+    let newStore = Object.assign({}, store);
     const keys = Object.keys(action.clinicData);
     const values = Object.values(action.clinicData);
 

@@ -80,5 +80,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(SessionTabs);
 SessionTabs.propTypes = {
   storedThreadConnections: PropTypes.object,
   selectedSession: PropTypes.object,
-  updateThreadDomain: PropTypes.func
+  updateThreadDomain: PropTypes.func,
+  location: PropTypes.object
 };
