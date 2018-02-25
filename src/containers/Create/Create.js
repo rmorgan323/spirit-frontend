@@ -8,7 +8,7 @@ import * as actions from '../../actions';
 import generator from 'generate-password';
 import './Create.css';
 
-class Create extends Component {
+export class Create extends Component {
   constructor() {
     super();
 
@@ -32,7 +32,6 @@ class Create extends Component {
     const { clinicName, clinicAbbreviation } = this.state;
     let error;
     let success;
-
     if (!clinicName || !clinicAbbreviation) {
       success = '';
       error = 'Please enter a clinic name and abbreviation';
@@ -55,7 +54,6 @@ class Create extends Component {
     error = '';
     success = `Clinic successfully added! Your clinic passcode is ${passcode}.`;
     this.setState({ error, success, clinicName: '', clinicAbbreviation: '' });
-
     saveClinic({ name, abbreviation, passcode }, user.id);
   };
 
@@ -141,11 +139,11 @@ class Create extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   user: store.user
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   saveClinic: (clinic, userId) => {
     dispatch(actions.saveClinic(clinic, userId));
   }

@@ -22,3 +22,7 @@ export const mockReminderAsterisk = [null, '*', '*', '*', '*'];
 
 export const mockReminder = '* If selected, remember to make a hypothesized arousal chart.';
 
+export const mockSliderTitle = 'Attention';
+
+export const mockDatabaseName = 'mod_2_attention';
+
