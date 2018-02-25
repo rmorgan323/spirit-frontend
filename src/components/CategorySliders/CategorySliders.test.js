@@ -11,7 +11,6 @@ import {
 
 describe('CategorySliders tests', () => {
   it('should match snapshot', () => {
-
     const renderedApp = shallow(<CategorySliders
       title={mockTitle}
       slidersArray={mockSlidersArray}
