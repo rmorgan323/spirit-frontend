@@ -7,5 +7,5 @@ describe('Executive tests', () => {
     const renderedApp = shallow(<Executive />)
 
     expect(renderedApp).toMatchSnapshot();
-  })
-})
+  });
+});
