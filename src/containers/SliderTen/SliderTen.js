@@ -8,7 +8,7 @@ import Definition from '../Definition/Definition';
 import * as actions from '../../actions';
 import './SliderTen.css';
 
-class SliderTen extends Component {
+export class SliderTen extends Component {
   constructor(props) {
     super(props);
 
@@ -207,12 +207,12 @@ class SliderTen extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   selectedProcess: store.selectedProcess,
   storedThreadConnections: store.storedThreadConnections
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   updateProcessPerformanceComponent: (processId, updatedProcess) => {
     dispatch(
       actions.updateProcessPerformanceComponent(processId, updatedProcess)
