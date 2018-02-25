@@ -6,7 +6,7 @@ import processProcessesData from '../../helpers/processProcessesData/processProc
 import formatTherapyGoalData from '../../helpers/formatTherapyGoalData/formatTherapyGoalData';
 import formatTreatmentPlanData from '../../helpers/formatTreatmentPlanData/formatTreatmentPlanData';
 
-const ViewSession = (props) => {
+export const ViewSession = (props) => {
 
   let date, clinic, patient, ids, concern, processValues, processValuesExec, processValuesMod, processValuesPos, processValuesSen, processValuesSoc, treatmentPlan, therapyGoal;
 
@@ -198,14 +198,13 @@ const ViewSession = (props) => {
   )
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   currentPatient: store.currentPatient,
   selectedConcern: store.selectedConcern,
   selectedSession: store.selectedSession,
   selectedProcess: store.selectedProcess,
   selectedTherapyGoal: store.selectedTherapyGoal,
-  selectedTreatmentPlan: store.selectedTreatmentPlan,
-  comparisonData: store.comparisonData
+  selectedTreatmentPlan: store.selectedTreatmentPlan
 })
 
 export default connect(mapStateToProps, null)(ViewSession);
