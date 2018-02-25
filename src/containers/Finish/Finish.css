@@ -55,3 +55,22 @@ p {
 
 .Finish .finish-headings {
   text-align: center; }
+
+.Finish .finish-button-holder {
+  position: relative;
+  width: 875px;
+  margin: auto; }
+
+.Finish .join-link {
+  position: absolute;
+  left: 0;
+  top: 0; }
+  .Finish .join-link button {
+    background-color: #5cba47;
+    height: 40px;
+    border: none;
+    color: #fff;
+    padding: 0 10px;
+    cursor: pointer; }
+  .Finish .join-link button:hover {
+    background-color: #468c41; }
