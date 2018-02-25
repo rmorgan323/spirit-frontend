@@ -56,12 +56,19 @@
     text-indent: 20px;
   }
 
-  .error-message {
+  .error-message, .success-message {
     @include match-h5;
     display: flex;
     justify-content: center;
     padding: 10px;
+  }
+
+  .error-message {
     color: #C00E0E;
+  }
+
+  .success-message {
+    color: $green4;
   }
 
   .link-holder a {

@@ -32,21 +32,24 @@ class UserDashboard extends Component {
     const { firstInitial, lastInitial } = this.state;
     const { savePatient, user } = this.props;
     let error;
+    let success;
 
     if (!firstInitial || !lastInitial) {
+      success = '';
       error = 'Please enter a first and last patient initial';
-      this.setState({ error });
+      this.setState({ error, success });
       return;
     }
 
+    success = 'Patient successfully added!'
     error = '';
-    this.setState({ error });
+    this.setState({ error, success });
 
     savePatient(firstInitial, lastInitial, user.id, user.clinic_abbreviation);
   };
 
   render() {
-    const { firstInitial, lastInitial, error } = this.state;
+    const { firstInitial, lastInitial, error, success } = this.state;
     const { user } = this.props;
 
     return (
@@ -76,6 +79,8 @@ class UserDashboard extends Component {
         </div>
 
         {error && <span className="error-message">{error}</span>}
+
+        {success && <span className="success-message">{success}</span>}
 
         <div className="patient-name-directions">
           Each patient name will be a combination of your clinic abbreviation,
