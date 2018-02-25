@@ -2,7 +2,7 @@ import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const loadSession = async sessionId => {
   try {
-    const fetchedSession = fetch(
+    const fetchedSession = await fetch(
       `http://localhost:3000/api/v1/sessions/${sessionId}`,
       {
         method: 'GET',
@@ -12,7 +12,7 @@ const loadSession = async sessionId => {
         }
       }
     );
-    const jsonSession = fetchedSession.json();
+    const jsonSession = await fetchedSession.json();
 
     return jsonSession;
   } catch (error) {

@@ -60,9 +60,6 @@ p {
     align-items: flex-start;
     position: relative;
     padding: 7px; }
-  .SliderTen .thread-connection {
-    background-color: #f0f7ee; }
-
   .SliderTen .definition-holder {
     display: none; }
   .SliderTen .display-definition {
@@ -105,6 +102,3 @@ p {
 
 .thread-connection {
   border: 4px solid #9ed18f; }
-
-    
-

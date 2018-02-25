@@ -1,5 +1,4 @@
 const processProcessesData = (data) => {
-
   data = data.sort((a, b) => a.id - b.id)
 
   let cleanExecutive = [
