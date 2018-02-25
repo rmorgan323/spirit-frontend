@@ -45,6 +45,12 @@ class Join extends Component {
       error = `No clinic found. Please check the passcode or contact your clinic administrator`;
       this.setState({ error, success });
       return;
+
+    } else if (user.clinic === joinMessage.clinic) {
+      error = '';
+      success = `You are already a member of ${user.clinic}.`;
+      this.setState({ error, success });
+
     } else {
       const newClinicName = joinMessage.clinic;
 
