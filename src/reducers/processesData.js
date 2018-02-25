@@ -3,6 +3,9 @@ const processesData = (store = {}, action) => {
   case 'PROCESSES_DATA_TO_STORE':
     return action.cleanProcesses;
 
+  case 'EMPTY_PROCESS_DATA':
+    return {};
+
   default:
     return store;
   }
