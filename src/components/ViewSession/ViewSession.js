@@ -8,12 +8,13 @@ import formatTreatmentPlanData from '../../helpers/formatTreatmentPlanData/forma
 
 const ViewSession = (props) => {
 
-  let date, clinic, patient, concern, processValues, processValuesExec, processValuesMod, processValuesPos, processValuesSen, processValuesSoc, treatmentPlan, therapyGoal;
+  let date, clinic, patient, ids, concern, processValues, processValuesExec, processValuesMod, processValuesPos, processValuesSen, processValuesSoc, treatmentPlan, therapyGoal;
 
   if (props.selectedSession.id) {
     patient = <h2>Patient: {props.currentPatient.abstracted_name}</h2>
     date = <h4>{moment(props.selectedSession.created_at).format('LL')}</h4>
     clinic = <h4>Clinic: {props.currentPatient.clinic_name}</h4>
+    ids = <h4>Concern ID: {props.selectedSession.concern_id}, Session ID: {props.selectedSession.id}</h4>
     concern = (
       <div className="view-concern">
         <p className="view-concern-description">{props.selectedConcern.description}</p>
@@ -124,8 +125,13 @@ const ViewSession = (props) => {
           {date}
         </div>
       </div>
-      <div className="view-clinic">
-        {clinic}
+      <div className="view-header-top">
+        <div className="view-ids">
+          {ids}
+        </div>
+        <div className="view-clinic">
+          {clinic}
+        </div>
       </div>
       <div>
         <h3>Primary Concern</h3>
@@ -134,40 +140,54 @@ const ViewSession = (props) => {
       <div className="view-processes">
         <h3>Processes</h3>
 
-          <h4>Modulation:</h4>
-          <div className="view-processes-section">
-            {processValuesMod}
+          <div className="view-section-container">
+            <h4>Modulation:</h4>
+            <div className="view-processes-section">
+              {processValuesMod}
+            </div>
           </div>
 
-          <h4>Postural:</h4>
-          <div className="view-processes-section">
-            {processValuesPos}
+          <div className="view-section-container">
+            <h4>Postural:</h4>
+            <div className="view-processes-section">
+              {processValuesPos}
+            </div>
           </div>
 
-          <h4>Executive:</h4>
-          <div className="view-processes-section">
-            {processValuesExec}
+          <div className="view-section-container">
+            <h4>Executive:</h4>
+            <div className="view-processes-section">
+              {processValuesExec}
+            </div>
           </div>
 
-          <h4>Sensory:</h4>
-          <div className="view-processes-section">
-            {processValuesSen}
+          <div className="view-section-container">
+            <h4>Sensory:</h4>
+            <div className="view-processes-section">
+              {processValuesSen}
+            </div>
           </div>
 
-          <h4>Social:</h4>
-          <div className="view-processes-section">
-            {processValuesSoc}
+          <div className="view-section-container">
+            <h4>Social:</h4>
+            <div className="view-processes-section">
+              {processValuesSoc}
+            </div>
           </div>
         </div>
 
-        <h3>Treatment Plans</h3>
-        <div className="view-treatment">
-          {treatmentPlan}
+        <div className="view-section-container">
+          <h3>Treatment Plans</h3>
+          <div className="view-treatment">
+            {treatmentPlan}
+          </div>
         </div>
 
-        <h3>Therapy Goals</h3>
-        <div className="view-therapy">
-          {therapyGoal}
+        <div className="view-section-container">
+          <h3>Therapy Goals</h3>
+          <div className="view-therapy">
+            {therapyGoal}
+          </div>
         </div>
     </div>
   )
