@@ -140,55 +140,60 @@ const ViewSession = (props) => {
       <div className="view-processes">
         <h3>Processes</h3>
 
-          <div className="view-section-container">
-            <h4>Modulation:</h4>
-            <div className="view-processes-section">
-              {processValuesMod}
-            </div>
-          </div>
-
-          <div className="view-section-container">
-            <h4>Postural:</h4>
-            <div className="view-processes-section">
-              {processValuesPos}
-            </div>
-          </div>
-
-          <div className="view-section-container">
-            <h4>Executive:</h4>
-            <div className="view-processes-section">
-              {processValuesExec}
-            </div>
-          </div>
-
-          <div className="view-section-container">
-            <h4>Sensory:</h4>
-            <div className="view-processes-section">
-              {processValuesSen}
-            </div>
-          </div>
-
-          <div className="view-section-container">
-            <h4>Social:</h4>
-            <div className="view-processes-section">
-              {processValuesSoc}
-            </div>
+        <div className="view-section-container">
+          <h4>Modulation:</h4>
+          <div className="view-processes-section">
+            {processValuesMod}
           </div>
         </div>
 
         <div className="view-section-container">
-          <h3>Treatment Plans</h3>
-          <div className="view-treatment">
-            {treatmentPlan}
+          <h4>Postural:</h4>
+          <div className="view-processes-section">
+            {processValuesPos}
           </div>
         </div>
 
         <div className="view-section-container">
-          <h3>Therapy Goals</h3>
-          <div className="view-therapy">
-            {therapyGoal}
+          <h4>Executive:</h4>
+          <div className="view-processes-section">
+            {processValuesExec}
           </div>
         </div>
+
+        <div className="view-section-container">
+          <h4>Sensory:</h4>
+          <div className="view-processes-section">
+            {processValuesSen}
+          </div>
+        </div>
+
+        <div className="view-section-container">
+          <h4>Social:</h4>
+          <div className="view-processes-section">
+            {processValuesSoc}
+          </div>
+        </div>
+      </div>
+
+      <div className="view-section-container">
+        <h3>Treatment Plans</h3>
+        <div className="view-treatment">
+          {treatmentPlan}
+        </div>
+      </div>
+
+      <div className="view-section-container">
+        <h3>Therapy Goals</h3>
+        <div className="view-therapy">
+          {therapyGoal}
+        </div>
+      </div>
+
+      <div className="print-button-container">
+        <a href="javascript:window.print()" className="print-button">PRINT THIS PAGE</a>
+      </div>
+
     </div>
   )
 }

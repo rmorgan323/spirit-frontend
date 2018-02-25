@@ -153,6 +153,24 @@
       margin: 0;
     }
   }
+
+  .print-button {
+    background-color: $green4;
+    height: 40px;
+    width: 170px;
+    margin: 50px auto;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .print-button:hover {
+    background-color: $green5;
+  }
 }
 
 @media print {
@@ -160,7 +178,7 @@
     size: landscape;
   }
 
-  .Header, .PatientHeader, .ConcernHeader, .SessionTabs {
+  .Header, .PatientHeader, .ConcernHeader, .SessionTabs, .print-button-container {
     display: none;
   }
 

@@ -45,18 +45,20 @@ class Finish extends Component {
           number="5"
         />
 
-        <button 
-          className="complete-session-button"
-          onClick={() => this.completeSessionNow()}
-        >COMPLETE SESSION</button>
-
-
-        <NavLink className="join-link" to={`/spirit/sessions/${this.props.selectedSession.id}/view`}>
+        <div className="finish-button-holder">
           <button 
-            className="session-result-button"
-          >SEE ALL SESSION RESULTS
-          </button>
-        </NavLink>
+            className="complete-session-button"
+            onClick={() => this.completeSessionNow()}
+          >COMPLETE SESSION</button>
+
+
+          <NavLink className="join-link" to={`/spirit/sessions/${this.props.selectedSession.id}/view`}>
+            <button 
+              className="session-result-button"
+            >SEE SESSION RESULTS
+            </button>
+          </NavLink>
+        </div>
       </div>
     );
   }
