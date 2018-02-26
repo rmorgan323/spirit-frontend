@@ -7,6 +7,8 @@ import mockSession from '../../data/mockData/mockSession';
 import mockProcess from '../../data/mockData/mockProcess';
 import mockTherapyGoal from '../../data/mockData/mockTherapyGoal';
 import mockTreatmentPlan from '../../data/mockData/mockTreatmentPlan';
+import mockSelectedProcess from '../../data/mockData/mockSelectedProcess';
+import mockStoredThreadConnections from '../../data/mockData/mockStoredThreadConnections';
 
 describe('Actions tests', () => {
   it('userToStore should have a type of USER_TO_STORE', () => {
@@ -122,11 +124,23 @@ describe('Actions tests', () => {
   });
 
   it('concernToStore should have a type of CONCERN_TO_STORE', () => {
+    const concern = mockConcern;
+    const expected = {
+      type: 'CONCERN_TO_STORE',
+      concern
+    };
 
+    expect(actions.concernToStore(concern)).toEqual(expected);
   });
 
   it('checkThreadConnections should have a type of CHECK_THREAD_CONNECTIONS', () => {
+    const selectedProcess = mockSelectedProcess;
+    const expected = {
+      type: 'CHECK_THREAD_CONNECTIONS',
+      selectedProcess
+    };
 
+    expect(actions.checkThreadConnections(selectedProcess)).toEqual(expected);
   });
 
   it('confirmMarkedThreadConnection should have a type of CONFIRM_MARKED_THREAD_CONNECTION', () => {
