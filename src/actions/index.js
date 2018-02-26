@@ -382,7 +382,7 @@ export const emptySelectedConcern = () => ({
 });
 
 export const emptyPatientConcerns = () => ({
-  type: 'EMPTY_PATIENT_CONCERS'
+  type: 'EMPTY_PATIENT_CONCERNS'
 });
 
 export const emptyCurrentPatient = () => ({
