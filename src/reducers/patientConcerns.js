@@ -8,7 +8,7 @@ const patientConcerns = (store = [], action) => {
   case 'CONCERN_ARRAY_TO_STORE':
     return action.concerns;
 
-  case 'EMPTY_PATIENT_CONCERS':
+  case 'EMPTY_PATIENT_CONCERNS':
     return [];
 
   default:
