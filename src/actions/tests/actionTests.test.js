@@ -1,8 +1,15 @@
 import * as actions from '../index';
+import mockUserData from '../../data/mockData/mockUserData';
 
 describe('Actions tests', () => {
   it('userToStore should have a type of USER_TO_STORE', () => {
+    const user = mockUserData;
+    const expected = {
+      type: 'USER_TO_STORE',
+      user
+    };
 
+    expect(actions.userToStore(user)).toEqual(expected);
   });
 
   it('currentPatientToStore should have a type of CURRENT_PATIENT_TO_STORE', () => {
