@@ -67,7 +67,7 @@ describe('Actions tests', () => {
 
   it('updateSessionsArray should have a type of UPDATE_SESSIONS_ARRAY', () => {
     const sessionId = 1;
-    const status = [mockSession]
+    const status = [mockSession];
     const expected = {
       type: 'UPDATE_SESSIONS_ARRAY',
       sessionId,
@@ -78,7 +78,7 @@ describe('Actions tests', () => {
   });
 
   it('updateSelectedSession should have a type of UPDATE_SELECTED_SESSION', () => {
-    const body = { completed: true }
+    const body = { completed: true };
     const expected = {
       type: 'UPDATE_SELECTED_SESSION',
       body
@@ -114,7 +114,9 @@ describe('Actions tests', () => {
       selectedTherapyGoal
     };
 
-    expect(actions.selectedTherapyGoalToStore(selectedTherapyGoal)).toEqual(expected);
+    expect(actions.selectedTherapyGoalToStore(selectedTherapyGoal)).toEqual(
+      expected
+    );
   });
 
   it('selectedTreatmentPlanToStore should have a type of SELECTED_TREATMENT_PLAN_TO_STORE', () => {
@@ -124,7 +126,9 @@ describe('Actions tests', () => {
       selectedTreatmentPlan
     };
 
-    expect(actions.selectedTreatmentPlanToStore(selectedTreatmentPlan)).toEqual(expected);
+    expect(actions.selectedTreatmentPlanToStore(selectedTreatmentPlan)).toEqual(
+      expected
+    );
   });
 
   it('concernToStore should have a type of CONCERN_TO_STORE', () => {
@@ -154,7 +158,9 @@ describe('Actions tests', () => {
       updatedProcess
     };
 
-    expect(actions.confirmMarkedThreadConnection(updatedProcess)).toEqual(expected);
+    expect(actions.confirmMarkedThreadConnection(updatedProcess)).toEqual(
+      expected
+    );
   });
 
   it('updateThreadConnections should have a type of UPDATE_THREAD_CONNECTIONS', () => {
@@ -164,7 +170,9 @@ describe('Actions tests', () => {
       threadConnections
     };
 
-    expect(actions.updateThreadConnections(threadConnections)).toEqual(expected);
+    expect(actions.updateThreadConnections(threadConnections)).toEqual(
+      expected
+    );
   });
 
   it('updateThreadDomain should have a type of UPDATE_THREAD_DOMAIN', () => {
@@ -194,7 +202,9 @@ describe('Actions tests', () => {
       updatedTreatmentPlan
     };
 
-    expect(actions.updatedTreatmentPlanToStore(updatedTreatmentPlan)).toEqual(expected);
+    expect(actions.updatedTreatmentPlanToStore(updatedTreatmentPlan)).toEqual(
+      expected
+    );
   });
 
   it('updatedTherapyGoalToStore should have a type of UPDATE_THERAPY_GOAL', () => {
@@ -204,7 +214,9 @@ describe('Actions tests', () => {
       updatedTherapyGoal
     };
 
-    expect(actions.updatedTherapyGoalToStore(updatedTherapyGoal)).toEqual(expected);
+    expect(actions.updatedTherapyGoalToStore(updatedTherapyGoal)).toEqual(
+      expected
+    );
   });
 
   it('definitionsToStore should have a type of DEFINITIONS_TO_STORE', () => {
@@ -264,7 +276,7 @@ describe('Actions tests', () => {
       cleanData
     };
 
-    expect(actions.comparisonDataToStore(cleanData)).toEqual(expected)
+    expect(actions.comparisonDataToStore(cleanData)).toEqual(expected);
   });
 
   it('emptyProcessData should have a type of EMPTY_PROCESS_DATA', () => {
@@ -346,4 +358,4 @@ describe('Actions tests', () => {
 
     expect(actions.emptyCurrentPatient()).toEqual(expected);
   });
-})
+});

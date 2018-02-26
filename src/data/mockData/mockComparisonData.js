@@ -1,4 +1,5 @@
 /*eslint-disable camelcase*/
+/*eslint-disable id-length*/
 
 export const mockComparisonData = [
   {
