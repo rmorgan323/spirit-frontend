@@ -1,18 +1,18 @@
 import * as actions from '../index';
-import mockUserData from '../../data/mockData/mockUserData';
-import mockPatient from '../../data/mockData/mockPatient';
-import mockConcernData from '../../data/mockData/mockConcernData';
-import mockConcern from '../../data/mockData/mockConcern';
-import mockSession from '../../data/mockData/mockSession';
-import mockProcess from '../../data/mockData/mockProcess';
-import mockTherapyGoal from '../../data/mockData/mockTherapyGoal';
-import mockTreatmentPlan from '../../data/mockData/mockTreatmentPlan';
-import mockSelectedProcess from '../../data/mockData/mockSelectedProcess';
-import mockStoredThreadConnections from '../../data/mockData/mockStoredThreadConnections';
-import mockDefinitions from '../../data/mockData/mockDefinitions';
-import mockClinic from '../../data/mockData/mockClinicData';
-import mockProcessesData from '../../data/mockData/mockProcessesData';
-import mockComparisonData from '../../data/mockData/mockComparisonData';
+import { mockUserData } from '../../data/mockData/mockUserData';
+import { mockPatient } from '../../data/mockData/mockPatient';
+import { mockConcernData } from '../../data/mockData/mockConcernData';
+import { mockConcern } from '../../data/mockData/mockConcern';
+import { mockSession } from '../../data/mockData/mockSession';
+import { mockProcess } from '../../data/mockData/mockProcess';
+import { mockTherapyGoal } from '../../data/mockData/mockTherapyGoal';
+import { mockTreatmentPlan } from '../../data/mockData/mockTreatmentPlan';
+import { mockSelectedProcess } from '../../data/mockData/mockSelectedProcess';
+import { mockStoredThreadConnections } from '../../data/mockData/mockStoredThreadConnections';
+import { mockDefinitions } from '../../data/mockData/mockDefinitions';
+import { mockClinic } from '../../data/mockData/mockClinicData';
+import { mockProcessesData } from '../../data/mockData/mockProcessesData';
+import { mockComparisonData } from '../../data/mockData/mockComparisonData';
 
 describe('Actions tests', () => {
   it('userToStore should have a type of USER_TO_STORE', () => {
