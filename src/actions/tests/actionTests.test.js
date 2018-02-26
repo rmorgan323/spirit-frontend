@@ -144,27 +144,63 @@ describe('Actions tests', () => {
   });
 
   it('confirmMarkedThreadConnection should have a type of CONFIRM_MARKED_THREAD_CONNECTION', () => {
+    const updatedProcess = mockSelectedProcess;
+    const expected = {
+      type: 'CONFIRM_MARKED_THREAD_CONNECTION',
+      updatedProcess
+    };
 
+    expect(actions.confirmMarkedThreadConnection(updatedProcess)).toEqual(expected);
   });
 
   it('updateThreadConnections should have a type of UPDATE_THREAD_CONNECTIONS', () => {
+    const threadConnections = mockStoredThreadConnections;
+    const expected = {
+      type: 'UPDATE_THREAD_CONNECTIONS',
+      threadConnections
+    };
 
+    expect(actions.updateThreadConnections(threadConnections)).toEqual(expected);
   });
 
   it('updateThreadDomain should have a type of UPDATE_THREAD_DOMAIN', () => {
+    const domain = 'Modulation';
+    const expected = {
+      type: 'UPDATE_THREAD_DOMAIN',
+      domain
+    };
 
+    expect(actions.updateThreadDomain(domain)).toEqual(expected);
   });
 
   it('updateProcessComponent should have a type of UPDATE_PROCESS_COMPONENT', () => {
+    const updatedProcess = mockSelectedProcess;
+    const expected = {
+      type: 'UPDATE_PROCESS_COMPONENT',
+      updatedProcess
+    };
 
+    expect(actions.updateProcessComponent(updatedProcess)).toEqual(expected);
   });
 
   it('updatedTreatmentPlanToStore should have a type of UPDATE_TREATMENT_PLAN', () => {
+    const updatedTreatmentPlan = mockTreatmentPlan;
+    const expected = {
+      type: 'UPDATE_TREATMENT_PLAN',
+      updatedTreatmentPlan
+    };
 
+    expect(actions.updatedTreatmentPlanToStore(updatedTreatmentPlan)).toEqual(expected);
   });
 
   it('updatedTherapyGoalToStore should have a type of UPDATE_THERAPY_GOAL', () => {
+    const updatedTherapyGoal = mockTherapyGoal;
+    const expected = {
+      type: 'UPDATE_THERAPY_GOAL',
+      updatedTherapyGoal
+    };
 
+    expect(actions.updatedTherapyGoalToStore(updatedTherapyGoal)).toEqual(expected);
   });
 
   it('definitionsToStore should have a type of DEFINITIONS_TO_STORE', () => {
