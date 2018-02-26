@@ -1,6 +1,6 @@
 /*eslint-disable camelcase*/
 
-export const mockTreatmentPlan = {
+const mockTreatmentPlan = {
   id: 10,
   modulation_sensory: "Notes.",
   modulation_task: "More notes.",
@@ -41,3 +41,5 @@ export const mockTreatmentPlan = {
   created_at: "2018-02-20T21:25:45.468Z",
   updated_at: "2018-02-20T21:25:45.468Z"
 };
+
+export default mockTreatmentPlan;

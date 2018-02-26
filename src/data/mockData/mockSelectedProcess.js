@@ -1,5 +1,7 @@
 /*eslint-disable camelcase*/
 
-export const mockSelectedProcess = {
+const mockSelectedProcess = {
   sen_2_imitation: '7a'
 };
+
+export default mockSelectedProcess;

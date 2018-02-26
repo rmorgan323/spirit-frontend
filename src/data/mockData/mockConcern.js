@@ -1,6 +1,6 @@
 /*eslint-disable camelcase*/
 
-export const mockConcern = {
+const mockConcern = {
   id: 5,
   description: "Concern 1",
   domain_1: true,
@@ -14,3 +14,5 @@ export const mockConcern = {
   created_at: "2018-02-20T20:08:19.142Z",
   updated_at: "2018-02-20T20:08:19.142Z"
 };
+
+export default mockConcern;

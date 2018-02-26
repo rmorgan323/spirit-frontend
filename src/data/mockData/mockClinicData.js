@@ -6,3 +6,5 @@ export const mockClinicData = {
   clinic_id: 10,
   passcode: 'f83jds8e'
 };
+
+export default mockClinicData;

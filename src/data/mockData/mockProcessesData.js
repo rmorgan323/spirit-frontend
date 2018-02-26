@@ -1,6 +1,6 @@
 /*eslint-disable camelcase*/
 
-export const mockProcessesData = {
+const mockProcessesData = {
   executive: [
     {
       dbName: 'exe_1_orient',
@@ -37,3 +37,5 @@ export const mockProcessesData = {
     }
   ]
 };
+
+export default mockProcessesData;
