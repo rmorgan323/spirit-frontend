@@ -1,5 +1,3 @@
-const mockApiResponse = {
+export const mockApiResponse = {
   status: 'success'
 };
-
-export default mockApiResponse;

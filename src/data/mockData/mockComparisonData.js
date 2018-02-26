@@ -1,7 +1,7 @@
 /*eslint-disable camelcase*/
 /*eslint-disable id-length*/
 
-const mockComparisonData = [
+export const mockComparisonData = [
   {
     created: [
       {
@@ -84,4 +84,3 @@ const mockComparisonData = [
   }
 ];
 
-export default mockComparisonData;

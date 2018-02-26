@@ -1,6 +1,6 @@
 /*eslint-disable camelcase*/
 
-const mockTherapyGoal = {
+export const mockTherapyGoal = {
   id: 8,
   modulation_goal: null,
   modulation_ot_importance: 4,
@@ -41,5 +41,3 @@ const mockTherapyGoal = {
   created_at: "2018-02-20T21:25:45.461Z",
   updated_at: "2018-02-20T21:25:45.461Z"
 };
-
-export default mockTherapyGoal;

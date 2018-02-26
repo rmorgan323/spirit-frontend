@@ -1,6 +1,6 @@
 /*eslint-disable camelcase*/
 
-const mockUserData = {
+export const mockUserData = {
   id: 1,
   authrocket_id: "usr_0vBdVVz3RUsbR2ArDCoPvo",
   name: "Lee Trevino",
@@ -13,5 +13,3 @@ const mockUserData = {
   clinic_id: 10,
   clinic_passcode: "utk85fmf"
 };
-
-export default mockUserData;

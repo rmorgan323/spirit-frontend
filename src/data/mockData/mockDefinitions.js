@@ -1,7 +1,7 @@
 /*eslint-disable camelcase*/
 /*eslint-disable max-len*/
 
-const mockDefinitions = [
+export const mockDefinitions = [
   {
     term: 'JRC/AR',
     definition: `This is the abbreviation for Just Right Challenge and Adaptive Response. Since we are utilizing and ASI© model as one foundational frame of reference, the treatment plan needs to include mindful decisions about how the therapists might guide the JRC and what AR's are noted.  This is where you should note what treatment was offered and what the response was.  In the treatment planning section, do this related to the STEPSI© components.`,
@@ -33,5 +33,3 @@ const mockDefinitions = [
     imageURL: ''
   }
 ];
-
-export default mockDefinitions;

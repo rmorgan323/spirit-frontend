@@ -1,6 +1,6 @@
 /*eslint-disable camelcase*/
 
-const mockPatient = {
+export const mockPatient = {
   id: 5,
   abstracted_name: "INTrm5",
   clinic_name: "I Need Therapy",
@@ -8,5 +8,3 @@ const mockPatient = {
   created_at: "2018-02-20T20:07:54.509Z",
   updated_at: "2018-02-20T20:07:54.509Z"
 };
-
-export default mockPatient;
