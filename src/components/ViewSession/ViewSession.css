@@ -43,6 +43,8 @@ p {
   width: 1104px;
   margin: auto;
   padding-bottom: 50px; }
+  .ViewSession .view-sam-image {
+    width: 240px; }
   .ViewSession .view-header-top {
     display: flex;
     justify-content: space-between; }
