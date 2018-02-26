@@ -11,9 +11,9 @@ import { mockTherapyGoal } from '../../data/mockData/mockTherapyGoal';
 import { mockTreatmentPlan } from '../../data/mockData/mockTreatmentPlan';
 
 describe('ViewSession', () => {
-  it('should match snapshot', () => {
+  it('Should match snapshot', () => {
     const renderedApp = shallow(
-      <ViewSession 
+      <ViewSession
         currentPatient={mockPatient}
         selectedConcern={mockConcern}
         selectedSession={mockSession}
@@ -28,7 +28,7 @@ describe('ViewSession', () => {
 });
 
 describe('mapStateToProps tests', () => {
-  it('should pull currentPatient, selectedConcern, selectedSession, selectedProcess, selectedTherapyGoal, selectedTreatmentPlan, and comparisonData from store', () => {
+  it('Should pull currentPatient, selectedConcern, selectedSession, selectedProcess, selectedTherapyGoal, selectedTreatmentPlan, and comparisonData from store', () => {
     const mockStore = {
       currentPatient: mockPatient,
       selectedConcern: mockConcern,
@@ -44,6 +44,8 @@ describe('mapStateToProps tests', () => {
     expect(result.selectedSession).toEqual(mockStore.selectedSession);
     expect(result.selectedProcess).toEqual(mockStore.selectedProcess);
     expect(result.selectedTherapyGoal).toEqual(mockStore.selectedTherapyGoal);
-    expect(result.selectedTreatmentPlan).toEqual(mockStore.selectedTreatmentPlan);
+    expect(result.selectedTreatmentPlan).toEqual(
+      mockStore.selectedTreatmentPlan
+    );
   });
 });
