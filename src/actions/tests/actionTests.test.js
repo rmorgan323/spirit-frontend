@@ -88,13 +88,13 @@ describe('Actions tests', () => {
   });
 
   it('selectedSessionToStore should have a type of SELECTED_SESSION_TO_STORE', () => {
-    const selectedSession = mockSession;
+    const body = mockSession;
     const expected = {
       type: 'UPDATE_SELECTED_SESSION',
-      selectedSession
+      body
     };
 
-    expect(actions.updateSelectedSession(selectedSession)).toEqual(expected);
+    expect(actions.updateSelectedSession(body)).toEqual(expected);
   });
 
   it('selectedProcessToStore should have a type of SELECTED_PROCESS_TO_STORE', () => {
