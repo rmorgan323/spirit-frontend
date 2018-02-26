@@ -4,6 +4,7 @@ import mockPatient from '../../data/mockData/mockPatient';
 import mockConcernData from '../../data/mockData/mockConcernData';
 import mockConcern from '../../data/mockData/mockConcern';
 import mockSession from '../../data/mockData/mockSession';
+import mockProcess from '../../data/mockData/mockProcess';
 
 describe('Actions tests', () => {
   it('userToStore should have a type of USER_TO_STORE', () => {
@@ -56,20 +57,46 @@ describe('Actions tests', () => {
     expect(actions.sessionsArrayToStore(sessions)).toEqual(expected);
   });
 
-  it('updateSessions Array should have a type of UPDATE_SESSIONS_ARRAY', () => {
+  it('updateSessionsArray should have a type of UPDATE_SESSIONS_ARRAY', () => {
+    const sessionId = 1;
+    const status = [mockSession]
+    const expected = {
+      type: 'UPDATE_SESSIONS_ARRAY',
+      sessionId,
+      status
+    };
 
+    expect(actions.updateSessionsArray(sessionId, status)).toEqual(expected);
   });
 
   it('updateSelectedSession should have a type of UPDATE_SELECTED_SESSION', () => {
+    const body = { completed: true }
+    const expected = {
+      type: 'UPDATE_SELECTED_SESSION',
+      body
+    };
 
+    expect(actions.updateSelectedSession(body)).toEqual(expected);
   });
 
   it('selectedSessionToStore should have a type of SELECTED_SESSION_TO_STORE', () => {
+    const selectedSession = mockSession;
+    const expected = {
+      type: 'UPDATE_SELECTED_SESSION',
+      selectedSession
+    };
 
+    expect(actions.updateSelectedSession(selectedSession)).toEqual(expected);
   });
 
   it('selectedProcessToStore should have a type of SELECTED_PROCESS_TO_STORE', () => {
+    const selectedProcess = mockProcess;
+    const expected = {
+      type: 'SELECTED_PROCESS_TO_STORE',
+      selectedProcess
+    };
 
+    expect(actions.selectedProcessToStore(selectedProcess)).toEqual(expected);
   });
 
   it('selectedTherapyGoalToStore should have a type of SELECTED_THERAPY_GOAL_TO_STORE', () => {
