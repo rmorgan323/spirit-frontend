@@ -6,6 +6,7 @@ import mockConcern from '../../data/mockData/mockConcern';
 import mockSession from '../../data/mockData/mockSession';
 import mockProcess from '../../data/mockData/mockProcess';
 import mockTherapyGoal from '../../data/mockData/mockTherapyGoal';
+import mockTreatmentPlan from '../../data/mockData/mockTreatmentPlan';
 
 describe('Actions tests', () => {
   it('userToStore should have a type of USER_TO_STORE', () => {
@@ -111,7 +112,13 @@ describe('Actions tests', () => {
   });
 
   it('selectedTreatmentPlanToStore should have a type of SELECTED_TREATMENT_PLAN_TO_STORE', () => {
+    const selectedTreatmentPlan = mockTreatmentPlan;
+    const expected = {
+      type: 'SELECTED_TREATMENT_PLAN_TO_STORE',
+      selectedTreatmentPlan
+    };
 
+    expect(actions.selectedTreatmentPlanToStore(selectedTreatmentPlan)).toEqual(expected);
   });
 
   it('concernToStore should have a type of CONCERN_TO_STORE', () => {
