@@ -5,9 +5,19 @@ import moment from 'moment';
 import processProcessesData from '../../helpers/processProcessesData/processProcessesData';
 import formatTherapyGoalData from '../../helpers/formatTherapyGoalData/formatTherapyGoalData';
 import formatTreatmentPlanData from '../../helpers/formatTreatmentPlanData/formatTreatmentPlanData';
+import * as actions from '../../actions';
 import { PropTypes } from 'prop-types';
 
 export const ViewSession = (props) => {
+
+  const completeSessionNow = () => {
+    props.updateSession(props.selectedSession.id, {
+      completed: true
+    });
+    props.history.push(
+      `/spirit/concerns/${props.selectedConcern.id}/sessions`
+    );
+  };
 
   let 
     date, 
@@ -140,8 +150,28 @@ export const ViewSession = (props) => {
     });
   } 
 
+  let renderCompleteButton;
+
+  if (props.selectedSession.completed === false) {
+    renderCompleteButton = (
+      <button 
+          className="complete-session-button"
+          onClick={() => completeSessionNow()}
+        >COMPLETE SESSION</button>
+    )
+  }
+
   return (
     <div className="ViewSession">
+
+      <div className="view-button-holder">
+        <div className="print-button-container">
+          <a href="javascript:window.print()" className="print-button"><img className="print-image" src="/assets/print.svg" /></a>
+        </div>
+
+        {renderCompleteButton}
+      </div>
+
       <div className="view-header-top">
         <div className="view-patient">
           {patient}
@@ -215,8 +245,12 @@ export const ViewSession = (props) => {
         </div>
       </div>
 
-      <div className="print-button-container">
-        <a href="javascript:window.print()" className="print-button">PRINT THIS PAGE</a>
+      <div className="view-button-holder">
+        <div className="print-button-container">
+          <a href="javascript:window.print()" className="print-button"><img className="print-image" src="/assets/print.svg" /></a>
+        </div>
+
+        {renderCompleteButton}
       </div>
 
     </div>
@@ -232,7 +266,13 @@ export const mapStateToProps = store => ({
   selectedTreatmentPlan: store.selectedTreatmentPlan
 });
 
-export default connect(mapStateToProps, null)(ViewSession);
+export const mapDispatchToProps = dispatch => ({
+  updateSession: (sessionId, status) => {
+    dispatch(actions.updateSession(sessionId, status));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ViewSession);
 
 ViewSession.propTypes = {
   currentPatient: PropTypes.object,
