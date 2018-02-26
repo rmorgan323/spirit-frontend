@@ -1,6 +1,7 @@
 import * as actions from '../index';
 import mockUserData from '../../data/mockData/mockUserData';
 import mockPatient from '../../data/mockData/mockPatient';
+import mockConcernData from '../../data/mockData/mockConcernData';
 
 describe('Actions tests', () => {
   it('userToStore should have a type of USER_TO_STORE', () => {
@@ -24,7 +25,13 @@ describe('Actions tests', () => {
   });
 
   it('concernArrayToStore should have a type of CONCERN_ARRAY_TO_STORE', () => {
+    const concerns = mockConcernData;
+    const expected = {
+      type: 'CONCERN_ARRAY_TO_STORE',
+      concerns
+    };
 
+    expect(actions.concernArrayToStore(concerns)).toEqual(expected);
   });
 
   it('selectedConcernToStore should have a type of SELECTED_CONCERN_TO_STORE', () => {
