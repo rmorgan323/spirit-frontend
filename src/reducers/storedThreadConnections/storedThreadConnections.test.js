@@ -6,12 +6,19 @@ describe('storedThreadConnections reducer tests', () => {
   it('Should return store by default', () => {
     const expected = markedThreadConnections;
 
-    expect(storedThreadConnections(undefined, markedThreadConnections)).toEqual(expected);
+    expect(storedThreadConnections(undefined, markedThreadConnections)).toEqual(
+      expected
+    );
   });
 
   it('Should return a new store with storedThreadConnections', () => {
     const expected = markedThreadConnections;
 
-    expect(storedThreadConnections(undefined, actions.checkThreadConnections(markedThreadConnections))).toEqual(expected)
+    expect(
+      storedThreadConnections(
+        undefined,
+        actions.checkThreadConnections(markedThreadConnections)
+      )
+    ).toEqual(expected);
   });
 });
