@@ -1,5 +1,5 @@
-import markedThreadConnections from '../data/markedThreadConnections';
-import getThreadConnections from '../helpers/getThreadConnections/getThreadConnections';
+import markedThreadConnections from '../../data/markedThreadConnections';
+import getThreadConnections from '../../helpers/getThreadConnections/getThreadConnections';
 
 const storedThreadConnections = (store = markedThreadConnections, action) => {
   switch (action.type) {
