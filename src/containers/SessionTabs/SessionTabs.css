@@ -44,6 +44,7 @@ p {
   display: flex;
   /*justify-content: center;*/
   margin-bottom: 50px;
+  height: 58px;
   /*p {
     border: 5px solid $purple5;
     padding: 5px 10px 15px;
@@ -61,16 +62,19 @@ p {
   .SessionTabs h2 {
     font-family: "Josefin Sans", sans-serif;
     font-size: 18px;
-    margin: 8px 0 0px;
+    /*margin: 8px 0 0px;*/
     color: #EAE5F0; }
   .SessionTabs .session-tabs {
-    width: 120px;
+    width: 142px;
     margin: 0 1px;
     background-color: #BFAFD0;
     text-align: center;
     cursor: pointer;
-    height: 39px;
+    height: 58px;
     transition: all .3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /*border-bottom: 5px solid $purple5;*/ }
     .SessionTabs .session-tabs:hover {
       background-color: #7F60A4; }
