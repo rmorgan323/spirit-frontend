@@ -268,42 +268,82 @@ describe('Actions tests', () => {
   });
 
   it('emptyProcessData should have a type of EMPTY_PROCESS_DATA', () => {
+    const expected = {
+      type: 'EMPTY_PROCESS_DATA'
+    };
 
+    expect(actions.emptyProcessData()).toEqual(expected);
   });
 
   it('emptyComparisonData should have a type of EMPTY_COMPARISON_DATA', () => {
+    const expected = {
+      type: 'EMPTY_COMPARISON_DATA'
+    };
 
+    expect(actions.emptyComparisonData()).toEqual(expected);
   });
 
   it('emptySelectedTreatmentPlan should have a type of EMPTY_SELECTED_TREATMENT_PLAN', () => {
+    const expected = {
+      type: 'EMPTY_SELECTED_TREATMENT_PLAN'
+    };
 
+    expect(actions.emptySelectedTreatmentPlan()).toEqual(expected);
   });
 
   it('emptySelectedTherapyGoal should have a type of EMPTY_SELECTED_THERAPY_GOAL', () => {
+    const expected = {
+      type: 'EMPTY_SELECTED_THERAPY_GOAL'
+    };
 
+    expect(actions.emptySelectedTherapyGoal()).toEqual(expected);
   });
 
   it('emptySelectedProcess should have a type of EMPTY_SELECTED_PROCESS', () => {
+    const expected = {
+      type: 'EMPTY_SELECTED_PROCESS'
+    };
 
+    expect(actions.emptySelectedProcess()).toEqual(expected);
   });
 
   it('emptySelectedSession should have a type of EMPTY_SELECTED_SESSION', () => {
+    const expected = {
+      type: 'EMPTY_SELECTED_SESSION'
+    };
 
+    expect(actions.emptySelectedSession()).toEqual(expected);
   });
 
   it('emptySessions should have a type of EMPTY_SESSIONS', () => {
+    const expected = {
+      type: 'EMPTY_SESSIONS'
+    };
 
+    expect(actions.emptySessions()).toEqual(expected);
   });
 
   it('emptySelectedConcern should have a type of EMPTY_SELECTED_CONCERN', () => {
+    const expected = {
+      type: 'EMPTY_SELECTED_CONCERN'
+    };
 
+    expect(actions.emptySelectedConcern()).toEqual(expected);
   });
 
   it('emptyPatientConcerns should have a type of EMPTY_PATIENT_CONCERNS', () => {
+    const expected = {
+      type: 'EMPTY_PATIENT_CONCERNS'
+    };
 
+    expect(actions.emptyPatientConcerns()).toEqual(expected);
   });
 
   it('emptyCurrentPatient should have a type of EMPTY_CURRENT_PATIENT', () => {
+    const expected = {
+      type: 'EMPTY_CURRENT_PATIENT'
+    };
 
+    expect(actions.emptyCurrentPatient()).toEqual(expected);
   });
 })
