@@ -9,6 +9,9 @@ import mockTherapyGoal from '../../data/mockData/mockTherapyGoal';
 import mockTreatmentPlan from '../../data/mockData/mockTreatmentPlan';
 import mockSelectedProcess from '../../data/mockData/mockSelectedProcess';
 import mockStoredThreadConnections from '../../data/mockData/mockStoredThreadConnections';
+import mockDefinitions from '../../data/mockData/mockDefinitions';
+import mockClinic from '../../data/mockData/mockClinicData';
+import mockProcessesData from '../../data/mockData/mockProcessesData';
 
 describe('Actions tests', () => {
   it('userToStore should have a type of USER_TO_STORE', () => {
@@ -204,27 +207,63 @@ describe('Actions tests', () => {
   });
 
   it('definitionsToStore should have a type of DEFINITIONS_TO_STORE', () => {
+    const definitions = mockDefinitions;
+    const expected = {
+      type: 'DEFINITIONS_TO_STORE',
+      definitions
+    };
 
+    expect(actions.definitionsToStore(definitions)).toEqual(expected);
   });
 
   it('clinicToStore should have a type of CLINIC_TO_STORE', () => {
+    const clinic = mockClinic;
+    const expected = {
+      type: 'CLINIC_TO_STORE',
+      clinic
+    };
 
+    expect(actions.clinicToStore(clinic)).toEqual(expected);
   });
 
   it('patientToStore should have a type of PATIENT_TO_STORE', () => {
+    const patient = mockPatient;
+    const expected = {
+      type: 'PATIENT_TO_STORE',
+      patient
+    };
 
+    expect(actions.patientToStore(patient)).toEqual(expected);
   });
 
   it('updateUserStore should have a type of UPDATE_USER_STORE', () => {
+    const clinicData = mockClinic;
+    const expected = {
+      type: 'UPDATE_USER_STORE',
+      clinicData
+    };
 
+    expect(actions.updateUserStore(clinicData)).toEqual(expected);
   });
 
   it('processesDataToStore should have a type of PROCESSES_DATA_TO_STORE', () => {
+    const cleanProcesses = mockProcessesData;
+    const expected = {
+      type: 'PROCESSES_DATA_TO_STORE',
+      cleanProcesses
+    };
 
+    expect(actions.processesDataToStore(cleanProcesses)).toEqual(expected);
   });
 
-  it('comparisonDataToStore should have a type of COMPARISON_DATA_TO_STORE', () => {
+  xit('comparisonDataToStore should have a type of COMPARISON_DATA_TO_STORE', () => {
+    // const cleanData = ; NEED MOCK DATA FILE
+    const expected = {
+      type: 'COMPARISON_DATA_TO_STORE',
+      cleanData
+    };
 
+    expect(actions.comparisonDataToStore(cleanData)).toEqual(expected)
   });
 
   it('emptyProcessData should have a type of EMPTY_PROCESS_DATA', () => {
