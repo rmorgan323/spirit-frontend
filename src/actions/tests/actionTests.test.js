@@ -12,6 +12,7 @@ import mockStoredThreadConnections from '../../data/mockData/mockStoredThreadCon
 import mockDefinitions from '../../data/mockData/mockDefinitions';
 import mockClinic from '../../data/mockData/mockClinicData';
 import mockProcessesData from '../../data/mockData/mockProcessesData';
+import mockComparisonData from '../../data/mockData/mockComparisonData';
 
 describe('Actions tests', () => {
   it('userToStore should have a type of USER_TO_STORE', () => {
@@ -256,8 +257,8 @@ describe('Actions tests', () => {
     expect(actions.processesDataToStore(cleanProcesses)).toEqual(expected);
   });
 
-  xit('comparisonDataToStore should have a type of COMPARISON_DATA_TO_STORE', () => {
-    // const cleanData = ; NEED MOCK DATA FILE
+  it('comparisonDataToStore should have a type of COMPARISON_DATA_TO_STORE', () => {
+    const cleanData = mockComparisonData;
     const expected = {
       type: 'COMPARISON_DATA_TO_STORE',
       cleanData
