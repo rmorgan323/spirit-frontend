@@ -1,3 +1,6 @@
+/*eslint-disable camelcase*/
+/*eslint-disable max-len*/
+
 export const mockDefinitions = [
   {
     term: 'JRC/AR',
