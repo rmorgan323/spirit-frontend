@@ -70,9 +70,6 @@ export class Routes extends Component {
         <Route path="/spirit/sessions/:session_id" component={SessionTabs} />
 
         <Switch>
-          {/*  <Route path="/spirit/sessions/:sessionId/therapygoals" component={Therapy} /> */}
-          {/*  <Route path="/spirit/sessions/:sessionId/treatmentplans" component={Treatment} /> */}
-          {/*  <Route path="/spirit/concerns/:concern_id" component={Concerns} />  */}
           <Route path="/spirit/sessions/:session_id/sam" component={Sam} />
           <Route
             path="/spirit/sessions/:session_id/sensory"
