@@ -1,6 +1,6 @@
 /*eslint-disable camelcase*/
 
-export const mockProcess = {
+export const mockCleanProcess = {
   id: 10,
   sen_h_vestibular: null,
   sen_h_proprioception: null,
