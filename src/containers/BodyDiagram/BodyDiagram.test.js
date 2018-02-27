@@ -54,10 +54,10 @@ describe('mapStateToProps tests', () => {
 describe('mapDispatchToProps tests', () => {
   it('Should call dispatch when updateProcessPerformanceComponent is call', () => {
     const mockDispatch = jest.fn();
-    const mockParameters = ({ pos_4_body: true }, 5);
+    const mockParameters = [{ pos_4_body: true }, 5];
     const result = mapDispatchToProps(mockDispatch);
 
-    result.updateProcessPerformanceComponent(mockParameters);
+    result.updateProcessPerformanceComponent(...mockParameters);
     expect(mockDispatch).toHaveBeenCalled();
   });
 });
