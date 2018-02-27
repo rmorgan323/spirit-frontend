@@ -29,7 +29,7 @@ describe('BodyDiagram tests', () => {
   });
 
   it('Should match the snapshot', () => {
-    expect(renderedBodyDiagram).toBeDefined;
+    expect(renderedBodyDiagram).toMatchSnapshot();
   });
 });
 
