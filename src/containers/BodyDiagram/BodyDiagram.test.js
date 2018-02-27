@@ -33,6 +33,61 @@ describe('BodyDiagram tests', () => {
   it('Should match the snapshot', () => {
     expect(renderedBodyDiagram).toMatchSnapshot();
   });
+
+  it('should set state for hover on mouseover', () => {
+    expect(renderedBodyDiagram.state('hover1')).toEqual(false);
+    renderedBodyDiagram.instance().hoverMe(1);
+
+    expect(renderedBodyDiagram.state('hover1')).toEqual(true);
+  });
+
+  it('should set state for hover on mouseleave', () => {
+    renderedBodyDiagram.instance().hoverMe(1);
+    renderedBodyDiagram.instance().unHoverMe(1);
+
+    expect(renderedBodyDiagram.state('hover1')).toEqual(false);
+  });
+
+  it('should toggle state for part on click', () => {
+    expect(renderedBodyDiagram.state('part1')).toEqual(false);
+    renderedBodyDiagram.instance().togglePart(1);
+
+    expect(renderedBodyDiagram.state('part1')).toEqual(true);
+    renderedBodyDiagram.instance().togglePart(1);
+
+    expect(renderedBodyDiagram.state('part1')).toEqual(false);
+  });
+
+  it('should load existing part values into state when component mounts', () => {
+    expect(renderedBodyDiagram.state('part1')).toEqual(false);
+    expect(renderedBodyDiagram.state('part2')).toEqual(true);
+  });
+
+  it('loadComponentValue should set states for parts when called', () => {
+    renderedBodyDiagram.instance().loadComponentValue([true, true, true]);
+
+    expect(renderedBodyDiagram.state('part1')).toEqual(true);
+    expect(renderedBodyDiagram.state('part2')).toEqual(true);
+    expect(renderedBodyDiagram.state('part3')).toEqual(true);
+  });
+
+  it('should set state of changed to true when a value is changed', () => {
+    renderedBodyDiagram.instance().togglePart(1);
+
+    expect(renderedBodyDiagram.state('changed')).toEqual(true);
+  });
+
+  it('should set state of changed to false when handleDataUpdate is called', () => {
+    renderedBodyDiagram.instance().togglePart(1);
+    expect(renderedBodyDiagram.state('changed')).toEqual(true);
+
+    renderedBodyDiagram.instance().handleDataUpdate(1);
+    expect(renderedBodyDiagram.state('changed')).toEqual(false);
+  });
+
+  it('check thread connections should return a string', () => {
+    expect(renderedBodyDiagram.instance().checkThreadConnections()).toEqual('body-key');
+  });
 });
 
 describe('mapStateToProps tests', () => {
