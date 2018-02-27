@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 import getThreadConnections from './getThreadConnections';
 
 describe('getThreadConnections tests', () => {
