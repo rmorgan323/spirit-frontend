@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 import React from 'react';
 import { YesNo, mapStateToProps, mapDispatchToProps } from './YesNo';
 import { shallow } from 'enzyme';
