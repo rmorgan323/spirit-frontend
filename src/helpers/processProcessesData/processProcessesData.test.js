@@ -15,7 +15,7 @@ describe('processProcessesData tests', () => {
   it('should add a value to the values property array in each object, when available', () => {
     const mockReturn = processProcessesData([mockProcess]);
 
-    expect(mockReturn.postural[1].values).toEqual(['7a']);
+    expect(mockReturn.postural[1].values).toEqual(['7A']);
   });
 
   it('The value property should remain null if values are not supplied', () => {

@@ -225,8 +225,8 @@ export const mapDispatchToProps = dispatch => ({
   }
 });
 
-SliderTen = onClickOutside(SliderTen);
-export default connect(mapStateToProps, mapDispatchToProps)(SliderTen);
+const wrappedSliderTen = onClickOutside(SliderTen);
+export default connect(mapStateToProps, mapDispatchToProps)(wrappedSliderTen);
 
 SliderTen.propTypes = {
   selectedProcess: PropTypes.object,
