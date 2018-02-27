@@ -385,7 +385,7 @@ ShallowWrapper {
           <div
             className="definition-holder"
           >
-            <Connect(Definition)
+            <Connect(Component)
               title="Attention"
             />
           </div>
@@ -486,7 +486,7 @@ ShallowWrapper {
             <div
               className="definition-holder"
             >
-              <Connect(Definition)
+              <Connect(Component)
                 title="Attention"
               />
             </div>,
@@ -520,7 +520,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <Connect(Definition)
+              "children": <Connect(Component)
                 title="Attention"
               />,
               "className": "definition-holder",
@@ -766,7 +766,7 @@ ShallowWrapper {
             <div
               className="definition-holder"
             >
-              <Connect(Definition)
+              <Connect(Component)
                 title="Attention"
               />
             </div>
@@ -867,7 +867,7 @@ ShallowWrapper {
               <div
                 className="definition-holder"
               >
-                <Connect(Definition)
+                <Connect(Component)
                   title="Attention"
                 />
               </div>,
@@ -901,7 +901,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <Connect(Definition)
+                "children": <Connect(Component)
                   title="Attention"
                 />,
                 "className": "definition-holder",

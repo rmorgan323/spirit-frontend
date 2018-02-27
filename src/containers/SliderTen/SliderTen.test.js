@@ -151,7 +151,9 @@ describe('SliderTen tests', () => {
 
 describe('mapStateToProps tests', () => {
   it('should pull selectedProcess and storedThreadConnections from store', () => {
-    const mockStore = { mockProcess, mockStoredThreadConnections };
+    const selectedProcess = mockProcess;
+    const storedThreadConnections = mockStoredThreadConnections;
+    const mockStore = { selectedProcess, storedThreadConnections };
     const result = mapStateToProps(mockStore);
 
     expect(result.selectedProcess).toEqual(mockStore.selectedProcess);
