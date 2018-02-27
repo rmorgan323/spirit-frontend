@@ -1,7 +1,11 @@
 /*eslint-disable max-len*/
 
 import React from 'react';
-import { ViewSession, mapStateToProps } from './ViewSession';
+import {
+  ViewSession,
+  mapStateToProps,
+  mapDispatchToProps
+} from './ViewSession';
 import { shallow } from 'enzyme';
 import { mockPatient } from '../../data/mockData/mockPatient';
 import { mockConcern } from '../../data/mockData/mockConcern';
@@ -47,5 +51,16 @@ describe('mapStateToProps tests', () => {
     expect(result.selectedTreatmentPlan).toEqual(
       mockStore.selectedTreatmentPlan
     );
+  });
+});
+
+describe('mapDispatchToProps tests', () => {
+  it('Should call disptch when updateSession is called', () => {
+    const mockDispatch = jest.fn();
+    const mockParameters = [5, { completed: true }];
+    const result = mapDispatchToProps(mockDispatch);
+
+    result.updateSession(...mockParameters);
+    expect(mockDispatch).toHaveBeenCalled();
   });
 });
