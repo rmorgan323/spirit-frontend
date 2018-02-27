@@ -7,7 +7,7 @@ import Concerns from '../Concerns/Concerns';
 import * as actions from '../../actions';
 import './PatientDashboard.css';
 
-class PatientDashboard extends Component {
+export class PatientDashboard extends Component {
   constructor() {
     super();
 
@@ -197,12 +197,12 @@ class PatientDashboard extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   patientConcerns: store.patientConcerns,
   currentPatient: store.currentPatient
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addConcern: (patientId, concernObject) => {
     dispatch(actions.addConcern(patientId, concernObject));
   },
