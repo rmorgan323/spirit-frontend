@@ -56,5 +56,38 @@ describe('mapStateToPropsTests', () => {
 });
 
 describe('mapDispatchToProps', () => {
+  it('Should call dispatch when createSession is called', () => {
+    const mockDispatch = jest.fn();
+    const mockParameters = 5;
+    const result = mapDispatchToProps(mockDispatch);
 
+    result.createSession(mockParameters);
+    expect(mockDispatch).toHaveBeenCalled();
+  });
+
+  it('Should call dispatch when getSession is called', () => {
+    const mockDispatch = jest.fn();
+    const mockParameters = 5;
+    const result = mapDispatchToProps(mockDispatch);
+
+    result.getSession(mockParameters);
+    expect(mockDispatch).toHaveBeenCalled();
+  });
+
+  it('Should call dispatch when compareSessionData is called', () => {
+    const mockDispatch = jest.fn();
+    const mockParameters = [5, 3];
+    const result = mapDispatchToProps(mockDispatch);
+
+    result.compareSessionData(...mockParameters);
+    expect(mockDispatch).toHaveBeenCalled();
+  });
+
+  it('Should call dispatch when wipeStoreFromSessions is called', () => {
+    const mockDispatch = jest.fn();
+    const result = mapDispatchToProps(mockDispatch);
+
+    result.wipeStoreFromSessions();
+    expect(mockDispatch).toHaveBeenCalled();
+  });
 });
