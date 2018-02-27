@@ -30,6 +30,18 @@ describe('TreatmentPlanModule tests', () => {
   it('Should match the snapshot', () => {
     expect(renderedTreatmentPlanModule).toMatchSnapshot();
   });
+
+  it('Should change a targeted areas value in state and set changed to true', () => {
+
+  });
+
+  it('Should not try to save any data if changed is false', () => {
+
+  });
+
+  it('Should set changed to false after sending send if changed is true', () => {
+
+  });
 });
 
 describe('mapStateToProps tests', () => {
