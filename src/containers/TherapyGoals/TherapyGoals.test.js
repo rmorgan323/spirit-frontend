@@ -36,6 +36,22 @@ describe('TherapyGoals tests', () => {
   it('Should match the snapshot', () => {
     expect(renderedTherapyGoal).toMatchSnapshot();
   });
+
+  it('Should save a value by type and set changed to true', () => {
+
+  });
+
+  it('Should capture a goal value and set changed to true', () => {
+
+  });
+
+  it('Should not try to save any data if changed is false', () => {
+
+  });
+
+  it('Should set changed to false after sending data if changed is true', () => {
+
+  });
 });
 
 describe('mapStateToProps tests', () => {
