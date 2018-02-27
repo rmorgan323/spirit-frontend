@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 import moment from 'moment';
 import './ConcernHeader.css';
 
-const ConcernHeader = props => {
+export const ConcernHeader = props => {
   let display;
   const {
     id,
@@ -45,7 +45,7 @@ const ConcernHeader = props => {
   return <div className="ConcernHeader">{display}</div>;
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   selectedConcern: store.selectedConcern
 });
 
