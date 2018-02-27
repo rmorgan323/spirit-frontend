@@ -227,7 +227,7 @@ ShallowWrapper {
           to="/spirit/sessions/10/modulation"
         >
           <h2>
-            Modulation
+            Sensory Modulation
           </h2>
         </NavLink>,
         <NavLink
@@ -247,7 +247,7 @@ ShallowWrapper {
           to="/spirit/sessions/10/sensory"
         >
           <h2>
-            Sensory
+            Sensory Discrimination
           </h2>
         </NavLink>,
         <NavLink
@@ -277,7 +277,7 @@ ShallowWrapper {
           to="/spirit/sessions/10/finish"
         >
           <h2>
-            Finish
+            Plans & Goals
           </h2>
         </NavLink>,
       ],
@@ -320,7 +320,7 @@ ShallowWrapper {
           "activeClassName": "active",
           "ariaCurrent": "true",
           "children": <h2>
-            Modulation
+            Sensory Modulation
           </h2>,
           "className": "session-tabs",
           "to": "/spirit/sessions/10/modulation",
@@ -331,10 +331,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Modulation",
+            "children": "Sensory Modulation",
           },
           "ref": null,
-          "rendered": "Modulation",
+          "rendered": "Sensory Modulation",
           "type": "h2",
         },
         "type": [Function],
@@ -374,7 +374,7 @@ ShallowWrapper {
           "activeClassName": "active",
           "ariaCurrent": "true",
           "children": <h2>
-            Sensory
+            Sensory Discrimination
           </h2>,
           "className": "session-tabs",
           "to": "/spirit/sessions/10/sensory",
@@ -385,10 +385,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Sensory",
+            "children": "Sensory Discrimination",
           },
           "ref": null,
-          "rendered": "Sensory",
+          "rendered": "Sensory Discrimination",
           "type": "h2",
         },
         "type": [Function],
@@ -455,7 +455,7 @@ ShallowWrapper {
           "activeClassName": "active",
           "ariaCurrent": "true",
           "children": <h2>
-            Finish
+            Plans & Goals
           </h2>,
           "className": "session-tabs",
           "to": "/spirit/sessions/10/finish",
@@ -466,10 +466,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Finish",
+            "children": "Plans & Goals",
           },
           "ref": null,
-          "rendered": "Finish",
+          "rendered": "Plans & Goals",
           "type": "h2",
         },
         "type": [Function],
@@ -501,7 +501,7 @@ ShallowWrapper {
             to="/spirit/sessions/10/modulation"
           >
             <h2>
-              Modulation
+              Sensory Modulation
             </h2>
           </NavLink>,
           <NavLink
@@ -521,7 +521,7 @@ ShallowWrapper {
             to="/spirit/sessions/10/sensory"
           >
             <h2>
-              Sensory
+              Sensory Discrimination
             </h2>
           </NavLink>,
           <NavLink
@@ -551,7 +551,7 @@ ShallowWrapper {
             to="/spirit/sessions/10/finish"
           >
             <h2>
-              Finish
+              Plans & Goals
             </h2>
           </NavLink>,
         ],
@@ -594,7 +594,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": <h2>
-              Modulation
+              Sensory Modulation
             </h2>,
             "className": "session-tabs",
             "to": "/spirit/sessions/10/modulation",
@@ -605,10 +605,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Modulation",
+              "children": "Sensory Modulation",
             },
             "ref": null,
-            "rendered": "Modulation",
+            "rendered": "Sensory Modulation",
             "type": "h2",
           },
           "type": [Function],
@@ -648,7 +648,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": <h2>
-              Sensory
+              Sensory Discrimination
             </h2>,
             "className": "session-tabs",
             "to": "/spirit/sessions/10/sensory",
@@ -659,10 +659,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Sensory",
+              "children": "Sensory Discrimination",
             },
             "ref": null,
-            "rendered": "Sensory",
+            "rendered": "Sensory Discrimination",
             "type": "h2",
           },
           "type": [Function],
@@ -729,7 +729,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": <h2>
-              Finish
+              Plans & Goals
             </h2>,
             "className": "session-tabs",
             "to": "/spirit/sessions/10/finish",
@@ -740,10 +740,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Finish",
+              "children": "Plans & Goals",
             },
             "ref": null,
-            "rendered": "Finish",
+            "rendered": "Plans & Goals",
             "type": "h2",
           },
           "type": [Function],
