@@ -1,5 +1,6 @@
 /*eslint-disable camelcase*/
 
+import apiRoot from '../apiRoot';
 import postPatient from './postPatient';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
@@ -20,7 +21,7 @@ describe('postPatient tests', () => {
 
   it('postPatient is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/users/1/patients',
+      `${apiRoot}/api/v1/users/1/patients`,
       {
         method: 'POST',
         headers: {

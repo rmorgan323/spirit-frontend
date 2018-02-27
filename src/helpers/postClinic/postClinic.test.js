@@ -1,3 +1,4 @@
+import apiRoot from '../apiRoot';
 import postClinic from './postClinic';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 import { mockClinicData } from '../../data/mockData/mockClinicData';
@@ -19,7 +20,7 @@ describe('postClinic tests', () => {
 
   it('postClinic is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/clinics',
+      `${apiRoot}/api/v1/clinics`,
       {
         method: 'POST',
         headers: {

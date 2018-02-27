@@ -1,3 +1,4 @@
+import apiRoot from '../apiRoot';
 import loadSessionsForComparison from './loadSessionsForComparison';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
@@ -18,7 +19,7 @@ describe('loadSessionsForComparison tests', () => {
 
   it('loadSessionsForComparison is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/therapy-goals/compare',
+      `${apiRoot}/api/v1/therapy-goals/compare`,
       {
         method: 'POST',
         headers: {

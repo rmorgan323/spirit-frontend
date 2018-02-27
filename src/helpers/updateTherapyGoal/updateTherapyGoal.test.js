@@ -1,5 +1,6 @@
 /*eslint-disable camelcase*/
 
+import apiRoot from '../apiRoot';
 import updateTherapyGoal from './updateTherapyGoal';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
@@ -20,7 +21,7 @@ describe('updateTherapyGoal tests', () => {
 
   it('updateTherapyGoal is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/therapy-goals/1',
+      `${apiRoot}/api/v1/therapy-goals/1`,
       {
         method: 'PUT',
         headers: {

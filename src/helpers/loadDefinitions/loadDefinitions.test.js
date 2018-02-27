@@ -1,3 +1,4 @@
+import apiRoot from '../apiRoot';
 import loadDefinitions from './loadDefinitions';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
@@ -18,7 +19,7 @@ describe('loadDefinitions tests', () => {
 
   it('loadDefinitions is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/terms/all',
+      `${apiRoot}/api/v1/terms/all`,
       {
         method: 'GET',
         headers: {

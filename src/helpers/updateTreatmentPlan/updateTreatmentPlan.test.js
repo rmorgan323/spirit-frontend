@@ -1,5 +1,6 @@
 /*eslint-disable camelcase*/
 
+import apiRoot from '../apiRoot';
 import updateTreatmentPlan from './updateTreatmentPlan';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
@@ -20,7 +21,7 @@ describe('updateTreatmentPlan tests', () => {
 
   it('updateTreatmentPlan is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/treatment-plans/1',
+      `${apiRoot}/api/v1/treatment-plans/1`,
       {
         method: 'PUT',
         headers: {
