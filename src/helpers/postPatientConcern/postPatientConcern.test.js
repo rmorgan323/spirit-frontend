@@ -1,8 +1,9 @@
+import apiRoot from '../apiRoot';
 import postPatientConcern from './postPatientConcern';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
-import { 
-  mockConcernData, 
-  mockConcernDataWithoutPatientId 
+import {
+  mockConcernData,
+  mockConcernDataWithoutPatientId
 } from '../../data/mockData/mockConcernData';
 
 global.localStorage = {
@@ -22,7 +23,7 @@ describe('postPatientConcern tests', () => {
 
   it('postPatientConcern is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/patients/1/primary-concerns',
+      `${apiRoot}/api/v1/patients/1/primary-concerns`,
       {
         method: 'POST',
         headers: {

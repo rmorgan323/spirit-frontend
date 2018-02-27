@@ -1,3 +1,4 @@
+import apiRoot from '../apiRoot';
 import joinClinic from './joinClinic';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
@@ -18,7 +19,7 @@ describe('joinClinic tests', () => {
 
   it('joinClinic is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/users/1/join',
+      `${apiRoot}/api/v1/users/1/join`,
       {
         method: 'PUT',
         headers: {

@@ -1,3 +1,4 @@
+import apiRoot from '../apiRoot';
 import loadProcessBySession from './loadProcessBySession';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
@@ -18,7 +19,7 @@ describe('loadProcessBySession tests', () => {
 
   it('loadProcessBySession is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/sessions/1/processes', 
+      `${apiRoot}/api/v1/sessions/1/processes`,
       {
         method: 'GET',
         headers: {

@@ -1,5 +1,6 @@
 /*eslint-disable camelcase*/
 
+import apiRoot from '../apiRoot';
 import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const postPatientConcern = async ({
@@ -15,7 +16,7 @@ const postPatientConcern = async ({
 
   try {
     const concernId = await fetch(
-      `http://localhost:3000/api/v1/patients/${patient_id}/primary-concerns`,
+      `${apiRoot}/api/v1/patients/${patient_id}/primary-concerns`,
       {
         method: 'POST',
         headers: {

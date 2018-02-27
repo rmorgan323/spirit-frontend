@@ -1,3 +1,4 @@
+import apiRoot from '../apiRoot';
 import loadTherapyGoalBySession from './loadTherapyGoalBySession';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
@@ -18,7 +19,7 @@ describe('loadTherapyGoalBySession tests', () => {
 
   it('loadTherapyGoalBySession is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/sessions/1/therapy-goals',
+      `${apiRoot}/api/v1/sessions/1/therapy-goals`,
       {
         method: 'GET',
         headers: {

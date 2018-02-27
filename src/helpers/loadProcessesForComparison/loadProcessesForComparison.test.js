@@ -1,3 +1,4 @@
+import apiRoot from '../apiRoot';
 import loadProcessesForComparison from './loadProcessesForComparison';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
@@ -18,7 +19,7 @@ describe('loadProcessesForComparison tests', () => {
 
   it('loadProcessesForComparison is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/processes/compare',
+      `${apiRoot}/api/v1/processes/compare`,
       {
         method: 'POST',
         headers: {

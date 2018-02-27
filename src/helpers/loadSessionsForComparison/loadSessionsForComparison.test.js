@@ -1,5 +1,6 @@
+import apiRoot from '../apiRoot';
 import loadSessionsForComparison from './loadSessionsForComparison';
-import { mockApiResponse } from '../../data/mockData/mockApiResponse';
+import { mockSession } from '../../data/mockData/mockSession';
 
 global.localStorage = {
   getItem: () => null
@@ -8,7 +9,10 @@ global.localStorage = {
 describe('loadSessionsForComparison tests', () => {
   window.fetch = jest.fn().mockImplementation(() =>
     Promise.resolve({
-      json: () => Promise.resolve(mockApiResponse)
+      json: () => Promise.resolve({
+        status: 'success',
+        body: [mockSession]
+      })
     })
   );
 
@@ -18,7 +22,7 @@ describe('loadSessionsForComparison tests', () => {
 
   it('loadSessionsForComparison is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/therapy-goals/compare',
+      `${apiRoot}/api/v1/therapy-goals/compare`,
       {
         method: 'POST',
         headers: {

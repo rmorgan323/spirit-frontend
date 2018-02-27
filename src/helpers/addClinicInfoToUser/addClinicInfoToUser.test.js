@@ -1,5 +1,6 @@
 /*eslint-disable camelcase*/
 
+import apiRoot from '../apiRoot';
 import addClinicInfoToUser from './addClinicInfoToUser';
 import { mockClinicData } from '../../data/mockData/mockClinicData';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
@@ -21,7 +22,7 @@ describe('addClinicInfoToUser tests', () => {
 
   it('addClinicInfoToUser is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/users/1',
+      `${apiRoot}/api/v1/users/1`,
       {
         method: 'PUT',
         headers: {

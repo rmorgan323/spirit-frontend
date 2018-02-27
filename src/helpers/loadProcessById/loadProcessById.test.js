@@ -1,3 +1,4 @@
+import apiRoot from '../apiRoot';
 import loadProcessById from './loadProcessById';
 import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
@@ -18,7 +19,7 @@ describe('loadProcessById tests', () => {
 
   it('loadProcessById is called with the correct params', async () => {
     const expected = [
-      'http://localhost:3000/api/v1/processes/1',
+      `${apiRoot}/api/v1/processes/1`,
       {
         method: 'GET',
         headers: {

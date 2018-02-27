@@ -12,14 +12,16 @@ describe('Join tests', () => {
 
   it('should set state on input', () => {
     const renderedApp = shallow(<Join user={mockUserData} />);
-    const mockEvent = { target: { name: 'clinicPasscode', value: 'mfjsd7js' }};
+    const mockEvent = { target: { name: 'clinicPasscode', value: 'mfjsd7js' } };
 
     renderedApp.instance().handleChange(mockEvent);
     expect(renderedApp.state('clinicPasscode')).toEqual('mfjsd7js');
   });
 
   it('should set state for error message if the passcode is the wrong length', () => {
-    const renderedApp = shallow(<Join user={mockUserData} joinExistingClinic={jest.fn()} />);
+    const renderedApp = shallow(
+      <Join user={mockUserData} joinExistingClinic={jest.fn()} />
+    );
     const mockEvent = { preventDefault: jest.fn() };
 
     renderedApp.instance().joinClinic(mockEvent, 'jfawf8f');
@@ -28,14 +30,13 @@ describe('Join tests', () => {
     );
   });
 
-
   //   return 'My New Clinic';
   // }
 
   // it('should return a success message if the passcode matches', () => {
-    
+
   //   const mockJoinExistingGroup = jest.fn().mockReturnValueOnce(Promise.resolve());
-    
+
   //   // mockJoinExistingGroup.mockReturnValueOnce(true).mockReturnValueOnce(false);
   //   // const result = ['My New Clinic', 'error'].filter(mockJoinExistingGroup);
 
@@ -45,7 +46,12 @@ describe('Join tests', () => {
   //   // // mockJoinExistingGroup.mockReturnValueOnce('My New Clinic');
 
   //   const mockEvent = { preventDefault: jest.fn() };
-  //   const renderedApp = shallow(<Join user={mockUserData} joinExistingClinic={mockJoinExistingGroup} />);
+  //   const renderedApp = shallow(
+  //   <Join
+  //     user={mockUserData}
+  //     joinExistingClinic={mockJoinExistingGroup}
+  //   />
+  // );
 
   //   renderedApp.instance().joinClinic(mockEvent, 'jfawf8fa');
   //   expect(renderedApp.state('success')).toEqual('You have successfully joined My New Clinic!');

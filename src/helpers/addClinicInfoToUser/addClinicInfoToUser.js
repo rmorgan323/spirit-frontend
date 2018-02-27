@@ -1,11 +1,12 @@
 /*eslint-disable camelcase*/
 
+import apiRoot from '../apiRoot';
 import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const addClinicInfoToUser = async (clinic, userId) => {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/v1/users/${userId}`,
+      `${apiRoot}/api/v1/users/${userId}`,
       {
         method: 'PUT',
         headers: {
