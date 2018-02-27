@@ -5,7 +5,7 @@ import PatientCard from '../PatientCard/PatientCard';
 import moment from 'moment';
 import './PatientList.css';
 
-const PatientList = props => {
+export const PatientList = props => {
   let patientListDisplay;
 
   if (props.patientList.length) {
@@ -24,7 +24,7 @@ const PatientList = props => {
   return <div className="PatientList">{patientListDisplay}</div>;
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   patientList: store.patientList
 });
 
