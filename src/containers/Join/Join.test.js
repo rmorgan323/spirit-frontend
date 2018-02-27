@@ -46,8 +46,7 @@ describe('mapDispatchToProps tests', () => {
     const mockDispatch = jest.fn();
     const mockParams = ({
       passcode: '3jfs0jek'
-    },
-    5);
+    }, 5);
     const result = mapDispatchToProps(mockDispatch);
 
     result.joinExistingClinic(mockParams);
