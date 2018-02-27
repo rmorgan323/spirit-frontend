@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 import ComparisonCard from '../../components/ComparisonCard/ComparisonCard';
 import './SessionsComparison.css';
 
-const SessionsComparison = props => {
+export const SessionsComparison = props => {
   let modulationDisplay;
   let posturalDisplay;
   let sensoryDisplay;
@@ -97,7 +97,7 @@ const SessionsComparison = props => {
   );
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   processesData: store.processesData
 });
 
