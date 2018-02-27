@@ -83,7 +83,8 @@ describe('Create tests', () => {
 
 describe('mapStateToProps tests', () => {
   it('should pull user from store', () => {
-    const mockStore = { mockUserData };
+    const user = { mockUserData }
+    const mockStore = { user };
     const result = mapStateToProps(mockStore);
 
     expect(result.user).toEqual(mockStore.user);
