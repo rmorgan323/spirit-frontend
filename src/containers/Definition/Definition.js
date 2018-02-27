@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import './Definition.css';
 
-const Definition = props => {
+export const Definition = props => {
   let relevantDefinitions;
   let display;
   const firstWord = new RegExp(/^([\w\-]+)/);
@@ -36,7 +36,7 @@ const Definition = props => {
   return <div className="Definition">{display}</div>;
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   definitions: store.definitions
 });
 
