@@ -59,18 +59,23 @@ p {
 .Finish .finish-button-holder {
   position: relative;
   width: 875px;
-  margin: auto; }
+  margin: auto;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px; }
+  .Finish .finish-button-holder .arrow-right {
+    margin-right: 10px;
+    margin-left: 10px; }
 
-.Finish .join-link {
-  position: absolute;
-  left: 0;
-  top: 0; }
-  .Finish .join-link button {
-    background-color: #5cba47;
-    height: 40px;
-    border: none;
-    color: #fff;
-    padding: 0 10px;
-    cursor: pointer; }
-  .Finish .join-link button:hover {
-    background-color: #468c41; }
+.Finish .join-link button {
+  background-color: #5cba47;
+  height: 40px;
+  border: none;
+  color: #fff;
+  padding: 0 10px;
+  cursor: pointer; }
+
+.Finish .join-link button:hover {
+  background-color: #468c41; }

@@ -8,7 +8,7 @@ const Sam = () => {
       <div className="sam-image-holder">
         <img
           className="sam-big-image"
-          src="/assets/sam-new.svg"
+          src="/assets/sam-w-labels.svg"
           alt="sam-diagram"
         />
 
@@ -16,15 +16,15 @@ const Sam = () => {
           <p className="sam-session-dots session-dots-1">1</p>
         </Link>
 
-        <Link to="postural">
+        <Link to="social">
           <p className="sam-session-dots session-dots-2">2</p>
         </Link>
 
-        <Link to="sensory">
+        <Link to="postural">
           <p className="sam-session-dots session-dots-3">3</p>
         </Link>
 
-        <Link to="social">
+        <Link to="sensory">
           <p className="sam-session-dots session-dots-4">4</p>
         </Link>
 

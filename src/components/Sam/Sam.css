@@ -40,7 +40,7 @@ p {
 
 /***  MIXINS  ***/
 .Sam .sam-image-holder {
-  width: 668px;
+  width: 750px;
   margin: 100px auto;
   display: block;
   position: relative; }
@@ -66,25 +66,25 @@ p {
   color: #EAE5F0; }
 
 .Sam .session-dots-1 {
-  top: 137px;
-  left: -14px; }
+  top: 280px;
+  left: 5px; }
 
 .Sam .session-dots-2 {
-  top: 140px;
-  left: 206px; }
+  top: 283px;
+  left: 248px; }
 
 .Sam .session-dots-3 {
-  top: 141px;
-  left: 439px; }
+  top: 283px;
+  left: 498px; }
 
 .Sam .session-dots-4 {
-  top: 0;
-  left: 116px; }
+  top: 130px;
+  left: 149px; }
 
 .Sam .session-dots-5 {
-  top: -6px;
-  left: 279px; }
+  top: 125px;
+  left: 325px; }
 
 .Sam .session-dots-6 {
-  top: 0;
-  left: 605px; }
+  top: 129px;
+  left: 679px; }

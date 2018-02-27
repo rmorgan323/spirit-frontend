@@ -24,12 +24,12 @@ export const SessionTabs = props => {
 
   const navHeader = [
     'SAM',
-    'Modulation',
+    'Sensory Modulation',
     'Postural',
-    'Sensory',
+    'Sensory Discrimination',
     'Social',
     'Executive',
-    'Finish'
+    'Plans & Goals'
   ];
 
   const getClass = (domain, route, threadConnection) => {

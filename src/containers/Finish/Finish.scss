@@ -25,13 +25,19 @@
     position: relative;
     width: 875px;
     margin: auto;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+
+    .arrow-right {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
   }
 
   .join-link {
-    position: absolute;
-    left: 0;
-    top: 0;
-
     button {
       background-color: $green4;
       height: 40px;

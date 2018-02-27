@@ -8,18 +8,24 @@ import * as actions from '../../actions';
 import './Finish.css';
 
 export class Finish extends Component {
-  completeSessionNow = () => {
-    this.props.updateSession(this.props.selectedSession.id, {
-      completed: true
-    });
-    this.props.history.push(
-      `/spirit/concerns/${this.props.selectedConcern.id}/sessions`
-    );
-  };
-
+  
   render() {
     return (
       <div className="Finish">
+
+        <div className="finish-button-holder">
+          <p>We recommend looking at session results before writing treatment plans <span className="arrow-right">&#10145;</span></p>
+          <NavLink 
+            className="join-link" 
+            to={`/spirit/sessions/${this.props.selectedSession.id}/view`}
+          >
+            <button 
+              className="session-result-button"
+            >SEE SESSION RESULTS
+            </button>
+          </NavLink>
+        </div>
+
         <h2 className="finish-headings">Treatment Plans</h2>
 
         <TreatmentPlans />
@@ -49,12 +55,6 @@ export class Finish extends Component {
         />
 
         <div className="finish-button-holder">
-          <button 
-            className="complete-session-button"
-            onClick={() => this.completeSessionNow()}
-          >COMPLETE SESSION</button>
-
-
           <NavLink 
             className="join-link" 
             to={`/spirit/sessions/${this.props.selectedSession.id}/view`}
@@ -73,12 +73,6 @@ export class Finish extends Component {
 export const mapStateToProps = store => ({
   selectedSession: store.selectedSession,
   selectedConcern: store.selectedConcern
-});
-
-export const mapDispatchToProps = dispatch => ({
-  updateSession: (sessionId, status) => {
-    dispatch(actions.updateSession(sessionId, status));
-  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Finish);

@@ -5,6 +5,10 @@
   margin: auto;
   padding-bottom: 50px;
 
+  .view-sam-image {
+    width: 240px;
+  }
+
   .view-header-top {
     display: flex;
     justify-content: space-between;
@@ -154,11 +158,17 @@
     }
   }
 
-  .print-button {
+  .view-button-holder {
+    height: 40px;
+    position: relative;
+    margin: 50px 0;
+  }
+
+  .complete-session-button {
     background-color: $green4;
     height: 40px;
-    width: 170px;
-    margin: 50px auto;
+    width: 202px;
+    margin: auto;
     display: block;
     color: #fff;
     text-decoration: none;
@@ -166,10 +176,25 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border: none;
+    @include std-transition;
   }
 
-  .print-button:hover {
+  .complete-session-button:hover {
     background-color: $green5;
+  }
+
+  .print-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    opacity: .4;
+    @include std-transition;
+  }
+
+  .print-image:hover {
+    opacity: .8;
   }
 }
 
@@ -178,7 +203,7 @@
     size: landscape;
   }
 
-  .Header, .PatientHeader, .ConcernHeader, .SessionTabs, .print-button-container {
+  .Header, .PatientHeader, .ConcernHeader, .SessionTabs, .view-button-holder {
     display: none;
   }
 

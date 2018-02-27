@@ -43,6 +43,8 @@ p {
   width: 1104px;
   margin: auto;
   padding-bottom: 50px; }
+  .ViewSession .view-sam-image {
+    width: 240px; }
   .ViewSession .view-header-top {
     display: flex;
     justify-content: space-between; }
@@ -134,25 +136,40 @@ p {
     width: 542px; }
     .ViewSession .treatment-plan-text p {
       margin: 0; }
-  .ViewSession .print-button {
+  .ViewSession .view-button-holder {
+    height: 40px;
+    position: relative;
+    margin: 50px 0; }
+  .ViewSession .complete-session-button {
     background-color: #5cba47;
     height: 40px;
-    width: 170px;
-    margin: 50px auto;
+    width: 202px;
+    margin: auto;
     display: block;
     color: #fff;
     text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer; }
-  .ViewSession .print-button:hover {
+    cursor: pointer;
+    border: none;
+    transition: all .3s ease-in-out; }
+  .ViewSession .complete-session-button:hover {
     background-color: #468c41; }
+  .ViewSession .print-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    opacity: .4;
+    transition: all .3s ease-in-out; }
+  .ViewSession .print-image:hover {
+    opacity: .8; }
 
 @media print {
   @page {
     size: landscape; }
-  .Header, .PatientHeader, .ConcernHeader, .SessionTabs, .print-button-container {
+  .Header, .PatientHeader, .ConcernHeader, .SessionTabs, .view-button-holder {
     display: none; }
   .view-section-container {
     page-break-inside: avoid; }
