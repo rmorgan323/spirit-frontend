@@ -1,6 +1,7 @@
 /*eslint-disable max-len*/
 
 const formatTherapyGoalData = (rawData) => {
+
   rawData = rawData.sort((aa, bb) => aa.id - bb.id);
 
   let therapyGoals = [

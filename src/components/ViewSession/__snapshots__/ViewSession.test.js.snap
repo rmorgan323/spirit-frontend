@@ -218,7 +218,7 @@ ShallowWrapper {
     selectedTherapyGoal={
       Object {
         "created_at": "2018-02-20T21:25:45.461Z",
-        "executive_functioning_goal": null,
+        "executive_functioning_goal": "Final goal",
         "executive_functioning_ot_importance": 7,
         "executive_functioning_ot_performance": 9,
         "executive_functioning_ot_satisfaction": 8,
@@ -233,14 +233,14 @@ ShallowWrapper {
         "modulation_parent_importance": 6,
         "modulation_parent_performance": 8,
         "modulation_parent_satisfaction": 9,
-        "posture_goal": null,
+        "posture_goal": "Some Goal",
         "posture_ot_importance": 7,
         "posture_ot_performance": 6,
         "posture_ot_satisfaction": 10,
         "posture_parent_importance": 4,
         "posture_parent_performance": 5,
         "posture_parent_satisfaction": 7,
-        "sensory_discrimination_goal": null,
+        "sensory_discrimination_goal": "Another goal",
         "sensory_discrimination_ot_importance": 8,
         "sensory_discrimination_ot_performance": 7,
         "sensory_discrimination_ot_satisfaction": 7,
@@ -248,7 +248,7 @@ ShallowWrapper {
         "sensory_discrimination_parent_performance": 7,
         "sensory_discrimination_parent_satisfaction": 8,
         "session_id": 10,
-        "social_emotional_goal": null,
+        "social_emotional_goal": "Social Goal",
         "social_emotional_ot_importance": 5,
         "social_emotional_ot_performance": 8,
         "social_emotional_ot_satisfaction": 4,
@@ -316,44 +316,73 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="view-header-top"
+          className="view-button-holder"
         >
           <div
-            className="view-patient"
+            className="print-button-container"
           >
-            <h2>
-              Patient: 
-              INTrm5
-            </h2>
-          </div>
-          <div
-            className="view-date"
-          >
-            <h4>
-              February 20, 2018
-            </h4>
+            <a
+              className="print-button"
+              href="javascript:window.print()"
+            >
+              <img
+                className="print-image"
+                src="/assets/print.svg"
+              />
+            </a>
           </div>
         </div>,
         <div
           className="view-header-top"
         >
           <div
-            className="view-ids"
+            className="view-header-left"
           >
-            <h4>
-              Concern ID: 
-              5
-              , Session ID: 
-              10
-            </h4>
+            <div
+              className="view-patient"
+            >
+              <h2>
+                Patient: 
+                INTrm5
+              </h2>
+            </div>
+            <div
+              className="view-ids"
+            >
+              <h4>
+                Concern ID: 
+                5
+                , Session ID: 
+                10
+              </h4>
+            </div>
           </div>
           <div
-            className="view-clinic"
+            className="view-header-center"
           >
-            <h4>
-              Clinic: 
-              I Need Therapy
-            </h4>
+            <img
+              className="view-sam-image"
+              src="/assets/sam-new-plain.svg"
+            />
+          </div>
+          <div
+            className="view-header-right"
+          >
+            <div
+              className="view-date"
+            >
+              <h4>
+                February 20, 2018
+              </h4>
+            </div>
+            <div
+              className="view-clinic"
+            >
+              <h4>
+                Clinic: 
+                I Need Therapy
+              </h4>
+            </div>
           </div>
         </div>,
         <div>
@@ -2191,6 +2220,19 @@ ShallowWrapper {
               </p>
             </div>
             <div
+              className="data-holder-wide"
+            >
+              <p
+                className="text-small-wide"
+              >
+                Posture Goal
+                : 
+              </p>
+              <p>
+                Some Goal
+              </p>
+            </div>
+            <div
               className="data-holder"
             >
               <p
@@ -2266,6 +2308,19 @@ ShallowWrapper {
               </p>
               <p>
                 7
+              </p>
+            </div>
+            <div
+              className="data-holder-wide"
+            >
+              <p
+                className="text-small-wide"
+              >
+                Sensory Discrimination Goal
+                : 
+              </p>
+              <p>
+                Another goal
               </p>
             </div>
             <div
@@ -2347,6 +2402,19 @@ ShallowWrapper {
               </p>
             </div>
             <div
+              className="data-holder-wide"
+            >
+              <p
+                className="text-small-wide"
+              >
+                Social/Emotional Goal
+                : 
+              </p>
+              <p>
+                Social Goal
+              </p>
+            </div>
+            <div
               className="data-holder"
             >
               <p
@@ -2422,6 +2490,19 @@ ShallowWrapper {
               </p>
               <p>
                 9
+              </p>
+            </div>
+            <div
+              className="data-holder-wide"
+            >
+              <p
+                className="text-small-wide"
+              >
+                Executive Functioning Goal
+                : 
+              </p>
+              <p>
+                Final goal
               </p>
             </div>
             <div
@@ -2505,14 +2586,21 @@ ShallowWrapper {
           </div>
         </div>,
         <div
-          className="print-button-container"
+          className="view-button-holder"
         >
-          <a
-            className="print-button"
-            href="javascript:window.print()"
+          <div
+            className="print-button-container"
           >
-            PRINT THIS PAGE
-          </a>
+            <a
+              className="print-button"
+              href="javascript:window.print()"
+            >
+              <img
+                className="print-image"
+                src="/assets/print.svg"
+              />
+            </a>
+          </div>
         </div>,
       ],
       "className": "ViewSession",
@@ -2526,22 +2614,21 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <div
-              className="view-patient"
+              className="print-button-container"
             >
-              <h2>
-                Patient: 
-                INTrm5
-              </h2>
+              <a
+                className="print-button"
+                href="javascript:window.print()"
+              >
+                <img
+                  className="print-image"
+                  src="/assets/print.svg"
+                />
+              </a>
             </div>,
-            <div
-              className="view-date"
-            >
-              <h4>
-                February 20, 2018
-              </h4>
-            </div>,
+            undefined,
           ],
-          "className": "view-header-top",
+          "className": "view-button-holder",
         },
         "ref": null,
         "rendered": Array [
@@ -2550,11 +2637,16 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <h2>
-                Patient: 
-                INTrm5
-              </h2>,
-              "className": "view-patient",
+              "children": <a
+                className="print-button"
+                href="javascript:window.print()"
+              >
+                <img
+                  className="print-image"
+                  src="/assets/print.svg"
+                />
+              </a>,
+              "className": "print-button-container",
             },
             "ref": null,
             "rendered": Object {
@@ -2562,44 +2654,31 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  "Patient: ",
-                  "INTrm5",
-                ],
+                "children": <img
+                  className="print-image"
+                  src="/assets/print.svg"
+                />,
+                "className": "print-button",
+                "href": "javascript:window.print()",
               },
               "ref": null,
-              "rendered": Array [
-                "Patient: ",
-                "INTrm5",
-              ],
-              "type": "h2",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "print-image",
+                  "src": "/assets/print.svg",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "a",
             },
             "type": "div",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <h4>
-                February 20, 2018
-              </h4>,
-              "className": "view-date",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "February 20, 2018",
-              },
-              "ref": null,
-              "rendered": "February 20, 2018",
-              "type": "h4",
-            },
-            "type": "div",
-          },
+          undefined,
         ],
         "type": "div",
       },
@@ -2610,22 +2689,53 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <div
-              className="view-ids"
+              className="view-header-left"
             >
-              <h4>
-                Concern ID: 
-                5
-                , Session ID: 
-                10
-              </h4>
+              <div
+                className="view-patient"
+              >
+                <h2>
+                  Patient: 
+                  INTrm5
+                </h2>
+              </div>
+              <div
+                className="view-ids"
+              >
+                <h4>
+                  Concern ID: 
+                  5
+                  , Session ID: 
+                  10
+                </h4>
+              </div>
             </div>,
             <div
-              className="view-clinic"
+              className="view-header-center"
             >
-              <h4>
-                Clinic: 
-                I Need Therapy
-              </h4>
+              <img
+                className="view-sam-image"
+                src="/assets/sam-new-plain.svg"
+              />
+            </div>,
+            <div
+              className="view-header-right"
+            >
+              <div
+                className="view-date"
+              >
+                <h4>
+                  February 20, 2018
+                </h4>
+              </div>
+              <div
+                className="view-clinic"
+              >
+                <h4>
+                  Clinic: 
+                  I Need Therapy
+                </h4>
+              </div>
             </div>,
           ],
           "className": "view-header-top",
@@ -2637,13 +2747,111 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <h4>
-                Concern ID: 
-                5
-                , Session ID: 
-                10
-              </h4>,
-              "className": "view-ids",
+              "children": Array [
+                <div
+                  className="view-patient"
+                >
+                  <h2>
+                    Patient: 
+                    INTrm5
+                  </h2>
+                </div>,
+                <div
+                  className="view-ids"
+                >
+                  <h4>
+                    Concern ID: 
+                    5
+                    , Session ID: 
+                    10
+                  </h4>
+                </div>,
+              ],
+              "className": "view-header-left",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <h2>
+                    Patient: 
+                    INTrm5
+                  </h2>,
+                  "className": "view-patient",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Patient: ",
+                      "INTrm5",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Patient: ",
+                    "INTrm5",
+                  ],
+                  "type": "h2",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <h4>
+                    Concern ID: 
+                    5
+                    , Session ID: 
+                    10
+                  </h4>,
+                  "className": "view-ids",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Concern ID: ",
+                      5,
+                      ", Session ID: ",
+                      10,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Concern ID: ",
+                    5,
+                    ", Session ID: ",
+                    10,
+                  ],
+                  "type": "h4",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <img
+                className="view-sam-image"
+                src="/assets/sam-new-plain.svg"
+              />,
+              "className": "view-header-center",
             },
             "ref": null,
             "rendered": Object {
@@ -2651,21 +2859,12 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  "Concern ID: ",
-                  5,
-                  ", Session ID: ",
-                  10,
-                ],
+                "className": "view-sam-image",
+                "src": "/assets/sam-new-plain.svg",
               },
               "ref": null,
-              "rendered": Array [
-                "Concern ID: ",
-                5,
-                ", Session ID: ",
-                10,
-              ],
-              "type": "h4",
+              "rendered": null,
+              "type": "img",
             },
             "type": "div",
           },
@@ -2674,30 +2873,83 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <h4>
-                Clinic: 
-                I Need Therapy
-              </h4>,
-              "className": "view-clinic",
+              "children": Array [
+                <div
+                  className="view-date"
+                >
+                  <h4>
+                    February 20, 2018
+                  </h4>
+                </div>,
+                <div
+                  className="view-clinic"
+                >
+                  <h4>
+                    Clinic: 
+                    I Need Therapy
+                  </h4>
+                </div>,
+              ],
+              "className": "view-header-right",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  "Clinic: ",
-                  "I Need Therapy",
-                ],
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <h4>
+                    February 20, 2018
+                  </h4>,
+                  "className": "view-date",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "February 20, 2018",
+                  },
+                  "ref": null,
+                  "rendered": "February 20, 2018",
+                  "type": "h4",
+                },
+                "type": "div",
               },
-              "ref": null,
-              "rendered": Array [
-                "Clinic: ",
-                "I Need Therapy",
-              ],
-              "type": "h4",
-            },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <h4>
+                    Clinic: 
+                    I Need Therapy
+                  </h4>,
+                  "className": "view-clinic",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Clinic: ",
+                      "I Need Therapy",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Clinic: ",
+                    "I Need Therapy",
+                  ],
+                  "type": "h4",
+                },
+                "type": "div",
+              },
+            ],
             "type": "div",
           },
         ],
@@ -14729,6 +14981,19 @@ ShallowWrapper {
                 </p>
               </div>
               <div
+                className="data-holder-wide"
+              >
+                <p
+                  className="text-small-wide"
+                >
+                  Posture Goal
+                  : 
+                </p>
+                <p>
+                  Some Goal
+                </p>
+              </div>
+              <div
                 className="data-holder"
               >
                 <p
@@ -14804,6 +15069,19 @@ ShallowWrapper {
                 </p>
                 <p>
                   7
+                </p>
+              </div>
+              <div
+                className="data-holder-wide"
+              >
+                <p
+                  className="text-small-wide"
+                >
+                  Sensory Discrimination Goal
+                  : 
+                </p>
+                <p>
+                  Another goal
                 </p>
               </div>
               <div
@@ -14885,6 +15163,19 @@ ShallowWrapper {
                 </p>
               </div>
               <div
+                className="data-holder-wide"
+              >
+                <p
+                  className="text-small-wide"
+                >
+                  Social/Emotional Goal
+                  : 
+                </p>
+                <p>
+                  Social Goal
+                </p>
+              </div>
+              <div
                 className="data-holder"
               >
                 <p
@@ -14960,6 +15251,19 @@ ShallowWrapper {
                 </p>
                 <p>
                   9
+                </p>
+              </div>
+              <div
+                className="data-holder-wide"
+              >
+                <p
+                  className="text-small-wide"
+                >
+                  Executive Functioning Goal
+                  : 
+                </p>
+                <p>
+                  Final goal
                 </p>
               </div>
               <div
@@ -15142,7 +15446,19 @@ ShallowWrapper {
                     9
                   </p>
                 </div>,
-                undefined,
+                <div
+                  className="data-holder-wide"
+                >
+                  <p
+                    className="text-small-wide"
+                  >
+                    Posture Goal
+                    : 
+                  </p>
+                  <p>
+                    Some Goal
+                  </p>
+                </div>,
                 <div
                   className="data-holder"
                 >
@@ -15221,7 +15537,19 @@ ShallowWrapper {
                     7
                   </p>
                 </div>,
-                undefined,
+                <div
+                  className="data-holder-wide"
+                >
+                  <p
+                    className="text-small-wide"
+                  >
+                    Sensory Discrimination Goal
+                    : 
+                  </p>
+                  <p>
+                    Another goal
+                  </p>
+                </div>,
                 <div
                   className="data-holder"
                 >
@@ -15300,7 +15628,19 @@ ShallowWrapper {
                     8
                   </p>
                 </div>,
-                undefined,
+                <div
+                  className="data-holder-wide"
+                >
+                  <p
+                    className="text-small-wide"
+                  >
+                    Social/Emotional Goal
+                    : 
+                  </p>
+                  <p>
+                    Social Goal
+                  </p>
+                </div>,
                 <div
                   className="data-holder"
                 >
@@ -15379,7 +15719,19 @@ ShallowWrapper {
                     9
                   </p>
                 </div>,
-                undefined,
+                <div
+                  className="data-holder-wide"
+                >
+                  <p
+                    className="text-small-wide"
+                  >
+                    Executive Functioning Goal
+                    : 
+                  </p>
+                  <p>
+                    Final goal
+                  </p>
+                </div>,
                 <div
                   className="data-holder"
                 >
@@ -15776,7 +16128,58 @@ ShallowWrapper {
                 ],
                 "type": "div",
               },
-              undefined,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p
+                      className="text-small-wide"
+                    >
+                      Posture Goal
+                      : 
+                    </p>,
+                    <p>
+                      Some Goal
+                    </p>,
+                  ],
+                  "className": "data-holder-wide",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Posture Goal",
+                        ": ",
+                      ],
+                      "className": "text-small-wide",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Posture Goal",
+                      ": ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Some Goal",
+                    },
+                    "ref": null,
+                    "rendered": "Some Goal",
+                    "type": "p",
+                  },
+                ],
+                "type": "div",
+              },
               Object {
                 "instance": null,
                 "key": undefined,
@@ -16089,7 +16492,58 @@ ShallowWrapper {
                 ],
                 "type": "div",
               },
-              undefined,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p
+                      className="text-small-wide"
+                    >
+                      Sensory Discrimination Goal
+                      : 
+                    </p>,
+                    <p>
+                      Another goal
+                    </p>,
+                  ],
+                  "className": "data-holder-wide",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Sensory Discrimination Goal",
+                        ": ",
+                      ],
+                      "className": "text-small-wide",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Sensory Discrimination Goal",
+                      ": ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Another goal",
+                    },
+                    "ref": null,
+                    "rendered": "Another goal",
+                    "type": "p",
+                  },
+                ],
+                "type": "div",
+              },
               Object {
                 "instance": null,
                 "key": undefined,
@@ -16402,7 +16856,58 @@ ShallowWrapper {
                 ],
                 "type": "div",
               },
-              undefined,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p
+                      className="text-small-wide"
+                    >
+                      Social/Emotional Goal
+                      : 
+                    </p>,
+                    <p>
+                      Social Goal
+                    </p>,
+                  ],
+                  "className": "data-holder-wide",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Social/Emotional Goal",
+                        ": ",
+                      ],
+                      "className": "text-small-wide",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Social/Emotional Goal",
+                      ": ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Social Goal",
+                    },
+                    "ref": null,
+                    "rendered": "Social Goal",
+                    "type": "p",
+                  },
+                ],
+                "type": "div",
+              },
               Object {
                 "instance": null,
                 "key": undefined,
@@ -16715,7 +17220,58 @@ ShallowWrapper {
                 ],
                 "type": "div",
               },
-              undefined,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p
+                      className="text-small-wide"
+                    >
+                      Executive Functioning Goal
+                      : 
+                    </p>,
+                    <p>
+                      Final goal
+                    </p>,
+                  ],
+                  "className": "data-holder-wide",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Executive Functioning Goal",
+                        ": ",
+                      ],
+                      "className": "text-small-wide",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Executive Functioning Goal",
+                      ": ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Final goal",
+                    },
+                    "ref": null,
+                    "rendered": "Final goal",
+                    "type": "p",
+                  },
+                ],
+                "type": "div",
+              },
               Object {
                 "instance": null,
                 "key": undefined,
@@ -17039,28 +17595,74 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <a
-            className="print-button"
-            href="javascript:window.print()"
-          >
-            PRINT THIS PAGE
-          </a>,
-          "className": "print-button-container",
+          "children": Array [
+            <div
+              className="print-button-container"
+            >
+              <a
+                className="print-button"
+                href="javascript:window.print()"
+              >
+                <img
+                  className="print-image"
+                  src="/assets/print.svg"
+                />
+              </a>
+            </div>,
+            undefined,
+          ],
+          "className": "view-button-holder",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "PRINT THIS PAGE",
-            "className": "print-button",
-            "href": "javascript:window.print()",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <a
+                className="print-button"
+                href="javascript:window.print()"
+              >
+                <img
+                  className="print-image"
+                  src="/assets/print.svg"
+                />
+              </a>,
+              "className": "print-button-container",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  className="print-image"
+                  src="/assets/print.svg"
+                />,
+                "className": "print-button",
+                "href": "javascript:window.print()",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "print-image",
+                  "src": "/assets/print.svg",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "a",
+            },
+            "type": "div",
           },
-          "ref": null,
-          "rendered": "PRINT THIS PAGE",
-          "type": "a",
-        },
+          undefined,
+        ],
         "type": "div",
       },
     ],
@@ -17074,44 +17676,73 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="view-header-top"
+            className="view-button-holder"
           >
             <div
-              className="view-patient"
+              className="print-button-container"
             >
-              <h2>
-                Patient: 
-                INTrm5
-              </h2>
-            </div>
-            <div
-              className="view-date"
-            >
-              <h4>
-                February 20, 2018
-              </h4>
+              <a
+                className="print-button"
+                href="javascript:window.print()"
+              >
+                <img
+                  className="print-image"
+                  src="/assets/print.svg"
+                />
+              </a>
             </div>
           </div>,
           <div
             className="view-header-top"
           >
             <div
-              className="view-ids"
+              className="view-header-left"
             >
-              <h4>
-                Concern ID: 
-                5
-                , Session ID: 
-                10
-              </h4>
+              <div
+                className="view-patient"
+              >
+                <h2>
+                  Patient: 
+                  INTrm5
+                </h2>
+              </div>
+              <div
+                className="view-ids"
+              >
+                <h4>
+                  Concern ID: 
+                  5
+                  , Session ID: 
+                  10
+                </h4>
+              </div>
             </div>
             <div
-              className="view-clinic"
+              className="view-header-center"
             >
-              <h4>
-                Clinic: 
-                I Need Therapy
-              </h4>
+              <img
+                className="view-sam-image"
+                src="/assets/sam-new-plain.svg"
+              />
+            </div>
+            <div
+              className="view-header-right"
+            >
+              <div
+                className="view-date"
+              >
+                <h4>
+                  February 20, 2018
+                </h4>
+              </div>
+              <div
+                className="view-clinic"
+              >
+                <h4>
+                  Clinic: 
+                  I Need Therapy
+                </h4>
+              </div>
             </div>
           </div>,
           <div>
@@ -18949,6 +19580,19 @@ ShallowWrapper {
                 </p>
               </div>
               <div
+                className="data-holder-wide"
+              >
+                <p
+                  className="text-small-wide"
+                >
+                  Posture Goal
+                  : 
+                </p>
+                <p>
+                  Some Goal
+                </p>
+              </div>
+              <div
                 className="data-holder"
               >
                 <p
@@ -19024,6 +19668,19 @@ ShallowWrapper {
                 </p>
                 <p>
                   7
+                </p>
+              </div>
+              <div
+                className="data-holder-wide"
+              >
+                <p
+                  className="text-small-wide"
+                >
+                  Sensory Discrimination Goal
+                  : 
+                </p>
+                <p>
+                  Another goal
                 </p>
               </div>
               <div
@@ -19105,6 +19762,19 @@ ShallowWrapper {
                 </p>
               </div>
               <div
+                className="data-holder-wide"
+              >
+                <p
+                  className="text-small-wide"
+                >
+                  Social/Emotional Goal
+                  : 
+                </p>
+                <p>
+                  Social Goal
+                </p>
+              </div>
+              <div
                 className="data-holder"
               >
                 <p
@@ -19180,6 +19850,19 @@ ShallowWrapper {
                 </p>
                 <p>
                   9
+                </p>
+              </div>
+              <div
+                className="data-holder-wide"
+              >
+                <p
+                  className="text-small-wide"
+                >
+                  Executive Functioning Goal
+                  : 
+                </p>
+                <p>
+                  Final goal
                 </p>
               </div>
               <div
@@ -19263,14 +19946,21 @@ ShallowWrapper {
             </div>
           </div>,
           <div
-            className="print-button-container"
+            className="view-button-holder"
           >
-            <a
-              className="print-button"
-              href="javascript:window.print()"
+            <div
+              className="print-button-container"
             >
-              PRINT THIS PAGE
-            </a>
+              <a
+                className="print-button"
+                href="javascript:window.print()"
+              >
+                <img
+                  className="print-image"
+                  src="/assets/print.svg"
+                />
+              </a>
+            </div>
           </div>,
         ],
         "className": "ViewSession",
@@ -19284,22 +19974,21 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <div
-                className="view-patient"
+                className="print-button-container"
               >
-                <h2>
-                  Patient: 
-                  INTrm5
-                </h2>
+                <a
+                  className="print-button"
+                  href="javascript:window.print()"
+                >
+                  <img
+                    className="print-image"
+                    src="/assets/print.svg"
+                  />
+                </a>
               </div>,
-              <div
-                className="view-date"
-              >
-                <h4>
-                  February 20, 2018
-                </h4>
-              </div>,
+              undefined,
             ],
-            "className": "view-header-top",
+            "className": "view-button-holder",
           },
           "ref": null,
           "rendered": Array [
@@ -19308,11 +19997,16 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <h2>
-                  Patient: 
-                  INTrm5
-                </h2>,
-                "className": "view-patient",
+                "children": <a
+                  className="print-button"
+                  href="javascript:window.print()"
+                >
+                  <img
+                    className="print-image"
+                    src="/assets/print.svg"
+                  />
+                </a>,
+                "className": "print-button-container",
               },
               "ref": null,
               "rendered": Object {
@@ -19320,44 +20014,31 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    "Patient: ",
-                    "INTrm5",
-                  ],
+                  "children": <img
+                    className="print-image"
+                    src="/assets/print.svg"
+                  />,
+                  "className": "print-button",
+                  "href": "javascript:window.print()",
                 },
                 "ref": null,
-                "rendered": Array [
-                  "Patient: ",
-                  "INTrm5",
-                ],
-                "type": "h2",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "print-image",
+                    "src": "/assets/print.svg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": "a",
               },
               "type": "div",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <h4>
-                  February 20, 2018
-                </h4>,
-                "className": "view-date",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "February 20, 2018",
-                },
-                "ref": null,
-                "rendered": "February 20, 2018",
-                "type": "h4",
-              },
-              "type": "div",
-            },
+            undefined,
           ],
           "type": "div",
         },
@@ -19368,22 +20049,53 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <div
-                className="view-ids"
+                className="view-header-left"
               >
-                <h4>
-                  Concern ID: 
-                  5
-                  , Session ID: 
-                  10
-                </h4>
+                <div
+                  className="view-patient"
+                >
+                  <h2>
+                    Patient: 
+                    INTrm5
+                  </h2>
+                </div>
+                <div
+                  className="view-ids"
+                >
+                  <h4>
+                    Concern ID: 
+                    5
+                    , Session ID: 
+                    10
+                  </h4>
+                </div>
               </div>,
               <div
-                className="view-clinic"
+                className="view-header-center"
               >
-                <h4>
-                  Clinic: 
-                  I Need Therapy
-                </h4>
+                <img
+                  className="view-sam-image"
+                  src="/assets/sam-new-plain.svg"
+                />
+              </div>,
+              <div
+                className="view-header-right"
+              >
+                <div
+                  className="view-date"
+                >
+                  <h4>
+                    February 20, 2018
+                  </h4>
+                </div>
+                <div
+                  className="view-clinic"
+                >
+                  <h4>
+                    Clinic: 
+                    I Need Therapy
+                  </h4>
+                </div>
               </div>,
             ],
             "className": "view-header-top",
@@ -19395,13 +20107,111 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <h4>
-                  Concern ID: 
-                  5
-                  , Session ID: 
-                  10
-                </h4>,
-                "className": "view-ids",
+                "children": Array [
+                  <div
+                    className="view-patient"
+                  >
+                    <h2>
+                      Patient: 
+                      INTrm5
+                    </h2>
+                  </div>,
+                  <div
+                    className="view-ids"
+                  >
+                    <h4>
+                      Concern ID: 
+                      5
+                      , Session ID: 
+                      10
+                    </h4>
+                  </div>,
+                ],
+                "className": "view-header-left",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <h2>
+                      Patient: 
+                      INTrm5
+                    </h2>,
+                    "className": "view-patient",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Patient: ",
+                        "INTrm5",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Patient: ",
+                      "INTrm5",
+                    ],
+                    "type": "h2",
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <h4>
+                      Concern ID: 
+                      5
+                      , Session ID: 
+                      10
+                    </h4>,
+                    "className": "view-ids",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Concern ID: ",
+                        5,
+                        ", Session ID: ",
+                        10,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Concern ID: ",
+                      5,
+                      ", Session ID: ",
+                      10,
+                    ],
+                    "type": "h4",
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  className="view-sam-image"
+                  src="/assets/sam-new-plain.svg"
+                />,
+                "className": "view-header-center",
               },
               "ref": null,
               "rendered": Object {
@@ -19409,21 +20219,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    "Concern ID: ",
-                    5,
-                    ", Session ID: ",
-                    10,
-                  ],
+                  "className": "view-sam-image",
+                  "src": "/assets/sam-new-plain.svg",
                 },
                 "ref": null,
-                "rendered": Array [
-                  "Concern ID: ",
-                  5,
-                  ", Session ID: ",
-                  10,
-                ],
-                "type": "h4",
+                "rendered": null,
+                "type": "img",
               },
               "type": "div",
             },
@@ -19432,30 +20233,83 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <h4>
-                  Clinic: 
-                  I Need Therapy
-                </h4>,
-                "className": "view-clinic",
+                "children": Array [
+                  <div
+                    className="view-date"
+                  >
+                    <h4>
+                      February 20, 2018
+                    </h4>
+                  </div>,
+                  <div
+                    className="view-clinic"
+                  >
+                    <h4>
+                      Clinic: 
+                      I Need Therapy
+                    </h4>
+                  </div>,
+                ],
+                "className": "view-header-right",
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    "Clinic: ",
-                    "I Need Therapy",
-                  ],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <h4>
+                      February 20, 2018
+                    </h4>,
+                    "className": "view-date",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "February 20, 2018",
+                    },
+                    "ref": null,
+                    "rendered": "February 20, 2018",
+                    "type": "h4",
+                  },
+                  "type": "div",
                 },
-                "ref": null,
-                "rendered": Array [
-                  "Clinic: ",
-                  "I Need Therapy",
-                ],
-                "type": "h4",
-              },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <h4>
+                      Clinic: 
+                      I Need Therapy
+                    </h4>,
+                    "className": "view-clinic",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Clinic: ",
+                        "I Need Therapy",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Clinic: ",
+                      "I Need Therapy",
+                    ],
+                    "type": "h4",
+                  },
+                  "type": "div",
+                },
+              ],
               "type": "div",
             },
           ],
@@ -31487,6 +32341,19 @@ ShallowWrapper {
                   </p>
                 </div>
                 <div
+                  className="data-holder-wide"
+                >
+                  <p
+                    className="text-small-wide"
+                  >
+                    Posture Goal
+                    : 
+                  </p>
+                  <p>
+                    Some Goal
+                  </p>
+                </div>
+                <div
                   className="data-holder"
                 >
                   <p
@@ -31562,6 +32429,19 @@ ShallowWrapper {
                   </p>
                   <p>
                     7
+                  </p>
+                </div>
+                <div
+                  className="data-holder-wide"
+                >
+                  <p
+                    className="text-small-wide"
+                  >
+                    Sensory Discrimination Goal
+                    : 
+                  </p>
+                  <p>
+                    Another goal
                   </p>
                 </div>
                 <div
@@ -31643,6 +32523,19 @@ ShallowWrapper {
                   </p>
                 </div>
                 <div
+                  className="data-holder-wide"
+                >
+                  <p
+                    className="text-small-wide"
+                  >
+                    Social/Emotional Goal
+                    : 
+                  </p>
+                  <p>
+                    Social Goal
+                  </p>
+                </div>
+                <div
                   className="data-holder"
                 >
                   <p
@@ -31718,6 +32611,19 @@ ShallowWrapper {
                   </p>
                   <p>
                     9
+                  </p>
+                </div>
+                <div
+                  className="data-holder-wide"
+                >
+                  <p
+                    className="text-small-wide"
+                  >
+                    Executive Functioning Goal
+                    : 
+                  </p>
+                  <p>
+                    Final goal
                   </p>
                 </div>
                 <div
@@ -31900,7 +32806,19 @@ ShallowWrapper {
                       9
                     </p>
                   </div>,
-                  undefined,
+                  <div
+                    className="data-holder-wide"
+                  >
+                    <p
+                      className="text-small-wide"
+                    >
+                      Posture Goal
+                      : 
+                    </p>
+                    <p>
+                      Some Goal
+                    </p>
+                  </div>,
                   <div
                     className="data-holder"
                   >
@@ -31979,7 +32897,19 @@ ShallowWrapper {
                       7
                     </p>
                   </div>,
-                  undefined,
+                  <div
+                    className="data-holder-wide"
+                  >
+                    <p
+                      className="text-small-wide"
+                    >
+                      Sensory Discrimination Goal
+                      : 
+                    </p>
+                    <p>
+                      Another goal
+                    </p>
+                  </div>,
                   <div
                     className="data-holder"
                   >
@@ -32058,7 +32988,19 @@ ShallowWrapper {
                       8
                     </p>
                   </div>,
-                  undefined,
+                  <div
+                    className="data-holder-wide"
+                  >
+                    <p
+                      className="text-small-wide"
+                    >
+                      Social/Emotional Goal
+                      : 
+                    </p>
+                    <p>
+                      Social Goal
+                    </p>
+                  </div>,
                   <div
                     className="data-holder"
                   >
@@ -32137,7 +33079,19 @@ ShallowWrapper {
                       9
                     </p>
                   </div>,
-                  undefined,
+                  <div
+                    className="data-holder-wide"
+                  >
+                    <p
+                      className="text-small-wide"
+                    >
+                      Executive Functioning Goal
+                      : 
+                    </p>
+                    <p>
+                      Final goal
+                    </p>
+                  </div>,
                   <div
                     className="data-holder"
                   >
@@ -32534,7 +33488,58 @@ ShallowWrapper {
                   ],
                   "type": "div",
                 },
-                undefined,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <p
+                        className="text-small-wide"
+                      >
+                        Posture Goal
+                        : 
+                      </p>,
+                      <p>
+                        Some Goal
+                      </p>,
+                    ],
+                    "className": "data-holder-wide",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "Posture Goal",
+                          ": ",
+                        ],
+                        "className": "text-small-wide",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Posture Goal",
+                        ": ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Some Goal",
+                      },
+                      "ref": null,
+                      "rendered": "Some Goal",
+                      "type": "p",
+                    },
+                  ],
+                  "type": "div",
+                },
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -32847,7 +33852,58 @@ ShallowWrapper {
                   ],
                   "type": "div",
                 },
-                undefined,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <p
+                        className="text-small-wide"
+                      >
+                        Sensory Discrimination Goal
+                        : 
+                      </p>,
+                      <p>
+                        Another goal
+                      </p>,
+                    ],
+                    "className": "data-holder-wide",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "Sensory Discrimination Goal",
+                          ": ",
+                        ],
+                        "className": "text-small-wide",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Sensory Discrimination Goal",
+                        ": ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Another goal",
+                      },
+                      "ref": null,
+                      "rendered": "Another goal",
+                      "type": "p",
+                    },
+                  ],
+                  "type": "div",
+                },
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -33160,7 +34216,58 @@ ShallowWrapper {
                   ],
                   "type": "div",
                 },
-                undefined,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <p
+                        className="text-small-wide"
+                      >
+                        Social/Emotional Goal
+                        : 
+                      </p>,
+                      <p>
+                        Social Goal
+                      </p>,
+                    ],
+                    "className": "data-holder-wide",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "Social/Emotional Goal",
+                          ": ",
+                        ],
+                        "className": "text-small-wide",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Social/Emotional Goal",
+                        ": ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Social Goal",
+                      },
+                      "ref": null,
+                      "rendered": "Social Goal",
+                      "type": "p",
+                    },
+                  ],
+                  "type": "div",
+                },
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -33473,7 +34580,58 @@ ShallowWrapper {
                   ],
                   "type": "div",
                 },
-                undefined,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <p
+                        className="text-small-wide"
+                      >
+                        Executive Functioning Goal
+                        : 
+                      </p>,
+                      <p>
+                        Final goal
+                      </p>,
+                    ],
+                    "className": "data-holder-wide",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "Executive Functioning Goal",
+                          ": ",
+                        ],
+                        "className": "text-small-wide",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Executive Functioning Goal",
+                        ": ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Final goal",
+                      },
+                      "ref": null,
+                      "rendered": "Final goal",
+                      "type": "p",
+                    },
+                  ],
+                  "type": "div",
+                },
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -33797,28 +34955,74 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <a
-              className="print-button"
-              href="javascript:window.print()"
-            >
-              PRINT THIS PAGE
-            </a>,
-            "className": "print-button-container",
+            "children": Array [
+              <div
+                className="print-button-container"
+              >
+                <a
+                  className="print-button"
+                  href="javascript:window.print()"
+                >
+                  <img
+                    className="print-image"
+                    src="/assets/print.svg"
+                  />
+                </a>
+              </div>,
+              undefined,
+            ],
+            "className": "view-button-holder",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "PRINT THIS PAGE",
-              "className": "print-button",
-              "href": "javascript:window.print()",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <a
+                  className="print-button"
+                  href="javascript:window.print()"
+                >
+                  <img
+                    className="print-image"
+                    src="/assets/print.svg"
+                  />
+                </a>,
+                "className": "print-button-container",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <img
+                    className="print-image"
+                    src="/assets/print.svg"
+                  />,
+                  "className": "print-button",
+                  "href": "javascript:window.print()",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "print-image",
+                    "src": "/assets/print.svg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": "a",
+              },
+              "type": "div",
             },
-            "ref": null,
-            "rendered": "PRINT THIS PAGE",
-            "type": "a",
-          },
+            undefined,
+          ],
           "type": "div",
         },
       ],
