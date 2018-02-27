@@ -15,6 +15,35 @@ describe('ConcernRow tests', () => {
   it('Should match the snapshot', () => {
     expect(renderedConcernRow).toMatchSnapshot();
   });
+
+  it('should set state when selectEnter is called', () => {
+    expect(renderedConcernRow.state('hover')).toEqual(false);
+    renderedConcernRow.instance().selectEnter();
+
+    expect(renderedConcernRow.state('hover')).toEqual(true);
+  });
+
+  it('should set state when selectLeave is called', () => {
+    expect(renderedConcernRow.state('hover')).toEqual(false);
+    renderedConcernRow.instance().selectEnter();
+
+    expect(renderedConcernRow.state('hover')).toEqual(true);
+    renderedConcernRow.instance().selectLeave();
+
+    expect(renderedConcernRow.state('hover')).toEqual(false);
+  });
+
+  it('determineDomainClass should return a string of "domains" if domain value is false', () => {
+    expect(renderedConcernRow.instance().determineDomainClass(false, false)).toEqual('domains');
+  });
+
+  it('determineDomainClass should return a string of "domains domains-true" if domain value is true', () => {
+    expect(renderedConcernRow.instance().determineDomainClass(true, false)).toEqual('domains domains-true');
+  });
+
+  it('determineDomainClass should return a string of "domains domains-true domains-hover" if domains and hover values are true', () => {
+    expect(renderedConcernRow.instance().determineDomainClass(true, true)).toEqual('domains domains-true domains-hover');
+  });
 });
 
 describe('mapDispatchToProps tests', () => {
