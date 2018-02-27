@@ -104,5 +104,5 @@ export const mapStateToProps = store => ({
 export default connect(mapStateToProps, null)(SessionsComparison);
 
 SessionsComparison.propTypes = {
-  processesData: PropTypes.array
+  processesData: PropTypes.object
 };
