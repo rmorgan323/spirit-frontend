@@ -30,19 +30,13 @@ describe('Finish tests', () => {
 });
 
 describe('mapStateToProps tests', () => {
-  it('Should pull selectedSession from store', () => {
+  it('Should pull selectedSession and selectedConcern from store', () => {
     const selectedSession = mockSession;
-    const mockStore = { selectedSession };
+    const selectedConcern = mockConcern;
+    const mockStore = { selectedSession, selectedConcern };
     const result = mapStateToProps(mockStore);
 
     expect(result.selectedSession).toEqual(mockStore.selectedSession);
-  });
-
-  it('Should pull selectedConcern from store', () => {
-    const selectedConcern = mockConcern;
-    const mockStore = { selectedConcern };
-    const result = mapStateToProps(mockStore);
-
     expect(result.selectedConcern).toEqual(mockStore.selectedConcern);
   });
 });
