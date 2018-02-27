@@ -44,6 +44,7 @@ class TreatmentPlans extends Component {
     const tabHeaders = tabHeaderClass.map((className, index) => {
       return (
         <div
+          key={index}
           className={
             currentTab === className
               ? `treatment-header treatment-header-active treatment-header-${className}`
@@ -59,6 +60,7 @@ class TreatmentPlans extends Component {
     const treatmentModules = treatmentModuleTypes.map((type, index) => {
       return (
         <div
+          key={index}
           className={
             currentTab === tabHeaderClass[index]
               ? 'treatment-body'
