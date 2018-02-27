@@ -1,5 +1,5 @@
 import React from 'react';
-import { Finish, mapStateToProps, mapDispatchToProps } from './Finish';
+import { Finish, mapStateToProps } from './Finish';
 import { shallow } from 'enzyme';
 import { mockSession } from '../../data/mockData/mockSession';
 import { mockConcern } from '../../data/mockData/mockConcern';

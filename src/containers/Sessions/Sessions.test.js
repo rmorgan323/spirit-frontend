@@ -39,6 +39,29 @@ describe('Sessions tests', () => {
   it('Should match the snapshot', () => {
     expect(renderedSessions).toMatchSnapshot();
   });
+
+  it('should set state with an array when toggleCheckBox is called', () => {
+    renderedSessions.instance().toggleCheckBox(1);
+    
+    expect(renderedSessions.state('checkedIds')).toEqual([1]);
+
+    renderedSessions.instance().toggleCheckBox(1);
+
+    expect(renderedSessions.state('checkedIds')).toEqual([]);
+
+    renderedSessions.instance().toggleCheckBox(1);
+    renderedSessions.instance().toggleCheckBox(2);
+
+    expect(renderedSessions.state('checkedIds')).toEqual([1, 2]);
+  });
+
+  it('checkedStatus should return true or false depending on state array', () => {
+    expect(renderedSessions.instance().checkedStatus(1)).toEqual(false);
+
+    renderedSessions.instance().toggleCheckBox(1);
+
+    expect(renderedSessions.instance().checkedStatus(1)).toEqual(true);
+  });
 });
 
 describe('mapStateToPropsTests', () => {

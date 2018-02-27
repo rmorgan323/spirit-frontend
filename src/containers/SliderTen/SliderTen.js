@@ -35,7 +35,7 @@ export class SliderTen extends Component {
   }
 
   handleClickOutside = () => {
-    this.setState({displayDefinition: false})
+    this.setState({displayDefinition: false});
   };
 
   loadComponentValue = matchedComponentValue => {

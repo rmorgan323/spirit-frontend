@@ -31,6 +31,45 @@ describe('PatientDashboard tests', () => {
   it('Should match the snapshot', () => {
     expect(renderedPatientDashboard).toMatchSnapshot();
   });
+
+  it('should set state when toggleDomain is called', () => {
+    expect(renderedPatientDashboard.state('domain1')).toEqual(false);
+
+    renderedPatientDashboard.instance().toggleDomain('domain1');
+
+    expect(renderedPatientDashboard.state('domain1')).toEqual(true);
+
+    renderedPatientDashboard.instance().toggleDomain('domain1');
+
+    expect(renderedPatientDashboard.state('domain1')).toEqual(false);
+  });
+
+  it('should set state when handleChange is called', () => {
+    const mockEvent = {
+      target: { name: 'concernInput', value: 'New Concern'}
+    };
+    expect(renderedPatientDashboard.state('concernInput')).toEqual('');
+
+    renderedPatientDashboard.instance().handleChange(mockEvent);
+
+    expect(renderedPatientDashboard.state('concernInput')).toEqual('New Concern');
+  });
+
+  it('should reset state when clearInputs is called', () => {
+    const mockEvent = {
+      target: { name: 'notesInput', value: 'Notes'}
+    };
+    renderedPatientDashboard.instance().toggleDomain('domain2');
+    renderedPatientDashboard.instance().handleChange(mockEvent);
+
+    expect(renderedPatientDashboard.state('domain2')).toEqual(true);
+    expect(renderedPatientDashboard.state('notesInput')).toEqual('Notes');
+
+    renderedPatientDashboard.instance().clearInputs();
+
+    expect(renderedPatientDashboard.state('domain2')).toEqual(false);
+    expect(renderedPatientDashboard.state('notesInput')).toEqual('');
+  });
 });
 
 describe('mapStateToProps tests', () => {
