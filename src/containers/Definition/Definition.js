@@ -6,17 +6,26 @@ import { PropTypes } from 'prop-types';
 import './Definition.css';
 
 const Definition = props => {
-  let relevantDefinitions;
+  let relevantDefinitions = [];
   let display;
   const firstWord = new RegExp(/^([\w\-]+)/);
 
   if (props.definitions.length) {
-    relevantDefinitions = props.definitions.filter(def => {
-      return (
-        def.term.match(firstWord)[0].toLowerCase() ===
-        props.title.match(firstWord)[0].toLowerCase()
-      );
-    });
+    props.definitions.forEach(def => {
+      if (def.term.toLowerCase() === props.title.toLowerCase()) {
+        console.log('heyo')
+        relevantDefinitions.push(def);
+      }
+    })
+
+    if (!relevantDefinitions.length) {
+      relevantDefinitions = props.definitions.filter(def => {
+        return (
+          def.term.match(firstWord)[0].toLowerCase() ===
+          props.title.match(firstWord)[0].toLowerCase()
+        );
+      }); 
+    }
 
     if (!relevantDefinitions.length) {
       relevantDefinitions = [{ term: 'No Definitions Found', definition: '' }];
