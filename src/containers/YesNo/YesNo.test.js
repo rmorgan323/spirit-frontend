@@ -35,6 +35,24 @@ describe('YesNo tests', () => {
   it('Should match the snapshot', () => {
     expect(renderedYesNo).toMatchSnapshot();
   });
+
+  it('Should change state to a yes or no value', () => {
+
+  });
+
+  it('Should change state if there is an incoming value from store', () => {
+
+  });
+
+  it('Should change class if there is a thread connection', () => {
+
+  });
+
+  it('Should not change class if there is a thread connection AND an incoming value from store', () => {
+
+  });
+
+
 });
 
 describe('mapStateToProps tests', () => {
