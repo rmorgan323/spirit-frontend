@@ -24,7 +24,8 @@ describe('Definition tests', () => {
 
 describe('mapStateToProps tests', () => {
   it('Should pull definitions from store', () => {
-    const mockStore = { mockDefinitions };
+    const definitions = mockDefinitions;
+    const mockStore = { definitions };
     const result = mapStateToProps(mockStore);
 
     expect(result.definitions).toEqual(mockStore.definitions);
