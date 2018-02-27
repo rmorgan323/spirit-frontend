@@ -25,16 +25,16 @@ describe('Sessions tests', () => {
     wipeStoreFromSessions = jest.fn();
 
     renderedSessions = shallow(
-      <Sessions 
+      <Sessions
         selectedConcern={selectedConcern}
-        sessions={sessions} 
+        sessions={sessions}
         createSession={createSession}
         getSession={getSession}
         compareSessionData={compareSessionData}
         comparisonData={comparisonData}
         wipeStoreFromSessions={wipeStoreFromSessions}
-      />)
-  })
+      />);
+  });
 
   it('Should match the snapshot', () => {
     expect(renderedSessions).toMatchSnapshot();

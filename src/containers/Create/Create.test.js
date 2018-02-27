@@ -83,7 +83,7 @@ describe('Create tests', () => {
 
 describe('mapStateToProps tests', () => {
   it('should pull user from store', () => {
-    const user = { mockUserData }
+    const user = { mockUserData };
     const mockStore = { user };
     const result = mapStateToProps(mockStore);
 
@@ -98,8 +98,7 @@ describe('mapDispatchToProps tests', () => {
       clinicName: 'I Need Therapy',
       clinicAbbreviation: 'INT',
       passcode: 'fj7f82jb'
-    },
-    5);
+    }, 5);
     const result = mapDispatchToProps(mockDispatch);
 
     result.saveClinic(mockParams);

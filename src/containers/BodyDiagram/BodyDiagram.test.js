@@ -1,3 +1,5 @@
+/*eslint-disable camelcase*/
+
 import React from 'react';
 import {
   BodyDiagram,
@@ -43,7 +45,7 @@ describe('mapStateToProps tests', () => {
   });
 
   it('Should pull storedThreadConnections from store', () => {
-    const storedThreadConnections = mockStoredThreadConnections
+    const storedThreadConnections = mockStoredThreadConnections;
     const mockStore = { storedThreadConnections };
     const result = mapStateToProps(mockStore);
 
