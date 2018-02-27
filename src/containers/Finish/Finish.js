@@ -8,14 +8,6 @@ import * as actions from '../../actions';
 import './Finish.css';
 
 class Finish extends Component {
-  completeSessionNow = () => {
-    this.props.updateSession(this.props.selectedSession.id, {
-      completed: true
-    });
-    this.props.history.push(
-      `/spirit/concerns/${this.props.selectedConcern.id}/sessions`
-    );
-  };
 
   render() {
     return (
@@ -49,12 +41,7 @@ class Finish extends Component {
         />
 
         <div className="finish-button-holder">
-          <button 
-            className="complete-session-button"
-            onClick={() => this.completeSessionNow()}
-          >COMPLETE SESSION</button>
-
-
+          
           <NavLink 
             className="join-link" 
             to={`/spirit/sessions/${this.props.selectedSession.id}/view`}
@@ -76,9 +63,7 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateSession: (sessionId, status) => {
-    dispatch(actions.updateSession(sessionId, status));
-  }
+  
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Finish);
