@@ -1,3 +1,3 @@
-const apiRoot = 'http://localhost:3000';
+const apiRoot = 'https://spirit-be.herokuapp.com';
 
 export default apiRoot;
