@@ -45,8 +45,19 @@ describe('mapStateToProps tests', () => {
     const mockStore = { mockStoredThreadConnections };
     const result = mapStateToProps(mockStore);
 
-    expect(result.storedThreadConnections).toEqual(mockStore.storedThreadConnections);
+    expect(result.storedThreadConnections).toEqual(
+      mockStore.storedThreadConnections
+    );
   });
 });
 
-describe('mapDispatchToProps tests', () => {});
+describe('mapDispatchToProps tests', () => {
+  it('Should call dispatch when updateProcessPerformanceComponent is call', () => {
+    const mockDispatch = jest.fn();
+    const mockParameters = ({ pos_4_body: true }, 5);
+    const result = mapDispatchToProps(mockDispatch);
+
+    result.updateProcessPerformanceComponent(mockParameters);
+    expect(mockDispatch).toHaveBeenCalled();
+  });
+});
