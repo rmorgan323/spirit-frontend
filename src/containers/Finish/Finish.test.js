@@ -40,14 +40,3 @@ describe('mapStateToProps tests', () => {
     expect(result.selectedConcern).toEqual(mockStore.selectedConcern);
   });
 });
-
-describe('mapDispatchToProps tests', () => {
-  it('Should call dispatch when updateSession is called', () => {
-    const mockDispatch = jest.fn();
-    const mockParameters = [5, { completed: true }];
-    const result = mapDispatchToProps(mockDispatch);
-
-    result.updateSession(...mockParameters);
-    expect(mockDispatch).toHaveBeenCalled();
-  });
-});
