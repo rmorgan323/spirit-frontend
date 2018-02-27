@@ -147,7 +147,7 @@ export class SliderTen extends Component {
 
         <div className="range-container">
           <Range
-            value={value}
+            value={parseInt(value)}
             fillColor={{
               r: 180,
               g: 180,
