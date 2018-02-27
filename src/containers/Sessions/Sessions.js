@@ -142,13 +142,13 @@ export class Sessions extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   comparisonData: store.comparisonData,
   selectedConcern: store.selectedConcern,
   sessions: store.sessions
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   createSession: selectedConcernId =>
     dispatch(actions.createSession(selectedConcernId)),
   getSession: selectedSessionId =>
