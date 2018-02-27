@@ -1,6 +1,5 @@
 import apiRoot from '../apiRoot';
 import loadSessionsForComparison from './loadSessionsForComparison';
-import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 import { mockSession } from '../../data/mockData/mockSession';
 
 global.localStorage = {
