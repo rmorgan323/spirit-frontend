@@ -21,6 +21,6 @@ describe('processProcessesData tests', () => {
   it('The value property should remain null if values are not supplied', () => {
     const mockReturn = processProcessesData([mockProcess]);
 
-    expect(mockReturn.sensory[2].values).toEqual([null]);
+    expect(mockReturn.sensory[2].values).toEqual([null]);     
   });
 });
