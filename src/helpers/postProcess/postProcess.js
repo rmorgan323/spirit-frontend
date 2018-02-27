@@ -1,9 +1,10 @@
+import apiRoot from '../apiRoot';
 import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const postProcess = async sessionId => {
   try {
     const fetchedProcessId = await fetch(
-      `http://localhost:3000/api/v1/sessions/${sessionId}/processes`,
+      `${apiRoot}/api/v1/sessions/${sessionId}/processes`,
       {
         method: 'POST',
         headers: {

@@ -1,11 +1,12 @@
 /*eslint-disable camelcase*/
 
+import apiRoot from '../apiRoot';
 import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
 
 const postPatient = async (absName, userId) => {
   try {
     const abstractedName = await fetch(
-      `http://localhost:3000/api/v1/users/${userId}/patients`,
+      `${apiRoot}/api/v1/users/${userId}/patients`,
       {
         method: 'POST',
         headers: {
