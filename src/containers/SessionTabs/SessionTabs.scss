@@ -32,11 +32,11 @@
 
   .session-tabs {
     width: 142px;
-    margin: 0 1px;
+    margin: 0 2px 0 0;
     background-color: $purple3;
     text-align: center;
     cursor: pointer;
-    height: 58px;
+    height: 53px;
     @include std-transition;
     display: flex;
     align-items: center;

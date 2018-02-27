@@ -66,11 +66,11 @@ p {
     color: #EAE5F0; }
   .SessionTabs .session-tabs {
     width: 142px;
-    margin: 0 1px;
+    margin: 0 2px 0 0;
     background-color: #BFAFD0;
     text-align: center;
     cursor: pointer;
-    height: 58px;
+    height: 53px;
     transition: all .3s ease-in-out;
     display: flex;
     align-items: center;

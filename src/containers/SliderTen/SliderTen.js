@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import Definition from '../Definition/Definition';
 import * as actions from '../../actions';
+import onClickOutside from 'react-onclickoutside';
 import './SliderTen.css';
 
 export class SliderTen extends Component {
@@ -32,6 +33,10 @@ export class SliderTen extends Component {
 
     this.loadComponentValue(matchedComponentValue);
   }
+
+  handleClickOutside = () => {
+    this.setState({displayDefinition: false})
+  };
 
   loadComponentValue = matchedComponentValue => {
     if (matchedComponentValue) {
@@ -220,6 +225,7 @@ export const mapDispatchToProps = dispatch => ({
   }
 });
 
+SliderTen = onClickOutside(SliderTen);
 export default connect(mapStateToProps, mapDispatchToProps)(SliderTen);
 
 SliderTen.propTypes = {

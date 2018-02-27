@@ -28,6 +28,7 @@ const Modulation = () => {
 
       <div className="category-content">
         <CategorySliders
+          title={'Capacities'}
           slidersArray={['Defensiveness', 'Over', 'Under', 'Variable']}
           databaseNamesArray={[
             'mod_1_defensiveness',
@@ -94,6 +95,7 @@ const Modulation = () => {
         />
 
         <CategorySliders
+          title={'Regulatory Capacities'}
           slidersArray={['Active', 'Self-Regulation', 'Avoid', 'Maladaptive']}
           databaseNamesArray={[
             'mod_4b_active',
