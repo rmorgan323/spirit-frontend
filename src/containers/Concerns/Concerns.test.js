@@ -20,7 +20,8 @@ describe('Concerns tests', () => {
 
 describe('mapStateToProps tests', () => {
   it('Should pull patientConcerns from store', () => {
-    const mockStore = { mockConcern };
+    const patientConcerns = [mockConcern];
+    const mockStore = { patientConcerns };
     const result = mapStateToProps(mockStore);
 
     expect(result.patientConcerns).toEqual(mockStore.patientConcerns);
