@@ -33,6 +33,20 @@ describe('BodyDiagram tests', () => {
   });
 });
 
-describe('mapStateToProps tests', () => {});
+describe('mapStateToProps tests', () => {
+  it('Should pull selectedProcess from store', () => {
+    const mockStore = { mockProcess };
+    const result = mapStateToProps(mockStore);
+
+    expect(result.selectedProcess).toEqual(mockStore.selectedProcess);
+  });
+
+  it('Should pull storedThreadConnections from store', () => {
+    const mockStore = { mockStoredThreadConnections };
+    const result = mapStateToProps(mockStore);
+
+    expect(result.storedThreadConnections).toEqual(mockStore.storedThreadConnections);
+  });
+});
 
 describe('mapDispatchToProps tests', () => {});
