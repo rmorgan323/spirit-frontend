@@ -81,7 +81,7 @@ describe('TreatmentPlanModule tests', () => {
 
 describe('mapStateToProps tests', () => {
   it('Should pull a selectedTreatmentPlan from store', () => {
-    const selectedTreatmentPlan = mockTreatmentPlan;
+    const selectedTreatmentPlan = mockCleanTreatmentPlan;
     const mockStore = { selectedTreatmentPlan };
     const result = mapStateToProps(mockStore);
 
