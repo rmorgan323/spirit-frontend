@@ -10,6 +10,7 @@ const ConcernHeader = props => {
   let display;
   const {
     id,
+    description,
     domain_1,
     domain_2,
     domain_3,
@@ -23,7 +24,7 @@ const ConcernHeader = props => {
     display = (
       <div className="concern-header-holder">
         <h4>
-          CONCERN ID:<span className="concern-header-span">{id}</span>
+          CONCERN:<span className="concern-header-span">{description}</span>
         </h4>
         <div className="domain-holder">
           <span className={domain_1 === false ? 'display-none' : null}>1</span>

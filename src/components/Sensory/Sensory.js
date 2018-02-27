@@ -102,6 +102,7 @@ const Sensory = () => {
         />
 
         <CategorySliders
+          title={"Skill Domain"}
           slidersArray={[
             'Oral',
             'Ocular',

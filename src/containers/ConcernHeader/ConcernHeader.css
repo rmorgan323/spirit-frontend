@@ -61,8 +61,12 @@ p {
     display: none; }
   .ConcernHeader h4 {
     font-size: 14px;
-    margin: 0;
-    color: #9E87BA; }
+    color: #9E87BA;
+    margin: 0 15px 0 0;
+    max-width: 455px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
   .ConcernHeader p {
     margin: 0;
     font-size: 16px; }
