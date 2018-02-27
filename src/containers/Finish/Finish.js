@@ -75,7 +75,7 @@ export const mapStateToProps = store => ({
   selectedConcern: store.selectedConcern
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Finish);
+export default connect(mapStateToProps, null)(Finish);
 
 Finish.propTypes = {
   updateSession: PropTypes.func,

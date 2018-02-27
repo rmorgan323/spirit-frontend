@@ -23,7 +23,7 @@ ShallowWrapper {
         <img
           alt="sam-diagram"
           className="sam-big-image"
-          src="/assets/sam-new.svg"
+          src="/assets/sam-w-labels.svg"
         />
         <Link
           replace={false}
@@ -37,7 +37,7 @@ ShallowWrapper {
         </Link>
         <Link
           replace={false}
-          to="postural"
+          to="social"
         >
           <p
             className="sam-session-dots session-dots-2"
@@ -47,7 +47,7 @@ ShallowWrapper {
         </Link>
         <Link
           replace={false}
-          to="sensory"
+          to="postural"
         >
           <p
             className="sam-session-dots session-dots-3"
@@ -57,7 +57,7 @@ ShallowWrapper {
         </Link>
         <Link
           replace={false}
-          to="social"
+          to="sensory"
         >
           <p
             className="sam-session-dots session-dots-4"
@@ -93,7 +93,7 @@ ShallowWrapper {
           <img
             alt="sam-diagram"
             className="sam-big-image"
-            src="/assets/sam-new.svg"
+            src="/assets/sam-w-labels.svg"
           />,
           <Link
             replace={false}
@@ -107,7 +107,7 @@ ShallowWrapper {
           </Link>,
           <Link
             replace={false}
-            to="postural"
+            to="social"
           >
             <p
               className="sam-session-dots session-dots-2"
@@ -117,7 +117,7 @@ ShallowWrapper {
           </Link>,
           <Link
             replace={false}
-            to="sensory"
+            to="postural"
           >
             <p
               className="sam-session-dots session-dots-3"
@@ -127,7 +127,7 @@ ShallowWrapper {
           </Link>,
           <Link
             replace={false}
-            to="social"
+            to="sensory"
           >
             <p
               className="sam-session-dots session-dots-4"
@@ -162,7 +162,7 @@ ShallowWrapper {
           "props": Object {
             "alt": "sam-diagram",
             "className": "sam-big-image",
-            "src": "/assets/sam-new.svg",
+            "src": "/assets/sam-w-labels.svg",
           },
           "ref": null,
           "rendered": null,
@@ -207,7 +207,7 @@ ShallowWrapper {
               2
             </p>,
             "replace": false,
-            "to": "postural",
+            "to": "social",
           },
           "ref": null,
           "rendered": Object {
@@ -235,7 +235,7 @@ ShallowWrapper {
               3
             </p>,
             "replace": false,
-            "to": "sensory",
+            "to": "postural",
           },
           "ref": null,
           "rendered": Object {
@@ -263,7 +263,7 @@ ShallowWrapper {
               4
             </p>,
             "replace": false,
-            "to": "social",
+            "to": "sensory",
           },
           "ref": null,
           "rendered": Object {
@@ -337,7 +337,7 @@ ShallowWrapper {
           <img
             alt="sam-diagram"
             className="sam-big-image"
-            src="/assets/sam-new.svg"
+            src="/assets/sam-w-labels.svg"
           />
           <Link
             replace={false}
@@ -351,7 +351,7 @@ ShallowWrapper {
           </Link>
           <Link
             replace={false}
-            to="postural"
+            to="social"
           >
             <p
               className="sam-session-dots session-dots-2"
@@ -361,7 +361,7 @@ ShallowWrapper {
           </Link>
           <Link
             replace={false}
-            to="sensory"
+            to="postural"
           >
             <p
               className="sam-session-dots session-dots-3"
@@ -371,7 +371,7 @@ ShallowWrapper {
           </Link>
           <Link
             replace={false}
-            to="social"
+            to="sensory"
           >
             <p
               className="sam-session-dots session-dots-4"
@@ -407,7 +407,7 @@ ShallowWrapper {
             <img
               alt="sam-diagram"
               className="sam-big-image"
-              src="/assets/sam-new.svg"
+              src="/assets/sam-w-labels.svg"
             />,
             <Link
               replace={false}
@@ -421,7 +421,7 @@ ShallowWrapper {
             </Link>,
             <Link
               replace={false}
-              to="postural"
+              to="social"
             >
               <p
                 className="sam-session-dots session-dots-2"
@@ -431,7 +431,7 @@ ShallowWrapper {
             </Link>,
             <Link
               replace={false}
-              to="sensory"
+              to="postural"
             >
               <p
                 className="sam-session-dots session-dots-3"
@@ -441,7 +441,7 @@ ShallowWrapper {
             </Link>,
             <Link
               replace={false}
-              to="social"
+              to="sensory"
             >
               <p
                 className="sam-session-dots session-dots-4"
@@ -476,7 +476,7 @@ ShallowWrapper {
             "props": Object {
               "alt": "sam-diagram",
               "className": "sam-big-image",
-              "src": "/assets/sam-new.svg",
+              "src": "/assets/sam-w-labels.svg",
             },
             "ref": null,
             "rendered": null,
@@ -521,7 +521,7 @@ ShallowWrapper {
                 2
               </p>,
               "replace": false,
-              "to": "postural",
+              "to": "social",
             },
             "ref": null,
             "rendered": Object {
@@ -549,7 +549,7 @@ ShallowWrapper {
                 3
               </p>,
               "replace": false,
-              "to": "sensory",
+              "to": "postural",
             },
             "ref": null,
             "rendered": Object {
@@ -577,7 +577,7 @@ ShallowWrapper {
                 4
               </p>,
               "replace": false,
-              "to": "social",
+              "to": "sensory",
             },
             "ref": null,
             "rendered": Object {

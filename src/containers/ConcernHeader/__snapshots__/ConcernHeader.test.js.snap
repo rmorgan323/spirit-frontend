@@ -38,11 +38,11 @@ ShallowWrapper {
         className="concern-header-holder"
       >
         <h4>
-          CONCERN ID:
+          CONCERN:
           <span
             className="concern-header-span"
           >
-            5
+            Concern 1
           </span>
         </h4>
         <div
@@ -98,11 +98,11 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h4>
-            CONCERN ID:
+            CONCERN:
             <span
               className="concern-header-span"
             >
-              5
+              Concern 1
             </span>
           </h4>,
           <div
@@ -158,27 +158,27 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "CONCERN ID:",
+              "CONCERN:",
               <span
                 className="concern-header-span"
               >
-                5
+                Concern 1
               </span>,
             ],
           },
           "ref": null,
           "rendered": Array [
-            "CONCERN ID:",
+            "CONCERN:",
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": 5,
+                "children": "Concern 1",
                 "className": "concern-header-span",
               },
               "ref": null,
-              "rendered": 5,
+              "rendered": "Concern 1",
               "type": "span",
             },
           ],
@@ -347,11 +347,11 @@ ShallowWrapper {
           className="concern-header-holder"
         >
           <h4>
-            CONCERN ID:
+            CONCERN:
             <span
               className="concern-header-span"
             >
-              5
+              Concern 1
             </span>
           </h4>
           <div
@@ -407,11 +407,11 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <h4>
-              CONCERN ID:
+              CONCERN:
               <span
                 className="concern-header-span"
               >
-                5
+                Concern 1
               </span>
             </h4>,
             <div
@@ -467,27 +467,27 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "CONCERN ID:",
+                "CONCERN:",
                 <span
                   className="concern-header-span"
                 >
-                  5
+                  Concern 1
                 </span>,
               ],
             },
             "ref": null,
             "rendered": Array [
-              "CONCERN ID:",
+              "CONCERN:",
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": 5,
+                  "children": "Concern 1",
                   "className": "concern-header-span",
                 },
                 "ref": null,
-                "rendered": 5,
+                "rendered": "Concern 1",
                 "type": "span",
               },
             ],
