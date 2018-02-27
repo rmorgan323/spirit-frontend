@@ -7,7 +7,7 @@ import TherapyGoals from '../TherapyGoals/TherapyGoals';
 import * as actions from '../../actions';
 import './Finish.css';
 
-class Finish extends Component {
+export class Finish extends Component {
   completeSessionNow = () => {
     this.props.updateSession(this.props.selectedSession.id, {
       completed: true
@@ -70,12 +70,12 @@ class Finish extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   selectedSession: store.selectedSession,
   selectedConcern: store.selectedConcern
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   updateSession: (sessionId, status) => {
     dispatch(actions.updateSession(sessionId, status));
   }
