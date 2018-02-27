@@ -12,6 +12,20 @@ class Finish extends Component {
   render() {
     return (
       <div className="Finish">
+
+        <div className="finish-button-holder">
+          <p>We recommend looking at session results before writing treatment plans <span className="arrow-right">&#10145;</span></p>
+          <NavLink 
+            className="join-link" 
+            to={`/spirit/sessions/${this.props.selectedSession.id}/view`}
+          >
+            <button 
+              className="session-result-button"
+            >SEE SESSION RESULTS
+            </button>
+          </NavLink>
+        </div>
+
         <h2 className="finish-headings">Treatment Plans</h2>
 
         <TreatmentPlans />
@@ -41,7 +55,6 @@ class Finish extends Component {
         />
 
         <div className="finish-button-holder">
-          
           <NavLink 
             className="join-link" 
             to={`/spirit/sessions/${this.props.selectedSession.id}/view`}

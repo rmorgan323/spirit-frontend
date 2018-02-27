@@ -168,33 +168,40 @@ export const ViewSession = (props) => {
         <div className="print-button-container">
           <a href="javascript:window.print()" className="print-button"><img className="print-image" src="/assets/print.svg" /></a>
         </div>
-
         {renderCompleteButton}
       </div>
 
       <div className="view-header-top">
-        <div className="view-patient">
-          {patient}
+        <div className="view-header-left">
+          <div className="view-patient">
+            {patient}
+          </div>
+          <div className="view-ids">
+            {ids}
+          </div>
         </div>
-        <div className="view-date">
-          {date}
+
+        <div className="view-header-center">
+          <img className="view-sam-image" src="/assets/sam-new-plain.svg" />
+        </div>
+
+        <div className="view-header-right">
+          <div className="view-date">
+            {date}
+          </div>
+          <div className="view-clinic">
+            {clinic}
+          </div>
         </div>
       </div>
-      <div className="view-header-top">
-        <div className="view-ids">
-          {ids}
-        </div>
-        <div className="view-clinic">
-          {clinic}
-        </div>
-      </div>
+
       <div>
         <h3>Primary Concern</h3>
         {concern}
       </div>
+
       <div className="view-processes">
         <h3>Processes</h3>
-
         <div className="view-section-container">
           <h4>Modulation:</h4>
           <div className="view-processes-section">

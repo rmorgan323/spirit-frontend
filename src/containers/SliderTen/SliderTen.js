@@ -67,7 +67,7 @@ export class SliderTen extends Component {
   };
 
   chooseFair = letter => {
-    this.setState({ fair: letter });
+    this.setState({ fair: letter.toUpperCase() });
   };
 
   toggleDefinition = () => {
@@ -167,36 +167,36 @@ export class SliderTen extends Component {
 
         <h2>
           <span
-            onClick={() => this.chooseFair('f')}
+            onClick={() => this.chooseFair('F')}
             className={
-              fair === 'f' ? 'button-fair button-active' : 'button-fair'
+              fair === 'F' ? 'button-fair button-active' : 'button-fair'
             }
           >
             F
           </span>
 
           <span
-            onClick={() => this.chooseFair('a')}
+            onClick={() => this.chooseFair('A')}
             className={
-              fair === 'a' ? 'button-fair button-active' : 'button-fair'
+              fair === 'A' ? 'button-fair button-active' : 'button-fair'
             }
           >
             A
           </span>
 
           <span
-            onClick={() => this.chooseFair('i')}
+            onClick={() => this.chooseFair('I')}
             className={
-              fair === 'i' ? 'button-fair button-active' : 'button-fair'
+              fair === 'I' ? 'button-fair button-active' : 'button-fair'
             }
           >
             I
           </span>
 
           <span
-            onClick={() => this.chooseFair('r')}
+            onClick={() => this.chooseFair('R')}
             className={
-              fair === 'r' ? 'button-fair button-active' : 'button-fair'
+              fair === 'R' ? 'button-fair button-active' : 'button-fair'
             }
           >
             R
