@@ -1,5 +1,4 @@
 import React from 'react';
-import './ViewSession.css';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import processProcessesData from '../../helpers/processProcessesData/processProcessesData';
@@ -7,6 +6,7 @@ import formatTherapyGoalData from '../../helpers/formatTherapyGoalData/formatThe
 import formatTreatmentPlanData from '../../helpers/formatTreatmentPlanData/formatTreatmentPlanData';
 import * as actions from '../../actions';
 import { PropTypes } from 'prop-types';
+import './ViewSession.css';
 
 export const ViewSession = props => {
   const completeSessionNow = () => {
