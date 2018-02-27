@@ -1,16 +1,22 @@
 import React from 'react';
 import ComparisonCard from './ComparisonCard';
 import { shallow } from 'enzyme';
-import { mockDataArray, mockTitle, mockValues } from '../../data/mockData/mockComparisonCardData';
+import {
+  mockDataArray,
+  mockTitle,
+  mockValues
+} from '../../data/mockData/mockComparisonCardData';
 
 describe('ComparisonCard tests', () => {
-  it('should match snapshot', () => {
-    const renderedApp = shallow(<ComparisonCard 
-      dateArray={mockDataArray}
-      title={mockTitle}
-      values={mockValues}
-    />);
-    
+  it('Should match snapshot', () => {
+    const renderedApp = shallow(
+      <ComparisonCard
+        dateArray={mockDataArray}
+        title={mockTitle}
+        values={mockValues}
+      />
+    );
+
     expect(renderedApp).toMatchSnapshot();
   });
 });

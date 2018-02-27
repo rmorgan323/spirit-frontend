@@ -7,7 +7,7 @@ import { PropTypes } from 'prop-types';
 import { VictoryChart, VictoryLine, VictoryLegend, VictoryAxis } from 'victory';
 import './GoalsChart.css';
 
-const GoalsChart = props => {
+export const GoalsChart = props => {
   const generateLines = () => {
     const lines = props.comparisonData;
 
@@ -158,7 +158,7 @@ const GoalsChart = props => {
   );
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   comparisonData: store.comparisonData
 });
 

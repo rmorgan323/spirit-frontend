@@ -3,7 +3,7 @@ import App from './App';
 import { MemoryRouter } from 'react-router';
 import { shallow } from 'enzyme';
 
-describe('app tests', () => {
+describe('App tests', () => {
   let renderedApp;
   beforeEach(() => {
     renderedApp = shallow(
@@ -13,12 +13,11 @@ describe('app tests', () => {
     );
   });
 
-  it('renders without crashing', () => {
+  it('Renders without crashing', () => {
     expect(renderedApp).toBeDefined();
   });
 
-  it('should render with the correct default elements', () => {
+  it('Should render with the correct default elements', () => {
     expect(renderedApp.find('App').length).toEqual(1);
   });
-
 });

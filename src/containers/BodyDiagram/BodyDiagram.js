@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
 import './BodyDiagram.css';
 
-class BodyDiagram extends Component {
+export class BodyDiagram extends Component {
   constructor() {
     super();
 
@@ -337,12 +337,12 @@ class BodyDiagram extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   selectedProcess: store.selectedProcess,
   storedThreadConnections: store.storedThreadConnections
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   updateProcessPerformanceComponent: (processId, updatedProcess) => {
     dispatch(
       actions.updateProcessPerformanceComponent(processId, updatedProcess)

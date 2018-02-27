@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
 import './SessionTabs.css';
 
-const SessionTabs = props => {
+export const SessionTabs = props => {
   const {
     storedThreadConnections,
     selectedSession,

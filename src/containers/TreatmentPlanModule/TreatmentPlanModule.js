@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
 import './TreatmentPlanModule.css';
 
-class TreatmentPlanModule extends Component {
+export class TreatmentPlanModule extends Component {
   constructor(props) {
     super(props);
 
@@ -165,11 +165,11 @@ class TreatmentPlanModule extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   selectedTreatmentPlan: store.selectedTreatmentPlan
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getTreatmentPlan: (id, treatmentPlanObject) => {
     dispatch(actions.getTreatmentPlan(id, treatmentPlanObject));
   }

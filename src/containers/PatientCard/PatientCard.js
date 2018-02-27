@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
 import './PatientCard.css';
 
-const PatientCard = props => {
+export const PatientCard = props => {
   const { abstractedName, lastAppt, id } = props;
 
   return (
@@ -30,7 +30,7 @@ const PatientCard = props => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getPatientConcerns: id => {
     dispatch(actions.getPatientConcerns(id));
   }

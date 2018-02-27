@@ -3,7 +3,7 @@ import Spirit from './Spirit';
 import { shallow } from 'enzyme';
 
 describe('Spirit tests', () => {
-  it('should match snapshot', () => {
+  it('Should match snapshot', () => {
     const renderedApp = shallow(<Spirit />);
 
     expect(renderedApp).toMatchSnapshot();

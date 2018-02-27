@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import ConcernRow from '../ConcernRow/ConcernRow';
 
-const Concerns = props => {
+export const Concerns = props => {
   let displayConcernRows;
 
   if (props.patientConcerns.length) {
@@ -28,7 +28,7 @@ const Concerns = props => {
   return <div>{displayConcernRows}</div>;
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   patientConcerns: store.patientConcerns
 });
 

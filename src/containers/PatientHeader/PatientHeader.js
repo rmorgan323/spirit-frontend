@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 import './PatientHeader.css';
 // import moment from 'moment';
 
-const PatientHeader = props => {
+export const PatientHeader = props => {
   let display;
 
   if (props.currentPatient.id !== undefined) {
@@ -22,7 +22,7 @@ const PatientHeader = props => {
   return <div className="PatientHeader">{display}</div>;
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   currentPatient: store.currentPatient
 });
 

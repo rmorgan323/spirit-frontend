@@ -27,7 +27,7 @@ import SessionTabs from '../SessionTabs/SessionTabs';
 import ViewSession from '../../components/ViewSession/ViewSession';
 import Finish from '../Finish/Finish';
 
-class Routes extends Component {
+export class Routes extends Component {
   componentDidMount = async () => {
     await this.checkForKey();
     await this.props.getUser();
@@ -142,7 +142,7 @@ class Routes extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getUser: () => {
     dispatch(actions.getUser());
   },

@@ -3,7 +3,7 @@ import Sensory from './Sensory';
 import { shallow } from 'enzyme';
 
 describe('Sensory tests', () => {
-  it('should match snapshot', () => {
+  it('Should match snapshot', () => {
     const renderedApp = shallow(<Sensory />);
 
     expect(renderedApp).toMatchSnapshot();

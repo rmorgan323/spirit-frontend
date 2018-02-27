@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import './Header.css';
 
-const Header = props => {
+export const Header = props => {
   const { user } = props;
 
   return (
@@ -37,7 +37,7 @@ const Header = props => {
   );
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   user: store.user
 });
 

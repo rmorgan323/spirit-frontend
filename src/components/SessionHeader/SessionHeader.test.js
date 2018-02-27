@@ -1,16 +1,16 @@
 import React from 'react';
 import SessionHeader from './SessionHeader';
 import { shallow } from 'enzyme';
-import { 
-  mockTitle, 
-  mockHeadings, 
-  mockDatabaseNamesArray 
+import {
+  mockTitle,
+  mockHeadings,
+  mockDatabaseNamesArray
 } from '../../data/mockData/mockSessionHeaderData';
 
 describe('SessionHeader tests', () => {
-  it('should match snapshot', () => {
+  it('Should match snapshot', () => {
     const renderedApp = shallow(
-      <SessionHeader 
+      <SessionHeader
         title={mockTitle}
         headings={mockHeadings}
         databaseNamesArray={mockDatabaseNamesArray}
@@ -20,13 +20,9 @@ describe('SessionHeader tests', () => {
     expect(renderedApp).toMatchSnapshot();
   });
 
-  it('should match snapshot if some props are empty arrays', () => {
+  it('Should match snapshot if some props are empty arrays', () => {
     const renderedApp = shallow(
-      <SessionHeader 
-        title={mockTitle}
-        headings={[]}
-        databaseNamesArray={[]}
-      />
+      <SessionHeader title={mockTitle} headings={[]} databaseNamesArray={[]} />
     );
 
     expect(renderedApp).toMatchSnapshot();

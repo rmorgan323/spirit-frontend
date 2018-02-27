@@ -7,8 +7,8 @@ import TherapyGoals from '../TherapyGoals/TherapyGoals';
 import * as actions from '../../actions';
 import './Finish.css';
 
-class Finish extends Component {
-
+export class Finish extends Component {
+  
   render() {
     return (
       <div className="Finish">
@@ -70,13 +70,9 @@ class Finish extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   selectedSession: store.selectedSession,
   selectedConcern: store.selectedConcern
-});
-
-const mapDispatchToProps = dispatch => ({
-  
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Finish);
