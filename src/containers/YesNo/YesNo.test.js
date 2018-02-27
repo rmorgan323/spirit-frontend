@@ -78,7 +78,7 @@ describe('YesNo tests', () => {
     expect(renderedYesNo.hasClass(expectedClass)).toEqual(true);
   });
 
-  it('Should not change class if there is a thread connection AND an incoming value from store', () => {
+  it('Should not change class if a thread connection AND an incoming value from store', () => {
     const expectedClass = 'YesNo';
     const unwantedClass = 'thread-connection-yesno';
 

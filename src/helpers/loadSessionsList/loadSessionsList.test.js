@@ -1,7 +1,6 @@
 import apiRoot from '../apiRoot';
 import loadSessionsList from './loadSessionsList';
 import { mockSession } from '../../data/mockData/mockSession';
-import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
 global.localStorage = {
   getItem: () => null
