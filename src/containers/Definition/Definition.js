@@ -14,7 +14,6 @@ export const Definition = props => {
   if (props.definitions.length) {
     props.definitions.forEach(def => {
       if (def.term.toLowerCase() === props.title.toLowerCase()) {
-        console.log('heyo')
         relevantDefinitions.push(def);
       }
     })
