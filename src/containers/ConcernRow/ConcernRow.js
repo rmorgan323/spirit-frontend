@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import * as actions from '../../actions/index';
 import './ConcernRow.css';
 
-class ConcernRow extends Component {
+export class ConcernRow extends Component {
   constructor(props) {
     super(props);
 
@@ -88,7 +88,7 @@ class ConcernRow extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getConcern: concernId => dispatch(actions.getConcern(concernId))
 });
 
