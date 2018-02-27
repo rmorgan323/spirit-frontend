@@ -215,7 +215,7 @@ ShallowWrapper {
           >
             <Connect(Component) />
           </div>
-          <Connect(SessionsComparison) />
+          <Connect(Component) />
         </div>,
       ],
       "className": "Sessions",
@@ -583,7 +583,7 @@ ShallowWrapper {
             >
               <Connect(Component) />
             </div>,
-            <Connect(SessionsComparison) />,
+            <Connect(Component) />,
           ],
         },
         "ref": null,
@@ -705,7 +705,7 @@ ShallowWrapper {
             >
               <Connect(Component) />
             </div>
-            <Connect(SessionsComparison) />
+            <Connect(Component) />
           </div>,
         ],
         "className": "Sessions",
@@ -1073,7 +1073,7 @@ ShallowWrapper {
               >
                 <Connect(Component) />
               </div>,
-              <Connect(SessionsComparison) />,
+              <Connect(Component) />,
             ],
           },
           "ref": null,
