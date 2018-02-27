@@ -21,8 +21,9 @@ describe('ConcernHeader tests', () => {
 });
 
 describe('mapStateToProps tests', () => {
-  it('Should pull selectedProcess from store', () => {
-    const mockStore = { mockConcern };
+  it('Should pull selectedConcern from store', () => {
+    const selectedConcern = mockConcern;
+    const mockStore = { selectedConcern };
     const result = mapStateToProps(mockStore);
 
     expect(result.selectedConcern).toEqual(mockStore.selectedConcern);
