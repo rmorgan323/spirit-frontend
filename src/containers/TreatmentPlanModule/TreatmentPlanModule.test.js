@@ -62,7 +62,7 @@ describe('TreatmentPlanModule tests', () => {
     expect(getTreatmentPlan).not.toHaveBeenCalled();
   });
 
-  it('Should set changed to false after sending send if changed is true', () => {
+  it('Should set changed to false after sending data if changed is true', () => {
     const mockType = 'sensory';
     const mockSensoryEvent = {
       target: { name: 'sensory', value: 'Work on walking in a line' }
@@ -76,6 +76,8 @@ describe('TreatmentPlanModule tests', () => {
 
     renderedTreatmentPlanModule.instance().handleSave(mockType);
     expect(getTreatmentPlan).toHaveBeenCalled();
+    renderedTreatmentPlanModule.update();
+    expect(renderedTreatmentPlanModule.state('changed')).toEqual(false);
   });
 });
 
