@@ -35,14 +35,16 @@ describe('BodyDiagram tests', () => {
 
 describe('mapStateToProps tests', () => {
   it('Should pull selectedProcess from store', () => {
-    const mockStore = { mockProcess };
+    const selectedProcess = mockProcess;
+    const mockStore = { selectedProcess };
     const result = mapStateToProps(mockStore);
 
     expect(result.selectedProcess).toEqual(mockStore.selectedProcess);
   });
 
   it('Should pull storedThreadConnections from store', () => {
-    const mockStore = { mockStoredThreadConnections };
+    const storedThreadConnections = mockStoredThreadConnections
+    const mockStore = { storedThreadConnections };
     const result = mapStateToProps(mockStore);
 
     expect(result.storedThreadConnections).toEqual(
