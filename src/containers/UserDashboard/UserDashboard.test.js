@@ -30,6 +30,64 @@ describe('UserDashboard tests', () => {
   it('Should match the snapshot', () => {
     expect(renderedUserDashboard).toMatchSnapshot();
   });
+
+  it('Should take in a first/last initial and set it to uppercase', () => {
+    const mockFirstInitial = {
+      target: { name: 'firstInitial', value: 'H' }
+    };
+
+    const mockLastInitial = {
+      target: { name: 'lastInitial', value: 'R' }
+    };
+
+    expect(renderedUserDashboard.state('firstInitial')).toEqual('');
+    expect(renderedUserDashboard.state('lastInitial')).toEqual('');
+
+    renderedUserDashboard.instance().handleChange(mockFirstInitial);
+    renderedUserDashboard.instance().handleChange(mockLastInitial);
+
+    expect(renderedUserDashboard.state('firstInitial')).toEqual('H');
+    expect(renderedUserDashboard.state('lastInitial')).toEqual('R');
+  });
+
+  it('Should show an error if one of the initials is missing', () => {
+    const expected = 'Please enter a first and last patient initial';
+    const mockFirstInitial = {
+      target: { name: 'firstInitial', value: 'H' }
+    };
+
+    renderedUserDashboard.instance().handleChange(mockFirstInitial);
+    expect(renderedUserDashboard.state('firstInitial')).toEqual('H');
+    expect(renderedUserDashboard.state('lastInitial')).toEqual('');
+
+    renderedUserDashboard.instance().handleSubmit();
+    expect(renderedUserDashboard.state('error')).toEqual(expected);
+
+    renderedUserDashboard.update();
+    expect(renderedUserDashboard.find('.error-message').length).toEqual(1);
+  });
+
+  it('Should show a success message if both initals are entered', () => {
+    const expected = 'Patient successfully added!';
+    const mockFirstInitial = {
+      target: { name: 'firstInitial', value: 'H' }
+    };
+
+    const mockLastInitial = {
+      target: { name: 'lastInitial', value: 'R' }
+    };
+
+    renderedUserDashboard.instance().handleChange(mockFirstInitial);
+    renderedUserDashboard.instance().handleChange(mockLastInitial);
+    expect(renderedUserDashboard.state('firstInitial')).toEqual('H');
+    expect(renderedUserDashboard.state('lastInitial')).toEqual('R');
+
+    renderedUserDashboard.instance().handleSubmit();
+    expect(renderedUserDashboard.state('success')).toEqual(expected);
+
+    renderedUserDashboard.update();
+    expect(renderedUserDashboard.find('.success-message').length).toEqual(1);
+  });
 });
 
 describe('mapStateToProps tests', () => {
