@@ -1,6 +1,6 @@
 import apiRoot from '../apiRoot';
 import loadSessionsForComparison from './loadSessionsForComparison';
-import { mockSession } from '../../data/mockData/mockSession';
+import { mockApiResponse } from '../../data/mockData/mockApiResponse';
 
 global.localStorage = {
   getItem: () => null
@@ -9,10 +9,7 @@ global.localStorage = {
 describe('loadSessionsForComparison tests', () => {
   window.fetch = jest.fn().mockImplementation(() =>
     Promise.resolve({
-      json: () => Promise.resolve({
-        status: 'success',
-        body: [mockSession]
-      })
+      json: () => Promise.resolve(mockApiResponse)
     })
   );
 

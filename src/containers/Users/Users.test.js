@@ -19,6 +19,10 @@ describe('Users tests', () => {
   it('Should match the snapshot', () => {
     expect(renderedUsers).toMatchSnapshot();
   });
+
+  it('Should redirect if there is a user', () => {
+    expect(history.push).toHaveBeenCalled();
+  });
 });
 
 describe('mapStateToProps tests', () => {

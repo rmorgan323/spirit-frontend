@@ -36,6 +36,66 @@ describe('TherapyGoals tests', () => {
   it('Should match the snapshot', () => {
     expect(renderedTherapyGoal).toMatchSnapshot();
   });
+
+  it('Should save a value by type and set changed to true', () => {
+    const expectedType = 'ot_importance';
+    const expectedValue = 8;
+
+    expect(renderedTherapyGoal.state(expectedType)).not.toEqual(expectedValue);
+    expect(renderedTherapyGoal.state('changed')).toEqual(false);
+
+    renderedTherapyGoal
+      .instance()
+      .handleRangeChange(expectedValue, expectedType);
+    expect(renderedTherapyGoal.state(expectedType)).toEqual(expectedValue);
+    expect(renderedTherapyGoal.state('changed')).toEqual(true);
+  });
+
+  it('Should capture a goal value and set changed to true', () => {
+    const mockGoalEvent = {
+      target: { value: "Be more aware of other people's emotions" }
+    };
+    const expected = "Be more aware of other people's emotions";
+
+    expect(renderedTherapyGoal.state('goal')).not.toEqual(expected);
+    expect(renderedTherapyGoal.state('changed')).toEqual(false);
+
+    renderedTherapyGoal.instance().handleGoalsChange(mockGoalEvent);
+    expect(renderedTherapyGoal.state('goal')).toEqual(expected);
+    expect(renderedTherapyGoal.state('changed')).toEqual(true);
+  });
+
+  it('Should not try to save any data if changed is false', () => {
+    expect(renderedTherapyGoal.state('changed')).toEqual(false);
+
+    renderedTherapyGoal.instance().handleTherapyGoalsUpdate();
+    expect(getTherapyGoal).not.toHaveBeenCalled();
+  });
+
+  it('Should set changed to false after sending data if changed is true', () => {
+    const mockProps = [
+      "Be more aware of other people's emotions",
+      10,
+      6,
+      5,
+      5,
+      6,
+      7
+    ];
+
+    const mockGoalEvent = {
+      target: { value: "Be more aware of other people's emotions" }
+    };
+
+    renderedTherapyGoal.instance().handleGoalsChange(mockGoalEvent);
+    expect(renderedTherapyGoal.state('changed')).toEqual(true);
+
+    renderedTherapyGoal.instance().handleTherapyGoalsUpdate(...mockProps);
+    expect(getTherapyGoal).toHaveBeenCalled();
+
+    renderedTherapyGoal.update();
+    expect(renderedTherapyGoal.state('changed')).toEqual(false);
+  });
 });
 
 describe('mapStateToProps tests', () => {

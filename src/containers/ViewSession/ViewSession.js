@@ -1,5 +1,4 @@
 import React from 'react';
-import './ViewSession.css';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import processProcessesData from '../../helpers/processProcessesData/processProcessesData';
@@ -7,6 +6,7 @@ import formatTherapyGoalData from '../../helpers/formatTherapyGoalData/formatThe
 import formatTreatmentPlanData from '../../helpers/formatTreatmentPlanData/formatTreatmentPlanData';
 import * as actions from '../../actions';
 import { PropTypes } from 'prop-types';
+import './ViewSession.css';
 
 export const ViewSession = props => {
   const completeSessionNow = () => {
@@ -105,80 +105,80 @@ export const ViewSession = props => {
     processValues = processProcessesData([props.selectedProcess]);
     treatmentPlan = formatTreatmentPlanData([props.selectedTreatmentPlan]);
     therapyGoal = formatTherapyGoalData([props.selectedTherapyGoal]);
-    processValuesExec = processValues.executive.map(object => {
+    processValuesExec = processValues.executive.map((object, index) => {
       if (object.values[0] !== null && object.dbName !== 'created_at') {
         return (
-          <div className="data-holder">
+          <div key={index} className="data-holder">
             <p className="text-small">{object.title}:</p>
             <p>{object.values[0]}</p>
           </div>
         );
       }
     });
-    processValuesMod = processValues.modulation.map(object => {
+    processValuesMod = processValues.modulation.map((object, index) => {
       if (object.values[0] !== null && object.dbName !== 'created_at') {
         return (
-          <div className="data-holder">
+          <div key={index} className="data-holder">
             <p className="text-small">{object.title}: </p>
             <p>{object.values[0]}</p>
           </div>
         );
       }
     });
-    processValuesPos = processValues.postural.map(object => {
+    processValuesPos = processValues.postural.map((object, index) => {
       if (object.values[0] !== null && object.dbName !== 'created_at') {
         object.values[0] === 'true' ? (object.values[0] = 'Yes') : null;
         object.values[0] === 'false' ? (object.values[0] = 'No') : null;
         object.values[0] === true ? (object.values[0] = 'Yes') : null;
         object.values[0] === false ? (object.values[0] = 'No') : null;
         return (
-          <div className="data-holder">
+          <div key={index} className="data-holder">
             <p className="text-small">{object.title}: </p>
             <p>{object.values[0]}</p>
           </div>
         );
       }
     });
-    processValuesSen = processValues.sensory.map(object => {
+    processValuesSen = processValues.sensory.map((object, index) => {
       if (object.values[0] !== null && object.dbName !== 'created_at') {
         return (
-          <div className="data-holder">
+          <div key={index} className="data-holder">
             <p className="text-small">{object.title}: </p>
             <p>{object.values[0]}</p>
           </div>
         );
       }
     });
-    processValuesSoc = processValues.social.map(object => {
+    processValuesSoc = processValues.social.map((object, index) => {
       if (object.values[0] !== null && object.dbName !== 'created_at') {
         object.values[0] === true ? (object.values[0] = 'Yes') : null;
         object.values[0] === false ? (object.values[0] = 'No') : null;
         return (
-          <div className="data-holder">
+          <div key={index} className="data-holder">
             <p className="text-small">{object.title}: </p>
             <p>{object.values[0]}</p>
           </div>
         );
       }
     });
-    treatmentPlan = treatmentPlan.map(object => {
+    treatmentPlan = treatmentPlan.map((object, index) => {
       if (object.value !== null && object.dbName !== 'created_at') {
         return (
-          <div className="treatment-plan-text">
+          <div key={index} className="treatment-plan-text">
             <p className="text-small-2">{object.title}: </p>
             <p>{object.value}</p>
           </div>
         );
       }
     });
-    therapyGoal = therapyGoal.map(object => {
+    therapyGoal = therapyGoal.map((object, index) => {
       if (
         object.value !== null &&
         object.dbName !== 'created_at' &&
         object.dbName.split('_')[object.dbName.split('_').length - 1] !== 'goal'
       ) {
         return (
-          <div className="data-holder">
+          <div key={index} className="data-holder">
             <p className="text-small text-small-3">{object.title}: </p>
             <p>{object.value}</p>
           </div>
@@ -189,7 +189,7 @@ export const ViewSession = props => {
         object.dbName.split('_')[object.dbName.split('_').length - 1] === 'goal'
       ) {
         return (
-          <div className="data-holder-wide">
+          <div key={index} className="data-holder-wide">
             <p className="text-small-wide">{object.title}: </p>
             <p>{object.value}</p>
           </div>
