@@ -17,7 +17,14 @@ describe('ConcernHeader tests', () => {
 
   it('Should match the snapshot', () => {
     expect(renderedConcernHeader).toMatchSnapshot();
-  })
+  });
 });
 
-describe('mapStateToProps tests', () => {});
+describe('mapStateToProps tests', () => {
+  it('Should pull selectedProcess from store', () => {
+    const mockStore = { mockConcern };
+    const result = mapStateToProps(mockStore);
+
+    expect(result.selectedConcern).toEqual(mockStore.selectedConcern);
+  });
+});
