@@ -8,7 +8,7 @@ import Range from 'react-range-progress';
 import * as actions from '../../actions';
 import './TherapyGoals.css';
 
-class TherapyGoals extends Component {
+export class TherapyGoals extends Component {
   constructor(props) {
     super(props);
 
@@ -288,11 +288,11 @@ class TherapyGoals extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   selectedTherapyGoal: store.selectedTherapyGoal
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getTherapyGoal: (id, goalObj) => {
     dispatch(actions.getTherapyGoal(id, goalObj));
   }
