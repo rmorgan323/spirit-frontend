@@ -1,3 +1,5 @@
+/*eslint-disable max-len*/
+
 import React from 'react';
 import { ConcernRow, mapDispatchToProps } from './ConcernRow';
 import { shallow } from 'enzyme';
@@ -33,16 +35,20 @@ describe('ConcernRow tests', () => {
     expect(renderedConcernRow.state('hover')).toEqual(false);
   });
 
-  it('determineDomainClass should return a string of "domains" if domain value is false', () => {
+  it('determineDomainClass should return "domains" if domain value is false', () => {
     expect(renderedConcernRow.instance().determineDomainClass(false, false)).toEqual('domains');
   });
 
-  it('determineDomainClass should return a string of "domains domains-true" if domain value is true', () => {
-    expect(renderedConcernRow.instance().determineDomainClass(true, false)).toEqual('domains domains-true');
+  it('determineDomainClass should return "domains domains-true" if domain value is true', () => {
+    expect(renderedConcernRow.instance()
+      .determineDomainClass(true, false))
+      .toEqual('domains domains-true');
   });
 
-  it('determineDomainClass should return a string of "domains domains-true domains-hover" if domains and hover values are true', () => {
-    expect(renderedConcernRow.instance().determineDomainClass(true, true)).toEqual('domains domains-true domains-hover');
+  it('determineDomainClass should return "domains domains-true domains-hover" if domains and hover values are true', () => {
+    expect(renderedConcernRow.instance()
+      .determineDomainClass(true, true))
+      .toEqual('domains domains-true domains-hover');
   });
 });
 

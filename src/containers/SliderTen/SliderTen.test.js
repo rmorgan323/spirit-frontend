@@ -1,3 +1,5 @@
+/*eslint-disable max-len*/
+
 import React from 'react';
 import { SliderTen, mapStateToProps, mapDispatchToProps } from './SliderTen';
 import { shallow } from 'enzyme';
@@ -7,19 +9,19 @@ import {
   mockSliderTitle,
   mockDatabaseName
 } from '../../data/mockData/mockCategorySlidersData';
-import onClickOutside from 'react-onclickoutside';
+// import onClickOutside from 'react-onclickoutside';
 
 describe('SliderTen tests', () => {
   it.skip('should match the snapshot', () => {
     const renderedApp = shallow(
       <onClickOutide>
-      <SliderTen
-        selectedProcess={mockProcess}
-        storedThreadConnections={mockStoredThreadConnections}
-        sliderTitle={mockSliderTitle}
-        databaseName={mockDatabaseName}
-        reminderAsterisk={'*'}
-      />
+        <SliderTen
+          selectedProcess={mockProcess}
+          storedThreadConnections={mockStoredThreadConnections}
+          sliderTitle={mockSliderTitle}
+          databaseName={mockDatabaseName}
+          reminderAsterisk={'*'}
+        />
       </onClickOutide>
     );
 
@@ -37,7 +39,6 @@ describe('SliderTen tests', () => {
     );
     const expectedFair = 'a';
     const expectedValue = '4';
-    console.log(renderedApp.state)
 
     expect(renderedApp.state('fair')).toEqual(expectedFair);
     expect(renderedApp.state('value')).toEqual(expectedValue);

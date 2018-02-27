@@ -24,7 +24,7 @@ const CategorySliders = ({
   let displayTitle;
 
   if (title) {
-    displayTitle = <h4 className="category-title">{title}</h4>
+    displayTitle = <h4 className="category-title">{title}</h4>;
   }
 
   return (
