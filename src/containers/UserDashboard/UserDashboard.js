@@ -15,7 +15,8 @@ export class UserDashboard extends Component {
     this.state = {
       firstInitial: '',
       lastInitial: '',
-      error: ''
+      error: '',
+      success: ''
     };
   }
 
@@ -43,7 +44,7 @@ export class UserDashboard extends Component {
 
     success = 'Patient successfully added!';
     error = '';
-    this.setState({ error, success });
+    this.setState({ firstInitial: '', lastInitial: '', error, success });
 
     savePatient(firstInitial, lastInitial, user.id, user.clinic_abbreviation);
   };
