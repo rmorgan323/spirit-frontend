@@ -60,34 +60,32 @@ export class Create extends Component {
   displayClinic = () => {
     const { user } = this.props;
 
-    if (Object.keys(user).length) {
-      return (
-        <div>
-          <h2 className="current-clinic-header">Your Current Clinic</h2>
-          <h4>
-            <span className="clinic-span">You are a member of: </span>
-            {user.clinic}
-          </h4>
-          <h4>
-            <span className="clinic-span">Clinic Abbreviation: </span>
-            {user.clinic_abbreviation}
-          </h4>
-          <h4>
-            <span className="clinic-span">Clinic Passcode: </span>
-            {user.clinic_passcode}
-          </h4>
-        </div>
-      );
-    }
+    return (
+      <div>
+        <h2 className="current-clinic-header">Your Current Clinic</h2>
+        <h4>
+          <span className="clinic-span">You are a member of: </span>
+          {user.clinic}
+        </h4>
+        <h4>
+          <span className="clinic-span">Clinic Abbreviation: </span>
+          {user.clinic_abbreviation}
+        </h4>
+        <h4>
+          <span className="clinic-span">Clinic Passcode: </span>
+          {user.clinic_passcode}
+        </h4>
+      </div>
+    );
   };
 
   render() {
     const { clinicName, clinicAbbreviation, error, success } = this.state;
     const { user } = this.props;
-
+    console.log(user.clinic);
     return (
       <div className="Create">
-        {this.displayClinic()}
+        {user.clinic && this.displayClinic()}
 
         <form className="new-clinic-form">
           <h2>Add a New Clinic</h2>
