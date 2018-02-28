@@ -3,15 +3,19 @@
  .UserDashboard {
   @include primary-content;
 
-  h2, h4 {
+  h2, h3, h5 {
     text-align: center;
   }
 
-  .dividing-line {
+  .dividing-line, .small-dividing-line {
     width: 675px;
     height: 2px;
     margin: auto;
     background: $grey5;
+  }
+
+  .small-dividing-line {
+    width: 20px;
   }
 
   .input-holder {
@@ -78,19 +82,20 @@
     color: $green4;
   }
 
-  .link-holder a {
-    text-decoration: none;
-    background-color: $green4;
-    height: 40px;
+  .clinic-button {
     display: flex;
     align-items: center;
-    color: #fff;
     justify-content: center;
     width: 200px;
     margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: $green4;
+    color: #fff;
+    text-decoration: none;
   }
 
-  .link-holder a:hover {
+  .clinic-button:hover {
     background-color: $green5;
   }
  }

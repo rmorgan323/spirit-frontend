@@ -42,13 +42,15 @@ p {
 .UserDashboard {
   width: 1152px;
   margin: 20px auto; }
-  .UserDashboard h2, .UserDashboard h4 {
+  .UserDashboard h2, .UserDashboard h3, .UserDashboard h5 {
     text-align: center; }
-  .UserDashboard .dividing-line {
+  .UserDashboard .dividing-line, .UserDashboard .small-dividing-line {
     width: 675px;
     height: 2px;
     margin: auto;
     background: #6d6e71; }
+  .UserDashboard .small-dividing-line {
+    width: 20px; }
   .UserDashboard .input-holder {
     display: flex;
     justify-content: space-between;
@@ -97,15 +99,16 @@ p {
     color: #C00E0E; }
   .UserDashboard .success-message {
     color: #5cba47; }
-  .UserDashboard .link-holder a {
-    text-decoration: none;
-    background-color: #5cba47;
-    height: 40px;
+  .UserDashboard .clinic-button {
     display: flex;
     align-items: center;
-    color: #fff;
     justify-content: center;
     width: 200px;
-    margin: auto; }
-  .UserDashboard .link-holder a:hover {
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #5cba47;
+    color: #fff;
+    text-decoration: none; }
+  .UserDashboard .clinic-button:hover {
     background-color: #468c41; }

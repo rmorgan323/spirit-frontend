@@ -53,13 +53,20 @@ export class UserDashboard extends Component {
   render() {
     const { firstInitial, lastInitial, error, success } = this.state;
     const { user, patientList } = this.props;
-    console.log(patientList);
 
     return (
       <div className="UserDashboard">
-        <h2>New Patients</h2>
+        <h2>{user.name}'s Dashboard</h2>
+
+        <div >
+          <Link className="clinic-button" to={`/spirit/users/${user.id}/create`}>SEE CLINIC INFO</Link>
+        </div>
+
         <div className="dividing-line" />
-        <h4>Add NEW patient with 2 patient initials</h4>
+
+        <h3>New Patients</h3>
+        <div className="small-dividing-line" />
+        <h5>Add NEW patient with 2 patient initials</h5>
 
         <div className="input-holder">
           <input
@@ -97,15 +104,11 @@ export class UserDashboard extends Component {
 
         {patientList.length && (
           <div>
-            <h2>Current Patients</h2>
-            <div className="dividing-line" />
+            <h3>Current Patients</h3>
+            <div className="small-dividing-line" />
             <PatientList />
           </div>
         )}
-
-        <div className="link-holder">
-          <Link to={`/spirit/users/${user.id}/create`}>SEE CLINIC INFO</Link>
-        </div>
       </div>
     );
   }
