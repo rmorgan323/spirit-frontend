@@ -11,18 +11,21 @@ import { mockPatient } from '../../data/mockData/mockPatient';
 describe('UserDashboard tests', () => {
   let savePatient;
   let user;
+  let patientList;
   let wipeStoreFromUserDashboard;
   let renderedUserDashboard;
 
   beforeEach(() => {
     savePatient = jest.fn();
     user = mockUserData;
+    patientList = [mockPatient];
     wipeStoreFromUserDashboard = jest.fn();
 
     renderedUserDashboard = shallow(
       <UserDashboard
         savePatient={savePatient}
         user={user}
+        patientList={patientList}
         wipeStoreFromUserDashboard={wipeStoreFromUserDashboard}
       />
     );
