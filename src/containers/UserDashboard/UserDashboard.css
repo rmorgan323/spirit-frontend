@@ -42,8 +42,13 @@ p {
 .UserDashboard {
   width: 1152px;
   margin: 20px auto; }
-  .UserDashboard h4 {
+  .UserDashboard h2, .UserDashboard h4 {
     text-align: center; }
+  .UserDashboard .dividing-line {
+    width: 675px;
+    height: 2px;
+    margin: auto;
+    background: #6d6e71; }
   .UserDashboard .input-holder {
     display: flex;
     justify-content: space-between;

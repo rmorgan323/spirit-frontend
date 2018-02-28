@@ -56,6 +56,8 @@ export class UserDashboard extends Component {
 
     return (
       <div className="UserDashboard">
+        <h2>New Patients</h2>
+        <div className="dividing-line"></div>
         <h4>Add NEW patient with 2 patient initials</h4>
 
         <div className="input-holder">
@@ -92,6 +94,8 @@ export class UserDashboard extends Component {
           {userDashboardCopy.patientDirections2}
         </div>
 
+        <h2>Current Patients</h2>
+        <div className="dividing-line"></div>
         <PatientList />
 
         <div className="link-holder">
