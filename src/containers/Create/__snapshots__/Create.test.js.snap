@@ -35,11 +35,11 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div>
-          <h2
+          <h3
             className="current-clinic-header"
           >
             Your Current Clinic
-          </h2>
+          </h3>
           <h4>
             <span
               className="clinic-span"
@@ -68,9 +68,9 @@ ShallowWrapper {
         <form
           className="new-clinic-form"
         >
-          <h2>
+          <h3>
             Add a New Clinic
-          </h2>
+          </h3>
           <div
             className="add-clinic-directions"
           >
@@ -126,11 +126,11 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <h2
+            <h3
               className="current-clinic-header"
             >
               Your Current Clinic
-            </h2>,
+            </h3>,
             <h4>
               <span
                 className="clinic-span"
@@ -169,7 +169,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "Your Current Clinic",
-            "type": "h2",
+            "type": "h3",
           },
           Object {
             "instance": null,
@@ -276,9 +276,9 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <h2>
+            <h3>
               Add a New Clinic
-            </h2>,
+            </h3>,
             <div
               className="add-clinic-directions"
             >
@@ -326,7 +326,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "Add a New Clinic",
-            "type": "h2",
+            "type": "h3",
           },
           Object {
             "instance": null,
@@ -429,11 +429,11 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div>
-            <h2
+            <h3
               className="current-clinic-header"
             >
               Your Current Clinic
-            </h2>
+            </h3>
             <h4>
               <span
                 className="clinic-span"
@@ -462,9 +462,9 @@ ShallowWrapper {
           <form
             className="new-clinic-form"
           >
-            <h2>
+            <h3>
               Add a New Clinic
-            </h2>
+            </h3>
             <div
               className="add-clinic-directions"
             >
@@ -520,11 +520,11 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h2
+              <h3
                 className="current-clinic-header"
               >
                 Your Current Clinic
-              </h2>,
+              </h3>,
               <h4>
                 <span
                   className="clinic-span"
@@ -563,7 +563,7 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Your Current Clinic",
-              "type": "h2",
+              "type": "h3",
             },
             Object {
               "instance": null,
@@ -670,9 +670,9 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h2>
+              <h3>
                 Add a New Clinic
-              </h2>,
+              </h3>,
               <div
                 className="add-clinic-directions"
               >
@@ -720,7 +720,7 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Add a New Clinic",
-              "type": "h2",
+              "type": "h3",
             },
             Object {
               "instance": null,
