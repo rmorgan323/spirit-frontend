@@ -40,9 +40,26 @@ p {
 
 /***  MIXINS  ***/
 .UserDashboard {
-  width: 1152px;
-  margin: 20px auto; }
-  .UserDashboard h2, .UserDashboard h3, .UserDashboard h5 {
+  margin: 0 auto; }
+  .UserDashboard .user-dashboard-header {
+    display: flex;
+    background-color: #5E378C;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; }
+  .UserDashboard .user-dashboard-content {
+    width: 1152px;
+    margin: 20px auto;
+    width: 480px; }
+  .UserDashboard h2 {
+    text-align: left;
+    margin: 3px 0 0;
+    color: #EAE5F0;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 24px; }
+  .UserDashboard h3 {
+    margin-top: 30px; }
+  .UserDashboard h5 {
     text-align: center; }
   .UserDashboard .dividing-line, .UserDashboard .small-dividing-line {
     width: 675px;
@@ -85,10 +102,7 @@ p {
     font-family: "Lato", sans-serif;
     font-size: 16px;
     display: flex;
-    max-width: 550px;
-    margin: 0 auto;
-    padding: 10px;
-    text-indent: 20px; }
+    margin: 20px auto; }
   .UserDashboard .error-message, .UserDashboard .success-message {
     font-family: "Josefin Sans", sans-serif;
     font-size: 14px;
@@ -103,12 +117,11 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
     margin: auto;
-    margin-bottom: 10px;
-    padding: 5px;
-    background-color: #5cba47;
     color: #fff;
-    text-decoration: none; }
+    text-decoration: none;
+    transition: all .3s ease-in-out; }
   .UserDashboard .clinic-button:hover {
-    background-color: #468c41; }
+    color: #BFAFD0; }
+  .UserDashboard .current-patients {
+    margin: 67px 0 -10px; }

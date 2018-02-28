@@ -69,7 +69,7 @@ export class Join extends Component {
 
     return (
       <div className="Join">
-        <h2>Join a Clinic</h2>
+        <h3>Join a Clinic</h3>
 
         <div className="join-clinic-directions">
           {joinClinicCopy.directions1}

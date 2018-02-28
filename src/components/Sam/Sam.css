@@ -88,3 +88,8 @@ p {
 .Sam .session-dots-6 {
   top: 129px;
   left: 679px; }
+
+.Sam .fair-image-holder {
+  width: 525px;
+  display: block;
+  margin: 0 auto 50px; }
