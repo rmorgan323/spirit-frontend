@@ -1,9 +1,33 @@
 @import '../../variables.scss';
 
  .UserDashboard {
-  @include primary-content;
+  margin: 0 auto;
 
-  h2, h3, h5 {
+  .user-dashboard-header {
+    display: flex;
+    background-color: $purple6;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .user-dashboard-content {
+    @include primary-content;
+    width: 480px
+  }
+
+  h2 {
+    text-align: left;
+    margin: 3px 0 0;
+    color: $purple1;
+    @include match-h3;
+  }
+
+  h3 {
+    margin-top: 30px;
+  }
+
+  h5 {
     text-align: center;
   }
 
@@ -61,10 +85,7 @@
   .patient-name-directions {
     @include match-p;
     display: flex;
-    max-width: 550px;
-    margin: 0 auto;
-    padding: 10px;
-    text-indent: 20px;
+    margin: 20px auto;
   }
 
   .error-message, .success-message {
@@ -86,16 +107,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
     margin: auto;
-    margin-bottom: 10px;
-    padding: 5px;
-    background-color: $green4;
     color: #fff;
     text-decoration: none;
+    @include std-transition;
   }
 
   .clinic-button:hover {
-    background-color: $green5;
+    color: $purple3;
+  }
+
+  .current-patients {
+    margin: 67px 0 -10px;
   }
  }
