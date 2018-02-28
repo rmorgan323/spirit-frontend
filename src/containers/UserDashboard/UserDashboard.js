@@ -52,12 +52,13 @@ export class UserDashboard extends Component {
 
   render() {
     const { firstInitial, lastInitial, error, success } = this.state;
-    const { user } = this.props;
+    const { user, patientList } = this.props;
+    console.log(patientList);
 
     return (
       <div className="UserDashboard">
         <h2>New Patients</h2>
-        <div className="dividing-line"></div>
+        <div className="dividing-line" />
         <h4>Add NEW patient with 2 patient initials</h4>
 
         <div className="input-holder">
@@ -94,9 +95,13 @@ export class UserDashboard extends Component {
           {userDashboardCopy.patientDirections2}
         </div>
 
-        <h2>Current Patients</h2>
-        <div className="dividing-line"></div>
-        <PatientList />
+        {patientList.length && (
+          <div>
+            <h2>Current Patients</h2>
+            <div className="dividing-line" />
+            <PatientList />
+          </div>
+        )}
 
         <div className="link-holder">
           <Link to={`/spirit/users/${user.id}/create`}>SEE CLINIC INFO</Link>
@@ -107,7 +112,8 @@ export class UserDashboard extends Component {
 }
 
 export const mapStateToProps = store => ({
-  user: store.user
+  user: store.user,
+  patientList: store.patientList
 });
 
 export const mapDispatchToProps = dispatch => ({
