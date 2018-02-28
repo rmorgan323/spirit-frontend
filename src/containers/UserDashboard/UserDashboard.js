@@ -130,5 +130,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(UserDashboard);
 UserDashboard.propTypes = {
   savePatient: PropTypes.func,
   user: PropTypes.object,
+  patientList: PropTypes.array,
   wipeStoreFromUserDashboard: PropTypes.func
 };
