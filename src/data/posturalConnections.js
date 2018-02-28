@@ -1,8 +1,14 @@
 /*eslint-disable camelcase*/
 
 const posturalConnections = {
-  pos_1_inner: ['modulation', 'sensory', 'pos_h_intero', 'mod_h_intero', 'sen_h_intero'],
-  pos_1_outer: [],
+  pos_1_inner: [
+    'modulation',
+    'sensory',
+    'pos_h_intero',
+    'mod_h_intero',
+    'sen_h_intero'
+  ],
+  pos_1_outer: ['pos_h_proprioception', 'pos_h_vestibular'],
   pos_2_mobility: [],
   pos_2_muscle: [],
   pos_2_phasic: [],
