@@ -58,8 +58,13 @@ export class UserDashboard extends Component {
       <div className="UserDashboard">
         <h2>{user.name}'s Dashboard</h2>
 
-        <div >
-          <Link className="clinic-button" to={`/spirit/users/${user.id}/create`}>SEE CLINIC INFO</Link>
+        <div>
+          <Link
+            className="clinic-button"
+            to={`/spirit/users/${user.id}/create`}
+          >
+            SEE CLINIC INFO
+          </Link>
         </div>
 
         <div className="dividing-line" />

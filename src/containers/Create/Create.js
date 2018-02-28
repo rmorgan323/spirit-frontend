@@ -83,7 +83,7 @@ export class Create extends Component {
   render() {
     const { clinicName, clinicAbbreviation, error, success } = this.state;
     const { user } = this.props;
-    console.log(user.clinic);
+
     return (
       <div className="Create">
         {user.clinic && this.displayClinic()}
