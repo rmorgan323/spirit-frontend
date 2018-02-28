@@ -63,7 +63,7 @@ export class Create extends Component {
 
     return (
       <div>
-        <h2 className="current-clinic-header">Your Current Clinic</h2>
+        <h3 className="current-clinic-header">Your Current Clinic</h3>
         <h4>
           <span className="clinic-span">You are a member of: </span>
           {user.clinic}
@@ -89,7 +89,7 @@ export class Create extends Component {
         {user.clinic && this.displayClinic()}
 
         <form className="new-clinic-form">
-          <h2>Add a New Clinic</h2>
+          <h3>Add a New Clinic</h3>
           <div className="add-clinic-directions">
             {createClinicCopy.addDirections1}
           </div>

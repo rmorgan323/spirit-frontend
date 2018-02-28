@@ -56,64 +56,65 @@ export class UserDashboard extends Component {
 
     return (
       <div className="UserDashboard">
-        <h2>{user.name}'s Dashboard</h2>
+        <div className="user-dashboard-header">
+          <h2>{user.name} - OT Dashboard</h2>
 
-        <div>
-          <Link
-            className="clinic-button"
-            to={`/spirit/users/${user.id}/create`}
-          >
-            SEE CLINIC INFO
-          </Link>
-        </div>
-
-        <div className="dividing-line" />
-
-        <h3>New Patients</h3>
-        <div className="small-dividing-line" />
-        <h5>Add NEW patient with 2 patient initials</h5>
-
-        <div className="input-holder">
-          <input
-            maxLength={1}
-            onChange={event => this.handleChange(event)}
-            value={firstInitial.toUpperCase()}
-            name="firstInitial"
-            placeholder="First Initial"
-          />
-
-          <input
-            maxLength={1}
-            onChange={event => this.handleChange(event)}
-            value={lastInitial.toUpperCase()}
-            name="lastInitial"
-            placeholder="Last Initial"
-          />
-
-          <button onClick={() => this.handleSubmit()} type="submit">
-            SUBMIT
-          </button>
-        </div>
-
-        {error && <span className="error-message">{error}</span>}
-
-        {success && <span className="success-message">{success}</span>}
-
-        <div className="patient-name-directions">
-          {userDashboardCopy.patientDirections1}
-        </div>
-
-        <div className="patient-name-directions">
-          {userDashboardCopy.patientDirections2}
-        </div>
-
-        {patientList.length && (
           <div>
-            <h3>Current Patients</h3>
-            <div className="small-dividing-line" />
-            <PatientList />
+            <Link
+              className="clinic-button"
+              to={`/spirit/users/${user.id}/create`}
+            >
+              {user.clinic ? 'SEE CLINIC INFO' : 'ADD/JOIN A CLINIC'}
+            </Link>
           </div>
-        )}
+        </div>
+
+        <div className="user-dashboard-content">
+
+          <h3>New Patients</h3>
+
+          <div className="input-holder">
+            <input
+              maxLength={1}
+              onChange={event => this.handleChange(event)}
+              value={firstInitial.toUpperCase()}
+              name="firstInitial"
+              placeholder="First Initial"
+            />
+
+            <input
+              maxLength={1}
+              onChange={event => this.handleChange(event)}
+              value={lastInitial.toUpperCase()}
+              name="lastInitial"
+              placeholder="Last Initial"
+            />
+
+            <button onClick={() => this.handleSubmit()} type="submit">
+              SUBMIT
+            </button>
+          </div>
+          <h5>Add NEW patient with 2 patient initials</h5>
+
+          {error && <span className="error-message">{error}</span>}
+
+          {success && <span className="success-message">{success}</span>}
+
+          <div className="patient-name-directions">
+            {userDashboardCopy.patientDirections1}
+          </div>
+
+          <div className="patient-name-directions">
+            {userDashboardCopy.patientDirections2}
+          </div>
+
+          {patientList.length && (
+            <div>
+              <h3 className="current-patients">Current Patients</h3>
+              <PatientList />
+            </div>
+          )}
+        </div>
       </div>
     );
   }
