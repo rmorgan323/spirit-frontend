@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import PatientList from '../PatientList/PatientList';
+import userDashboardCopy from '../../data/copyContent/userDashboardCopy';
 import * as actions from '../../actions';
 import './UserDashboard.css';
 
@@ -15,7 +16,8 @@ export class UserDashboard extends Component {
     this.state = {
       firstInitial: '',
       lastInitial: '',
-      error: ''
+      error: '',
+      success: ''
     };
   }
 
@@ -43,18 +45,33 @@ export class UserDashboard extends Component {
 
     success = 'Patient successfully added!';
     error = '';
-    this.setState({ error, success });
+    this.setState({ firstInitial: '', lastInitial: '', error, success });
 
     savePatient(firstInitial, lastInitial, user.id, user.clinic_abbreviation);
   };
 
   render() {
     const { firstInitial, lastInitial, error, success } = this.state;
-    const { user } = this.props;
+    const { user, patientList } = this.props;
 
     return (
       <div className="UserDashboard">
-        <h4>Add NEW patient with 2 patient initials</h4>
+        <h2>{user.name}'s Dashboard</h2>
+
+        <div>
+          <Link
+            className="clinic-button"
+            to={`/spirit/users/${user.id}/create`}
+          >
+            SEE CLINIC INFO
+          </Link>
+        </div>
+
+        <div className="dividing-line" />
+
+        <h3>New Patients</h3>
+        <div className="small-dividing-line" />
+        <h5>Add NEW patient with 2 patient initials</h5>
 
         <div className="input-holder">
           <input
@@ -83,28 +100,28 @@ export class UserDashboard extends Component {
         {success && <span className="success-message">{success}</span>}
 
         <div className="patient-name-directions">
-          Each patient name will be a combination of your clinic abbreviation,
-          the patient's first and last initial, and a unique number identifier
-          (ie CLI + AB + 10).
+          {userDashboardCopy.patientDirections1}
         </div>
 
         <div className="patient-name-directions">
-          Please keep this abstracted name in your personal patient records for
-          future reference.
+          {userDashboardCopy.patientDirections2}
         </div>
 
-        <PatientList />
-
-        <div className="link-holder">
-          <Link to={`/spirit/users/${user.id}/create`}>SEE CLINIC INFO</Link>
-        </div>
+        {patientList.length && (
+          <div>
+            <h3>Current Patients</h3>
+            <div className="small-dividing-line" />
+            <PatientList />
+          </div>
+        )}
       </div>
     );
   }
 }
 
 export const mapStateToProps = store => ({
-  user: store.user
+  user: store.user,
+  patientList: store.patientList
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -121,5 +138,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(UserDashboard);
 UserDashboard.propTypes = {
   savePatient: PropTypes.func,
   user: PropTypes.object,
+  patientList: PropTypes.array,
   wipeStoreFromUserDashboard: PropTypes.func
 };

@@ -37,17 +37,34 @@
   }
 
   .select-session-button {
-    text-decoration: none;
-    color: $green4;
-    background: none;
-    border: none;
-    cursor: pointer;
     position: relative;
     top: 4px;
+    width: 100px;
+    border: none;
+    background: none;
+    color: $green4;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   .select-session-button:hover {
     color: $green5;
+  }
+
+  .join-link {
+    button {
+      width: 100px;
+      height: 40px;
+      padding: 0 10px;
+      border: none;
+      background-color: $green4;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: $green5;
+    }
   }
 
   .create-session-button {

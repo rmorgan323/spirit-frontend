@@ -49,7 +49,7 @@ ShallowWrapper {
           className="finish-button-holder"
         >
           <p>
-            We recommend looking at session results before writing treatment plans 
+            We recommend reviewing your session results before writing plans and goals
             <span
               className="arrow-right"
             >
@@ -74,12 +74,28 @@ ShallowWrapper {
         >
           Treatment Plans
         </h2>,
+        <div
+          className="dividing-line"
+        />,
+        <h5
+          className="finish-sub-headings"
+        >
+          S.T.E.P.S.I. ©
+        </h5>,
         <TreatmentPlans />,
         <h2
           className="finish-headings"
         >
           Therapy Goals
         </h2>,
+        <div
+          className="dividing-line"
+        />,
+        <h5
+          className="finish-sub-headings"
+        >
+          Modified from the C.O.P.M.
+        </h5>,
         <Connect(TherapyGoals)
           category="modulation_"
           number="1"
@@ -133,7 +149,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <p>
-              We recommend looking at session results before writing treatment plans 
+              We recommend reviewing your session results before writing plans and goals
               <span
                 className="arrow-right"
               >
@@ -163,7 +179,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "We recommend looking at session results before writing treatment plans ",
+                "We recommend reviewing your session results before writing plans and goals",
                 <span
                   className="arrow-right"
                 >
@@ -173,7 +189,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "We recommend looking at session results before writing treatment plans ",
+              "We recommend reviewing your session results before writing plans and goals",
               Object {
                 "instance": null,
                 "key": undefined,
@@ -237,6 +253,29 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "dividing-line",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "S.T.E.P.S.I. ©",
+          "className": "finish-sub-headings",
+        },
+        "ref": null,
+        "rendered": "S.T.E.P.S.I. ©",
+        "type": "h5",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
         "nodeType": "class",
         "props": Object {},
         "ref": null,
@@ -254,6 +293,29 @@ ShallowWrapper {
         "ref": null,
         "rendered": "Therapy Goals",
         "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "dividing-line",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Modified from the C.O.P.M.",
+          "className": "finish-sub-headings",
+        },
+        "ref": null,
+        "rendered": "Modified from the C.O.P.M.",
+        "type": "h5",
       },
       Object {
         "instance": null,
@@ -386,7 +448,7 @@ ShallowWrapper {
             className="finish-button-holder"
           >
             <p>
-              We recommend looking at session results before writing treatment plans 
+              We recommend reviewing your session results before writing plans and goals
               <span
                 className="arrow-right"
               >
@@ -411,12 +473,28 @@ ShallowWrapper {
           >
             Treatment Plans
           </h2>,
+          <div
+            className="dividing-line"
+          />,
+          <h5
+            className="finish-sub-headings"
+          >
+            S.T.E.P.S.I. ©
+          </h5>,
           <TreatmentPlans />,
           <h2
             className="finish-headings"
           >
             Therapy Goals
           </h2>,
+          <div
+            className="dividing-line"
+          />,
+          <h5
+            className="finish-sub-headings"
+          >
+            Modified from the C.O.P.M.
+          </h5>,
           <Connect(TherapyGoals)
             category="modulation_"
             number="1"
@@ -470,7 +548,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <p>
-                We recommend looking at session results before writing treatment plans 
+                We recommend reviewing your session results before writing plans and goals
                 <span
                   className="arrow-right"
                 >
@@ -500,7 +578,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "We recommend looking at session results before writing treatment plans ",
+                  "We recommend reviewing your session results before writing plans and goals",
                   <span
                     className="arrow-right"
                   >
@@ -510,7 +588,7 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
-                "We recommend looking at session results before writing treatment plans ",
+                "We recommend reviewing your session results before writing plans and goals",
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -574,6 +652,29 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "dividing-line",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "S.T.E.P.S.I. ©",
+            "className": "finish-sub-headings",
+          },
+          "ref": null,
+          "rendered": "S.T.E.P.S.I. ©",
+          "type": "h5",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
           "nodeType": "class",
           "props": Object {},
           "ref": null,
@@ -591,6 +692,29 @@ ShallowWrapper {
           "ref": null,
           "rendered": "Therapy Goals",
           "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "dividing-line",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Modified from the C.O.P.M.",
+            "className": "finish-sub-headings",
+          },
+          "ref": null,
+          "rendered": "Modified from the C.O.P.M.",
+          "type": "h5",
         },
         Object {
           "instance": null,

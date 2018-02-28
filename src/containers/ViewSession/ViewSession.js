@@ -9,6 +9,8 @@ import { PropTypes } from 'prop-types';
 import './ViewSession.css';
 
 export const ViewSession = props => {
+  window.scrollTo(0, 0);
+
   const completeSessionNow = () => {
     props.updateSession(props.selectedSession.id, {
       completed: true
