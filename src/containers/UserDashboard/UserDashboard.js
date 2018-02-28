@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import PatientList from '../PatientList/PatientList';
+import userDashboardCopy from '../../data/copyContent/userDashboardCopy';
 import * as actions from '../../actions';
 import './UserDashboard.css';
 
@@ -84,14 +85,11 @@ export class UserDashboard extends Component {
         {success && <span className="success-message">{success}</span>}
 
         <div className="patient-name-directions">
-          Each patient name will be a combination of your clinic abbreviation,
-          the patient's first and last initial, and a unique number identifier
-          (ie CLI + AB + 10).
+          {userDashboardCopy.patientDirections1}
         </div>
 
         <div className="patient-name-directions">
-          Please keep this abstracted name in your personal patient records for
-          future reference.
+          {userDashboardCopy.patientDirections2}
         </div>
 
         <PatientList />
