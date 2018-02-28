@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+import joinClinicCopy from '../../data/copyContent/joinClinicCopy';
 import * as actions from '../../actions';
 import './Join.css';
 
@@ -71,14 +72,11 @@ export class Join extends Component {
         <h2>Join a Clinic</h2>
 
         <div className="join-clinic-directions">
-          To join an existing clinic on SpIRiT©, you must use a clinic's eight
-          digit passcode. If you do not know your clinic's passcode, please
-          contact your SpIRiT© administrator.
+          {joinClinicCopy.directions1}
         </div>
 
         <div className="join-clinic-directions">
-          If your clinic has not been registered, click 'CREATE NEW CLINIC'
-          below to learn how you can add your clinic and start using SpIRiT©.
+          {joinClinicCopy.directions2}
         </div>
 
         <form>

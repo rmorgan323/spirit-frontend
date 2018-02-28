@@ -53,8 +53,14 @@ p {
 .Finish .complete-session-button:hover {
   background-color: #5E378C; }
 
-.Finish .finish-headings {
+.Finish .finish-headings, .Finish .finish-sub-headings {
   text-align: center; }
+
+.Finish .dividing-line {
+  width: 675px;
+  height: 2px;
+  margin: auto;
+  background: #6d6e71; }
 
 .Finish .finish-button-holder {
   position: relative;

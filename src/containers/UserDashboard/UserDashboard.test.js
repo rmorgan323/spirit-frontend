@@ -6,22 +6,26 @@ import {
 } from './UserDashboard';
 import { shallow } from 'enzyme';
 import { mockUserData } from '../../data/mockData/mockUserData';
+import { mockPatient } from '../../data/mockData/mockPatient';
 
 describe('UserDashboard tests', () => {
   let savePatient;
   let user;
+  let patientList;
   let wipeStoreFromUserDashboard;
   let renderedUserDashboard;
 
   beforeEach(() => {
     savePatient = jest.fn();
     user = mockUserData;
+    patientList = [mockPatient];
     wipeStoreFromUserDashboard = jest.fn();
 
     renderedUserDashboard = shallow(
       <UserDashboard
         savePatient={savePatient}
         user={user}
+        patientList={patientList}
         wipeStoreFromUserDashboard={wipeStoreFromUserDashboard}
       />
     );
@@ -91,12 +95,14 @@ describe('UserDashboard tests', () => {
 });
 
 describe('mapStateToProps tests', () => {
-  it('Should pull a user from store', () => {
+  it('Should pull a user and patientList from store', () => {
     const user = mockUserData;
-    const mockStore = { user };
+    const patientList = [mockPatient];
+    const mockStore = { user, patientList };
     const result = mapStateToProps(mockStore);
 
     expect(result.user).toEqual(mockStore.user);
+    expect(result.patientList).toEqual(mockStore.patientList);
   });
 });
 

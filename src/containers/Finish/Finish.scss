@@ -17,8 +17,15 @@
     background-color: $purple6;
   }
 
-  .finish-headings {
+  .finish-headings, .finish-sub-headings {
     text-align: center;
+  }
+
+  .dividing-line {
+    width: 675px;
+    height: 2px;
+    margin: auto;
+    background: $grey5;
   }
 
   .finish-button-holder {

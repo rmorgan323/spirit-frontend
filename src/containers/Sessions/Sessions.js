@@ -78,14 +78,30 @@ export class Sessions extends Component {
             {session.completed ? 'Completed' : 'In Progress'}
           </p>
 
-          <Link to={`/spirit/sessions/${session.id}/sam`}>
-            <button
-              className="select-session-button"
-              onClick={() => this.props.getSession(session)}
+          {!session.completed && (
+            <Link to={`/spirit/sessions/${session.id}/sam`}>
+              <button
+                className="select-session-button"
+                onClick={() => this.props.getSession(session)}
+              >
+                SELECT
+              </button>
+            </Link>
+          )}
+
+          {session.completed && (
+            <Link
+              className="join-link"
+              to={`/spirit/sessions/${session.id}/view`}
             >
-              SELECT
-            </button>
-          </Link>
+              <button
+                className="session-result-button"
+                onClick={() => this.props.getSession(session)}
+              >
+                RESULTS
+              </button>
+            </Link>
+          )}
         </div>
       );
     });

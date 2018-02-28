@@ -40,7 +40,7 @@ p {
 
 /***  MIXINS  ***/
 .Sessions .sessions-main-holder {
-  width: 645px;
+  width: 675px;
   margin: 20px auto; }
 
 .Sessions .session {
@@ -70,16 +70,29 @@ p {
   font-size: 20px; }
 
 .Sessions .select-session-button {
-  text-decoration: none;
-  color: #5cba47;
-  background: none;
-  border: none;
-  cursor: pointer;
   position: relative;
-  top: 4px; }
+  top: 4px;
+  width: 100px;
+  border: none;
+  background: none;
+  color: #5cba47;
+  text-decoration: none;
+  cursor: pointer; }
 
 .Sessions .select-session-button:hover {
   color: #468c41; }
+
+.Sessions .join-link button {
+  width: 100px;
+  height: 40px;
+  padding: 0 10px;
+  border: none;
+  background-color: #5cba47;
+  color: #fff;
+  cursor: pointer; }
+
+.Sessions .join-link button:hover {
+  background-color: #468c41; }
 
 .Sessions .create-session-button {
   width: 300px;
@@ -160,5 +173,5 @@ p {
   background-color: #2e5b2a; }
 
 .Sessions .goals-chart {
-  width: 645px;
+  width: 675px;
   margin: 20px auto; }

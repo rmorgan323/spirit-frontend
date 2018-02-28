@@ -187,14 +187,15 @@ ShallowWrapper {
               Completed
             </p>
             <Link
+              className="join-link"
               replace={false}
-              to="/spirit/sessions/10/sam"
+              to="/spirit/sessions/10/view"
             >
               <button
-                className="select-session-button"
+                className="session-result-button"
                 onClick={[Function]}
               >
-                SELECT
+                RESULTS
               </button>
             </Link>
           </div>
@@ -273,14 +274,15 @@ ShallowWrapper {
                   Completed
                 </p>
                 <Link
+                  className="join-link"
                   replace={false}
-                  to="/spirit/sessions/10/sam"
+                  to="/spirit/sessions/10/view"
                 >
                   <button
-                    className="select-session-button"
+                    className="session-result-button"
                     onClick={[Function]}
                   >
-                    SELECT
+                    RESULTS
                   </button>
                 </Link>
               </div>,
@@ -354,15 +356,17 @@ ShallowWrapper {
                 >
                   Completed
                 </p>,
+                false,
                 <Link
+                  className="join-link"
                   replace={false}
-                  to="/spirit/sessions/10/sam"
+                  to="/spirit/sessions/10/view"
                 >
                   <button
-                    className="select-session-button"
+                    className="session-result-button"
                     onClick={[Function]}
                   >
-                    SELECT
+                    RESULTS
                   </button>
                 </Link>,
               ],
@@ -501,19 +505,21 @@ ShallowWrapper {
                 "rendered": "Completed",
                 "type": "p",
               },
+              false,
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
                   "children": <button
-                    className="select-session-button"
+                    className="session-result-button"
                     onClick={[Function]}
                   >
-                    SELECT
+                    RESULTS
                   </button>,
+                  "className": "join-link",
                   "replace": false,
-                  "to": "/spirit/sessions/10/sam",
+                  "to": "/spirit/sessions/10/view",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -521,12 +527,12 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "SELECT",
-                    "className": "select-session-button",
+                    "children": "RESULTS",
+                    "className": "session-result-button",
                     "onClick": [Function],
                   },
                   "ref": null,
-                  "rendered": "SELECT",
+                  "rendered": "RESULTS",
                   "type": "button",
                 },
                 "type": [Function],
@@ -677,14 +683,15 @@ ShallowWrapper {
                 Completed
               </p>
               <Link
+                className="join-link"
                 replace={false}
-                to="/spirit/sessions/10/sam"
+                to="/spirit/sessions/10/view"
               >
                 <button
-                  className="select-session-button"
+                  className="session-result-button"
                   onClick={[Function]}
                 >
-                  SELECT
+                  RESULTS
                 </button>
               </Link>
             </div>
@@ -763,14 +770,15 @@ ShallowWrapper {
                     Completed
                   </p>
                   <Link
+                    className="join-link"
                     replace={false}
-                    to="/spirit/sessions/10/sam"
+                    to="/spirit/sessions/10/view"
                   >
                     <button
-                      className="select-session-button"
+                      className="session-result-button"
                       onClick={[Function]}
                     >
-                      SELECT
+                      RESULTS
                     </button>
                   </Link>
                 </div>,
@@ -844,15 +852,17 @@ ShallowWrapper {
                   >
                     Completed
                   </p>,
+                  false,
                   <Link
+                    className="join-link"
                     replace={false}
-                    to="/spirit/sessions/10/sam"
+                    to="/spirit/sessions/10/view"
                   >
                     <button
-                      className="select-session-button"
+                      className="session-result-button"
                       onClick={[Function]}
                     >
-                      SELECT
+                      RESULTS
                     </button>
                   </Link>,
                 ],
@@ -991,19 +1001,21 @@ ShallowWrapper {
                   "rendered": "Completed",
                   "type": "p",
                 },
+                false,
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
                     "children": <button
-                      className="select-session-button"
+                      className="session-result-button"
                       onClick={[Function]}
                     >
-                      SELECT
+                      RESULTS
                     </button>,
+                    "className": "join-link",
                     "replace": false,
-                    "to": "/spirit/sessions/10/sam",
+                    "to": "/spirit/sessions/10/view",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1011,12 +1023,12 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "SELECT",
-                      "className": "select-session-button",
+                      "children": "RESULTS",
+                      "className": "session-result-button",
                       "onClick": [Function],
                     },
                     "ref": null,
-                    "rendered": "SELECT",
+                    "rendered": "RESULTS",
                     "type": "button",
                   },
                   "type": [Function],

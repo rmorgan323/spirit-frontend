@@ -1,4 +1,5 @@
 import React from 'react';
+import landingCopy from '../../data/copyContent/landingCopy';
 import './Spirit.css';
 
 const Spirit = () => {
@@ -10,8 +11,7 @@ const Spirit = () => {
         alt="Spirit-Wordmark-with-Tagline"
       />
       <h4 className="homepage-brief-descriptor">
-        A clinical reasoning model for ensuring best practice in pediatric
-        occupational therapy.
+        {landingCopy.descriptor}
       </h4>
     </div>
   );

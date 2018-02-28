@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
 import generator from 'generate-password';
+import createClinicCopy from '../../data/copyContent/createClinicCopy';
 import './Create.css';
 
 export class Create extends Component {
@@ -60,25 +61,23 @@ export class Create extends Component {
   displayClinic = () => {
     const { user } = this.props;
 
-    if (Object.keys(user).length) {
-      return (
-        <div>
-          <h2 className="current-clinic-header">Your Current Clinic</h2>
-          <h4>
-            <span className="clinic-span">You are a member of: </span>
-            {user.clinic}
-          </h4>
-          <h4>
-            <span className="clinic-span">Clinic Abbreviation: </span>
-            {user.clinic_abbreviation}
-          </h4>
-          <h4>
-            <span className="clinic-span">Clinic Passcode: </span>
-            {user.clinic_passcode}
-          </h4>
-        </div>
-      );
-    }
+    return (
+      <div>
+        <h2 className="current-clinic-header">Your Current Clinic</h2>
+        <h4>
+          <span className="clinic-span">You are a member of: </span>
+          {user.clinic}
+        </h4>
+        <h4>
+          <span className="clinic-span">Clinic Abbreviation: </span>
+          {user.clinic_abbreviation}
+        </h4>
+        <h4>
+          <span className="clinic-span">Clinic Passcode: </span>
+          {user.clinic_passcode}
+        </h4>
+      </div>
+    );
   };
 
   render() {
@@ -87,18 +86,15 @@ export class Create extends Component {
 
     return (
       <div className="Create">
-        {this.displayClinic()}
+        {user.clinic && this.displayClinic()}
 
         <form className="new-clinic-form">
           <h2>Add a New Clinic</h2>
           <div className="add-clinic-directions">
-            To add a new clinic, you must provide a clinic name and three letter
-            abbreviation. This abbreviation will be used to abstract your
-            patient's real name when adding them to SpIRiT©.
+            {createClinicCopy.addDirections1}
           </div>
           <div className="add-clinic-directions">
-            After submission, you will be provided with a passcode. This
-            passcode will be used by other members in order to join your clinic.
+            {createClinicCopy.addDirections2}
           </div>
           <input
             className="input-clinic-name"

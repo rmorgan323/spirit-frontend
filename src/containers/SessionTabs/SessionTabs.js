@@ -33,7 +33,12 @@ export const SessionTabs = props => {
   ];
 
   const getClass = (domain, route, threadConnection) => {
+    const { selectedSession } = props;
     const { pathname } = props.location;
+
+    if (selectedSession.completed) {
+      return 'session-tabs';
+    }
 
     if (threadConnection && pathname === route) {
       updateThreadDomain(domain);
