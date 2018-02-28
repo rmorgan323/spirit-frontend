@@ -14,6 +14,8 @@ import { mockProcess } from '../../data/mockData/mockProcess';
 import { mockTherapyGoal } from '../../data/mockData/mockTherapyGoal';
 import { mockTreatmentPlan } from '../../data/mockData/mockTreatmentPlan';
 
+window.scrollTo = jest.fn();
+
 describe('ViewSession', () => {
   it('Should match snapshot', () => {
     const renderedApp = shallow(
