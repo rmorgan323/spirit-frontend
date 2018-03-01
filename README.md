@@ -16,13 +16,13 @@ Management of state and data was also crucial, which is where keen attention tow
 
 ## Screenshots
 
-#### User Dashboard
-
-![SpIRiT](https://i.imgur.com/kvzdMPc.png)
-
 #### Clinic Info Page
 
 ![SpIRiT](https://i.imgur.com/1WWRRsr.png)
+
+#### User Dashboard
+
+![SpIRiT](https://i.imgur.com/kvzdMPc.png)
 
 #### Patient Dashboard
 
