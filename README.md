@@ -13,3 +13,45 @@ Hugh Hartigan and Rob Morgan saw this as an opportunity to take this incredibly 
 Our area of focus was to make this app as accessible as possible, while still maintaining the integrity of the process itself. Our client's, Tracy Stackhouse and Angela Graf, put an immense amount of time and effort into developing SpIRiT© in order to help children and we wanted to make sure that dedication wasn't lost in our application. Prior to and during development, we met with them several times to make sure each and every feature they wanted was accounted for and implemented accordingly.
 
 Management of state and data was also crucial, which is where keen attention toward the structure of our Redux store and Node.js schemas came into play. With over 150+ pieces of data to potentially account for in a single session, a consistent and predictable flow of data was incredibly important. We spent a large portion of our time making sure that every possible piece of data was trackable and had its place in our Redux store and back-end database.
+
+## Screenshots
+
+#### User Dashboard
+
+![SpIRiT](https://i.imgur.com/kvzdMPc.png)
+
+#### Clinic Info Page
+
+![SpIRiT](https://i.imgur.com/1WWRRsr.png)
+
+#### Patient Dashboard
+
+![SpIRiT](https://i.imgur.com/QDEr7vU.png)
+
+#### Therapy Sessions Page
+
+![SpIRiT](https://i.imgur.com/LqejYsk.png)
+
+#### Therapy Session SAM Page with Conditional Highlighting
+
+![SpIRiT](https://i.imgur.com/0bz9kzS.png)
+
+#### Therapy Session Posturl Page with Conditional Highlighting
+
+![SpIRiT](https://i.imgur.com/GQOfpTp.png)
+
+#### Therapy Session Posturl Page with Ratings
+
+![SpIRiT](https://i.imgur.com/cki98S0.png)
+
+#### Treatment Plans Page
+
+![SpIRiT](https://i.imgur.com/khlG9CW.png)
+
+#### Therapy Goals
+
+![SpIRiT](https://i.imgur.com/7RYuTBH.png)
+
+#### Session Results / Printout
+
+![SpIRiT](https://i.imgur.com/B4eq3L7.png)
