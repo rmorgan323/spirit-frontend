@@ -1,5 +1,6 @@
 /*eslint-disable max-len*/
 /*eslint-disable camelcase*/
+import authLogin from '../helpers/authLogin'
 
 import loadUser from '../helpers/loadUser/loadUser';
 import loadDefinitions from '../helpers/loadDefinitions/loadDefinitions';
@@ -42,7 +43,7 @@ export const getUser = () => async dispatch => {
       dispatch(patientToStore(patient));
     }
   } catch (error) {
-    window.location = 'https://spirit.e1.loginrocket.com/';
+    window.location = authLogin;
   }
 };
 

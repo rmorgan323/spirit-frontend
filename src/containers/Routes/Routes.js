@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
 
+import authLogin from '../../helpers/authLogin'
 import PatientDashboard from '../PatientDashboard/PatientDashboard';
 import Sensory from '../../components/Sensory/Sensory';
 import Modulation from '../../components/Modulation/Modulation';
@@ -43,7 +44,7 @@ export class Routes extends Component {
       return;
     } else {
       clearLocalStorage();
-      window.location = 'https://spirit.e1.loginrocket.com/';
+      window.location = authLogin;
       return;
     }
   };
