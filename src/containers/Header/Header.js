@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import authLogin from '../../helpers/authLogin'
 import { PropTypes } from 'prop-types';
 import './Header.css';
 
@@ -28,7 +29,7 @@ export const Header = props => {
 
       {!user.name && (
         <div>
-          <a href="https://spirit.e1.loginrocket.com/login">
+          <a href={authLogin}>
             <h5 className="login-link">LOGIN</h5>
           </a>
         </div>
