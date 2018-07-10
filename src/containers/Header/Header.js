@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import authLogin from '../../helpers/authLogin';
@@ -19,22 +19,22 @@ export const Header = props => {
       </Link>
 
       {name && (
-        <div>
+        <Fragment>
           <Link to={`/spirit/users/${id}`}>
             <h5 className="header-welcome-user">Welcome, {name}!</h5>
           </Link>
           <h5 className="header-welcome-clinic">
             {clinic ? `Clinic: ${clinic}` : `Join a clinic below!`}
           </h5>
-        </div>
+        </Fragment>
       )}
 
       {!name && (
-        <div>
+        <Fragment>
           <a href={authLogin}>
             <h5 className="login-link">LOGIN</h5>
           </a>
-        </div>
+        </Fragment>
       )}
     </div>
   );
