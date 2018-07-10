@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import authLogin from '../../helpers/authLogin'
+import authLogin from '../../helpers/authLogin';
 import { PropTypes } from 'prop-types';
 import './Header.css';
 
 export const Header = props => {
-  const { user } = props;
+  const { name, id, clinic } = props.user;
 
   return (
     <div className="Header">
@@ -18,16 +18,18 @@ export const Header = props => {
         />
       </Link>
 
-      {user.name && (
+      {name && (
         <div>
-          <Link to={`/spirit/users/${user.id}`}>
-            <h5 className="header-welcome-user">Welcome, {user.name}!</h5>
+          <Link to={`/spirit/users/${id}`}>
+            <h5 className="header-welcome-user">Welcome, {name}!</h5>
           </Link>
-          <h5 className="header-welcome-clinic">{user.clinic ? `Clinic: ${user.clinic}` : `Join a clinic below!`}</h5>
+          <h5 className="header-welcome-clinic">
+            {clinic ? `Clinic: ${clinic}` : `Join a clinic below!`}
+          </h5>
         </div>
       )}
 
-      {!user.name && (
+      {!name && (
         <div>
           <a href={authLogin}>
             <h5 className="login-link">LOGIN</h5>
@@ -42,7 +44,10 @@ export const mapStateToProps = store => ({
   user: store.user
 });
 
-export default connect(mapStateToProps, null)(Header);
+export default connect(
+  mapStateToProps,
+  null
+)(Header);
 
 Header.propTypes = {
   user: PropTypes.object
