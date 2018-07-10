@@ -17,7 +17,8 @@ export class UserDashboard extends Component {
       firstInitial: '',
       lastInitial: '',
       error: '',
-      success: ''
+      success: '',
+      showInstructions: true
     };
   }
 
@@ -50,8 +51,19 @@ export class UserDashboard extends Component {
     savePatient(firstInitial, lastInitial, user.id, user.clinic_abbreviation);
   };
 
+  toggleInstructions = () =>
+    this.setState(prevState => ({
+      showInstructions: !prevState.showInstructions
+    }));
+
   render() {
-    const { firstInitial, lastInitial, error, success } = this.state;
+    const {
+      firstInitial,
+      lastInitial,
+      error,
+      success,
+      showInstructions
+    } = this.state;
     const { user, patientList } = this.props;
 
     return (
@@ -70,7 +82,6 @@ export class UserDashboard extends Component {
         </div>
 
         <div className="user-dashboard-content">
-
           <h3>New Patients</h3>
 
           <div className="input-holder">
@@ -100,13 +111,23 @@ export class UserDashboard extends Component {
 
           {success && <span className="success-message">{success}</span>}
 
-          <div className="patient-name-directions">
-            {userDashboardCopy.patientDirections1}
+          <div
+            className={`instructions-wrapper ${!showInstructions ?
+              `show-instructions` : `hide-instructions`}`}
+          >
+            <div className={`patient-name-directions`}>
+              {userDashboardCopy.patientDirections1}
+            </div>
+
+            <div className={`patient-name-directions`}>
+              {userDashboardCopy.patientDirections2}
+            </div>
           </div>
 
-          <div className="patient-name-directions">
-            {userDashboardCopy.patientDirections2}
-          </div>
+          <span
+            className="patient-directions-toggle"
+            onClick={this.toggleInstructions}
+          >{`${showInstructions ? `Hide` : `Show`} Instructions`}</span>
 
           {patientList.length !== 0 && (
             <div>
@@ -134,7 +155,10 @@ export const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserDashboard);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UserDashboard);
 
 UserDashboard.propTypes = {
   savePatient: PropTypes.func,
