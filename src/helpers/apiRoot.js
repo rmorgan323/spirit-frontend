@@ -1,5 +1,5 @@
 
-// const apiRoot = 'https://spirit-be.herokuapp.com'; // Live root
-const apiRoot = 'http://localhost:3000'; // Production root
+// const apiRoot = 'https://spirit-be.herokuapp.com'; // Production root
+const apiRoot = 'http://localhost:3000'; // Dev root
 
 export default apiRoot;
