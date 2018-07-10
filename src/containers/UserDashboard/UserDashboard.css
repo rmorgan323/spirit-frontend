@@ -50,6 +50,8 @@ p {
   .UserDashboard .user-dashboard-content {
     width: 1152px;
     margin: 20px auto;
+    display: flex;
+    flex-direction: column;
     width: 480px; }
   .UserDashboard h2 {
     text-align: left;
@@ -61,7 +63,8 @@ p {
     margin-top: 30px; }
   .UserDashboard h5 {
     text-align: center; }
-  .UserDashboard .dividing-line, .UserDashboard .small-dividing-line {
+  .UserDashboard .dividing-line,
+  .UserDashboard .small-dividing-line {
     width: 675px;
     height: 2px;
     margin: auto;
@@ -98,12 +101,25 @@ p {
     transition: all .3s ease-in-out; }
   .UserDashboard button:hover {
     background-color: #5E378C; }
+  .UserDashboard .instructions-wrapper {
+    height: 150px;
+    opacity: 1;
+    transition: opacity 0.3s 0.4s, height 0.6s ease-in-out; }
+  .UserDashboard .hide-instructions {
+    height: 0px;
+    opacity: 0;
+    transition: opacity 0.3s, height 0.6s 0.1s ease-in-out; }
   .UserDashboard .patient-name-directions {
     font-family: "Lato", sans-serif;
     font-size: 16px;
     display: flex;
     margin: 20px auto; }
-  .UserDashboard .error-message, .UserDashboard .success-message {
+  .UserDashboard .patient-directions-toggle {
+    margin: 5px auto;
+    font-size: 12px;
+    cursor: pointer; }
+  .UserDashboard .error-message,
+  .UserDashboard .success-message {
     font-family: "Josefin Sans", sans-serif;
     font-size: 14px;
     display: flex;
