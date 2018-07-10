@@ -108,7 +108,7 @@ export class UserDashboard extends Component {
             {userDashboardCopy.patientDirections2}
           </div>
 
-          {patientList.length && (
+          {patientList.length !== 0 && (
             <div>
               <h3 className="current-patients">Current Patients</h3>
               <PatientList />
