@@ -23,7 +23,7 @@ export const Header = props => {
           <Link to={`/spirit/users/${user.id}`}>
             <h5 className="header-welcome-user">Welcome, {user.name}!</h5>
           </Link>
-          <h5 className="header-welcome-clinic">Clinic: {user.clinic}</h5>
+          <h5 className="header-welcome-clinic">{user.clinic ? `Clinic: ${user.clinic}` : `Join a clinic below!`}</h5>
         </div>
       )}
 
