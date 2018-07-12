@@ -3,6 +3,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import InstructionWrapper from '../../components/InstructionWrapper/InstructionWrapper';
+
 import { PropTypes } from 'prop-types';
 import joinClinicCopy from '../../data/copyContent/joinClinicCopy';
 import * as actions from '../../actions';
@@ -48,12 +50,10 @@ export class Join extends Component {
       error = `No clinic found. Please check the passcode or contact your clinic administrator`;
       this.setState({ error, success });
       return;
-
     } else if (user.clinic === joinMessage.clinic) {
       error = '';
       success = `You are already a member of ${user.clinic}.`;
       this.setState({ error, success });
-
     } else {
       const newClinicName = joinMessage.clinic;
 
@@ -71,13 +71,15 @@ export class Join extends Component {
       <div className="Join">
         <h3>Join a Clinic</h3>
 
-        <div className="join-clinic-directions">
-          {joinClinicCopy.directions1}
-        </div>
+        <InstructionWrapper>
+          <div className={`instructions`}>
+            {joinClinicCopy.directions1}
+          </div>
 
-        <div className="join-clinic-directions">
-          {joinClinicCopy.directions2}
-        </div>
+          <div className={`instructions`}>
+            {joinClinicCopy.directions2}
+          </div>
+        </InstructionWrapper>
 
         <form>
           <input
@@ -124,7 +126,10 @@ export const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Join);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Join);
 
 Join.propTypes = {
   joinExistingClinic: PropTypes.func,
