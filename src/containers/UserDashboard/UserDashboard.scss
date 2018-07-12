@@ -71,16 +71,6 @@
   button:hover {
     background-color: $purple6;
   }
-  .instructions-wrapper {
-    height: 150px;
-    opacity: 1;
-    transition: opacity 0.3s 0.4s, height 0.6s ease-in-out;
-  }
-  .hide-instructions {
-    height: 0px;
-    opacity: 0;
-    transition: opacity 0.3s, height 0.6s 0.1s ease-in-out;
-  }
   .patient-name-directions {
     @include match-p;
     display: flex;
