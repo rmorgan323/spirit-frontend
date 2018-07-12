@@ -108,11 +108,11 @@ export class UserDashboard extends Component {
           {success && <span className="success-message">{success}</span>}
 
           <InstructionWrapper>
-            <div className={`patient-name-directions`}>
+            <div className={`instructions`}>
               {userDashboardCopy.patientDirections1}
             </div>
 
-            <div className={`patient-name-directions`}>
+            <div className={`instructions`}>
               {userDashboardCopy.patientDirections2}
             </div>
           </InstructionWrapper>
