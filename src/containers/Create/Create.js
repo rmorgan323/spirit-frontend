@@ -90,18 +90,18 @@ export class Create extends Component {
       <div className="Create">
         {user.clinic && this.displayClinic()}
 
+        <h3>Add a New Clinic</h3>
+
+        <InstructionWrapper>
+          <div className={`instructions`}>
+            {createClinicCopy.addDirections1}
+          </div>
+          <div className={`instructions`}>
+            {createClinicCopy.addDirections2}
+          </div>
+        </InstructionWrapper>
+
         <form className="new-clinic-form">
-          <h3>Add a New Clinic</h3>
-
-          <InstructionWrapper>
-            <div className="add-clinic-directions">
-              {createClinicCopy.addDirections1}
-            </div>
-            <div className="add-clinic-directions">
-              {createClinicCopy.addDirections2}
-            </div>
-          </InstructionWrapper>
-
           <input
             className="input-clinic-name"
             onChange={event => this.handleChange(event)}
