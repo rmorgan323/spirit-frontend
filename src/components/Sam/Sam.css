@@ -54,7 +54,7 @@ p {
   border-radius: 100px;
   border: 6px solid #BFAFD0;
   position: absolute;
-  transition: all .3s ease-in-out;
+  transition: all .2s ease-in-out;
   cursor: pointer; }
 
 .Sam .sam-session-dots:hover {

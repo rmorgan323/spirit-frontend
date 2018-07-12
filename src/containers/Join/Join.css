@@ -69,7 +69,7 @@ p {
     background-color: #9E87BA;
     cursor: pointer;
     color: #fff;
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-in-out;
     font-weight: 900;
     height: 40px;
     border: none; }

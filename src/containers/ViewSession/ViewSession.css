@@ -153,7 +153,7 @@ p {
     align-items: center;
     cursor: pointer;
     border: none;
-    transition: all .3s ease-in-out; }
+    transition: all .2s ease-in-out; }
   .ViewSession .complete-session-button:hover {
     background-color: #468c41; }
   .ViewSession .print-image {
@@ -162,7 +162,7 @@ p {
     top: 0;
     width: 40px;
     opacity: .4;
-    transition: all .3s ease-in-out; }
+    transition: all .2s ease-in-out; }
   .ViewSession .print-image:hover {
     opacity: .8; }
 

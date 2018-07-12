@@ -71,16 +71,6 @@
   button:hover {
     background-color: $purple6;
   }
-  .patient-name-directions {
-    @include match-p;
-    display: flex;
-    margin: 20px auto;
-  }
-  .patient-directions-toggle {
-    margin: 5px auto;
-    font-size: 12px;
-    cursor: pointer;
-  }
   .error-message,
   .success-message {
     @include match-h5;
