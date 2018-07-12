@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import InstructionWrapper from '../../components/InstructionWrapper/InstructionWrapper';
+
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
@@ -90,12 +92,16 @@ export class Create extends Component {
 
         <form className="new-clinic-form">
           <h3>Add a New Clinic</h3>
-          <div className="add-clinic-directions">
-            {createClinicCopy.addDirections1}
-          </div>
-          <div className="add-clinic-directions">
-            {createClinicCopy.addDirections2}
-          </div>
+
+          <InstructionWrapper>
+            <div className="add-clinic-directions">
+              {createClinicCopy.addDirections1}
+            </div>
+            <div className="add-clinic-directions">
+              {createClinicCopy.addDirections2}
+            </div>
+          </InstructionWrapper>
+
           <input
             className="input-clinic-name"
             onChange={event => this.handleChange(event)}
@@ -104,6 +110,7 @@ export class Create extends Component {
             placeholder="New Clinic Name"
             maxLength={30}
           />
+
           <input
             className="input-abbreviation"
             onChange={event => this.handleChange(event)}
@@ -112,6 +119,7 @@ export class Create extends Component {
             placeholder="Choose a 3-letter abbreviation for your clinic"
             maxLength={3}
           />
+
           <button
             className="submit-button"
             type="submit"
@@ -145,7 +153,10 @@ export const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Create);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Create);
 
 Create.propTypes = {
   saveClinic: PropTypes.func,
