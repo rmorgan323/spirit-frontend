@@ -3,15 +3,26 @@ import InstructionWrapper from './InstructionWrapper';
 import { shallow } from 'enzyme';
 
 describe('InstructionWrapper tests', () => {
-  it('Should match the snapshot', () => {
-    const renderedInstructionWrapper = shallow(
+  let renderedInstructionWrapper;
+
+  beforeEach(() => {
+    renderedInstructionWrapper = shallow(
       <InstructionWrapper>
         <div>{`Instructions`}</div>
       </InstructionWrapper>
     );
-
+  });
+  it('Should match the snapshot', () => {
     expect(renderedInstructionWrapper).toMatchSnapshot();
   });
 
-  it('It ')
+  it('Should hide instructions by default', () => {
+    expect(renderedInstructionWrapper.state('hideInstructions')).toEqual(true);
+  });
+
+  it('Should toggle hide instructions when clicked', () => {
+    expect(renderedInstructionWrapper.state('hideInstructions')).toEqual(true);
+    renderedInstructionWrapper.instance().toggleInstructions();
+    expect(renderedInstructionWrapper.state('hideInstructions')).toEqual(false);
+  });
 });
