@@ -12,16 +12,12 @@ import * as actions from '../../actions';
 import './UserDashboard.css';
 
 export class UserDashboard extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      firstInitial: '',
-      lastInitial: '',
-      error: '',
-      success: ''
-    };
-  }
+  state = {
+    firstInitial: '',
+    lastInitial: '',
+    error: '',
+    success: ''
+  };
 
   componentDidMount() {
     this.props.wipeStoreFromUserDashboard();
@@ -34,7 +30,9 @@ export class UserDashboard extends Component {
 
   handleSubmit = () => {
     const { firstInitial, lastInitial } = this.state;
-    const { savePatient, user } = this.props;
+    const { savePatient } = this.props;
+    const { id, clinic_abbreviation } = this.props.user;
+
     let error;
     let success;
 
@@ -49,7 +47,7 @@ export class UserDashboard extends Component {
     error = '';
     this.setState({ firstInitial: '', lastInitial: '', error, success });
 
-    savePatient(firstInitial, lastInitial, user.id, user.clinic_abbreviation);
+    savePatient(firstInitial, lastInitial, id, clinic_abbreviation);
   };
 
   render() {
@@ -63,11 +61,13 @@ export class UserDashboard extends Component {
         <div className="user-dashboard-header">
           <h3 className={`user-dashboard-name`}>{name} - OT Dashboard</h3>
 
-          {clinic && <div>
-            <Link className="clinic-link" to={`/spirit/users/${id}/create`}>
-              {'SEE CLINIC INFO'}
-            </Link>
-          </div>}
+          {clinic && (
+            <div>
+              <Link className="clinic-link" to={`/spirit/users/${id}/create`}>
+                {'SEE CLINIC INFO'}
+              </Link>
+            </div>
+          )}
         </div>
 
         <div className="user-dashboard-content">
