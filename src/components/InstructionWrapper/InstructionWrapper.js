@@ -36,3 +36,10 @@ class InstructionWrapper extends Component {
 }
 
 export default InstructionWrapper;
+
+InstructionWrapper.PropTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ])
+};
