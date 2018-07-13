@@ -65,22 +65,24 @@ ShallowWrapper {
             utk85fmf
           </h4>
         </div>,
-        <form
-          className="new-clinic-form"
-        >
-          <h3>
-            Add a New Clinic
-          </h3>
+        <h3>
+          Add a New Clinic
+        </h3>,
+        <InstructionWrapper>
           <div
-            className="add-clinic-directions"
+            className="instructions"
           >
             To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.
           </div>
           <div
-            className="add-clinic-directions"
+            className="instructions"
           >
             After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.
           </div>
+        </InstructionWrapper>,
+        <form
+          className="new-clinic-form"
+        >
           <input
             className="input-clinic-name"
             maxLength={30}
@@ -109,7 +111,7 @@ ShallowWrapper {
         "",
         <NavLink
           activeClassName="active"
-          ariaCurrent="true"
+          aria-current="page"
           className="join-link"
           to="/spirit/users/1/join"
         >
@@ -275,20 +277,65 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "children": "Add a New Clinic",
+        },
+        "ref": null,
+        "rendered": "Add a New Clinic",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
           "children": Array [
-            <h3>
-              Add a New Clinic
-            </h3>,
             <div
-              className="add-clinic-directions"
+              className="instructions"
             >
               To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.
             </div>,
             <div
-              className="add-clinic-directions"
+              className="instructions"
             >
               After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.
             </div>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.",
+              "className": "instructions",
+            },
+            "ref": null,
+            "rendered": "To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.",
+              "className": "instructions",
+            },
+            "ref": null,
+            "rendered": "After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.",
+            "type": "div",
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
             <input
               className="input-clinic-name"
               maxLength={30}
@@ -317,41 +364,6 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Add a New Clinic",
-            },
-            "ref": null,
-            "rendered": "Add a New Clinic",
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.",
-              "className": "add-clinic-directions",
-            },
-            "ref": null,
-            "rendered": "To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.",
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.",
-              "className": "add-clinic-directions",
-            },
-            "ref": null,
-            "rendered": "After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.",
-            "type": "div",
-          },
           Object {
             "instance": null,
             "key": undefined,
@@ -409,7 +421,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "activeClassName": "active",
-          "ariaCurrent": "true",
+          "aria-current": "page",
           "children": "JOIN EXISTING CLINIC",
           "className": "join-link",
           "to": "/spirit/users/1/join",
@@ -459,22 +471,24 @@ ShallowWrapper {
               utk85fmf
             </h4>
           </div>,
-          <form
-            className="new-clinic-form"
-          >
-            <h3>
-              Add a New Clinic
-            </h3>
+          <h3>
+            Add a New Clinic
+          </h3>,
+          <InstructionWrapper>
             <div
-              className="add-clinic-directions"
+              className="instructions"
             >
               To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.
             </div>
             <div
-              className="add-clinic-directions"
+              className="instructions"
             >
               After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.
             </div>
+          </InstructionWrapper>,
+          <form
+            className="new-clinic-form"
+          >
             <input
               className="input-clinic-name"
               maxLength={30}
@@ -503,7 +517,7 @@ ShallowWrapper {
           "",
           <NavLink
             activeClassName="active"
-            ariaCurrent="true"
+            aria-current="page"
             className="join-link"
             to="/spirit/users/1/join"
           >
@@ -669,20 +683,65 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "Add a New Clinic",
+          },
+          "ref": null,
+          "rendered": "Add a New Clinic",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
             "children": Array [
-              <h3>
-                Add a New Clinic
-              </h3>,
               <div
-                className="add-clinic-directions"
+                className="instructions"
               >
                 To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.
               </div>,
               <div
-                className="add-clinic-directions"
+                className="instructions"
               >
                 After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.
               </div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.",
+                "className": "instructions",
+              },
+              "ref": null,
+              "rendered": "To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.",
+                "className": "instructions",
+              },
+              "ref": null,
+              "rendered": "After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.",
+              "type": "div",
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
               <input
                 className="input-clinic-name"
                 maxLength={30}
@@ -711,41 +770,6 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Add a New Clinic",
-              },
-              "ref": null,
-              "rendered": "Add a New Clinic",
-              "type": "h3",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.",
-                "className": "add-clinic-directions",
-              },
-              "ref": null,
-              "rendered": "To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.",
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.",
-                "className": "add-clinic-directions",
-              },
-              "ref": null,
-              "rendered": "After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.",
-              "type": "div",
-            },
             Object {
               "instance": null,
               "key": undefined,
@@ -803,7 +827,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "activeClassName": "active",
-            "ariaCurrent": "true",
+            "aria-current": "page",
             "children": "JOIN EXISTING CLINIC",
             "className": "join-link",
             "to": "/spirit/users/1/join",

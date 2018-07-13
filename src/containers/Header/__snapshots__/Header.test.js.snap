@@ -44,7 +44,7 @@ ShallowWrapper {
             src="/assets/Spirit-Wordmark-White.png"
           />
         </Link>,
-        <div>
+        <UNDEFINED>
           <Link
             replace={false}
             to="/spirit/users/1"
@@ -60,10 +60,9 @@ ShallowWrapper {
           <h5
             className="header-welcome-clinic"
           >
-            Clinic: 
-            I Need Therapy
+            Clinic: I Need Therapy
           </h5>
-        </div>,
+        </UNDEFINED>,
         false,
       ],
       "className": "Header",
@@ -102,7 +101,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
           "children": Array [
             <Link
@@ -120,8 +119,7 @@ ShallowWrapper {
             <h5
               className="header-welcome-clinic"
             >
-              Clinic: 
-              I Need Therapy
+              Clinic: I Need Therapy
             </h5>,
           ],
         },
@@ -170,21 +168,15 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                "Clinic: ",
-                "I Need Therapy",
-              ],
+              "children": "Clinic: I Need Therapy",
               "className": "header-welcome-clinic",
             },
             "ref": null,
-            "rendered": Array [
-              "Clinic: ",
-              "I Need Therapy",
-            ],
+            "rendered": "Clinic: I Need Therapy",
             "type": "h5",
           },
         ],
-        "type": "div",
+        "type": Symbol(react.fragment),
       },
       false,
     ],
@@ -207,7 +199,7 @@ ShallowWrapper {
               src="/assets/Spirit-Wordmark-White.png"
             />
           </Link>,
-          <div>
+          <UNDEFINED>
             <Link
               replace={false}
               to="/spirit/users/1"
@@ -223,10 +215,9 @@ ShallowWrapper {
             <h5
               className="header-welcome-clinic"
             >
-              Clinic: 
-              I Need Therapy
+              Clinic: I Need Therapy
             </h5>
-          </div>,
+          </UNDEFINED>,
           false,
         ],
         "className": "Header",
@@ -265,7 +256,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
             "children": Array [
               <Link
@@ -283,8 +274,7 @@ ShallowWrapper {
               <h5
                 className="header-welcome-clinic"
               >
-                Clinic: 
-                I Need Therapy
+                Clinic: I Need Therapy
               </h5>,
             ],
           },
@@ -333,21 +323,15 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  "Clinic: ",
-                  "I Need Therapy",
-                ],
+                "children": "Clinic: I Need Therapy",
                 "className": "header-welcome-clinic",
               },
               "ref": null,
-              "rendered": Array [
-                "Clinic: ",
-                "I Need Therapy",
-              ],
+              "rendered": "Clinic: I Need Therapy",
               "type": "h5",
             },
           ],
-          "type": "div",
+          "type": Symbol(react.fragment),
         },
         false,
       ],

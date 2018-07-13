@@ -5,7 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <PatientDashboard
-    addConcern={[MockFunction]}
+    addConcern={[Function]}
     currentPatient={
       Object {
         "abstracted_name": "INTrm5",
@@ -16,13 +16,7 @@ ShallowWrapper {
         "updated_at": "2018-02-20T20:07:54.509Z",
       }
     }
-    wipeStoreFromPatientDashboard={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-      }
-    }
+    wipeStoreFromPatientDashboard={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
