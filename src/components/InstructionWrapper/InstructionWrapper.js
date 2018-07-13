@@ -13,11 +13,16 @@ class InstructionWrapper extends Component {
     }));
 
   render() {
-    const { children } = this.props
+    const { children } = this.props;
     const { showInstructions } = this.state;
 
     return (
       <div className="InstructionWrapper">
+        <span
+          className="patient-directions-toggle"
+          onClick={this.toggleInstructions}
+        >{`${showInstructions ? `Show` : `Hide`} Instructions`}</span>
+
         <div
           className={`instructions-wrapper ${
             !showInstructions ? `show-instructions` : `hide-instructions`
@@ -25,11 +30,6 @@ class InstructionWrapper extends Component {
         >
           {children}
         </div>
-
-        <span
-          className="patient-directions-toggle"
-          onClick={this.toggleInstructions}
-        >{`${showInstructions ? `Show` : `Hide`} Instructions`}</span>
       </div>
     );
   }
