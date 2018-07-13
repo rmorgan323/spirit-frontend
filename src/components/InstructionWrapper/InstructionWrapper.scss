@@ -2,16 +2,6 @@
 .InstructionWrapper {
   display: flex;
   flex-direction: column;
-  .instructions-wrapper {
-    max-height: 200px;
-    opacity: 1;
-    transition: opacity 0.3s 0.4s, max-height 0.6s ease-in-out;
-  }
-  .hide-instructions {
-    max-height: 0px;
-    opacity: 0;
-    transition: opacity 0.3s, max-height 0.6s 0.1s ease-in-out;
-  }
   .patient-directions-toggle {
     margin: 5px 0;
     color: $purple6;
@@ -24,9 +14,24 @@
       color: $purple4;
     }
   }
+  .instructions-wrapper {
+    max-height: 200px;
+    opacity: 1;
+    transition: opacity 0.3s 0.4s, max-height 0.6s ease-in-out;
+  }
+  .hide-instructions {
+    max-height: 0px;
+    opacity: 0;
+    transition: opacity 0.3s, max-height 0.6s 0.1s ease-in-out;
+  }
   .instructions {
     @include match-p;
-    display: flex;
     margin: 20px auto;
+    visibility: visible;
+    transition: visibility 0.3s 0.4s ease-in-out;
+  }
+  .hide-instructions .instructions {
+    visibility: hidden;
+    transition: visibility 0.3s ease-in-out;
   }
 }
