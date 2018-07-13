@@ -59,12 +59,12 @@ export class UserDashboard extends Component {
     return (
       <div className="UserDashboard">
         <div className="user-dashboard-header">
-          <h3 className={`user-dashboard-name`}>{name} - OT Dashboard</h3>
+          <h3 className={`user-dashboard-name`}>{`${name}${userDashboardCopy.otDash}`}</h3>
 
           {clinic && (
             <div>
               <Link className="clinic-link" to={`/spirit/users/${id}/create`}>
-                {'SEE CLINIC INFO'}
+                {userDashboardCopy.seeClinic}
               </Link>
             </div>
           )}
@@ -73,7 +73,7 @@ export class UserDashboard extends Component {
         <div className="user-dashboard-content">
           {!clinic && (
             <div className={`welcome-wrapper`}>
-              <h3>{`Welcome to SpIRiT, ${name}!`}</h3>
+              <h3>{`${userDashboardCopy.welcome}${name}!`}</h3>
               <p className={`welcome-instructions`}>
                 {userDashboardCopy.welcomeDirections1}
               </p>
@@ -82,13 +82,13 @@ export class UserDashboard extends Component {
               </p>
 
               <Link className="clinic-button" to={`/spirit/users/${id}/create`}>
-                <button>{'ADD/JOIN A CLINIC'}</button>
+                <button>{userDashboardCopy.addJoinClinic}</button>
               </Link>
             </div>
           )}
           {clinic && (
             <Fragment>
-              <h3>New Patients</h3>
+              <h3>{userDashboardCopy.newPatients}</h3>
 
               <div className="input-holder">
                 <input
@@ -108,10 +108,10 @@ export class UserDashboard extends Component {
                 />
 
                 <button onClick={() => this.handleSubmit()} type="submit">
-                  SUBMIT
+                  {userDashboardCopy.submit}
                 </button>
               </div>
-              <h5>Add NEW patient with 2 patient initials</h5>
+              <h5>{userDashboardCopy.addNewPatientDetails}</h5>
 
               {error && <span className="error-message">{error}</span>}
 
@@ -131,7 +131,7 @@ export class UserDashboard extends Component {
 
           {patientList.length !== 0 && (
             <div>
-              <h3 className="current-patients">Current Patients</h3>
+              <h3 className="current-patients">{userDashboardCopy.currentPatients}</h3>
               <PatientList />
             </div>
           )}
