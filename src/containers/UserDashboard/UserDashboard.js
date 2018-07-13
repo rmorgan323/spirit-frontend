@@ -1,6 +1,6 @@
 /*eslint-disable react/no-unescaped-entities*/
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
@@ -53,69 +53,81 @@ export class UserDashboard extends Component {
   };
 
   render() {
-    const {
-      firstInitial,
-      lastInitial,
-      error,
-      success,
-      showInstructions
-    } = this.state;
+    const { firstInitial, lastInitial, error, success } = this.state;
     const { user, patientList } = this.props;
+
+    const { id, name, clinic } = user;
 
     return (
       <div className="UserDashboard">
         <div className="user-dashboard-header">
-          <h2>{user.name} - OT Dashboard</h2>
+          <h3 className={`user-dashboard-name`}>{name} - OT Dashboard</h3>
 
-          <div>
-            <Link
-              className="clinic-button"
-              to={`/spirit/users/${user.id}/create`}
-            >
-              {user.clinic ? 'SEE CLINIC INFO' : 'ADD/JOIN A CLINIC'}
+          {clinic && <div>
+            <Link className="clinic-link" to={`/spirit/users/${id}/create`}>
+              {'SEE CLINIC INFO'}
             </Link>
-          </div>
+          </div>}
         </div>
 
         <div className="user-dashboard-content">
-          <h3>New Patients</h3>
+          {!clinic && (
+            <div className={`welcome-wrapper`}>
+              <h3>{`Welcome to SpIRiT, ${name}!`}</h3>
+              <p className={`welcome-instructions`}>
+                {userDashboardCopy.welcomeDirections1}
+              </p>
+              <p className={`welcome-instructions`}>
+                {userDashboardCopy.welcomeDirections2}
+              </p>
 
-          <div className="input-holder">
-            <input
-              maxLength={1}
-              onChange={event => this.handleChange(event)}
-              value={firstInitial.toUpperCase()}
-              name="firstInitial"
-              placeholder="First Initial"
-            />
-
-            <input
-              maxLength={1}
-              onChange={event => this.handleChange(event)}
-              value={lastInitial.toUpperCase()}
-              name="lastInitial"
-              placeholder="Last Initial"
-            />
-
-            <button onClick={() => this.handleSubmit()} type="submit">
-              SUBMIT
-            </button>
-          </div>
-          <h5>Add NEW patient with 2 patient initials</h5>
-
-          {error && <span className="error-message">{error}</span>}
-
-          {success && <span className="success-message">{success}</span>}
-
-          <InstructionWrapper>
-            <div className={`instructions`}>
-              {userDashboardCopy.patientDirections1}
+              <Link className="clinic-button" to={`/spirit/users/${id}/create`}>
+                <button>{'ADD/JOIN A CLINIC'}</button>
+              </Link>
             </div>
+          )}
+          {clinic && (
+            <Fragment>
+              <h3>New Patients</h3>
 
-            <div className={`instructions`}>
-              {userDashboardCopy.patientDirections2}
-            </div>
-          </InstructionWrapper>
+              <div className="input-holder">
+                <input
+                  maxLength={1}
+                  onChange={event => this.handleChange(event)}
+                  value={firstInitial.toUpperCase()}
+                  name="firstInitial"
+                  placeholder="First Initial"
+                />
+
+                <input
+                  maxLength={1}
+                  onChange={event => this.handleChange(event)}
+                  value={lastInitial.toUpperCase()}
+                  name="lastInitial"
+                  placeholder="Last Initial"
+                />
+
+                <button onClick={() => this.handleSubmit()} type="submit">
+                  SUBMIT
+                </button>
+              </div>
+              <h5>Add NEW patient with 2 patient initials</h5>
+
+              {error && <span className="error-message">{error}</span>}
+
+              {success && <span className="success-message">{success}</span>}
+
+              <InstructionWrapper>
+                <p className={`instructions`}>
+                  {userDashboardCopy.patientDirections1}
+                </p>
+
+                <p className={`instructions`}>
+                  {userDashboardCopy.patientDirections2}
+                </p>
+              </InstructionWrapper>
+            </Fragment>
+          )}
 
           {patientList.length !== 0 && (
             <div>
