@@ -4,28 +4,28 @@ import './InstructionWrapper.css';
 
 class InstructionWrapper extends Component {
   state = {
-    showInstructions: true
+    hideInstructions: true
   };
 
   toggleInstructions = () =>
     this.setState(prevState => ({
-      showInstructions: !prevState.showInstructions
+      hideInstructions: !prevState.hideInstructions
     }));
 
   render() {
     const { children } = this.props;
-    const { showInstructions } = this.state;
+    const { hideInstructions } = this.state;
 
     return (
       <div className="InstructionWrapper">
         <span
           className="patient-directions-toggle"
           onClick={this.toggleInstructions}
-        >{`${showInstructions ? `Show` : `Hide`} Instructions`}</span>
+        >{`${hideInstructions ? `Show` : `Hide`} Instructions`}</span>
 
         <div
           className={`instructions-wrapper ${
-            !showInstructions ? `show-instructions` : `hide-instructions`
+            !hideInstructions ? `show-instructions` : `hide-instructions`
           }`}
         >
           {children}

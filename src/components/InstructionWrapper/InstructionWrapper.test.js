@@ -12,4 +12,6 @@ describe('InstructionWrapper tests', () => {
 
     expect(renderedInstructionWrapper).toMatchSnapshot();
   });
+
+  it('It ')
 });
