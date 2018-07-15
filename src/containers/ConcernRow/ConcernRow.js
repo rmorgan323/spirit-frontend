@@ -6,13 +6,9 @@ import * as actions from '../../actions/index';
 import './ConcernRow.css';
 
 export class ConcernRow extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      hover: false
-    };
-  }
+  state = {
+    hover: false
+  };
 
   selectEnter = () => {
     this.setState({ hover: true });
@@ -92,7 +88,10 @@ export const mapDispatchToProps = dispatch => ({
   getConcern: concernId => dispatch(actions.getConcern(concernId))
 });
 
-export default connect(null, mapDispatchToProps)(ConcernRow);
+export default connect(
+  null,
+  mapDispatchToProps
+)(ConcernRow);
 
 ConcernRow.propTypes = {
   id: PropTypes.number,
