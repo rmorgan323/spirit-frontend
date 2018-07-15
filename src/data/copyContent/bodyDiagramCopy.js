@@ -10,4 +10,4 @@ const bodyDiagramCopy = {
   foot: `8. Foot/Base of Support Core`
 };
 
-export default bodyDiagramCopy'
+export default bodyDiagramCopy
