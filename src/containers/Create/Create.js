@@ -35,12 +35,12 @@ export class Create extends Component {
 
     if (!clinicName || !clinicAbbreviation) {
       success = '';
-      error = 'Please enter a clinic name and abbreviation';
+      error = createClinicCopy.clinicNameError;
       this.setState({ error, success });
       return;
     } else if (clinicAbbreviation.length !== 3) {
       success = '';
-      error = 'Clinic abbreviation must be three characters long';
+      error = createClinicCopy.clinicAbbreviationError;
       this.setState({ error, success });
       return;
     }
@@ -53,7 +53,7 @@ export class Create extends Component {
     });
 
     error = '';
-    success = `Clinic successfully added! Your clinic passcode is ${passcode}.`;
+    success = `${createClinicCopy.addClinicSuccess}${passcode}.`;
     this.setState({ error, success, clinicName: '', clinicAbbreviation: '' });
     saveClinic({ name, abbreviation, passcode }, user.id);
   };
@@ -63,17 +63,17 @@ export class Create extends Component {
 
     return (
       <div>
-        <h3 className="current-clinic-header">Your Current Clinic</h3>
+        <h3 className="current-clinic-header">{createClinicCopy.currentClinic}</h3>
         <h4>
-          <span className="clinic-span">You are a member of: </span>
+          <span className="clinic-span">{createClinicCopy.memberOfClinic}}</span>
           {user.clinic}
         </h4>
         <h4>
-          <span className="clinic-span">Clinic Abbreviation: </span>
+          <span className="clinic-span">{createClinicCopy.clinicAbbreviation}</span>
           {user.clinic_abbreviation}
         </h4>
         <h4>
-          <span className="clinic-span">Clinic Passcode: </span>
+          <span className="clinic-span">{createClinicCopy.clinicPasscode}</span>
           {user.clinic_passcode}
         </h4>
       </div>
@@ -105,7 +105,7 @@ export class Create extends Component {
             onChange={event => this.handleChange(event)}
             value={clinicName}
             name="clinicName"
-            placeholder="New Clinic Name"
+            placeholder={createClinicCopy.newClinicPlaceholder}
             maxLength={30}
           />
 
@@ -114,7 +114,7 @@ export class Create extends Component {
             onChange={event => this.handleChange(event)}
             value={clinicAbbreviation}
             name="clinicAbbreviation"
-            placeholder="Choose a 3-letter abbreviation for your clinic"
+            placeholder={createClinicCopy.clinicAbbreviationPlaceholder}
             maxLength={3}
           />
 
@@ -125,7 +125,7 @@ export class Create extends Component {
               this.saveNewClinic(event, clinicName, clinicAbbreviation)
             }
           >
-            SUBMIT
+           {createClinicCopy.submitClinic}
           </button>
         </form>
 
@@ -134,7 +134,7 @@ export class Create extends Component {
         {success && <span className="success-message">{success}</span>}
 
         <NavLink className="join-link" to={`/spirit/users/${user.id}/join`}>
-          JOIN EXISTING CLINIC
+          {createClinicCopy.joinClinic}
         </NavLink>
       </div>
     );
