@@ -12,6 +12,7 @@ describe('InstructionWrapper tests', () => {
       </InstructionWrapper>
     );
   });
+
   it('Should match the snapshot', () => {
     expect(renderedInstructionWrapper).toMatchSnapshot();
   });
