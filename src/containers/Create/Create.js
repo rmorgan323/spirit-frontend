@@ -12,17 +12,13 @@ import createClinicCopy from '../../data/copyContent/createClinicCopy';
 import './Create.css';
 
 export class Create extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      clinicName: '',
-      clinicAbbreviation: '',
-      successMessage: '',
-      error: '',
-      success: ''
-    };
-  }
+  state = {
+    clinicName: '',
+    clinicAbbreviation: '',
+    successMessage: '',
+    error: '',
+    success: ''
+  };
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -33,8 +29,10 @@ export class Create extends Component {
     event.preventDefault();
     const { saveClinic, user } = this.props;
     const { clinicName, clinicAbbreviation } = this.state;
+
     let error;
     let success;
+
     if (!clinicName || !clinicAbbreviation) {
       success = '';
       error = 'Please enter a clinic name and abbreviation';
