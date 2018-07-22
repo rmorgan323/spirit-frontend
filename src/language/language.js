@@ -22,7 +22,8 @@ export const createClinic = {
   addDirections2: `After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.`,
   clinicNameError: `Please enter a clinic name and abbreviation`,
   clinicAbbreviationError: `Clinic abbreviation must be three characters long`,
-  addClinicSuccess: (passcode) => `Clinic successfully added! Your clinic passcode is ${passcode}.`,
+  addClinicSuccess: passcode =>
+    `Clinic successfully added! Your clinic passcode is ${passcode}.`,
   currentClinic: `Your Current Clinic`,
   memberOfClinic: `You are a member of: `,
   clinicAbbreviation: `Clinic Abbreviation: `,
@@ -36,6 +37,63 @@ export const createClinic = {
 export const joinClinic = {
   directions1: `To join an existing clinic on SpIRiT©, you must use a clinic's eight digit passcode. If you do not know your clinic's passcode, please contact your SpIRiT© administrator.`,
   directions2: `If your clinic has not been registered, click 'CREATE NEW CLINIC' below to learn how you can add your clinic and start using SpIRiT©.`
+};
+
+export const executive = {
+  header: `Executive Functioning Capacities`,
+  column1Terms: ['Orient EYES-EARS-SELF to GOAL', 'Inhibition'],
+  column1DB: ['exe_1_orient', 'exe_1_inhibition'],
+  column2ATerms: ['Working Memory', 'Shifting'],
+  column2ADB: ['exe_2a_working', 'exe_2a_shifting'],
+  column2BTerms: [
+    'Verbal',
+    'Spatial',
+    'General',
+    'Global/Local',
+    'Flexibility'
+  ],
+  column2BDB: [
+    'exe_2b_verbal',
+    'exe_2b_spatial',
+    'exe_2b_general',
+    'exe_2b_global',
+    'exe_2b_flexibility'
+  ],
+  column3Terms: ['Initiation', 'Planning', 'Sequencing', 'Monitoring'],
+  column3DB: [
+    'exe_3_initiation',
+    'exe_3_planning',
+    'exe_3_sequencing',
+    'exe_3_monitoring'
+  ],
+  column4ATerms: [
+    'Future-Oriented/Goal-Directed',
+    'Spatial/Temporal Organization',
+    'Problem Solving',
+    'Reflective Thinking',
+    'Internalized Language'
+  ],
+  column4ADB: [
+    'exe_4a_future',
+    'exe_4a_spatial',
+    'exe_4a_problem',
+    'exe_4a_reflective',
+    'exe_4a_internalized'
+  ],
+  column4BTerms: [
+    'Motivational Bias',
+    'Effortful Control',
+    'Self-Control',
+    'Self-Regulation',
+    'Self-Compassion'
+  ],
+  column4BDB: [
+    'exe_4b_motivational',
+    'exe_4b_effortful',
+    'exe_4b_self_control',
+    'exe_4b_self_regulation',
+    'exe_4b_self_compassion'
+  ]
 };
 
 export const bodyDiagram = {
