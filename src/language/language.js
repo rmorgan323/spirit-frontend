@@ -41,59 +41,65 @@ export const joinClinic = {
 
 export const executive = {
   header: `Executive Functioning Capacities`,
-  column1Terms: ['Orient EYES-EARS-SELF to GOAL', 'Inhibition'],
-  column1DB: ['exe_1_orient', 'exe_1_inhibition'],
-  column2ATerms: ['Working Memory', 'Shifting'],
-  column2ADB: ['exe_2a_working', 'exe_2a_shifting'],
-  column2BTerms: [
-    'Verbal',
-    'Spatial',
-    'General',
-    'Global/Local',
-    'Flexibility'
-  ],
-  column2BDB: [
-    'exe_2b_verbal',
-    'exe_2b_spatial',
-    'exe_2b_general',
-    'exe_2b_global',
-    'exe_2b_flexibility'
-  ],
-  column3Terms: ['Initiation', 'Planning', 'Sequencing', 'Monitoring'],
-  column3DB: [
-    'exe_3_initiation',
-    'exe_3_planning',
-    'exe_3_sequencing',
-    'exe_3_monitoring'
-  ],
-  column4ATerms: [
-    'Future-Oriented/Goal-Directed',
-    'Spatial/Temporal Organization',
-    'Problem Solving',
-    'Reflective Thinking',
-    'Internalized Language'
-  ],
-  column4ADB: [
-    'exe_4a_future',
-    'exe_4a_spatial',
-    'exe_4a_problem',
-    'exe_4a_reflective',
-    'exe_4a_internalized'
-  ],
-  column4BTerms: [
-    'Motivational Bias',
-    'Effortful Control',
-    'Self-Control',
-    'Self-Regulation',
-    'Self-Compassion'
-  ],
-  column4BDB: [
-    'exe_4b_motivational',
-    'exe_4b_effortful',
-    'exe_4b_self_control',
-    'exe_4b_self_regulation',
-    'exe_4b_self_compassion'
-  ]
+  column1: {
+    terms: ['Orient EYES-EARS-SELF to GOAL', 'Inhibition'],
+    db: ['exe_1_orient', 'exe_1_inhibition']
+  },
+  column2A: {
+    terms: ['Working Memory', 'Shifting'],
+    db: ['exe_2a_working', 'exe_2a_shifting']
+  },
+  column2B: {
+    terms: ['Verbal', 'Spatial', 'General', 'Global/Local', 'Flexibility'],
+    db: [
+      'exe_2b_verbal',
+      'exe_2b_spatial',
+      'exe_2b_general',
+      'exe_2b_global',
+      'exe_2b_flexibility'
+    ]
+  },
+  column3: {
+    terms: ['Initiation', 'Planning', 'Sequencing', 'Monitoring'],
+    db: [
+      'exe_3_initiation',
+      'exe_3_planning',
+      'exe_3_sequencing',
+      'exe_3_monitoring'
+    ]
+  },
+  column4A: {
+    terms: [
+      'Future-Oriented/Goal-Directed',
+      'Spatial/Temporal Organization',
+      'Problem Solving',
+      'Reflective Thinking',
+      'Internalized Language'
+    ],
+    db: [
+      'exe_4a_future',
+      'exe_4a_spatial',
+      'exe_4a_problem',
+      'exe_4a_reflective',
+      'exe_4a_internalized'
+    ]
+  },
+  column4B: {
+    terms: [
+      'Motivational Bias',
+      'Effortful Control',
+      'Self-Control',
+      'Self-Regulation',
+      'Self-Compassion'
+    ],
+    db: [
+      'exe_4b_motivational',
+      'exe_4b_effortful',
+      'exe_4b_self_control',
+      'exe_4b_self_regulation',
+      'exe_4b_self_compassion'
+    ]
+  }
 };
 
 export const bodyDiagram = {
