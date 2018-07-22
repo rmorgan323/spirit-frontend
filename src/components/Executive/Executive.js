@@ -1,82 +1,42 @@
 import React from 'react';
 import SessionHeader from '../SessionHeader/SessionHeader';
 import CategorySliders from '../CategorySliders/CategorySliders';
+import { executive } from '../../language/language';
 import './Executive.css';
 
 const Executive = () => {
   return (
     <div className="Executive">
-      <SessionHeader title={'Executive Functioning Capacities'} headings={[]} />
+      <SessionHeader title={executive.header} headings={[]} />
       <div className="category-content">
         <CategorySliders
-          slidersArray={['Orient EYES-EARS-SELF to GOAL', 'Inhibition']}
-          databaseNamesArray={['exe_1_orient', 'exe_1_inhibition']}
+          slidersArray={executive.column1Terms}
+          databaseNamesArray={executive.column1DB}
         />
 
         <CategorySliders
-          slidersArray={['Working Memory', 'Shifting']}
-          databaseNamesArray={['exe_2a_working', 'exe_2a_shifting']}
+          slidersArray={executive.column2ATerms}
+          databaseNamesArray={executive.column2ADB}
         />
 
         <CategorySliders
-          slidersArray={[
-            'Verbal',
-            'Spatial',
-            'General',
-            'Global/Local',
-            'Flexibility'
-          ]}
-          databaseNamesArray={[
-            'exe_2b_verbal',
-            'exe_2b_spatial',
-            'exe_2b_general',
-            'exe_2b_global',
-            'exe_2b_flexibility'
-          ]}
+          slidersArray={executive.column2BTerms}
+          databaseNamesArray={executive.column2BDB}
         />
 
         <CategorySliders
-          slidersArray={['Initiation', 'Planning', 'Sequencing', 'Monitoring']}
-          databaseNamesArray={[
-            'exe_3_initiation',
-            'exe_3_planning',
-            'exe_3_sequencing',
-            'exe_3_monitoring'
-          ]}
+          slidersArray={executive.column3Terms}
+          databaseNamesArray={executive.column3DB}
         />
 
         <CategorySliders
-          slidersArray={[
-            'Future-Oriented/Goal-Directed',
-            'Spatial/Temporal Organization',
-            'Problem Solving',
-            'Reflective Thinking',
-            'Internalized Language'
-          ]}
-          databaseNamesArray={[
-            'exe_4a_future',
-            'exe_4a_spatial',
-            'exe_4a_problem',
-            'exe_4a_reflective',
-            'exe_4a_internalized'
-          ]}
+          slidersArray={executive.column4ATerms}
+          databaseNamesArray={executive.column4ADB}
         />
 
         <CategorySliders
-          slidersArray={[
-            'Motivational Bias',
-            'Effortful Control',
-            'Self-Control',
-            'Self-Regulation',
-            'Self-Compassion'
-          ]}
-          databaseNamesArray={[
-            'exe_4b_motivational',
-            'exe_4b_effortful',
-            'exe_4b_self_control',
-            'exe_4b_self_regulation',
-            'exe_4b_self_compassion'
-          ]}
+          slidersArray={executive.column4BTerms}
+          databaseNamesArray={executive.column4BDB}
         />
       </div>
     </div>
