@@ -9,35 +9,13 @@ const Executive = () => {
     <div className="Executive">
       <SessionHeader title={executive.header} headings={[]} />
       <div className="category-content">
-        <CategorySliders
-          slidersArray={executive.column1.terms}
-          databaseNamesArray={executive.column1.db}
-        />
+        {Object.keys(executive.columns).map(column => {
+          const { terms, db } = executive.columns[column];
 
-        <CategorySliders
-          slidersArray={executive.column2A.terms}
-          databaseNamesArray={executive.column2A.db}
-        />
-
-        <CategorySliders
-          slidersArray={executive.column2B.terms}
-          databaseNamesArray={executive.column2B.db}
-        />
-
-        <CategorySliders
-          slidersArray={executive.column3.terms}
-          databaseNamesArray={executive.column3.db}
-        />
-
-        <CategorySliders
-          slidersArray={executive.column4A.terms}
-          databaseNamesArray={executive.column4A.db}
-        />
-
-        <CategorySliders
-          slidersArray={executive.column4B.terms}
-          databaseNamesArray={executive.column4B.db}
-        />
+          return (
+            <CategorySliders slidersArray={terms} databaseNamesArray={db} />
+          );
+        })}
       </div>
     </div>
   );
