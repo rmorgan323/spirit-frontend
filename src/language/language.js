@@ -1,9 +1,9 @@
 const language = {
-  landing = {
+  landing: {
     descriptor: `A clinical reasoning model for ensuring best practice in pediatric occupational therapy.`
   },
-  userDashboard = {
-    otDash: ` - OT Dashboard`,
+  userDashboard: {
+    otDash: (name) => `${name} - OT Dashboard`,
     welcome: `Welcome to SpIRiT, `,
     seeClinic: `SEE CLINIC INFO`,
     addJoinClinic: `ADD/JOIN A CLINIC`,
@@ -16,7 +16,7 @@ const language = {
     patientDirections1: `Each patient name is a combination of your clinic abbreviation, the patient's first and last initial, and a unique number identifier (ie CLI + AB + 10).`,
     patientDirections2: `Please keep this abstracted name in your personal patient records for future reference.`
   },
-  createClinic = {
+  createClinic: {
     addDirections1: `To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.`,
     addDirections2: `After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.`,
     clinicNameError: `Please enter a clinic name and abbreviation`,
@@ -31,11 +31,11 @@ const language = {
     submitClinic: `SUBMIT`,
     joinClinic: `JOIN EXISTING CLINIC`
   },
-  joinClinic = {
+  joinClinic: {
     directions1: `To join an existing clinic on SpIRiT©, you must use a clinic's eight digit passcode. If you do not know your clinic's passcode, please contact your SpIRiT© administrator.`,
     directions2: `If your clinic has not been registered, click 'CREATE NEW CLINIC' below to learn how you can add your clinic and start using SpIRiT©.`
   },
-  bodyDiagram = {
+  bodyDiagram: {
     title: `Body Parts`,
     coreAbdominal: `1. Core Abdominal Control`,
     shoulder: `2. Shoulder Girdle Core`,
@@ -46,7 +46,7 @@ const language = {
     lower: `7. Lower Extremity`,
     foot: `8. Foot/Base of Support Core`
   },
-  finish = {
+  finish: {
     recommend:
       'We recommend reviewing your session results before writing plans and goals',
     stepsi: 'S.T.E.P.S.I. ©',
