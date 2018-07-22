@@ -65,7 +65,7 @@ export class Create extends Component {
       <div>
         <h3 className="current-clinic-header">{createClinic.currentClinic}</h3>
         <h4>
-          <span className="clinic-span">{createClinic.memberOfClinic}}</span>
+          <span className="clinic-span">{createClinic.memberOfClinic}</span>
           {user.clinic}
         </h4>
         <h4>
