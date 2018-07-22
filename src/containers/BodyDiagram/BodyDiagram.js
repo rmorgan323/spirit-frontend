@@ -1,7 +1,7 @@
 /*eslint-disable camelcase*/
 
 import React, { Component } from 'react';
-import bodyDiagramCopy from '../../data/copyContent/bodyDiagramCopy'
+import { bodyDiagram } from '../../language/language';
 
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -183,7 +183,7 @@ export class BodyDiagram extends Component {
           )
         }
       >
-        <h4 className="category-title">{bodyDiagramCopy.title}</h4>
+        <h4 className="category-title">{bodyDiagram.title}</h4>
         <div className={this.checkThreadConnections()}>
           <h6
             className={part1 || hover1 ? 'hover-purple-color' : null}
@@ -191,7 +191,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(1)}
             onMouseOut={() => this.unHoverMe(1)}
           >
-            {bodyDiagramCopy.coreAbdominal}
+            {bodyDiagram.coreAbdominal}
           </h6>
           <h6
             className={part2 || hover2 ? 'hover-purple-color' : null}
@@ -199,7 +199,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(2)}
             onMouseOut={() => this.unHoverMe(2)}
           >
-            {bodyDiagramCopy.shoulder}
+            {bodyDiagram.shoulder}
           </h6>
           <h6
             className={part3 || hover3 ? 'hover-purple-color' : null}
@@ -207,7 +207,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(3)}
             onMouseOut={() => this.unHoverMe(3)}
           >
-            {bodyDiagramCopy.pelvic}
+            {bodyDiagram.pelvic}
           </h6>
           <h6
             className={part4 || hover4 ? 'hover-purple-color' : null}
@@ -215,7 +215,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(4)}
             onMouseOut={() => this.unHoverMe(4)}
           >
-            {bodyDiagramCopy.head}
+            {bodyDiagram.head}
           </h6>
           <h6
             className={part5 || hover5 ? 'hover-purple-color' : null}
@@ -223,7 +223,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(5)}
             onMouseOut={() => this.unHoverMe(5)}
           >
-            {bodyDiagramCopy.eyes}
+            {bodyDiagram.eyes}
           </h6>
           <h6
             className={part6 || hover6 ? 'hover-purple-color' : null}
@@ -231,7 +231,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(6)}
             onMouseOut={() => this.unHoverMe(6)}
           >
-            {bodyDiagramCopy.hand}
+            {bodyDiagram.hand}
           </h6>
           <h6
             className={part7 || hover7 ? 'hover-purple-color' : null}
@@ -239,7 +239,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(7)}
             onMouseOut={() => this.unHoverMe(7)}
           >
-            {bodyDiagramCopy.lower}
+            {bodyDiagram.lower}
           </h6>
           <h6
             className={part8 || hover8 ? 'hover-purple-color' : null}
@@ -247,7 +247,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(8)}
             onMouseOut={() => this.unHoverMe(8)}
           >
-            {bodyDiagramCopy.foot}
+            {bodyDiagram.foot}
           </h6>
 
           <div

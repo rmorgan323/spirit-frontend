@@ -7,7 +7,7 @@ import { PropTypes } from 'prop-types';
 
 import InstructionWrapper from '../../components/InstructionWrapper/InstructionWrapper';
 import PatientList from '../PatientList/PatientList';
-import userDashboardCopy from '../../data/copyContent/userDashboardCopy';
+import { userDashboard } from '../../language/language';
 import * as actions from '../../actions';
 import './UserDashboard.css';
 
@@ -59,12 +59,14 @@ export class UserDashboard extends Component {
     return (
       <div className="UserDashboard">
         <div className="user-dashboard-header">
-          <h3 className={`user-dashboard-name`}>{`${name}${userDashboardCopy.otDash}`}</h3>
+          <h3 className={`user-dashboard-name`}>{`${name}${
+            userDashboard.otDash
+          }`}</h3>
 
           {clinic && (
             <div>
               <Link className="clinic-link" to={`/spirit/users/${id}/create`}>
-                {userDashboardCopy.seeClinic}
+                {userDashboard.seeClinic}
               </Link>
             </div>
           )}
@@ -73,22 +75,22 @@ export class UserDashboard extends Component {
         <div className="user-dashboard-content">
           {!clinic && (
             <div className={`welcome-wrapper`}>
-              <h3>{`${userDashboardCopy.welcome}${name}!`}</h3>
+              <h3>{`${userDashboard.welcome}${name}!`}</h3>
               <p className={`welcome-instructions`}>
-                {userDashboardCopy.welcomeDirections1}
+                {userDashboard.welcomeDirections1}
               </p>
               <p className={`welcome-instructions`}>
-                {userDashboardCopy.welcomeDirections2}
+                {userDashboard.welcomeDirections2}
               </p>
 
               <Link className="clinic-button" to={`/spirit/users/${id}/create`}>
-                <button>{userDashboardCopy.addJoinClinic}</button>
+                <button>{userDashboard.addJoinClinic}</button>
               </Link>
             </div>
           )}
           {clinic && (
             <Fragment>
-              <h3>{userDashboardCopy.newPatients}</h3>
+              <h3>{userDashboard.newPatients}</h3>
 
               <div className="input-holder">
                 <input
@@ -108,10 +110,10 @@ export class UserDashboard extends Component {
                 />
 
                 <button onClick={() => this.handleSubmit()} type="submit">
-                  {userDashboardCopy.submit}
+                  {userDashboard.submit}
                 </button>
               </div>
-              <h5>{userDashboardCopy.addNewPatientDetails}</h5>
+              <h5>{userDashboard.addNewPatientDetails}</h5>
 
               {error && <span className="error-message">{error}</span>}
 
@@ -119,11 +121,11 @@ export class UserDashboard extends Component {
 
               <InstructionWrapper>
                 <p className={`instructions`}>
-                  {userDashboardCopy.patientDirections1}
+                  {userDashboard.patientDirections1}
                 </p>
 
                 <p className={`instructions`}>
-                  {userDashboardCopy.patientDirections2}
+                  {userDashboard.patientDirections2}
                 </p>
               </InstructionWrapper>
             </Fragment>
@@ -131,7 +133,9 @@ export class UserDashboard extends Component {
 
           {patientList.length !== 0 && (
             <div>
-              <h3 className="current-patients">{userDashboardCopy.currentPatients}</h3>
+              <h3 className="current-patients">
+                {userDashboard.currentPatients}
+              </h3>
               <PatientList />
             </div>
           )}

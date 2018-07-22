@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
 import generator from 'generate-password';
-import createClinicCopy from '../../data/copyContent/createClinicCopy';
+import { createClinic } from '../../language/language';
 import './Create.css';
 
 export class Create extends Component {
@@ -35,12 +35,12 @@ export class Create extends Component {
 
     if (!clinicName || !clinicAbbreviation) {
       success = '';
-      error = createClinicCopy.clinicNameError;
+      error = createClinic.clinicNameError;
       this.setState({ error, success });
       return;
     } else if (clinicAbbreviation.length !== 3) {
       success = '';
-      error = createClinicCopy.clinicAbbreviationError;
+      error = createClinic.clinicAbbreviationError;
       this.setState({ error, success });
       return;
     }
@@ -53,7 +53,7 @@ export class Create extends Component {
     });
 
     error = '';
-    success = `${createClinicCopy.addClinicSuccess}${passcode}.`;
+    success = `${createClinic.addClinicSuccess}${passcode}.`;
     this.setState({ error, success, clinicName: '', clinicAbbreviation: '' });
     saveClinic({ name, abbreviation, passcode }, user.id);
   };
@@ -63,17 +63,17 @@ export class Create extends Component {
 
     return (
       <div>
-        <h3 className="current-clinic-header">{createClinicCopy.currentClinic}</h3>
+        <h3 className="current-clinic-header">{createClinic.currentClinic}</h3>
         <h4>
-          <span className="clinic-span">{createClinicCopy.memberOfClinic}}</span>
+          <span className="clinic-span">{createClinic.memberOfClinic}}</span>
           {user.clinic}
         </h4>
         <h4>
-          <span className="clinic-span">{createClinicCopy.clinicAbbreviation}</span>
+          <span className="clinic-span">{createClinic.clinicAbbreviation}</span>
           {user.clinic_abbreviation}
         </h4>
         <h4>
-          <span className="clinic-span">{createClinicCopy.clinicPasscode}</span>
+          <span className="clinic-span">{createClinic.clinicPasscode}</span>
           {user.clinic_passcode}
         </h4>
       </div>
@@ -91,12 +91,8 @@ export class Create extends Component {
         <h3>Add a New Clinic</h3>
 
         <InstructionWrapper>
-          <div className={`instructions`}>
-            {createClinicCopy.addDirections1}
-          </div>
-          <div className={`instructions`}>
-            {createClinicCopy.addDirections2}
-          </div>
+          <div className={`instructions`}>{createClinic.addDirections1}</div>
+          <div className={`instructions`}>{createClinic.addDirections2}</div>
         </InstructionWrapper>
 
         <form className="new-clinic-form">
@@ -105,7 +101,7 @@ export class Create extends Component {
             onChange={event => this.handleChange(event)}
             value={clinicName}
             name="clinicName"
-            placeholder={createClinicCopy.newClinicPlaceholder}
+            placeholder={createClinic.newClinicPlaceholder}
             maxLength={30}
           />
 
@@ -114,7 +110,7 @@ export class Create extends Component {
             onChange={event => this.handleChange(event)}
             value={clinicAbbreviation}
             name="clinicAbbreviation"
-            placeholder={createClinicCopy.clinicAbbreviationPlaceholder}
+            placeholder={createClinic.clinicAbbreviationPlaceholder}
             maxLength={3}
           />
 
@@ -125,7 +121,7 @@ export class Create extends Component {
               this.saveNewClinic(event, clinicName, clinicAbbreviation)
             }
           >
-           {createClinicCopy.submitClinic}
+            {createClinic.submitClinic}
           </button>
         </form>
 
@@ -134,7 +130,7 @@ export class Create extends Component {
         {success && <span className="success-message">{success}</span>}
 
         <NavLink className="join-link" to={`/spirit/users/${user.id}/join`}>
-          {createClinicCopy.joinClinic}
+          {createClinic.joinClinic}
         </NavLink>
       </div>
     );

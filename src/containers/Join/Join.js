@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import InstructionWrapper from '../../components/InstructionWrapper/InstructionWrapper';
 
 import { PropTypes } from 'prop-types';
-import joinClinicCopy from '../../data/copyContent/joinClinicCopy';
+import { joinClinic } from '../../language/language';
 import * as actions from '../../actions';
 import './Join.css';
 
@@ -72,13 +72,9 @@ export class Join extends Component {
         <h3>Join a Clinic</h3>
 
         <InstructionWrapper>
-          <div className={`instructions`}>
-            {joinClinicCopy.directions1}
-          </div>
+          <div className={`instructions`}>{joinClinic.directions1}</div>
 
-          <div className={`instructions`}>
-            {joinClinicCopy.directions2}
-          </div>
+          <div className={`instructions`}>{joinClinic.directions2}</div>
         </InstructionWrapper>
 
         <form>

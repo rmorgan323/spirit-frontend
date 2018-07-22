@@ -1,5 +1,5 @@
 import React from 'react';
-import landingCopy from '../../data/copyContent/landingCopy';
+import { landing } from '../../language/language';
 import './Spirit.css';
 
 const Spirit = () => {
@@ -10,9 +10,7 @@ const Spirit = () => {
         src="/assets/Spirit-Homepage-Wordmark-Purple.png"
         alt="Spirit-Wordmark-with-Tagline"
       />
-      <h4 className="homepage-brief-descriptor">
-        {landingCopy.descriptor}
-      </h4>
+      <h4 className="homepage-brief-descriptor">{landing.descriptor}</h4>
     </div>
   );
 };
