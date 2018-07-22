@@ -59,9 +59,9 @@ export class UserDashboard extends Component {
     return (
       <div className="UserDashboard">
         <div className="user-dashboard-header">
-          <h3 className={`user-dashboard-name`}>{`${name}${
-            userDashboard.otDash
-          }`}</h3>
+          <h3 className={`user-dashboard-name`}>
+            {userDashboard.otDash(name)}
+          </h3>
 
           {clinic && (
             <div>
