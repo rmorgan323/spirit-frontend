@@ -53,7 +53,7 @@ export class Create extends Component {
     });
 
     error = '';
-    success = `${createClinic.addClinicSuccess}${passcode}.`;
+    success = createClinic.addClinicSuccess(passcode);
     this.setState({ error, success, clinicName: '', clinicAbbreviation: '' });
     saveClinic({ name, abbreviation, passcode }, user.id);
   };
