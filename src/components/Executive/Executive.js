@@ -10,33 +10,33 @@ const Executive = () => {
       <SessionHeader title={executive.header} headings={[]} />
       <div className="category-content">
         <CategorySliders
-          slidersArray={executive.column1Terms}
-          databaseNamesArray={executive.column1DB}
+          slidersArray={executive.column1.terms}
+          databaseNamesArray={executive.column1.db}
         />
 
         <CategorySliders
-          slidersArray={executive.column2ATerms}
-          databaseNamesArray={executive.column2ADB}
+          slidersArray={executive.column2A.terms}
+          databaseNamesArray={executive.column2A.db}
         />
 
         <CategorySliders
-          slidersArray={executive.column2BTerms}
-          databaseNamesArray={executive.column2BDB}
+          slidersArray={executive.column2B.terms}
+          databaseNamesArray={executive.column2B.db}
         />
 
         <CategorySliders
-          slidersArray={executive.column3Terms}
-          databaseNamesArray={executive.column3DB}
+          slidersArray={executive.column3.terms}
+          databaseNamesArray={executive.column3.db}
         />
 
         <CategorySliders
-          slidersArray={executive.column4ATerms}
-          databaseNamesArray={executive.column4ADB}
+          slidersArray={executive.column4A.terms}
+          databaseNamesArray={executive.column4A.db}
         />
 
         <CategorySliders
-          slidersArray={executive.column4BTerms}
-          databaseNamesArray={executive.column4BDB}
+          slidersArray={executive.column4B.terms}
+          databaseNamesArray={executive.column4B.db}
         />
       </div>
     </div>
