@@ -5,12 +5,13 @@ import { executive } from '../../language/language';
 import './Executive.css';
 
 const Executive = () => {
+  const { header, columns } = executive;
   return (
     <div className="Executive">
-      <SessionHeader title={executive.header} headings={[]} />
+      <SessionHeader title={header.title} headings={[]} />
       <div className="category-content">
-        {Object.keys(executive.columns).map(column => {
-          const { terms, db } = executive.columns[column];
+        {Object.keys(columns).map(column => {
+          const { terms, db } = columns[column];
 
           return (
             <CategorySliders slidersArray={terms} databaseNamesArray={db} />
