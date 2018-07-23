@@ -35,8 +35,8 @@ const Sam = () => {
         <p className="sam-session-dots session-dots-6">6</p>
       </div>
       <div className="fair-image-holder">
-        <img 
-          className="fair-big-image" 
+        <img
+          className="fair-big-image"
           src="/assets/fair.svg"
           alt="fair-diagram"
         />
