@@ -74,13 +74,7 @@ export const modulation = {
     },
     column2: {
       title: 'Capacities',
-      terms: [
-        'Attention',
-        'Action',
-        'Affect',
-        'Autonomic',
-        'Arousability'
-      ],
+      terms: ['Attention', 'Action', 'Affect', 'Autonomic', 'Arousability'],
       db: [
         'mod_2_attention',
         'mod_2_action',
@@ -129,6 +123,105 @@ export const modulation = {
         'mod_4b_self_regulation',
         'mod_4b_avoid',
         'mod_4b_maladaptive'
+      ]
+    }
+  }
+};
+
+export const postural = {
+  header: {
+    title: 'Postural/Core Movement Capacities',
+    terms: [
+      'Vestibular',
+      'Proprioception',
+      'Tactile',
+      'Auditory',
+      'Visual',
+      'Intero'
+    ],
+    db: [
+      'pos_h_vestibular',
+      'pos_h_proprioception',
+      'pos_h_tactile',
+      'pos_h_auditory',
+      'pos_h_visual',
+      'pos_h_intero'
+    ]
+  },
+  columns: {
+    column1: {
+      type: 'YesNo',
+      title: 'Core Development',
+      terms: ['Outer Core', 'Inner Core'],
+      db: ['pos_1_outer', 'pos_1_inner']
+    },
+    column2: {
+      title: 'Quality of Movement',
+      terms: ['Stability', 'Mobility', 'Tonic', 'Phasic', 'Muscle Tone'],
+      db: [
+        'pos_2_stability',
+        'pos_2_mobility',
+        'pos_2_tonic',
+        'pos_2_phasic',
+        'pos_2_muscle'
+      ]
+    },
+    column3: {
+      title: 'Planes of Movement',
+      terms: [
+        'Sagittal: Flex/Ext',
+        'Frontal: Lateral',
+        'Transverse: Rotational',
+        'Midlines of each plane'
+      ],
+      db: [
+        'pos_3_sagittal',
+        'pos_3_frontal',
+        'pos_3_transverse',
+        'pos_3_midlines'
+      ]
+    },
+    column4: {
+      type: 'BodyDiagram'
+    },
+    column5: {
+      title: 'Automatic Actions',
+      terms: [
+        'Suck/Swallow/Breath',
+        'Ocular within Postural Control',
+        'Antigravity Control',
+        'Reflex Integration/Sensory Motor Patterns',
+        'Alignment/COG over BOS',
+        'Alignment/Orient to Stimulus or Goal',
+        'Anticipatory Control',
+        'Interactive Oscillator and Imitative Action'
+      ],
+      db: [
+        'pos_5_suck',
+        'pos_5_ocular',
+        'pos_5_antigravity',
+        'pos_5_reflex',
+        'pos_5_alignment_COG',
+        'pos_5_alignment_orient',
+        'pos_5_anticipatory',
+        'pos_5_interactive'
+      ]
+    },
+    column6: {
+      title: 'Voluntary Actions',
+      terms: [
+        'Push/Pull/Reach',
+        'Bilateral Symmetrical/Bilateral Asymmetrical/Unilateral',
+        'Grasp/Release',
+        'Strength/Endurance/Flexibility/BMI',
+        'Effortful Control'
+      ],
+      db: [
+        'pos_6_push',
+        'pos_6_bilateral',
+        'pos_6_grasp',
+        'pos_6_strength',
+        'pos_6_effortful'
       ]
     }
   }
