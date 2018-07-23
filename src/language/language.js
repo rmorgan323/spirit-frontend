@@ -227,6 +227,145 @@ export const postural = {
   }
 };
 
+export const sensory = {
+  header: {
+    title: 'Sensory Discrimination Capacities',
+    terms: [
+      'Vestibular',
+      'Proprioception',
+      'Tactile',
+      'Auditory',
+      'Visual',
+      'Intero'
+    ],
+    db: [
+      'sen_h_vestibular',
+      'sen_h_proprioception',
+      'sen_h_tactile',
+      'sen_h_auditory',
+      'sen_h_visual',
+      'sen_h_intero'
+    ]
+  },
+  columns: {
+    column1: {
+      title: 'Sensory Discrimination / Perceptual Skills',
+      terms: [
+        'Ability to Recognize',
+        'Match',
+        'Classification',
+        'Spatial Organization',
+        'Figure Ground Perception',
+        'Inferences and Abstractions (logic)'
+      ],
+      db: [
+        'sen_1_ability',
+        'sen_1_match',
+        'sen_1_classification',
+        'sen_1_spatial',
+        'sen_1_figure',
+        'sen_1_inferences'
+      ]
+    },
+    column2: {
+      title: 'Ideation',
+      terms: [
+        'Initiation',
+        'Imitation (mimic or emulate?)',
+        'Affordance-based (obvious, imitative or expands?)',
+        'Generativity'
+      ],
+      db: [
+        'sen_2_initiation',
+        'sen_2_imitation',
+        'sen_2_affordance',
+        'sen_2_generativity'
+      ]
+    },
+    column3: {
+      title: 'Planning',
+      terms: [
+        'Sequencing',
+        'Sequencing/Gestalt',
+        'Schema Selection',
+        'Schema Expansion',
+        'Modification'
+      ],
+      db: [
+        'sen_3_sequencing',
+        'sen_3_sequencing_gestalt',
+        'sen_3_schema_selection',
+        'sen_3_schema_expansion',
+        'sen_3_modification'
+      ]
+    },
+    column4: {
+      title: 'Execution',
+      terms: [
+        'Timing',
+        'Timing/Force',
+        'Spatial',
+        'Temporal',
+        'Control (Postural; FF; FB)',
+        'Monitoring'
+      ],
+      db: [
+        'sen_4_timing',
+        'sen_4_timing_force',
+        'sen_4_spatial',
+        'sen_4_temporal',
+        'sen_4_control',
+        'sen_4_monitoring'
+      ]
+    },
+    column5: {
+      title: 'Skill Domain',
+      terms: [
+        'Oral',
+        'Ocular',
+        'Postural',
+        'Limb',
+        'Gross',
+        'Fine',
+        'Tool/Object',
+        'Projected Action Sequences'
+      ],
+      db: [
+        'sen_5_oral',
+        'sen_5_ocular',
+        'sen_5_postural',
+        'sen_5_limb',
+        'sen_5_gross',
+        'sen_5_fine',
+        'sen_5_tool',
+        'sen_5_projected'
+      ]
+    },
+    column6: {
+      title: `Ayres' Factors`,
+      terms: [
+        'Somatodyspraxia',
+        'Visual Dyspraxia',
+        'Generalized Dyspraxis',
+        'BMC/Balance/Sequencing/ML',
+        'Praxis on Verbal Command'
+      ],
+      db: [
+        'sen_6_somatodyspraxia',
+        'sen_6_visual',
+        'sen_6_generalized',
+        'sen_6_bmc',
+        'sen_6_praxis'
+      ]
+    }
+  }
+};
+
+export const social = {
+  header: {},
+  columns: {}
+};
+
 export const executive = {
   header: { title: `Executive Functioning Capacities` },
   columns: {
