@@ -12,22 +12,22 @@ export const userDashboard = {
   addNewPatientDetails: `Add NEW patient with 2 patient initials`,
   currentPatients: `Current Patients`,
   welcomeDirections1: `To start tracking your patients through SpIRiT, add a new clinic or join an existing one below.`,
-  welcomeDirections2: `Joining an existing clinic will require a passcode which you can obtain from your your administrator.`,
+  welcomeDirections2: `Joining an existing clinic will require a PIN which you can obtain from your your administrator.`,
   patientDirections1: `Each patient name is a combination of your clinic abbreviation, the patient's first and last initial, and a unique number identifier (ie CLI + AB + 10).`,
   patientDirections2: `Please keep this abstracted name in your personal patient records for future reference.`
 };
 
 export const createClinic = {
   addDirections1: `To add a new clinic, you must provide a clinic name and three letter abbreviation. This abbreviation will be used to abstract your patient's real name when adding them to SpIRiT©.`,
-  addDirections2: `After submission, you will be provided with a passcode. This passcode will be used by other members in order to join your clinic.`,
+  addDirections2: `After submission, you will be provided with a PIN. This PIN will be used by other members in order to join your clinic.`,
   clinicNameError: `Please enter a clinic name and abbreviation`,
   clinicAbbreviationError: `Clinic abbreviation must be three characters long`,
-  addClinicSuccess: passcode =>
-    `Clinic successfully added! Your clinic passcode is ${passcode}.`,
+  addClinicSuccess: PIN =>
+    `Clinic successfully added! Your clinic PIN is ${PIN}.`,
   currentClinic: `Your Current Clinic`,
   memberOfClinic: `You are a member of: `,
   clinicAbbreviation: `Clinic Abbreviation: `,
-  clinicPasscode: `Clinic Passcode: `,
+  clinicPIN: `Clinic PIN: `,
   newClinicPlaceholder: `New Clinic Name`,
   clinicAbbreviationPlaceholder: `Choose a 3-letter abbreviation for your clinic`,
   submitClinic: `SUBMIT`,
@@ -35,7 +35,7 @@ export const createClinic = {
 };
 
 export const joinClinic = {
-  directions1: `To join an existing clinic on SpIRiT©, you must use a clinic's eight digit passcode. If you do not know your clinic's passcode, please contact your SpIRiT© administrator.`,
+  directions1: `To join an existing clinic on SpIRiT©, you must use a clinic's eight digit PIN. If you do not know your clinic's PIN, please contact your SpIRiT© administrator.`,
   directions2: `If your clinic has not been registered, click 'CREATE NEW CLINIC' below to learn how you can add your clinic and start using SpIRiT©.`
 };
 
