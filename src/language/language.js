@@ -39,8 +39,103 @@ export const joinClinic = {
   directions2: `If your clinic has not been registered, click 'CREATE NEW CLINIC' below to learn how you can add your clinic and start using SpIRiT©.`
 };
 
+export const modulation = {
+  header: {
+    title: `Modulation Capacities: Sensory Modulation to Self-Regulation`,
+    terms: [
+      'Vestibular',
+      'Proprioception',
+      'Tactile',
+      'Auditory',
+      'Visual',
+      'Intero'
+    ],
+    db: [
+      'mod_h_vestibular',
+      'mod_h_proprioception',
+      'mod_h_tactile',
+      'mod_h_auditory',
+      'mod_h_visual',
+      'mod_h_intero'
+    ]
+  },
+  columns: {
+    column1: {
+      title: 'Capacities',
+      terms: ['Defensiveness', 'Over', 'Under', 'Variable'],
+      db: [
+        'mod_1_defensiveness',
+        'mod_1_over',
+        'mod_1_under',
+        'mod_1_variable'
+      ],
+      reminderPlacement: [null, '*', '*', '*', '*'],
+      reminder: '* If selected, remember to make a hypothesized arousal chart'
+    },
+    column2: {
+      title: 'Capacities',
+      terms: [
+        'Attention',
+        'Action',
+        'Affect',
+        'Autonomic',
+        'Arousability'
+      ],
+      db: [
+        'mod_2_attention',
+        'mod_2_action',
+        'mod_2_affect',
+        'mod_2_autonomic',
+        'mod_2_arousability'
+      ],
+      reminderPlacement: [null, null, null, null, '*']
+    },
+    column3: {
+      title: 'Self-Regulation',
+      terms: [
+        'Physiological',
+        'Sensory',
+        'Motor',
+        'Emotional',
+        'Cognitive',
+        'Social',
+        'Prosocial'
+      ],
+      db: [
+        'mod_3_physiological',
+        'mod_3_sensory',
+        'mod_3_motor',
+        'mod_3_emotional',
+        'mod_3_cognitive',
+        'mod_3_social',
+        'mod_3_prosocial'
+      ]
+    },
+    column4A: {
+      title: 'Regulatory Capacities',
+      terms: ['Passive', 'Co-Regulation', 'Approach', 'Adaptive'],
+      db: [
+        'mod_4a_passive',
+        'mod_4a_co_regulation',
+        'mod_4a_approach',
+        'mod_4a_adaptive'
+      ]
+    },
+    column4B: {
+      title: 'Regulatory Capacities',
+      terms: ['Active', 'Self-Regulation', 'Avoid', 'Maladaptive'],
+      db: [
+        'mod_4b_active',
+        'mod_4b_self_regulation',
+        'mod_4b_avoid',
+        'mod_4b_maladaptive'
+      ]
+    }
+  }
+};
+
 export const executive = {
-  header: `Executive Functioning Capacities`,
+  header: { title: `Executive Functioning Capacities` },
   columns: {
     column1: {
       terms: ['Orient EYES-EARS-SELF to GOAL', 'Inhibition'],
