@@ -2,9 +2,12 @@ import React from 'react';
 import SessionHeader from '../SessionHeader/SessionHeader';
 import CategorySliders from '../../components/CategorySliders/CategorySliders';
 import YesNoQuestions from '../../components/YesNoQuestions/YesNoQuestions';
+import { social } from '../../language/language'
 import './Social.css';
 
 const Social = () => {
+  const { header, columns } = social;
+
   return (
     <div className="Social">
       <SessionHeader
