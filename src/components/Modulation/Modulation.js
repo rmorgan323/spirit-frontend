@@ -21,6 +21,7 @@ const Modulation = () => {
 
           return (
             <CategorySliders
+              key={db}
               title={title}
               slidersArray={terms}
               databaseNamesArray={db}

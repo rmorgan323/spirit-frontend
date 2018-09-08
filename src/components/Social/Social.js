@@ -23,6 +23,7 @@ const Social = () => {
           if (type) {
             if (type === 'YesNo') {
               <YesNoQuestions
+                key={db}
                 title={title}
                 questionsArray={terms}
                 databaseNamesArray={db}
@@ -32,6 +33,7 @@ const Social = () => {
 
           return (
             <CategorySliders
+              key={db}
               title={title}
               slidersArray={terms}
               databaseNamesArray={db}

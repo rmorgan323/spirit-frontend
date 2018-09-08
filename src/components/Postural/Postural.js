@@ -25,17 +25,19 @@ const Postural = () => {
             if (type === 'YesNo') {
               return (
                 <YesNoQuestions
+                  key={db}
                   title={title}
                   questionsArray={terms}
                   databaseNamesArray={db}
                 />
               );
             } else if (type === 'BodyDiagram') {
-              return <BodyDiagram />;
+              return <BodyDiagram key={`body_diagram`} />;
             }
           }
           return (
             <CategorySliders
+              key={db}
               title={title}
               slidersArray={terms}
               databaseNamesArray={db}

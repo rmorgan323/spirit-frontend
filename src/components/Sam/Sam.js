@@ -25,14 +25,14 @@ const Sam = () => {
 
           if (index === domains.length - 1) {
             return (
-              <p className={`sam-session-dots session-dots-${domainNumber}`}>
+              <p key={domainNumber} className={`sam-session-dots session-dots-${domainNumber}`}>
                 {domainNumber}
               </p>
             );
           }
 
           return (
-            <Link to={domain}>
+            <Link key={domain} to={domain}>
               <p className={`sam-session-dots session-dots-${domainNumber}`}>
                 {domainNumber}
               </p>

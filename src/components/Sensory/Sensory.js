@@ -10,6 +10,7 @@ const Sensory = () => {
   return (
     <div className="Sensory">
       <SessionHeader
+        key={header.db}
         title={header.title}
         headings={header.terms}
         databaseNamesArray={header.db}
@@ -21,6 +22,7 @@ const Sensory = () => {
 
           return (
             <CategorySliders
+              key={db}
               title={title}
               slidersArray={terms}
               databaseNamesArray={db}

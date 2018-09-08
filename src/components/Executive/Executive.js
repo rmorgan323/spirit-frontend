@@ -14,7 +14,7 @@ const Executive = () => {
           const { terms, db } = columns[column];
 
           return (
-            <CategorySliders slidersArray={terms} databaseNamesArray={db} />
+            <CategorySliders key={db} slidersArray={terms} databaseNamesArray={db} />
           );
         })}
       </div>
