@@ -1,6 +1,6 @@
 /*eslint-disable max-len*/
 /*eslint-disable camelcase*/
-import authLogin from '../helpers/authLogin'
+import authLogin from '../helpers/authLogin';
 
 import loadUser from '../helpers/loadUser/loadUser';
 import loadDefinitions from '../helpers/loadDefinitions/loadDefinitions';

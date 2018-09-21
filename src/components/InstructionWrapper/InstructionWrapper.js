@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import './InstructionWrapper.css';
 
@@ -37,7 +37,7 @@ class InstructionWrapper extends Component {
 
 export default InstructionWrapper;
 
-InstructionWrapper.PropTypes = {
+InstructionWrapper.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node

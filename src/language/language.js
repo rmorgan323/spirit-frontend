@@ -1,3 +1,4 @@
+/*eslint-disable max-len*/
 export const landing = {
   descriptor: `A clinical reasoning model for ensuring best practice in pediatric occupational therapy.`
 };

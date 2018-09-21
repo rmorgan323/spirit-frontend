@@ -1,4 +1,5 @@
 /*eslint-disable react/no-unescaped-entities*/
+/*eslint-disable camelcase*/
 
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
