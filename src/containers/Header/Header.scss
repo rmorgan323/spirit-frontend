@@ -89,13 +89,17 @@
 
   .nav-link {
     padding: 10px;
-    background-color: $purple3;
     box-shadow: rgba(0,0,0,0.5) -3px 3px 5px;
+    color: $white1;
+    background-color: $purple3;
     text-decoration: none;
     text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background-color: $purple4;
+    }
     &.selected {
       background-color: $purple5;
-      color: $white1;
       cursor: default;
       pointer-events: none;
     }

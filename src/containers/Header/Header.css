@@ -108,12 +108,15 @@ p {
     transition: 0.3s ease-in-out; }
   .Header .nav-link {
     padding: 10px;
-    background-color: #BFAFD0;
     box-shadow: rgba(0, 0, 0, 0.5) -3px 3px 5px;
+    color: #F9F9F9;
+    background-color: #BFAFD0;
     text-decoration: none;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out; }
+    .Header .nav-link:hover {
+      background-color: #9E87BA; }
     .Header .nav-link.selected {
       background-color: #7F60A4;
-      color: #F9F9F9;
       cursor: default;
       pointer-events: none; }
