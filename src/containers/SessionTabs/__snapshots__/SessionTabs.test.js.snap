@@ -195,7 +195,7 @@ ShallowWrapper {
         "social": false,
       }
     }
-    updateThreadDomain={[Function]}
+    updateThreadDomain={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -212,7 +212,7 @@ ShallowWrapper {
       "children": Array [
         <NavLink
           activeClassName="active"
-          aria-current="page"
+          ariaCurrent="true"
           className="session-tabs"
           to="/spirit/sessions/10/sam"
         >
@@ -222,7 +222,7 @@ ShallowWrapper {
         </NavLink>,
         <NavLink
           activeClassName="active"
-          aria-current="page"
+          ariaCurrent="true"
           className="session-tabs"
           to="/spirit/sessions/10/modulation"
         >
@@ -232,7 +232,7 @@ ShallowWrapper {
         </NavLink>,
         <NavLink
           activeClassName="active"
-          aria-current="page"
+          ariaCurrent="true"
           className="session-tabs"
           to="/spirit/sessions/10/postural"
         >
@@ -242,7 +242,7 @@ ShallowWrapper {
         </NavLink>,
         <NavLink
           activeClassName="active"
-          aria-current="page"
+          ariaCurrent="true"
           className="session-tabs"
           to="/spirit/sessions/10/sensory"
         >
@@ -252,7 +252,7 @@ ShallowWrapper {
         </NavLink>,
         <NavLink
           activeClassName="active"
-          aria-current="page"
+          ariaCurrent="true"
           className="session-tabs"
           to="/spirit/sessions/10/social"
         >
@@ -262,7 +262,7 @@ ShallowWrapper {
         </NavLink>,
         <NavLink
           activeClassName="active"
-          aria-current="page"
+          ariaCurrent="true"
           className="session-tabs"
           to="/spirit/sessions/10/executive"
         >
@@ -272,7 +272,7 @@ ShallowWrapper {
         </NavLink>,
         <NavLink
           activeClassName="active"
-          aria-current="page"
+          ariaCurrent="true"
           className="session-tabs"
           to="/spirit/sessions/10/finish"
         >
@@ -291,7 +291,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "activeClassName": "active",
-          "aria-current": "page",
+          "ariaCurrent": "true",
           "children": <h2>
             SAM
           </h2>,
@@ -318,7 +318,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "activeClassName": "active",
-          "aria-current": "page",
+          "ariaCurrent": "true",
           "children": <h2>
             Sensory Modulation
           </h2>,
@@ -345,7 +345,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "activeClassName": "active",
-          "aria-current": "page",
+          "ariaCurrent": "true",
           "children": <h2>
             Postural
           </h2>,
@@ -372,7 +372,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "activeClassName": "active",
-          "aria-current": "page",
+          "ariaCurrent": "true",
           "children": <h2>
             Sensory Discrimination
           </h2>,
@@ -399,7 +399,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "activeClassName": "active",
-          "aria-current": "page",
+          "ariaCurrent": "true",
           "children": <h2>
             Social
           </h2>,
@@ -426,7 +426,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "activeClassName": "active",
-          "aria-current": "page",
+          "ariaCurrent": "true",
           "children": <h2>
             Executive
           </h2>,
@@ -453,7 +453,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "activeClassName": "active",
-          "aria-current": "page",
+          "ariaCurrent": "true",
           "children": <h2>
             Plans & Goals
           </h2>,
@@ -486,7 +486,7 @@ ShallowWrapper {
         "children": Array [
           <NavLink
             activeClassName="active"
-            aria-current="page"
+            ariaCurrent="true"
             className="session-tabs"
             to="/spirit/sessions/10/sam"
           >
@@ -496,7 +496,7 @@ ShallowWrapper {
           </NavLink>,
           <NavLink
             activeClassName="active"
-            aria-current="page"
+            ariaCurrent="true"
             className="session-tabs"
             to="/spirit/sessions/10/modulation"
           >
@@ -506,7 +506,7 @@ ShallowWrapper {
           </NavLink>,
           <NavLink
             activeClassName="active"
-            aria-current="page"
+            ariaCurrent="true"
             className="session-tabs"
             to="/spirit/sessions/10/postural"
           >
@@ -516,7 +516,7 @@ ShallowWrapper {
           </NavLink>,
           <NavLink
             activeClassName="active"
-            aria-current="page"
+            ariaCurrent="true"
             className="session-tabs"
             to="/spirit/sessions/10/sensory"
           >
@@ -526,7 +526,7 @@ ShallowWrapper {
           </NavLink>,
           <NavLink
             activeClassName="active"
-            aria-current="page"
+            ariaCurrent="true"
             className="session-tabs"
             to="/spirit/sessions/10/social"
           >
@@ -536,7 +536,7 @@ ShallowWrapper {
           </NavLink>,
           <NavLink
             activeClassName="active"
-            aria-current="page"
+            ariaCurrent="true"
             className="session-tabs"
             to="/spirit/sessions/10/executive"
           >
@@ -546,7 +546,7 @@ ShallowWrapper {
           </NavLink>,
           <NavLink
             activeClassName="active"
-            aria-current="page"
+            ariaCurrent="true"
             className="session-tabs"
             to="/spirit/sessions/10/finish"
           >
@@ -565,7 +565,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "activeClassName": "active",
-            "aria-current": "page",
+            "ariaCurrent": "true",
             "children": <h2>
               SAM
             </h2>,
@@ -592,7 +592,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "activeClassName": "active",
-            "aria-current": "page",
+            "ariaCurrent": "true",
             "children": <h2>
               Sensory Modulation
             </h2>,
@@ -619,7 +619,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "activeClassName": "active",
-            "aria-current": "page",
+            "ariaCurrent": "true",
             "children": <h2>
               Postural
             </h2>,
@@ -646,7 +646,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "activeClassName": "active",
-            "aria-current": "page",
+            "ariaCurrent": "true",
             "children": <h2>
               Sensory Discrimination
             </h2>,
@@ -673,7 +673,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "activeClassName": "active",
-            "aria-current": "page",
+            "ariaCurrent": "true",
             "children": <h2>
               Social
             </h2>,
@@ -700,7 +700,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "activeClassName": "active",
-            "aria-current": "page",
+            "ariaCurrent": "true",
             "children": <h2>
               Executive
             </h2>,
@@ -727,7 +727,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "activeClassName": "active",
-            "aria-current": "page",
+            "ariaCurrent": "true",
             "children": <h2>
               Plans & Goals
             </h2>,

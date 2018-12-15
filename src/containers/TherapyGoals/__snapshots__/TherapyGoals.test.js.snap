@@ -6,7 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TherapyGoals
     category="Sensory"
-    getTherapyGoal={[Function]}
+    getTherapyGoal={[MockFunction]}
     number="1"
     selectedTherapyGoal={
       Object {

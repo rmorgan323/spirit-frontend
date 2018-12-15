@@ -17,7 +17,7 @@ ShallowWrapper {
         },
       ]
     }
-    savePatient={[Function]}
+    savePatient={[MockFunction]}
     user={
       Object {
         "admin": false,
@@ -33,7 +33,13 @@ ShallowWrapper {
         "updated_at": "2018-02-19T03:41:23.701Z",
       }
     }
-    wipeStoreFromUserDashboard={[Function]}
+    wipeStoreFromUserDashboard={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

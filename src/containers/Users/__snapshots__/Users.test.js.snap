@@ -7,7 +7,13 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Unknown
     history={
       Object {
-        "push": [Function],
+        "push": [MockFunction] {
+          "calls": Array [
+            Array [
+              "/spirit/users/1/",
+            ],
+          ],
+        },
       }
     }
     user={
