@@ -103,17 +103,16 @@ p {
     padding: 15px 10px;
     color: #F9F9F9;
     background-color: #462A69;
-    box-shadow: rgba(0, 0, 0, 0.5) -3px 3px 5px;
-    font-weight: 400;
-    transition: 0.3s ease-in-out; }
+    box-shadow: rgba(0, 0, 0, 0.3) -3px 3px 5px;
+    font-weight: 400; }
   .Header .nav-link {
     padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.5) -3px 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.3) -3px 3px 5px;
     color: #F9F9F9;
     background-color: #BFAFD0;
     text-decoration: none;
     text-transform: uppercase;
-    transition: 0.3s ease-in-out; }
+    transition: 0.2s ease-in-out; }
     .Header .nav-link:hover {
       background-color: #9E87BA; }
     .Header .nav-link.selected {
