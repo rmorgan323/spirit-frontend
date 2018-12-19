@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import authLogin from '../../helpers/authLogin';
+import logoutUser from '../../helpers/logoutUser/logoutUser';
+import * as actions from '../../actions';
 import { PropTypes } from 'prop-types';
 import './Header.css';
 
@@ -14,6 +16,16 @@ export class Header extends Component {
     const { isMenuShown } = this.state;
 
     this.setState({ isMenuShown: !isMenuShown });
+  };
+
+  handleLogout = async () => {
+    const { history, clearCurrentUser } = this.props;
+
+    this.handleToggleMenu();
+    await logoutUser();
+    await clearCurrentUser();
+
+    history.push('/spirit/index');
   };
 
   render() {
@@ -68,7 +80,9 @@ export class Header extends Component {
                   My Clinic
                 </NavLink>
 
-                <span className="nav-link">Logout</span>
+                <span className="nav-link" onClick={this.handleLogout}>
+                  Logout
+                </span>
               </div>
             )}
           </Fragment>
@@ -90,9 +104,15 @@ export const mapStateToProps = store => ({
   user: store.user
 });
 
+export const mapDispatchToProps = dispatch => ({
+  clearCurrentUser: () => {
+    dispatch(actions.clearCurrentUser());
+  }
+});
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Header);
 
 Header.propTypes = {
