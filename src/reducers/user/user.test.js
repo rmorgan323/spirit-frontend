@@ -20,6 +20,6 @@ describe('User reducer tests', () => {
   it('Should return an empty object when clearing the user', () => {
     const expected = {};
 
-    expected(user(undefined, actions.clearCurrentUser())).toEqual(expected);
+    expect(user(undefined, actions.clearCurrentUser())).toEqual(expected);
   });
 });

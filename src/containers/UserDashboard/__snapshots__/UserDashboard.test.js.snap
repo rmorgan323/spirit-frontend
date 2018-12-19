@@ -17,7 +17,7 @@ ShallowWrapper {
         },
       ]
     }
-    savePatient={[MockFunction]}
+    savePatient={[Function]}
     user={
       Object {
         "admin": false,
@@ -33,13 +33,7 @@ ShallowWrapper {
         "updated_at": "2018-02-19T03:41:23.701Z",
       }
     }
-    wipeStoreFromUserDashboard={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-      }
-    }
+    wipeStoreFromUserDashboard={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -62,15 +56,6 @@ ShallowWrapper {
           >
             Lee Trevino - OT Dashboard
           </h3>
-          <div>
-            <Link
-              className="clinic-link"
-              replace={false}
-              to="/spirit/users/1/create"
-            >
-              SEE CLINIC INFO
-            </Link>
-          </div>
         </div>,
         <div
           className="user-dashboard-content"
@@ -140,69 +125,26 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <h3
-              className="user-dashboard-name"
-            >
-              Lee Trevino - OT Dashboard
-            </h3>,
-            <div>
-              <Link
-                className="clinic-link"
-                replace={false}
-                to="/spirit/users/1/create"
-              >
-                SEE CLINIC INFO
-              </Link>
-            </div>,
-          ],
+          "children": <h3
+            className="user-dashboard-name"
+          >
+            Lee Trevino - OT Dashboard
+          </h3>,
           "className": "user-dashboard-header",
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Lee Trevino - OT Dashboard",
-              "className": "user-dashboard-name",
-            },
-            "ref": null,
-            "rendered": "Lee Trevino - OT Dashboard",
-            "type": "h3",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Lee Trevino - OT Dashboard",
+            "className": "user-dashboard-name",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <Link
-                className="clinic-link"
-                replace={false}
-                to="/spirit/users/1/create"
-              >
-                SEE CLINIC INFO
-              </Link>,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "SEE CLINIC INFO",
-                "className": "clinic-link",
-                "replace": false,
-                "to": "/spirit/users/1/create",
-              },
-              "ref": null,
-              "rendered": "SEE CLINIC INFO",
-              "type": [Function],
-            },
-            "type": "div",
-          },
-        ],
+          "ref": null,
+          "rendered": "Lee Trevino - OT Dashboard",
+          "type": "h3",
+        },
         "type": "div",
       },
       Object {
@@ -538,15 +480,6 @@ ShallowWrapper {
             >
               Lee Trevino - OT Dashboard
             </h3>
-            <div>
-              <Link
-                className="clinic-link"
-                replace={false}
-                to="/spirit/users/1/create"
-              >
-                SEE CLINIC INFO
-              </Link>
-            </div>
           </div>,
           <div
             className="user-dashboard-content"
@@ -616,69 +549,26 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              <h3
-                className="user-dashboard-name"
-              >
-                Lee Trevino - OT Dashboard
-              </h3>,
-              <div>
-                <Link
-                  className="clinic-link"
-                  replace={false}
-                  to="/spirit/users/1/create"
-                >
-                  SEE CLINIC INFO
-                </Link>
-              </div>,
-            ],
+            "children": <h3
+              className="user-dashboard-name"
+            >
+              Lee Trevino - OT Dashboard
+            </h3>,
             "className": "user-dashboard-header",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Lee Trevino - OT Dashboard",
-                "className": "user-dashboard-name",
-              },
-              "ref": null,
-              "rendered": "Lee Trevino - OT Dashboard",
-              "type": "h3",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Lee Trevino - OT Dashboard",
+              "className": "user-dashboard-name",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <Link
-                  className="clinic-link"
-                  replace={false}
-                  to="/spirit/users/1/create"
-                >
-                  SEE CLINIC INFO
-                </Link>,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": "SEE CLINIC INFO",
-                  "className": "clinic-link",
-                  "replace": false,
-                  "to": "/spirit/users/1/create",
-                },
-                "ref": null,
-                "rendered": "SEE CLINIC INFO",
-                "type": [Function],
-              },
-              "type": "div",
-            },
-          ],
+            "ref": null,
+            "rendered": "Lee Trevino - OT Dashboard",
+            "type": "h3",
+          },
           "type": "div",
         },
         Object {

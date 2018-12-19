@@ -111,7 +111,7 @@ ShallowWrapper {
         "",
         <NavLink
           activeClassName="active"
-          ariaCurrent="true"
+          aria-current="page"
           className="join-link"
           to="/spirit/users/1/join"
         >
@@ -421,7 +421,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "activeClassName": "active",
-          "ariaCurrent": "true",
+          "aria-current": "page",
           "children": "JOIN EXISTING CLINIC",
           "className": "join-link",
           "to": "/spirit/users/1/join",
@@ -517,7 +517,7 @@ ShallowWrapper {
           "",
           <NavLink
             activeClassName="active"
-            ariaCurrent="true"
+            aria-current="page"
             className="join-link"
             to="/spirit/users/1/join"
           >
@@ -827,7 +827,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "activeClassName": "active",
-            "ariaCurrent": "true",
+            "aria-current": "page",
             "children": "JOIN EXISTING CLINIC",
             "className": "join-link",
             "to": "/spirit/users/1/join",
