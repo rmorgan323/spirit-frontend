@@ -62,6 +62,15 @@ export class Header extends Component {
                 <h5 className="header-welcome-user">Welcome, {name}!</h5>
                 <NavLink
                   exact
+                  to={`/spirit/index`}
+                  className="nav-link"
+                  activeClassName="selected"
+                  onClick={this.handleToggleMenu}
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  exact
                   to={`/spirit/users/${id}`}
                   className="nav-link"
                   activeClassName="selected"
