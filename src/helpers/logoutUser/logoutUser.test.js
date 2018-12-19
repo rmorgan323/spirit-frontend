@@ -1,11 +1,8 @@
 import logoutUser from './logoutUser';
 import getKeyFromLS from '../getKeyFromLS/getKeyFromLS';
+import mockLocalStorage from '../../data/mockData/mockLocalStorage';
 
-global.localStorage = {
-  getItem: key => global.localStorage[key],
-  removeItem: key => delete localStorage[key],
-  'spirit-token-987': 'abcdefghijk987654321'
-};
+global.localStorage = mockLocalStorage;
 
 describe('logoutUser tests', () => {
   window.fetch = jest.fn().mockImplementation(() =>
