@@ -9,7 +9,7 @@ import './Header.css';
 
 export class Header extends Component {
   state = {
-    isMenuOpen: false
+    isMenuShown: false
   };
 
   handleToggleMenu = () => {
