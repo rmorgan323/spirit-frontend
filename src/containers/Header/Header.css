@@ -111,7 +111,7 @@ p {
     color: #F9F9F9;
     background-color: #BFAFD0;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     transition: 0.2s ease-in-out; }
     .Header .nav-link:hover {
       background-color: #9E87BA; }

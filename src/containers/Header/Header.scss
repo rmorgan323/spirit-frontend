@@ -92,7 +92,7 @@
     color: $white1;
     background-color: $purple3;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     transition: 0.2s ease-in-out;
     &:hover {
       background-color: $purple4;
