@@ -8,6 +8,40 @@ import * as actions from '../../actions';
 import { PropTypes } from 'prop-types';
 import './ViewSession.css';
 
+const sortProcessValues = processArray => {
+  const sortingOrder = ['R', 'I', 'A', 'F', 'Yes', 'No'];
+
+  const sortedArray = [];
+
+  sortingOrder.forEach(order => {
+    processArray.forEach(process => {
+      if (process.values[0].includes(order)) {
+        sortedArray.push(process);
+      }
+    });
+  });
+
+  return sortedArray;
+};
+
+const filterProcessValues = processArray => {
+  const filteredArray = processArray.filter(process => {
+    if (process.values[0] !== null && process.dbName !== 'created_at') {
+      if (process.values[0] === true || process.values[0] === 'true') {
+        process.values[0] = 'Yes';
+      } else if (process.values[0] === false || process.values[0] === 'false') {
+        process.values[0] = 'No';
+      }
+
+      return true;
+    }
+
+    return false;
+  });
+
+  return filteredArray;
+};
+
 export const ViewSession = props => {
   window.scrollTo(0, 0);
 
@@ -107,62 +141,52 @@ export const ViewSession = props => {
     processValues = processProcessesData([props.selectedProcess]);
     treatmentPlan = formatTreatmentPlanData([props.selectedTreatmentPlan]);
     therapyGoal = formatTherapyGoalData([props.selectedTherapyGoal]);
-    processValuesExec = processValues.executive.map((object, index) => {
-      if (object.values[0] !== null && object.dbName !== 'created_at') {
-        return (
-          <div key={index} className="data-holder">
-            <p className="text-small">{object.title}:</p>
-            <p>{object.values[0]}</p>
-          </div>
-        );
-      }
-    });
-    processValuesMod = processValues.modulation.map((object, index) => {
-      if (object.values[0] !== null && object.dbName !== 'created_at') {
-        return (
-          <div key={index} className="data-holder">
-            <p className="text-small">{object.title}: </p>
-            <p>{object.values[0]}</p>
-          </div>
-        );
-      }
-    });
-    processValuesPos = processValues.postural.map((object, index) => {
-      if (object.values[0] !== null && object.dbName !== 'created_at') {
-        object.values[0] === 'true' ? (object.values[0] = 'Yes') : null;
-        object.values[0] === 'false' ? (object.values[0] = 'No') : null;
-        object.values[0] === true ? (object.values[0] = 'Yes') : null;
-        object.values[0] === false ? (object.values[0] = 'No') : null;
-        return (
-          <div key={index} className="data-holder">
-            <p className="text-small">{object.title}: </p>
-            <p>{object.values[0]}</p>
-          </div>
-        );
-      }
-    });
-    processValuesSen = processValues.sensory.map((object, index) => {
-      if (object.values[0] !== null && object.dbName !== 'created_at') {
-        return (
-          <div key={index} className="data-holder">
-            <p className="text-small">{object.title}: </p>
-            <p>{object.values[0]}</p>
-          </div>
-        );
-      }
-    });
-    processValuesSoc = processValues.social.map((object, index) => {
-      if (object.values[0] !== null && object.dbName !== 'created_at') {
-        object.values[0] === true ? (object.values[0] = 'Yes') : null;
-        object.values[0] === false ? (object.values[0] = 'No') : null;
-        return (
-          <div key={index} className="data-holder">
-            <p className="text-small">{object.title}: </p>
-            <p>{object.values[0]}</p>
-          </div>
-        );
-      }
-    });
+    console.log({ processValues });
+    processValuesExec = sortProcessValues(
+      filterProcessValues(processValues.executive)
+    ).map((object, index) => (
+      <div key={index} className="data-holder">
+        <p className="text-small">{object.title}:</p>
+        <p>{object.values[0]}</p>
+      </div>
+    ));
+
+    processValuesMod = sortProcessValues(
+      filterProcessValues(processValues.modulation)
+    ).map((object, index) => (
+      <div key={index} className="data-holder">
+        <p className="text-small">{object.title}: </p>
+        <p>{object.values[0]}</p>
+      </div>
+    ));
+
+    processValuesPos = sortProcessValues(
+      filterProcessValues(processValues.postural)
+    ).map((object, index) => (
+      <div key={index} className="data-holder">
+        <p className="text-small">{object.title}: </p>
+        <p>{object.values[0]}</p>
+      </div>
+    ));
+
+    processValuesSen = sortProcessValues(
+      filterProcessValues(processValues.sensory)
+    ).map((object, index) => (
+      <div key={index} className="data-holder">
+        <p className="text-small">{object.title}: </p>
+        <p>{object.values[0]}</p>
+      </div>
+    ));
+
+    processValuesSoc = sortProcessValues(
+      filterProcessValues(processValues.social)
+    ).map((object, index) => (
+      <div key={index} className="data-holder">
+        <p className="text-small">{object.title}: </p>
+        <p>{object.values[0]}</p>
+      </div>
+    ));
+
     treatmentPlan = treatmentPlan.map((object, index) => {
       if (object.value !== null && object.dbName !== 'created_at') {
         return (
@@ -311,7 +335,10 @@ export const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ViewSession);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ViewSession);
 
 ViewSession.propTypes = {
   currentPatient: PropTypes.object,
