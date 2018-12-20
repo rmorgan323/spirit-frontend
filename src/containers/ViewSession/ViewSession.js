@@ -8,40 +8,6 @@ import * as actions from '../../actions';
 import { PropTypes } from 'prop-types';
 import './ViewSession.css';
 
-const sortProcessValues = processArray => {
-  const sortingOrder = ['R', 'I', 'A', 'F', 'Yes', 'No'];
-
-  const sortedArray = [];
-
-  sortingOrder.forEach(order => {
-    processArray.forEach(process => {
-      if (process.values[0].includes(order)) {
-        sortedArray.push(process);
-      }
-    });
-  });
-
-  return sortedArray;
-};
-
-const filterProcessValues = processArray => {
-  const filteredArray = processArray.filter(process => {
-    if (process.values[0] !== null && process.dbName !== 'created_at') {
-      if (process.values[0] === true || process.values[0] === 'true') {
-        process.values[0] = 'Yes';
-      } else if (process.values[0] === false || process.values[0] === 'false') {
-        process.values[0] = 'No';
-      }
-
-      return true;
-    }
-
-    return false;
-  });
-
-  return filteredArray;
-};
-
 export const ViewSession = props => {
   window.scrollTo(0, 0);
 
@@ -225,14 +191,12 @@ export const ViewSession = props => {
           <div key={`${value}-${index}`} className="view-section-container">
             <h4 className="view-processes-title">{value}</h4>
             <div className="view-processes-section">
-              {sortProcessValues(filterProcessValues(processValues[value])).map(
-                (object, index) => (
-                  <div key={index} className="data-holder">
-                    <p className="text-small">{object.title}: </p>
-                    <p>{object.values[0]}</p>
-                  </div>
-                )
-              )}
+              {processValues[value].map((object, index) => (
+                <div key={index} className="data-holder">
+                  <p className="text-small">{object.title}: </p>
+                  <p>{object.values[0]}</p>
+                </div>
+              ))}
             </div>
           </div>
         ))}

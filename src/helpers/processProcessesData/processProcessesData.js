@@ -357,12 +357,46 @@ const processProcessesData = processData => {
   });
 
   return {
-    executive: cleanExecutive,
-    modulation: cleanModulation,
-    postural: cleanPostural,
-    sensory: cleanSensory,
-    social: cleanSocial
+    executive: sortProcessValues(filterProcessValues(cleanExecutive)),
+    modulation: sortProcessValues(filterProcessValues(cleanModulation)),
+    postural: sortProcessValues(filterProcessValues(cleanPostural)),
+    sensory: sortProcessValues(filterProcessValues(cleanSensory)),
+    social: sortProcessValues(filterProcessValues(cleanSocial))
   };
+};
+
+const sortProcessValues = processArray => {
+  const sortingOrder = ['R', 'I', 'A', 'F', 'Yes', 'No'];
+
+  const sortedArray = [];
+
+  sortingOrder.forEach(order => {
+    processArray.forEach(process => {
+      if (process.values[0].includes(order)) {
+        sortedArray.push(process);
+      }
+    });
+  });
+
+  return sortedArray;
+};
+
+const filterProcessValues = processArray => {
+  const filteredArray = processArray.filter(process => {
+    if (process.values[0] !== null && process.dbName !== 'created_at') {
+      if (process.values[0] === true || process.values[0] === 'true') {
+        process.values[0] = 'Yes';
+      } else if (process.values[0] === false || process.values[0] === 'false') {
+        process.values[0] = 'No';
+      }
+
+      return true;
+    }
+
+    return false;
+  });
+
+  return filteredArray;
 };
 
 export default processProcessesData;
