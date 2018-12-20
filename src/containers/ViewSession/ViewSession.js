@@ -58,11 +58,6 @@ export const ViewSession = props => {
     ids,
     concern,
     processValues,
-    processValuesExec,
-    processValuesMod,
-    processValuesPos,
-    processValuesSen,
-    processValuesSoc,
     treatmentPlan,
     therapyGoal;
 
@@ -141,51 +136,6 @@ export const ViewSession = props => {
     processValues = processProcessesData([props.selectedProcess]);
     treatmentPlan = formatTreatmentPlanData([props.selectedTreatmentPlan]);
     therapyGoal = formatTherapyGoalData([props.selectedTherapyGoal]);
-    console.log({ processValues });
-    processValuesExec = sortProcessValues(
-      filterProcessValues(processValues.executive)
-    ).map((object, index) => (
-      <div key={index} className="data-holder">
-        <p className="text-small">{object.title}:</p>
-        <p>{object.values[0]}</p>
-      </div>
-    ));
-
-    processValuesMod = sortProcessValues(
-      filterProcessValues(processValues.modulation)
-    ).map((object, index) => (
-      <div key={index} className="data-holder">
-        <p className="text-small">{object.title}: </p>
-        <p>{object.values[0]}</p>
-      </div>
-    ));
-
-    processValuesPos = sortProcessValues(
-      filterProcessValues(processValues.postural)
-    ).map((object, index) => (
-      <div key={index} className="data-holder">
-        <p className="text-small">{object.title}: </p>
-        <p>{object.values[0]}</p>
-      </div>
-    ));
-
-    processValuesSen = sortProcessValues(
-      filterProcessValues(processValues.sensory)
-    ).map((object, index) => (
-      <div key={index} className="data-holder">
-        <p className="text-small">{object.title}: </p>
-        <p>{object.values[0]}</p>
-      </div>
-    ));
-
-    processValuesSoc = sortProcessValues(
-      filterProcessValues(processValues.social)
-    ).map((object, index) => (
-      <div key={index} className="data-holder">
-        <p className="text-small">{object.title}: </p>
-        <p>{object.values[0]}</p>
-      </div>
-    ));
 
     treatmentPlan = treatmentPlan.map((object, index) => {
       if (object.value !== null && object.dbName !== 'created_at') {
@@ -271,30 +221,21 @@ export const ViewSession = props => {
 
       <div className="view-processes">
         <h3>Processes</h3>
-        <div className="view-section-container">
-          <h4>Modulation:</h4>
-          <div className="view-processes-section">{processValuesMod}</div>
-        </div>
-
-        <div className="view-section-container">
-          <h4>Postural:</h4>
-          <div className="view-processes-section">{processValuesPos}</div>
-        </div>
-
-        <div className="view-section-container">
-          <h4>Executive:</h4>
-          <div className="view-processes-section">{processValuesExec}</div>
-        </div>
-
-        <div className="view-section-container">
-          <h4>Sensory:</h4>
-          <div className="view-processes-section">{processValuesSen}</div>
-        </div>
-
-        <div className="view-section-container">
-          <h4>Social:</h4>
-          <div className="view-processes-section">{processValuesSoc}</div>
-        </div>
+        {Object.keys(processValues).map((value, index) => (
+          <div key={`${value}-${index}`} className="view-section-container">
+            <h4 className="view-processes-title">{value}</h4>
+            <div className="view-processes-section">
+              {sortProcessValues(filterProcessValues(processValues[value])).map(
+                (object, index) => (
+                  <div key={index} className="data-holder">
+                    <p className="text-small">{object.title}: </p>
+                    <p>{object.values[0]}</p>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="view-section-container">
