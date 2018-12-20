@@ -99,7 +99,7 @@ export const ViewSession = props => {
         <p className="view-concern-notes">{props.selectedConcern.notes}</p>
       </div>
     );
-    processValues = processProcessesData([props.selectedProcess]);
+    processValues = processProcessesData([props.selectedProcess], true);
     treatmentPlan = formatTreatmentPlanData([props.selectedTreatmentPlan]);
     therapyGoal = formatTherapyGoalData([props.selectedTherapyGoal]);
 
