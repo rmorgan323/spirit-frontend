@@ -1,7 +1,7 @@
 /*eslint-disable camelcase*/
 /*eslint-disable id-length*/
 
-const processProcessesData = processData => {
+const processProcessesData = (processData, withFilterSort) => {
   processData = processData.sort((a, b) => a.id - b.id);
 
   let cleanExecutive = [
@@ -357,11 +357,21 @@ const processProcessesData = processData => {
   });
 
   return {
-    executive: sortProcessValues(filterProcessValues(cleanExecutive)),
-    modulation: sortProcessValues(filterProcessValues(cleanModulation)),
-    postural: sortProcessValues(filterProcessValues(cleanPostural)),
-    sensory: sortProcessValues(filterProcessValues(cleanSensory)),
-    social: sortProcessValues(filterProcessValues(cleanSocial))
+    executive: withFilterSort
+      ? sortProcessValues(filterProcessValues(cleanExecutive))
+      : cleanExecutive,
+    modulation: withFilterSort
+      ? sortProcessValues(filterProcessValues(cleanModulation))
+      : cleanModulation,
+    postural: withFilterSort
+      ? sortProcessValues(filterProcessValues(cleanPostural))
+      : cleanPostural,
+    sensory: withFilterSort
+      ? sortProcessValues(filterProcessValues(cleanSensory))
+      : cleanSensory,
+    social: withFilterSort
+      ? sortProcessValues(filterProcessValues(cleanSocial))
+      : cleanSocial
   };
 };
 
