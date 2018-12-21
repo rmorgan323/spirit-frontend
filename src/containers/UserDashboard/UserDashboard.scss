@@ -1,8 +1,6 @@
 @import '../../variables.scss';
-
- .UserDashboard {
+.UserDashboard {
   margin: 0 auto;
-
   .user-dashboard-header {
     display: flex;
     background-color: $purple6;
@@ -10,38 +8,42 @@
     align-items: center;
     padding: 10px 20px;
   }
-
   .user-dashboard-content {
     @include primary-content;
+    display: flex;
+    flex-direction: column;
     width: 480px
   }
-
-  h2 {
+  .welcome-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcome-instructions {
+    @include match-p;
+  }
+  .user-dashboard-name {
     text-align: left;
     margin: 3px 0 0;
     color: $purple1;
     @include match-h3;
   }
-
   h3 {
     margin-top: 30px;
   }
-
   h5 {
     text-align: center;
   }
-
-  .dividing-line, .small-dividing-line {
+  .dividing-line,
+  .small-dividing-line {
     width: 675px;
     height: 2px;
     margin: auto;
     background: $grey5;
   }
-
   .small-dividing-line {
     width: 20px;
   }
-
   .input-holder {
     display: flex;
     justify-content: space-between;
@@ -49,7 +51,6 @@
     width: 380px;
     margin: 0 auto 10px;
   }
-
   input {
     height: 100px;
     width: 110px;
@@ -61,15 +62,13 @@
     text-align: center;
     font-weight: bold;
   }
-
   ::placeholder {
     font-size: 16px;
     position: relative;
     bottom: 10px;
   }
-
   button {
-    width: 110px;
+    min-width: 110px;
     height: 40px;
     background-color: $purple4;
     color: white;
@@ -77,33 +76,23 @@
     cursor: pointer;
     @include std-transition;
   }
-
   button:hover {
     background-color: $purple6;
   }
-
-  .patient-name-directions {
-    @include match-p;
-    display: flex;
-    margin: 20px auto;
-  }
-
-  .error-message, .success-message {
+  .error-message,
+  .success-message {
     @include match-h5;
     display: flex;
     justify-content: center;
     padding: 10px;
   }
-
   .error-message {
     color: #C00E0E;
   }
-
   .success-message {
     color: $green4;
   }
-
-  .clinic-button {
+  .clinic-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,12 +101,10 @@
     text-decoration: none;
     @include std-transition;
   }
-
-  .clinic-button:hover {
+  .clinic-link:hover {
     color: $purple3;
   }
-
   .current-patients {
     margin: 67px 0 -10px;
   }
- }
+}

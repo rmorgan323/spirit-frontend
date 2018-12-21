@@ -42,13 +42,17 @@ export const getUser = () => async dispatch => {
       dispatch(patientToStore(patient));
     }
   } catch (error) {
-    window.location = 'https://spirit.e1.loginrocket.com/';
+    throw new Error(`Error unable to get current user: ${error}`);
   }
 };
 
 export const userToStore = user => ({
   type: 'USER_TO_STORE',
   user
+});
+
+export const clearCurrentUser = () => ({
+  type: 'CLEAR_CURRENT_USER'
 });
 
 export const getPatientConcerns = id => async dispatch => {

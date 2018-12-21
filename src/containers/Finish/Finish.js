@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import TreatmentPlans from '../../components/TreatmentPlans/TreatmentPlans';
 import TherapyGoals from '../TherapyGoals/TherapyGoals';
-import finishCopy from '../../data/copyContent/finishCopy';
+import { finish } from '../../language/language';
 import './Finish.css';
 
 export class Finish extends Component {
@@ -13,7 +13,8 @@ export class Finish extends Component {
       <div className="Finish">
         <div className="finish-button-holder">
           <p>
-            {finishCopy.recommend}<span className="arrow-right">&#10145;</span>
+            {finish.recommend}
+            <span className="arrow-right">&#10145;</span>
           </p>
           <NavLink
             className="join-link"
@@ -26,14 +27,14 @@ export class Finish extends Component {
         </div>
 
         <h2 className="finish-headings">Treatment Plans</h2>
-        <div className="dividing-line"></div>
-        <h5 className="finish-sub-headings">{finishCopy.stepsi}</h5>
+        <div className="dividing-line" />
+        <h5 className="finish-sub-headings">{finish.stepsi}</h5>
 
         <TreatmentPlans />
 
         <h2 className="finish-headings">Therapy Goals</h2>
-        <div className="dividing-line"></div>
-        <h5 className="finish-sub-headings">{finishCopy.copm}</h5>
+        <div className="dividing-line" />
+        <h5 className="finish-sub-headings">{finish.copm}</h5>
 
         <TherapyGoals category="modulation_" title="Modulation" number="1" />
 
@@ -77,7 +78,10 @@ export const mapStateToProps = store => ({
   selectedConcern: store.selectedConcern
 });
 
-export default connect(mapStateToProps, null)(Finish);
+export default connect(
+  mapStateToProps,
+  null
+)(Finish);
 
 Finish.propTypes = {
   updateSession: PropTypes.func,

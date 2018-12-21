@@ -121,7 +121,7 @@ p {
     position: absolute;
     font-weight: bold;
     color: #EAE5F0;
-    transition: all .3s ease-in-out; }
+    transition: all .2s ease-in-out; }
   .PatientDashboard .sam-dot-1 {
     top: 125px;
     left: 2px; }

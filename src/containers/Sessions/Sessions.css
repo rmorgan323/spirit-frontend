@@ -53,7 +53,7 @@ p {
   font-size: 20px; }
 
 .Sessions .session-date {
-  width: 290px;
+  width: 300px;
   margin-right: 20px;
   font-size: 20px; }
 
@@ -103,7 +103,7 @@ p {
   color: #fff;
   cursor: pointer;
   border: none;
-  transition: all .3s ease-in-out; }
+  transition: all .2s ease-in-out; }
 
 .Sessions .create-session-button:hover {
   background-color: #5E378C; }
@@ -134,7 +134,7 @@ p {
   border-radius: 50px;
   border: 2px solid #d1d3d4;
   box-shadow: inset 0px 0px 4px -1px rgba(0, 0, 0, 0.77);
-  transition: all .3s ease-in-out; }
+  transition: all .2s ease-in-out; }
 
 .Sessions .compare-button-holder:hover input ~ .checkmark {
   background-color: #d1d3d4; }
@@ -166,7 +166,7 @@ p {
   width: 88px;
   border: none;
   color: #fff;
-  transition: all .3s ease-in-out;
+  transition: all .2s ease-in-out;
   cursor: pointer; }
 
 .Sessions .compare-sessions-button:hover {

@@ -1,25 +1,24 @@
 /*eslint-disable react/no-unescaped-entities*/
+/*eslint-disable camelcase*/
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+
+import InstructionWrapper from '../../components/InstructionWrapper/InstructionWrapper';
 import PatientList from '../PatientList/PatientList';
-import userDashboardCopy from '../../data/copyContent/userDashboardCopy';
+import { userDashboard } from '../../language/language';
 import * as actions from '../../actions';
 import './UserDashboard.css';
 
 export class UserDashboard extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      firstInitial: '',
-      lastInitial: '',
-      error: '',
-      success: ''
-    };
-  }
+  state = {
+    firstInitial: '',
+    lastInitial: '',
+    error: '',
+    success: ''
+  };
 
   componentDidMount() {
     this.props.wipeStoreFromUserDashboard();
@@ -32,7 +31,9 @@ export class UserDashboard extends Component {
 
   handleSubmit = () => {
     const { firstInitial, lastInitial } = this.state;
-    const { savePatient, user } = this.props;
+    const { savePatient } = this.props;
+    const { id, clinic_abbreviation } = this.props.user;
+
     let error;
     let success;
 
@@ -47,70 +48,87 @@ export class UserDashboard extends Component {
     error = '';
     this.setState({ firstInitial: '', lastInitial: '', error, success });
 
-    savePatient(firstInitial, lastInitial, user.id, user.clinic_abbreviation);
+    savePatient(firstInitial, lastInitial, id, clinic_abbreviation);
   };
 
   render() {
     const { firstInitial, lastInitial, error, success } = this.state;
     const { user, patientList } = this.props;
 
+    const { id, name, clinic } = user;
+
     return (
       <div className="UserDashboard">
         <div className="user-dashboard-header">
-          <h2>{user.name} - OT Dashboard</h2>
-
-          <div>
-            <Link
-              className="clinic-button"
-              to={`/spirit/users/${user.id}/create`}
-            >
-              {user.clinic ? 'SEE CLINIC INFO' : 'ADD/JOIN A CLINIC'}
-            </Link>
-          </div>
+          <h3 className={`user-dashboard-name`}>
+            {userDashboard.otDash(name)}
+          </h3>
         </div>
 
         <div className="user-dashboard-content">
+          {!clinic && (
+            <div className={`welcome-wrapper`}>
+              <h3>{`${userDashboard.welcome}${name}!`}</h3>
+              <p className={`welcome-instructions`}>
+                {userDashboard.welcomeDirections1}
+              </p>
+              <p className={`welcome-instructions`}>
+                {userDashboard.welcomeDirections2}
+              </p>
 
-          <h3>New Patients</h3>
+              <Link className="clinic-button" to={`/spirit/users/${id}/create`}>
+                <button>{userDashboard.addJoinClinic}</button>
+              </Link>
+            </div>
+          )}
+          {clinic && (
+            <Fragment>
+              <h3>{userDashboard.newPatients}</h3>
 
-          <div className="input-holder">
-            <input
-              maxLength={1}
-              onChange={event => this.handleChange(event)}
-              value={firstInitial.toUpperCase()}
-              name="firstInitial"
-              placeholder="First Initial"
-            />
+              <div className="input-holder">
+                <input
+                  maxLength={1}
+                  onChange={event => this.handleChange(event)}
+                  value={firstInitial.toUpperCase()}
+                  name="firstInitial"
+                  placeholder="First Initial"
+                />
 
-            <input
-              maxLength={1}
-              onChange={event => this.handleChange(event)}
-              value={lastInitial.toUpperCase()}
-              name="lastInitial"
-              placeholder="Last Initial"
-            />
+                <input
+                  maxLength={1}
+                  onChange={event => this.handleChange(event)}
+                  value={lastInitial.toUpperCase()}
+                  name="lastInitial"
+                  placeholder="Last Initial"
+                />
 
-            <button onClick={() => this.handleSubmit()} type="submit">
-              SUBMIT
-            </button>
-          </div>
-          <h5>Add NEW patient with 2 patient initials</h5>
+                <button onClick={() => this.handleSubmit()} type="submit">
+                  {userDashboard.submit}
+                </button>
+              </div>
+              <h5>{userDashboard.addNewPatientDetails}</h5>
 
-          {error && <span className="error-message">{error}</span>}
+              {error && <span className="error-message">{error}</span>}
 
-          {success && <span className="success-message">{success}</span>}
+              {success && <span className="success-message">{success}</span>}
 
-          <div className="patient-name-directions">
-            {userDashboardCopy.patientDirections1}
-          </div>
+              <InstructionWrapper>
+                <p className={`instructions`}>
+                  {userDashboard.patientDirections1}
+                </p>
 
-          <div className="patient-name-directions">
-            {userDashboardCopy.patientDirections2}
-          </div>
+                <p className={`instructions`}>
+                  {userDashboard.patientDirections2}
+                </p>
+              </InstructionWrapper>
+            </Fragment>
+          )}
 
-          {patientList.length && (
+          {patientList.length !== 0 && (
             <div>
-              <h3 className="current-patients">Current Patients</h3>
+              <h3 className="current-patients">
+                {userDashboard.currentPatients}
+              </h3>
               <PatientList />
             </div>
           )}
@@ -134,7 +152,10 @@ export const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserDashboard);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UserDashboard);
 
 UserDashboard.propTypes = {
   savePatient: PropTypes.func,

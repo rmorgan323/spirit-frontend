@@ -1,35 +1,33 @@
 /*eslint-disable camelcase*/
 
 import React, { Component } from 'react';
+import { bodyDiagram } from '../../language/language';
+
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import * as actions from '../../actions';
 import './BodyDiagram.css';
 
 export class BodyDiagram extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      part1: false,
-      part2: false,
-      part3: false,
-      part4: false,
-      part5: false,
-      part6: false,
-      part7: false,
-      part8: false,
-      hover1: false,
-      hover2: false,
-      hover3: false,
-      hover4: false,
-      hover5: false,
-      hover6: false,
-      hover7: false,
-      hover8: false,
-      changed: false
-    };
-  }
+  state = {
+    part1: false,
+    part2: false,
+    part3: false,
+    part4: false,
+    part5: false,
+    part6: false,
+    part7: false,
+    part8: false,
+    hover1: false,
+    hover2: false,
+    hover3: false,
+    hover4: false,
+    hover5: false,
+    hover6: false,
+    hover7: false,
+    hover8: false,
+    changed: false
+  };
 
   componentDidMount() {
     const { selectedProcess } = this.props;
@@ -43,6 +41,7 @@ export class BodyDiagram extends Component {
       'pos_4_lower',
       'pos_4_foot'
     ];
+
     const matchedComponentValues = bodyPropertiesArray.map(componentName => {
       const matchedComponent = Object.keys(selectedProcess).find(
         component => component === componentName
@@ -76,20 +75,23 @@ export class BodyDiagram extends Component {
     });
   };
 
-  hoverMe = num => {
-    this.setState({ [`hover${num}`]: true });
+  hoverMe = number => {
+    this.setState({ [`hover${number}`]: true });
   };
 
-  unHoverMe = num => {
-    this.setState({ [`hover${num}`]: false });
+  unHoverMe = number => {
+    this.setState({ [`hover${number}`]: false });
   };
 
-  togglePart = num => {
-    this.setState({ [`part${num}`]: !this.state[`part${num}`] });
+  togglePart = number => {
+    this.setState({ [`part${number}`]: !this.state[`part${number}`] });
     this.setState({ changed: true });
   };
 
   handleDataUpdate = (p1, p2, p3, p4, p5, p6, p7, p8) => {
+    const { changed } = this.state;
+    const { updateProcessPerformanceComponent, selectedProcess } = this.props;
+
     const bodyObject = {
       pos_4_core: p1,
       pos_4_shoulder: p2,
@@ -101,11 +103,8 @@ export class BodyDiagram extends Component {
       pos_4_foot: p8
     };
 
-    if (this.state.changed === true) {
-      this.props.updateProcessPerformanceComponent(
-        this.props.selectedProcess.id,
-        bodyObject
-      );
+    if (changed === true) {
+      updateProcessPerformanceComponent(selectedProcess.id, bodyObject);
       this.setState({ changed: false });
     }
   };
@@ -184,7 +183,7 @@ export class BodyDiagram extends Component {
           )
         }
       >
-        <h4 className="category-title">Body Parts</h4>
+        <h4 className="category-title">{bodyDiagram.title}</h4>
         <div className={this.checkThreadConnections()}>
           <h6
             className={part1 || hover1 ? 'hover-purple-color' : null}
@@ -192,7 +191,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(1)}
             onMouseOut={() => this.unHoverMe(1)}
           >
-            1. Core Abdominal Control
+            {bodyDiagram.coreAbdominal}
           </h6>
           <h6
             className={part2 || hover2 ? 'hover-purple-color' : null}
@@ -200,7 +199,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(2)}
             onMouseOut={() => this.unHoverMe(2)}
           >
-            2. Shoulder Girdle Core
+            {bodyDiagram.shoulder}
           </h6>
           <h6
             className={part3 || hover3 ? 'hover-purple-color' : null}
@@ -208,7 +207,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(3)}
             onMouseOut={() => this.unHoverMe(3)}
           >
-            3. Pelvic Trunk/LE Core
+            {bodyDiagram.pelvic}
           </h6>
           <h6
             className={part4 || hover4 ? 'hover-purple-color' : null}
@@ -216,7 +215,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(4)}
             onMouseOut={() => this.unHoverMe(4)}
           >
-            4. Head/Neck to Trunk Core
+            {bodyDiagram.head}
           </h6>
           <h6
             className={part5 || hover5 ? 'hover-purple-color' : null}
@@ -224,7 +223,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(5)}
             onMouseOut={() => this.unHoverMe(5)}
           >
-            5. Eyes in Head Core
+            {bodyDiagram.eyes}
           </h6>
           <h6
             className={part6 || hover6 ? 'hover-purple-color' : null}
@@ -232,7 +231,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(6)}
             onMouseOut={() => this.unHoverMe(6)}
           >
-            6. Hand Control
+            {bodyDiagram.hand}
           </h6>
           <h6
             className={part7 || hover7 ? 'hover-purple-color' : null}
@@ -240,7 +239,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(7)}
             onMouseOut={() => this.unHoverMe(7)}
           >
-            7. Lower Extremity
+            {bodyDiagram.lower}
           </h6>
           <h6
             className={part8 || hover8 ? 'hover-purple-color' : null}
@@ -248,7 +247,7 @@ export class BodyDiagram extends Component {
             onMouseOver={() => this.hoverMe(8)}
             onMouseOut={() => this.unHoverMe(8)}
           >
-            8. Foot/Base of Support Core
+            {bodyDiagram.foot}
           </h6>
 
           <div
@@ -350,7 +349,10 @@ export const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BodyDiagram);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BodyDiagram);
 
 BodyDiagram.propTypes = {
   selectedProcess: PropTypes.object,

@@ -89,7 +89,7 @@ p {
     background-color: #9E87BA;
     cursor: pointer;
     color: #7F60A4;
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-in-out;
     font-weight: 900;
     color: #fff; }
   .Create .submit-button:hover {
